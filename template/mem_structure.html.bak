@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="##memseocom##" />
+<meta name="keywords" content="##memseokey##" />
+<link rel="shortcut icon" href="images/icon.ico" />
+<title>##pagpagetitle##</title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./include/global_java.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19322499-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script language="Javascript">
+      function replaceText(text){
+	      while(text.lastIndexOf("&") > 0){
+		      text = text.replace('&', '[i-Stats]');
+	      }
+	      return text;
+      }
+
+      var web_referrer = replaceText(document.referrer);
+      <!--
+      istat = new Image(1,1);
+      istat.src = "http://www.fact-link.com.vn/_Traffic/counter.php?sw="+screen.width+"&sc="+screen.colorDepth+"&referer="+web_referrer+"&page="+location.href;
+      //-->
+      </script>
+ <script language="javascript">
+	  	function ac_stat(){  
+				//document.frm_stat.action='_Traffic/counter.php'; 
+				document.frm_stat.action='_memstats/mem_stats.php';
+				document.frm_stat.method='get'
+				document.frm_stat.target='stats';
+				  
+				document.frm_stat.submit();      
+			}
+		
+		function replaceText2(text){
+	      while(text.lastIndexOf("&") > 0){
+		      text = text.replace('&', '[i-Stats]');
+	      }
+	      return text;
+      }
+
+      var web_referrer2 = replaceText2(document.referrer);
+		function stst(){
+			 document.getElementById('sw').value=screen.width;
+			 document.getElementById('sc').value=screen.colorDepth;
+			 document.getElementById('referer').value=web_referrer2;
+			 document.getElementById('page').value=location.href;//00003661
+			 document.getElementById('memid').value="##memid##";
+             
+			 ac_stat();
+			}
+	  </script>
+</head>
+<body onload="stst();">
+<iframe name="stats" id="stats" width="0" height="0" frameborder="0"></iframe>
+      <form action="" name="frm_stat" id="frm_stat" method="get" enctype="multipart/form-data">
+      
+      <input type="hidden" name="sw" id="sw" />
+      <input type="hidden" name="sc" id="sc" />
+      <input type="hidden" name="referer" id="referer" />
+      <input type="hidden" name="page" id="page" />
+      <input type="hidden" name="memid" id="memid" />
+      </form>  
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="3" valign="top"><img src="images/tpl_01.png" width="1000" height="3" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/tpl_02.png" width="10" height="90" /></td>
+    <td valign="top"><table width="980" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10"><img src="images/tpl_##tpmcode##_01.png" width="10" height="10" /></td>
+        <td width="960"><img src="images/tpl_##tpmcode##_02.png" width="960" height="10" /></td>
+        <td width="10"><img src="images/tpl_##tpmcode##_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td><img src="images/tpl_##tpmcode##_04.png" width="10" height="70" /></td>
+        <td><table width="960" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="110"><img src="images/tpl_##tpmcode##_05.png" width="110" height="70" /></td>
+            <td width="850" background="images/tpl_##tpmcode##_06.png"><table width="850" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="760"><table width="760" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="white_n">##memsubdesc##</td>
+                  </tr>
+                  <tr>
+                    <td><font color="#FFFFFF"><h1 class="h1_title">##memcomname##</h1></font></td>
+                  </tr>
+                </table></td>
+                <td width="10"><img src="images/blank.png" width="10" height="70" /></td>
+                <td width="80" valign="top"><div align="right">##langjp## ##langvn## ##langen##</div></td>
+              </tr>
+            </table></td>
+            </tr>
+        </table></td>
+        <td><img src="images/tpl_##tpmcode##_07.png" width="10" height="70" /></td>
+      </tr>
+      <tr>
+        <td><img src="images/tpl_##tpmcode##_08.png" width="10" height="10" /></td>
+        <td><img src="images/tpl_##tpmcode##_09.png" width="960" height="10" /></td>
+        <td><img src="images/tpl_##tpmcode##_10.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+    <td valign="top"><img src="images/tpl_03.png" width="10" height="90" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/tpl_13.png" width="10" height="10" /></td>
+    <td valign="top"><table width="980" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10"><img src="images/tpl_04.png" width="10" height="10" /></td>
+        <td width="180"><img src="images/tpl_05.png" width="180" height="10" /></td>
+        <td width="20"><img src="images/tpl_06.png" width="20" height="10" /></td>
+        <td width="760"><img src="images/tpl_07.png" width="760" height="10" /></td>
+        <td width="10"><img src="images/tpl_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+    <td valign="top"><img src="images/tpl_14.png" width="10" height="10" /></td>
+  </tr>
+  <tr>
+    <td width="10" valign="top" background="images/tpl_09.png">&nbsp;</td>
+    <td width="980" valign="top"><table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+      <tr>
+        <td width="5" valign="top">&nbsp;</td>
+        <td width="185" valign="top">
+		<table width="185" border="0" cellspacing="0" cellpadding="0">
+              ##menulist##
+            </table>
+		</td>
+        <td width="20" valign="top" background="images/line_v_01.png">&nbsp;</td>
+        <td width="760" valign="top">##DETAIL_AREA##</td>
+        <td width="10" valign="top">&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="10" valign="top" background="images/tpl_10.png">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top"><img src="images/tpl_11.png" width="1000" height="10" /></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top"><table width="1000" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20"><img src="images/tpl_##tpmcode##_11.png" width="20" height="30" /></td>
+        <td width="960" background="images/tpl_##tpmcode##_12.png"><div align="center" class="white_sb">##memfooter##</div></td>
+        <td width="20"><img src="images/tpl_##tpmcode##_13.png" width="20" height="30" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top"><img src="images/tpl_15.png" width="1000" height="3" /></td>
+  </tr>
+</table>
+
+</body>
+</html>

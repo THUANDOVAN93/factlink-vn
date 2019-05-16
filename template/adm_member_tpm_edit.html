@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##tt_member_template##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formadmmemtpm" name="formadmmemtpm" method="post" enctype="multipart/form-data" action="adm_member_tpm_edit_post.php" class="form_margin" onsubmit="return check_form('f_admmemtpm');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="200"><div align="right"><strong> ##lb_comname##</strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530">##memcomname##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_tempmain## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><table width="530" border="0" cellspacing="0" cellpadding="0">
+              <!-- BEGIN DYNAMIC BLOCK: rows_tpm -->
+              <tr>
+                <td width="30"><input type="radio" name="t_tpm" id="t_tpm" value="##tpmid##" ##tpmchecked##/></td>
+                <td width="500"><img src="images/tpl_##tpmfile##_00.png" width="500" height="48" /></td>
+              </tr>
+              <tr>
+                <td colspan="2"><img src="images/blank.png" width="530" height="5" /></td>
+              </tr>
+              <!-- END DYNAMIC BLOCK: rows_tpm -->
+            </table></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_memid" type="hidden" id="h_memid" value="##memid##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="sản xuất , chế tạo,sản xuất kinh doanh ,ngành công nghiệp,Manufacturing business, Manufacture, Vietnam, Japan, Factory, 
+Expansion into Thailand,ファクトリンク,Fact-link,製造業,製造,ベトナム,日本,工場,進出" />
+<meta name="description" content="sản xuất , chế tạo,sản xuất kinh doanh ,ngành công nghiệp , introducing manufacturing companies. You can search 
+manufacturing companies in Vietnam by the business field, industrial estate, area.ファクトリンク（Fact-link）はベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。
+ベトナムにある製造業及び関連企業が、業種別、工業団地別、地域別で検索できます。"  />
+<meta name="google-site-verification" content="la59twvP76ef_9Ax0RmaqGn3lOh2TrNPXJ5t_pmUMrw" />
+<meta name="robots" content="index,FOLLOW,ALL"/>
+
+
+<title>##texttitlebar##</title>
+
+
+<link href="/flc_css.css" rel="stylesheet" type="text/css" />
+<link href="/theme.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+	<div id="wrap">
+		
+		<section id="top-section">
+		
+			<div class="container relative">
+
+				<!-- -->
+				<p id="top-text">Japan - Vietname Industrial Directory</p>
+				
+				<!-- -->
+				<nav id="nav-logo">
+					<a href="index.php">
+						<img src="images/fact-link-vn-logo.png" title="##texttitlebar##" />
+					</a>
+				</nav>
+				
+				<!-- Language navigation -->
+				<nav id="nav-language">
+				
+					<span>Language</span>
+				
+					<a href="set_language.php?lang=jp">
+						<img src="images/##langpicjp##" title="日本語" width="20" height="20" border="0" />
+					</a>
+					
+					<a href="set_language.php?lang=vn">
+						<img src="images/##langpicvn##" title="Việt Nam" width="20" height="20" border="0" />
+					</a>
+					
+					<a href="set_language.php?lang=en">
+						<img src="images/##langpicen##" title="English" width="20" height="20" border="0" />
+					</a>
+					
+				</nav>
+				
+				<!-- -->
+				<div id="nav-menu-area">
+					##MENU_AREA##
+				</div>
+				
+				<!-- -->
+				<div id="top-banner">
+					##TOP_AREA##
+				</div>
+			
+			</div>
+
+		</section>
+			
+		<section id="nav-section">
+	
+			<div id="nav-section-header">
+				<div class="container">
+					<p lang="en">Search for factories and businesses</p>
+					<p lang="th" hidden>ค้นหาตามโรงงานและบริษัท</p>
+					<p lang="ja" hidden>工場・企業の検索</p>
+				</div>
+			</div>
+			
+			<nav id="search-nav">
+			
+				<div class="container relative">
+				
+					<div class="row-flex">
+					
+						<div class="dropdown-head">
+							<button type="button" onclick="dt('#dropdown-category');">
+								<span lang="en">Search by Category</span>
+							</button>
+						</div>
+						
+						<div class="dropdown-head">
+							<button type="button" onclick="dt('#dropdown-ie');">
+								<span lang="en">Search by I.E.</span>
+							</button>
+						</div>
+					
+						<div class="dropdown-head">
+							<button type="button" onclick="dt('#dropdown-province');">
+								<span lang="en">Search by Province</span>
+							</button>
+						</div>
+				
+						<div class="dropdown-head">
+							<button type="button" onclick="dt('#dropdown-country');">
+								<span lang="en">Search by Country</span>
+							</button>
+						</div>
+						
+						<div id="search-form">
+
+							<form id="formsearchquick" name="formsearchquick" method="post" enctype="multipart/form-data" action="search_post.php" class="form_margin" onsubmit="return check_form('f_searchquick');">
+								
+								<input name="h_type" type="hidden" id="h_type" value="word" />
+								<input name="t_searchcomname" type="text" class="box_side" id="t_searchcomname" placeholder="##lb_companyname##" />
+								<input name="t_searchkeyword" type="text" class="box_side" id="t_searchkeyword" placeholder="##lb_keyword##" />
+								
+								<button type="submit">
+									<span lang="en">Search</span>
+								</button>
+					
+							</form>
+							
+						</div>
+					
+					</div>
+					
+					<div id="dropdown-toggle" hidden>
+						
+						<div class="dropdown-toggle-box" id="dropdown-category" hidden>
+							<div class="row-flex">
+								##cattextlist##
+							</div>
+						</div>
+						
+						<div class="dropdown-toggle-box" id="dropdown-ie" hidden>
+							<div class="row-flex">
+								##ietextlist##
+							</div>
+						</div>
+						
+						<div class="dropdown-toggle-box" id="dropdown-province" hidden>
+							<div class="row-flex">
+								##ProvinceDropdownList##
+							</div>
+						</div>
+						
+						<div class="dropdown-toggle-box" id="dropdown-country" hidden>
+							<div class="row-flex">
+								##CountryDropdownList##
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</nav>
+			
+			
+		</section>
+		
+		<section id="mid-section">
+			
+			<div class="container">
+				
+				<div class="row-flex">
+				
+					<main>
+						
+						<table id="main-table" border="0" cellspacing="0" cellpadding="0" width="100%">
+						
+							<tr>
+								
+								<!-- Main content -->
+								<td valign="top" id="main-content">
+								
+									##DETAIL_AREA##
+									
+								</td>
+								
+							</tr>
+						
+						</table>
+						
+					</main>
+					
+					<aside id="right-panel">
+					
+						<table id="right-panel" border="0" cellspacing="0" cellpadding="0">
+							
+							<tr>
+							
+								<td valign="top">
+								
+									<table cellspacing="0" cellpadding="0" width="200" border="0">
+										<tbody>
+											<tr>
+												<td width="15" valign="top"><img src="images/frame02_01.png" width="15" height="5"></td>
+												<td width="170" valign="top"><img src="images/frame02_02.png" width="170" height="5"></td>
+												<td width="15" valign="top"><img src="images/frame02_03.png" width="15" height="5"></td>
+											</tr>
+											<tr>
+												<td valign="top"><img src="images/frame02_04.png" width="15" height="45"></td>
+												<td><a href="touroku.php"><img src="images/bn_register_en.png" width="170" height="45" border="0"></a></td>
+												<td valign="top"><img src="images/frame02_06.png" width="15" height="45"></td>
+											</tr>
+											<tr>
+												<td valign="top"><img src="images/frame02_16.png" width="15" height="15"></td>
+												<td valign="top"><img src="images/frame02_17.png" width="170" height="15"></td>
+												<td valign="top"><img src="images/frame02_18.png" width="15" height="15"></td>
+											</tr>
+										</tbody>
+									</table>
+								
+								</td>
+								
+							</tr>
+							
+							<tr>
+								
+								<td valign="top">
+								
+									<form id="formmemlogin" name="formmemlogin" method="post" enctype="multipart/form-data" action="mem_login.php" class="form_margin" onsubmit="return check_form('f_memlogin');">
+										
+										<table width="200" border="0" cellspacing="0" cellpadding="0">
+											
+											<tr>
+												<td width="15" valign="top"><img src="images/frame01_01.png" width="15" height="5" /></td>
+												<td width="170" valign="top"><img src="images/frame01_02.png" width="170" height="5" /></td>
+												<td width="15" valign="top"><img src="images/frame01_03.png" width="15" height="5" /></td>
+											</tr>
+											
+											<tr>
+											
+												<td valign="top"><img src="images/frame01_04.png" width="15" height="85" /></td>
+												
+												<td valign="top" background="images/frame01_05.png">
+												
+													<table width="170" border="0" cellspacing="0" cellpadding="0">
+													
+														<tr>
+															<td valign="top" class="white_n"><img src="images/blank.png" width="170" height="5" /></td>
+														</tr>
+														
+														<tr>
+														
+															<td valign="top" class="form_label">
+															
+																##lb_username##
+																
+															</td>
+															
+														</tr>
+														
+														<tr>
+															<td valign="top">
+															
+																<input name="t_memuser" type="text" class="box_side" id="t_memuser" maxlength="15" />
+																
+															</td>
+														</tr>
+														
+														<tr>
+															<td valign="top"><img src="images/blank.png" width="170" height="5" /></td>
+														</tr>
+														
+														<tr>
+														
+															<td valign="top">
+															
+																<span class="form_label">##lb_password##</span>
+															
+															</td>
+															
+														</tr>
+														
+														<tr>
+															
+															<td valign="top">
+															
+																<input name="t_mempass" type="password" class="box_side" id="t_mempass" maxlength="15" />
+																
+															</td>
+															
+														</tr>
+														
+													</table>
+												
+												</td>
+												
+												<td valign="top"><img src="images/frame01_06.png" width="15" height="85" /></td>
+											
+											</tr>
+										
+											<tr>
+												<td valign="top"><img src="images/frame01_07.png" width="15" height="5" /></td>
+												<td valign="top"><img src="images/frame01_08.png" width="170" height="5" /></td>
+												<td valign="top"><img src="images/frame01_09.png" width="15" height="5" /></td>
+											</tr>
+										
+											<tr>
+												<td valign="top"><img src="images/frame01_10.png" width="15" height="30" /></td>
+												<td valign="top"><input name="b_ok" type="image" id="b_ok" src="images/##buttonlogin##" /></td>
+												<td valign="top"><img src="images/frame01_11.png" width="15" height="30" /></td>
+											</tr>
+										
+											<tr>
+												<td valign="top"><img src="images/frame01_12.png" width="15" height="5" /></td>
+												<td valign="top"><img src="images/frame01_13.png" width="170" height="5" /></td>
+												<td valign="top"><img src="images/frame01_14.png" width="15" height="5" /></td>
+											</tr>
+										
+										</table>
+										
+									</form>
+								
+								</td>
+								
+							</tr>
+						
+							<tr>
+								<td valign="top"><img src="images/line_side_01.png" width="200" height="20" /></td>
+							</tr>
+							
+							<tr>
+							
+								<td valign="top">
+								
+									<table width="200" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="10" valign="top">&nbsp;</td>
+											<td width="180" valign="top">##RIGHT_AREA##</td>
+											<td width="10" valign="top">&nbsp;</td>
+										</tr>
+									</table>
+								
+								</td>
+								
+							</tr>
+							
+							<tr>
+								
+								<td valign="top">
+									
+									<table width="200" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="10" valign="top">&nbsp;</td>
+											<td width="180" valign="top">##LEFT_AREA##</td>
+											<td width="10" valign="top">&nbsp;</td>
+										</tr>
+									</table>
+									
+								</td>
+								
+							</tr>
+						
+						</table>
+						
+					</aside>
+				
+				</div>
+				
+			</div>
+			
+		</section>
+		
+		<section id="bot-section">
+			
+			<div class="container">
+
+				<p>ALL RIGHTS RESERVED BY TOKYO DEVELOPMENT CONSULTANTS (VN) CO., LTD.</p>
+				
+			</div>
+				
+		</section>
+		
+	</div>
+
+<!-- BEGIN DYNAMIC BLOCK: rows_category1 -->
+<!-- END DYNAMIC BLOCK: rows_category1 -->                         
+<!-- START GROUP SECTOR rows_category -->
+<!-- BEGIN DYNAMIC BLOCK: rows_province -->
+<!-- END DYNAMIC BLOCK: rows_province -->
+<!-- BEGIN DYNAMIC BLOCK: rows_country -->
+<!-- END DYNAMIC BLOCK: rows_country -->
+
+
+	<script type="text/javascript">
+		
+		/* dt = DropDown Toggle */
+		function dt(selector) {
+			
+			/* Target element */
+			var target = document.querySelector(selector);
+			var parent = document.querySelector("#dropdown-toggle");
+			var childs = document.querySelectorAll(".dropdown-toggle-box");
+			var opened = null;
+			
+			/* */
+			for(var i=0;i<childs.length;i++) {
+			
+				if(!childs[i].hasAttribute("hidden")) {
+					opened = childs[i].id;
+				}
+			
+				childs[i].setAttribute("hidden","");
+			
+			}
+			
+			if(parent.hasAttribute("hidden")) {
+				parent.removeAttribute("hidden");
+				target.removeAttribute("hidden");
+			} else if(opened == target.id) {
+				parent.setAttribute("hidden","");
+				target.setAttribute("hidden","");
+			} else {
+				parent.removeAttribute("hidden");
+				target.removeAttribute("hidden");
+			}
+			
+		}
+		
+	</script>
+	<script type="text/javascript" src="./include/global_java.js"></script>
+	<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-29194652-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<script type="text/JavaScript">
+	<!--
+	function MM_jumpMenu(targ,selObj,restore){ //v3.0
+	  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+	  if (restore) selObj.selectedIndex=0;
+	}
+	//-->
+	</script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-19322499-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	<script language="Javascript">
+	function replaceText(text){
+	  while(text.lastIndexOf("&") > 0){
+		  text = text.replace('&', '[i-Stats]');
+	  }
+	  return text;
+	}
+
+	var web_referrer = replaceText(document.referrer);
+	<!--
+	istat = new Image(1,1);
+	istat.src = "http://www.fact-link.com.vn/_Traffic/counter.php?sw="+screen.width+"&sc="+screen.colorDepth+"&referer="+web_referrer+"&page="+location.href;
+	//-->
+	</script>
+
+</body>
+</html>

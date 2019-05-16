@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##tt_bannercate_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formadmbacedt" name="formadmbacedt" method="post" enctype="multipart/form-data" action="adm_bancat_edit_post.php" class="form_margin" onsubmit="return check_form('f_admbacedt');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="3"><div align="right"><a href="adm_bancat.php?type=##bactype##&amp;start=0">##lb_back##</a></div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_ban_name## </strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><input name="t_name" type="text" class="box_normal" id="t_name" value="##bacname##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_cate_name## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_cat" class="box_list" id="t_cat">
+              <option value="" ##catdefault##>--- Select Category ---</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cat -->
+              <option value="##catid##" ##catselected##>##catname##</option>
+              <!-- END DYNAMIC BLOCK: rows_cat -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_package## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_package" class="box_list" id="t_package">
+              <option value="" ##pckdefault##>--- Select Package ---</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_1 -->
+              <option value="##pckid##" ##pckselected##>##pckname##</option>
+              <!-- END DYNAMIC BLOCK: rows_1 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_start##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_day" class="box_date_list" id="t_day">
+              <option value="" selected="selected">--- Select Day ---</option>
+              
+            ##sday##
+          
+            </select>
+              <select name="t_month" class="box_date_list" id="t_month">
+                <option value="" selected="selected">--- Select Month ---</option>
+                
+              ##smonth##
+            
+              </select>
+              <input name="t_year" type="text" class="box_date" id="t_year" value="##syear##" maxlength="4" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3"><table width="740" border="0" cellpadding="0" cellspacing="0" bgcolor="#999999">
+              <tr>
+                <td width="5" bgcolor="#0000CC"><img src="images/blank.png" width="5" height="20" align="absmiddle" /></td>
+                <td width="5">&nbsp;</td>
+                <td width="730"><span class="white_b">##lb_en##</span></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="center">##bacimagepreview_en##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_ban_image## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_en" type="file" class="box_list" id="t_image_en" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_width## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_width_en" type="text" class="box_normal" id="t_width_en" value="##bacwidth_en##" maxlength="4" disabled/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_height## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_height_en" type="text" class="box_normal" id="t_height_en" value="##bacheight_en##" maxlength="4" ##spcdisable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_ban_link## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_link_en" type="text" class="box_normal" id="t_link_en" value="##baclink_en##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><table width="740" border="0" cellpadding="0" cellspacing="0" bgcolor="#999999">
+              <tr>
+                <td width="5" bgcolor="#CC0000"><img src="images/blank.png" width="5" height="20" align="absmiddle" /></td>
+                <td width="5">&nbsp;</td>
+                <td width="730"><span class="white_b">##lb_jp##</span></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="center">##bacimagepreview_jp##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_ban_image## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_jp" type="file" class="box_list" id="t_image_jp" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_width## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_width_jp" type="text" class="box_normal" id="t_width_jp" value="##bacwidth_jp##" maxlength="4" disabled="disabled"/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_height## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_height_jp" type="text" class="box_normal" id="t_height_jp" value="##bacheight_jp##" maxlength="4" ##spcdisable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_ban_link## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_link_jp" type="text" class="box_normal" id="t_link_jp" value="##baclink_jp##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><table width="740" border="0" cellpadding="0" cellspacing="0" bgcolor="#999999">
+              <tr>
+                <td width="5" bgcolor="#FFCC00"><img src="images/blank.png" width="5" height="20" align="absmiddle" /></td>
+                <td width="5">&nbsp;</td>
+                <td width="730"><span class="white_b">##lb_vn##</span></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="center">##bacimagepreview_vn##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_ban_image## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_vn" type="file" class="box_list" id="t_image_vn" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_width## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_width_vn" type="text" class="box_normal" id="t_width_vn" value="##bacwidth_vn##" maxlength="4" disabled="disabled"/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_height## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_height_vn" type="text" class="box_normal" id="t_height_vn" value="##bacheight_vn##" maxlength="4" ##spcdisable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_ban_link## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_link_vn" type="text" class="box_normal" id="t_link_vn" value="##baclink_vn##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td><input name="h_admid" type="hidden" id="h_admid" value="##admid##" />
+              <input name="h_bacid" type="hidden" id="h_bacid" value="##bacid##" />
+              <input name="h_bactype" type="hidden" id="h_bactype" value="##bactype##" />
+              <input name="h_bacpackage" type="hidden" id="h_bacpackage" value="##bacpackage##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

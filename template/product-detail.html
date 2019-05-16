@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .content-img-cover {
+    display: none;
+  }
+</style>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <nav class="breadcrumb bg-white">
+          <a class="breadcrumb-item" href="##rootBreadcrumbLink##">##search_by_product##</a>
+          <a class="breadcrumb-item ##classBreadcrumb2##" href="##subBreadcrumbLink2##">
+          ##subBreadcrumbName2##
+          <a class="breadcrumb-item" href="##subBreadcrumbLink1##">
+          ##subBreadcrumbName1##
+          </a>
+          <span class="breadcrumb-item active">##productname##</span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-12 col-md-6">
+        <div class="wrap-product-img">
+            <figure  class="show js-change-hook" href="##mainproductimage##" style="height: 400px;">
+              <img id="show-img" class="product-detail-img" src="##mainproductimage##" alt="The Pulpit Rock">
+            </figure>
+            <ul class="wrap-product-thumb-small js-change-img">
+              <li class="product-thumb-small ##showthumbclass1##">
+                <figure>
+                  <img src="##mainproductimage##" alt="The Pulpit Rock">
+                </figure>
+              </li>
+              <li class="product-thumb-small ##showthumbclass1##">
+                <figure>
+                  <img src="##productthumbimage1##" alt="The Pulpit Rock">
+                </figure>
+              </li>
+              <li class="product-thumb-small ##showthumbclass2##">
+                <figure>
+                  <img src="##productthumbimage2##" alt="The Pulpit Rock">
+                </figure>
+              </li>
+              <li class="product-thumb-small ##showthumbclass3##">
+                <figure>
+                  <img src="##productthumbimage3##" alt="The Pulpit Rock">
+                </figure>
+              </li>
+              <li class="product-thumb-small ##showthumbclass4##">
+                <figure>
+                  <img src="##productthumbimage4##" alt="The Pulpit Rock">
+                </figure>
+              </li>
+              
+            </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <article>
+          <h2 class="product-detail-tit">##productname##</h2>
+          <p class="product-detail-sku">SKU : ##productsku##</p>
+          <p class="product-detail-des">##productdesc##</p>
+          <p class="product-detail-sta ##vs_status_class##">##stockinvietnam## : <span class="##statusclass##">##status##</span></p>
+          <a class="btn btn-danger float-right text-white" href="contact_supplier.php?pid=##productid##">##pro_contact##</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h5 class="text-white font-weight-bold bg-dark p-2">COMPANY INFO</h5>
+        <dl class="row">
+          <dt class="col-4"> - ##pro_comname_link## : </dt>
+          <dd class="col-8"><a href="##suppageurl##">##suppliername##</a></dd>
+          <dt class="col-4"> - ##lb_address## : </dt>
+          <dd class="col-8">##supplieraddress##</dd>
+          <dt class="col-4"> - ##business_desc## : </dt>
+          <dd class="col-8">##supplierdesc##</dd>
+          <dt class="col-4"> - ##search_by_product## : </dt>
+          <dd class="col-8">##memproduct##</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12"><h5 class="text-white font-weight-bold bg-dark p-2">PRODUCT OF COMPANY</h5></div>
+      <div class="col text-center">
+        <div id="js-wrap-products-list" class="wrap-products-list">
+
+          <!-- BEGIN DYNAMIC BLOCK: rows_product_supplier -->
+          <div class="product-box">
+            <div class="wrap-product-thumb">
+              <a href="##productsuplink##"><img class="product-thumb" src="##productsupimg##"></a>
+            </div>
+            <div class="wrap-product-des">
+              <div class="product-name">
+                <a href="#">##productsupname##</a>
+              </div>
+            </div>
+          </div>
+          <!-- END DYNAMIC BLOCK: rows_product_supplier -->
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##tt_news_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formadmnwsadd" name="formadmnwsadd" method="post" enctype="multipart/form-data" action="adm_news_edit_post.php" class="form_margin" onsubmit="return check_form('f_admnwsadd');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><div align="right"><strong> * ##lb_nwg_name## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_nwg" class="box_list" id="t_nwg">
+              <option value="" ##nwgdefault##>--- Select ---</option>
+			  <!-- BEGIN DYNAMIC BLOCK: rows_nwg -->
+              <option value="##nwgid##" ##nwgselected##>##nwgname##</option>
+              <!-- END DYNAMIC BLOCK: rows_nwg -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nwe_name##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_nwe" class="box_list" id="t_nwe">
+              <option value="" ##nwedefault##>--- Select ---</option>
+			  <!-- BEGIN DYNAMIC BLOCK: rows_nwe -->
+              <option value="##nweid##" ##nweselected##>##nwename##</option>
+              <!-- END DYNAMIC BLOCK: rows_nwe -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_nws_title## [##lb_en##] </strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><input name="t_title_en" type="text" class="box_normal" id="t_title_en" value="##nwstitleen##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nws_title## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td>
+              <textarea name="t_title_jp"  class="box_normal" id="t_title_jp" style="width:524px;" maxlength="500" />##nwstitlejp##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nws_title## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title_vn" type="text" class="box_normal" id="t_title_vn" value="##nwstitlevn##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_06.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_nws_sum## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_sum_en" class="box_multi" id="t_sum_en">##nwssumen##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_nws_sum## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_sum_jp" class="box_multi" id="t_sum_jp">##nwssumjp##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_nws_sum## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_sum_vn" class="box_multi" id="t_sum_vn">##nwssumvn##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_06.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nws_detail## [##lb_en##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_en" class="box_multi" id="t_detail_en">##nwsdetailen##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nws_detail## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_jp" class="box_multi" id="t_detail_jp">##nwsdetailjp##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nws_detail## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_vn" class="box_multi" id="t_detail_vn">##nwsdetailvn##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_nws_date##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_day" class="box_date_list" id="t_day">
+              <option value="" selected="selected">--- Select Day ---</option>
+              
+              
+            ##sday##
+          
+            
+            </select>
+              <select name="t_month" class="box_date_list" id="t_month">
+                <option value="" selected="selected">--- Select Month ---</option>
+                
+                
+              ##smonth##
+            
+              
+              </select>
+              <input name="t_year" type="text" class="box_date" id="t_year" value="##syear##" maxlength="4" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_nws_show## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_show" type="checkbox" id="t_show" value="t" ##nwsshow##/>
+##lb_enable##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_nws_status## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_status" type="checkbox" id="t_status" value="d" ##nwsstatus##/>
+              ##lb_status##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_memo## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_memo" class="box_multi" id="t_memo">##nwsmemo##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_admid" type="hidden" id="h_admid" value="##admid##" />
+              <input name="h_nwsid" type="hidden" id="h_nwsid" value="##nwsid##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

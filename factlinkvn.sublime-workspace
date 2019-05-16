@@ -1,0 +1,1157 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ta",
+				"table-row\tdisplay"
+			],
+			[
+				"de",
+				"detail"
+			],
+			[
+				"pag_",
+				"pag_sort"
+			],
+			[
+				"margin-",
+				"margin-bottom\tproperty"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"sql",
+				"sqlGetAllProduct"
+			],
+			[
+				"co",
+				"color\tproperty"
+			],
+			[
+				"se",
+				"seachOption"
+			],
+			[
+				"CA",
+				"CategoryID"
+			],
+			[
+				"cat",
+				"catInfor"
+			],
+			[
+				"pso",
+				"posSub"
+			],
+			[
+				"catI",
+				"catId"
+			],
+			[
+				"mem",
+				"mem_folder"
+			],
+			[
+				"rs",
+				"rsGetProductCr"
+			],
+			[
+				"mysql_fe",
+				"mysql_fetch_array"
+			],
+			[
+				"pro",
+				"productItem"
+			],
+			[
+				"ts",
+				"t_search_op"
+			],
+			[
+				"mysql_fetch",
+				"mysql_fetch_array"
+			],
+			[
+				"get",
+				"rsGetCatInfo"
+			],
+			[
+				"mysql_en",
+				"mysql_escape_string"
+			],
+			[
+				"ca",
+				"catIdGet"
+			],
+			[
+				"produc",
+				"productItem"
+			],
+			[
+				"C",
+				"CategoryID"
+			],
+			[
+				"fo",
+				"foreach\tforeach …"
+			],
+			[
+				"row",
+				"rownum"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"flc_",
+				"flc_products"
+			],
+			[
+				"img",
+				"imgProductLink"
+			],
+			[
+				"P",
+				"Product"
+			],
+			[
+				"supp",
+				"t_supplier_id_format"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"pa",
+				"pag_id"
+			],
+			[
+				"print",
+				"printf"
+			],
+			[
+				"mysqlfe",
+				"mysql_fetch_array"
+			],
+			[
+				"mysql_res",
+				"mysql_real_escape_string"
+			],
+			[
+				"da",
+				"dbarr1"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"Pro",
+				"ProductID"
+			],
+			[
+				"supId",
+				"supIdCurrent"
+			],
+			[
+				"rsSe",
+				"rsSelectProduct"
+			],
+			[
+				"mysql_f",
+				"mysql_fetch_array"
+			],
+			[
+				"sqlSe",
+				"sqlSelectSupplier"
+			],
+			[
+				"mysql_fet",
+				"mysql_fetch_array"
+			],
+			[
+				"Ca",
+				"CatFeatured"
+			],
+			[
+				"flc",
+				"flc_product_category"
+			],
+			[
+				"sq",
+				"sqlSelectFeaOld"
+			],
+			[
+				"Produ",
+				"Products"
+			],
+			[
+				"fact",
+				"fact-link"
+			],
+			[
+				"pr",
+				"productName"
+			],
+			[
+				"mysql_rel",
+				"mysql_real_escape_string"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"box",
+				"box-sizing\tproperty"
+			],
+			[
+				"padd",
+				"padding\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"t",
+				"t_imagethumb1"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"nu",
+				"number_format"
+			],
+			[
+				"foe",
+				"font-size\tproperty"
+			],
+			[
+				"in",
+				"inline-block\tdisplay"
+			],
+			[
+				"me",
+				"mem_total"
+			],
+			[
+				"mysql_",
+				"mysql_query"
+			],
+			[
+				"mem_",
+				"mem_folder"
+			],
+			[
+				"re",
+				"result2"
+			],
+			[
+				"mysql_er",
+				"mysql_error"
+			],
+			[
+				"su",
+				"supplierName"
+			],
+			[
+				"wh",
+				"while\twhile …"
+			],
+			[
+				"Cate",
+				"CategoryID"
+			],
+			[
+				"else",
+				"elseif\telseif …"
+			],
+			[
+				"_",
+				"_COOKIE"
+			],
+			[
+				"tem",
+				"template"
+			],
+			[
+				"ini_se",
+				"ini_set"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"resu",
+				"result1"
+			],
+			[
+				"vi",
+				"video-right"
+			],
+			[
+				"s",
+				"sql6"
+			],
+			[
+				"txt",
+				"text-center"
+			],
+			[
+				"col",
+				"col-12"
+			],
+			[
+				"te",
+				"text-center"
+			],
+			[
+				"mi",
+				"min-width\tproperty"
+			],
+			[
+				"min-",
+				"min-height\tproperty"
+			],
+			[
+				"tra",
+				"translateX()\ttransform"
+			],
+			[
+				"b",
+				"border\tproperty"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"margi",
+				"margin-top\tproperty"
+			],
+			[
+				"ali",
+				"align-self\tproperty"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"font",
+				"font-weight\tproperty"
+			],
+			[
+				"li",
+				"line-height\tproperty"
+			],
+			[
+				"c",
+				"cursor\tproperty"
+			],
+			[
+				"ba",
+				"background\tproperty"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"u",
+				"url()\tbackground"
+			],
+			[
+				"pad",
+				"padding-left\tproperty"
+			],
+			[
+				"lis",
+				"list-style-type\tproperty"
+			],
+			[
+				"html",
+				"html_entity_decode"
+			],
+			[
+				"htm",
+				"html_entity_decode"
+			],
+			[
+				"un",
+				"unset"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"tex-al",
+				"text-align\tproperty"
+			],
+			[
+				"ass",
+				"assign"
+			],
+			[
+				"a",
+				"array\t$… = array (…)"
+			],
+			[
+				"esl",
+				"else"
+			],
+			[
+				"pri",
+				"print_r"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"to",
+				"total"
+			],
+			[
+				"int",
+				"intval"
+			],
+			[
+				"pu",
+				"purchase_id"
+			],
+			[
+				"product",
+				"product_category"
+			],
+			[
+				"product_",
+				"product_category_desc"
+			],
+			[
+				"produ",
+				"product"
+			],
+			[
+				"mysqli_",
+				"mysqli_connect"
+			],
+			[
+				"ex",
+				"exit"
+			],
+			[
+				"pas",
+				"pass"
+			],
+			[
+				"Repa",
+				"re-password"
+			],
+			[
+				"Pas",
+				"password"
+			],
+			[
+				"repa",
+				"re-password"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"use",
+				"user"
+			],
+			[
+				"user",
+				"userid"
+			],
+			[
+				"SUC",
+				"SUCCESS"
+			],
+			[
+				"lo",
+				"login"
+			],
+			[
+				"ra",
+				"rand"
+			],
+			[
+				"curen",
+				"current_page"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"ge",
+				"getList"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "template/structure-bootstrap.html",
+			"settings":
+			{
+				"buffer_size": 15625,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "flc_css.css",
+			"settings":
+			{
+				"buffer_size": 15967,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "product_detail.php",
+			"settings":
+			{
+				"buffer_size": 10144,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/beta/global_value.php",
+			"settings":
+			{
+				"buffer_size": 71765,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "template/product-detail.html",
+			"settings":
+			{
+				"buffer_size": 5063,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ph",
+				"Set Syntax: PHP"
+			],
+			[
+				"",
+				"Set Syntax: D"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/autoloader",
+		"/media/autoloader/blog",
+		"/var/www/html/factlinkvn",
+		"/var/www/html/factlinkvn/include",
+		"/var/www/html/factlinkvn/include/beta"
+	],
+	"file_history":
+	[
+		"/var/www/html/factlinkvn/products_list.php",
+		"/var/www/html/factlinkvn/template/structure-new.html",
+		"/var/www/html/factlinkvn/contact_supplier_post.php",
+		"/var/www/html/factlinkvn/product_detail.php",
+		"/var/www/html/factlinkvn/template/structure_bootstrap.html",
+		"/var/www/html/factlinkvn/contact_add_post.php",
+		"/var/www/html/factlinkvn/adm_member_product_sendmail.php",
+		"/var/www/html/factlinkvn/mem_products.php",
+		"/var/www/html/factlinkvn/include/global_memvalue.php",
+		"/var/www/html/factlinkvn/flc_css.css",
+		"/var/www/html/factlinkvn/include/global_value.php",
+		"/var/www/html/factlinkvn/template/products-list.html",
+		"/var/www/html/factlinkvn/mantisbt-2.19.0/config/config_inc.php.sample",
+		"/var/www/html/factlinkvn/adm_product_category_add_post.php",
+		"/var/www/html/old-source/index.php",
+		"/home/thuando/Downloads/thuando-gameloft.pem",
+		"/var/www/html/factlinkvn/search_result.php",
+		"/var/www/html/factlinkvn/template/mem_products.html",
+		"/var/www/html/factlinkvn/template/product-detail.html",
+		"/var/www/html/factlinkvn/adm_product_add_post.php",
+		"/var/www/html/factlinkvn/template/contact.html",
+		"/var/www/html/factlinkvn/include/global_java.js",
+		"/var/www/html/factlinkvn/template/contact_supplier.html",
+		"/var/www/html/factlinkvn/template/mem_structure.html",
+		"/var/www/html/factlinkvn/include/global_edtvalue.php",
+		"/var/www/html/factlinkvn/template/mem_profile.html",
+		"/var/www/html/factlinkvn/mem_profile.php",
+		"/var/www/html/factlinkvn/template/edt_mail_inbox_view.html",
+		"/var/www/html/factlinkvn/edt_mail_inbox_view.php",
+		"/var/www/html/factlinkvn/contact_supplier.php",
+		"/var/www/html/factlinkvn/edt_mail_inbox.php",
+		"/var/www/html/factlinkvn/index.php",
+		"/var/www/html/factlinkvn/include/global_config.php",
+		"/var/www/html/factlinkvn/template/search_result.html",
+		"/var/www/html/factlinkvn/search_post.php",
+		"/var/www/html/factlinkvn/template/adm_product_add.html",
+		"/var/www/html/factlinkvn/template/adm_product_edit.html",
+		"/var/www/html/factlinkvn/set_language.php",
+		"/var/www/html/factlinkvn/adm_product_add.php",
+		"/var/www/html/factlinkvn/include/global_expire.php",
+		"/var/www/html/factlinkvn/adm_product_edit_post.php",
+		"/var/www/html/factlinkvn/adm_product_edit.php",
+		"/var/www/html/factlinkvn/include/global_admvalue.php",
+		"/var/www/html/factlinkvn/adm_category_add_post.php",
+		"/var/www/html/factlinkvn/adm_products_categorys_manager.php",
+		"/var/www/html/factlinkvn/template/adm_product_category_add.html",
+		"/var/www/html/factlinkvn/template/adm_product_category_edit.html",
+		"/var/www/html/factlinkvn/adm_product_category_edit.php",
+		"/var/www/html/factlinkvn/adm_product_category_edit_post.php",
+		"/var/www/html/factlinkvn/template/SearchMenubar1.html",
+		"/var/www/html/factlinkvn/include/global_memvalue.php.bak",
+		"/var/www/html/factlinkvn/adm_category_edit_post.php",
+		"/var/www/html/factlinkvn/template/adm_category_edit.html",
+		"/var/www/html/factlinkvn/adm_category_edit.php",
+		"/var/www/html/factlinkvn/adm_category_add.php",
+		"/var/www/html/factlinkvn/adm_category.php",
+		"/var/www/html/factlinkvn/template/adm_category.html",
+		"/var/www/html/factlinkvn/adm_product_category_add.php",
+		"/var/www/html/factlinkvn/template/adm_products_categorys_manager.html",
+		"/var/www/html/factlinkvn/template/adm_category_add.html",
+		"/var/www/html/factlinkvn/template/news_view.html",
+		"/var/www/html/factlinkvn/news_view.php",
+		"/var/www/html/factlinkvn/template/adm_country_add.html",
+		"/var/www/html/factlinkvn/adm_bancat.php",
+		"/var/www/html/factlinkvn/adm_bancat_edit_post.php",
+		"/var/www/html/factlinkvn/adm_feature.php",
+		"/var/www/html/factlinkvn/adm_feature_edit_master.php",
+		"/var/www/html/factlinkvn/adm_bulletin_set_disable.php",
+		"/var/www/html/factlinkvn/adm_bancat_add_post2.php",
+		"/var/www/html/factlinkvn/adm_bancat2.php",
+		"/var/www/html/factlinkvn/adm_banner_sort.php",
+		"/var/www/html/factlinkvn/about.php",
+		"/var/www/html/factlinkvn/adm_province_add_post.php",
+		"/var/www/html/factlinkvn/adm_feature_edit.php",
+		"/var/www/html/factlinkvn/template/adm_feature_edit.html",
+		"/var/www/html/factlinkvn/adm_products_manager.php",
+		"/var/www/html/factlinkvn/adm_fea_products_manager.php",
+		"/var/www/html/factlinkvn/template/adm_products_manager.html",
+		"/var/www/html/factlinkvn/adm_mail_delete.php",
+		"/var/www/html/factlinkvn/home/tdc-vn/products/25-L.jpg",
+		"/var/www/html/factlinkvn/adm_member_bulcat_edit_post.php",
+		"/var/www/html/factlinkvn/adm_introduce_set_edit_post.php",
+		"/var/www/html/factlinkvn/template/mem_home.html",
+		"/var/www/html/factlinkvn/adm_member_page_home_edit.php",
+		"/var/www/html/factlinkvn/mem_home.php",
+		"/var/www/html/mem_home.php",
+		"/var/www/html/factlinkvn/include/global_function.php",
+		"/var/www/html/factlinkvn/template/touroku.html",
+		"/var/www/html/factlinkvn/touroku.php",
+		"/var/www/html/factlinkvn/template/adm_member_product_search.html",
+		"/var/www/html/factlinkvn/adm_member_product_search_post.php",
+		"/var/www/html/factlinkvn/adm_member_product_search.php",
+		"/var/www/html/factlinkvn/adm_member_search_post.php",
+		"/var/www/html/factlinkvn/template/adm_fea_products_manager.html",
+		"/var/www/html/factlinkvn/template/adm_member_search.html",
+		"/var/www/html/factlinkvn/adm_member_search.php",
+		"/var/www/html/factlinkvn/contact_supplier_done.php",
+		"/var/www/html/factlinkvn/template/contact_supplier_done.html",
+		"/var/www/html/factlinkvn/template/structure.html",
+		"/var/www/html/factlinkvn/contact_done.php",
+		"/var/www/html/factlinkvn/template/adm_mail_products_manager.html",
+		"/var/www/html/factlinkvn/adm_mail_product_view.php",
+		"/home/thuando/Downloads/flc_mail.php",
+		"/var/www/html/factlinkvn/adm_mail_products_manager.php",
+		"/var/www/html/factlinkvn/adm_index.php",
+		"/var/www/html/factlinkvn/adm_inquiry_view.php",
+		"/var/www/html/factlinkvn/adm_member_inquiry_sendmail.php",
+		"/var/www/html/factlinkvn/template/adm_mail_product_view.html",
+		"/var/www/html/factlinkvn/template/edt_structure.html",
+		"/var/www/html/factlinkvn/template/mem_inquiry_done.html",
+		"/var/www/node/node_modules/uglify-js/lib/ast.js",
+		"/var/www/html/factlinkvn/template/SearchMenubar2.html",
+		"/var/www/html/factlinkvn/include/class.rFastTemplate.php",
+		"/var/www/node/node_modules/qs/lib/utils.js",
+		"/var/www/html/factlinkvn/template/adm_inquiry_view.html",
+		"/var/www/html/factlinkvn/mem_inquiry.php",
+		"/var/www/html/factlinkvn/mem_inquiry_add_post.php",
+		"/var/www/html/factlinkvn/contact.php",
+		"/var/www/html/factlinkvn/template/adm_magazine.html",
+		"/var/www/html/factlinkvn/template/adm_default.html",
+		"/var/www/html/factlinkvn/template/adm_structure.html",
+		"/var/www/html/factlinkvn/adm_magazine.php",
+		"/var/www/html/factlinkvn/template/edt_support.html",
+		"/var/www/html/factlinkvn/edt_support.php",
+		"/var/www/html/factlinkvn/edt_support_post.php",
+		"/var/www/html/factlinkvn/edt_page_home_add.php",
+		"/var/www/html/factlinkvn/adm_lock.php",
+		"/var/www/html/factlinkvn/adm_fea_products_manager_post.php"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 118.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<ul class=\\\"flvn-nav-before\\\">",
+			"search-form",
+			"navbarTogglerDemo01",
+			"navbar",
+			"dropdown-menu",
+			"open",
+			"main-cat",
+			"cattextlist",
+			"cattextline",
+			"cattextlist",
+			"dropdown",
+			"cattextlist",
+			"cattextline",
+			"##cattextlist##",
+			"$cattextlist",
+			"cattextlist",
+			"onclick=\\\"dt('#dropdown-category');\\\"",
+			"dropdown-toggle-box",
+			"hidden",
+			"nav-item",
+			"dropdown",
+			"SearchMenubar1",
+			"nav-item active",
+			"nav",
+			"slick",
+			"js",
+			"container",
+			"SearchMenubar1",
+			"container",
+			"book",
+			"boot",
+			"<p>",
+			"\\\"><p>",
+			"p>",
+			"<tr",
+			"strong",
+			"tr",
+			"memcontactmail",
+			"memcomname",
+			"body",
+			"html",
+			"send()",
+			"send",
+			" Mobile",
+			" 差出人 / By",
+			"sku",
+			"$detail",
+			"sku",
+			"detail",
+			"beta-version-mem-ac",
+			"beta-version",
+			"getCategoryProductCount",
+			"countSup",
+			"subCatItem",
+			"getCategoryProductCount",
+			"flc_product_category",
+			"sqlGetProductByCat",
+			"rsGetProductByCat",
+			"g_crypto_master_salt",
+			"g_default_timezone",
+			"g_crypto_master_salt",
+			"g_default_timezone",
+			"search",
+			"beta",
+			"SearchMenubarProduct",
+			"search",
+			"contact",
+			"tx_inqalert_2",
+			"pro_comname_link",
+			"lb_contact",
+			"contact",
+			"exit",
+			"limit",
+			"mail_from",
+			"flc_mail",
+			"flc_contact",
+			"t_contact",
+			"mal_company",
+			"t_contact",
+			"sqlInsertProduct",
+			"memProduct",
+			"search_by_product",
+			"取り扱い商品",
+			"search_by_product",
+			"product",
+			"beta_version",
+			"menupagtype",
+			"menulist",
+			"menu",
+			"beta",
+			"Company Name",
+			"&beta",
+			"ver",
+			"flc_product_category",
+			"ver",
+			"beta_version",
+			"&beta",
+			"SupplierID",
+			"sqlGetProductByCat",
+			"search_by_product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			"product",
+			"Product",
+			" Tên của bạn",
+			"product_name",
+			"product"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "template/structure-bootstrap.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2456,
+								2456
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1466.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "flc_css.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15348,
+								15348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 18787.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "product_detail.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9664,
+								9664
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5406.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "include/beta/global_value.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 71765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17258,
+								17258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13326.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "template/product-detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3626,
+								3626
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1500.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "factlinkvn.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/var/www/html/factlinkvn/factlinkvn.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"$cons"
+			]
+		],
+		"width": 757.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 340.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

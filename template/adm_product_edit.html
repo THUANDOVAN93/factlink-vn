@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##tt_product_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+    <form id="formadmproedit" name="formadmproedit" method="post" enctype="multipart/form-data" action="adm_product_edit_post.php" class="form_margin" onsubmit="return check_form('f_admproductedit');">
+    <table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input type="hidden" name="t_product_id" id="t_product_id" value="##product_id##"></td>
+          </tr>
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_name## [##lb_en##] </strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><input name="t_title_en" type="text" class="box_normal" id="t_title_en" maxlength="85" value="##productname_en##" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_name## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title_jp" type="text" class="box_normal" id="t_title_jp" maxlength="85" value="##productname_jp##" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_name## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title_vn" type="text" class="box_normal" id="t_title_vn" maxlength="85" value="##productname_vn##" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+
+          <tr>
+            <td width="200"><div align="right"><strong>Stock Status</strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><select name="t_product_status" class="box_list" id="t_product_status">
+              <option value="1" ##active_selected##>Active</option>
+              <option value="" ##disable_selected##>Disable</option>
+            </select></td>
+          </tr>
+
+           <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+
+          <tr>
+            <td width="200"><div align="right"><strong>##lb_mem_category##</strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><select name="t_product_cat" class="box_list" id="t_product_cat">
+              <option value="" ##catdefault##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cat -->
+              <option value="##catid##" ##catselected##>##catname##</option>
+              <!-- END DYNAMIC BLOCK: rows_cat -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+
+          <tr>
+            <td width="200"><div align="right"><strong>##lb_product_supplier##</strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><select name="t_supplier" class="box_list" id="t_supplier">
+              <option value="" ##supplierdefault##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_supplier -->
+              <option value="##supplierid##" ##supselected##>##suppliername##</option>
+              <!-- END DYNAMIC BLOCK: rows_supplier -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+
+           <tr>
+            <td><div align="right">&nbsp;</div></td>
+            <td>&nbsp;</td>
+            <td><img style="max-width: 100%;" src="##productImgCr##" alt="current products"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+
+          <tr>
+            <td><div align="right"><strong> ##lb_product_topimage## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image" type="file" class="box_list" id="t_image" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_06.png" width="740" height="20" /></td>
+            </tr>
+
+
+          <tr>
+            <td><div align="right">&nbsp;</div></td>
+            <td>&nbsp;</td>
+            <td><img style="max-width: 100%;" src="##productThumbCr1##" alt="product thumb1"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_product_thumb_01## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_thumb_01" type="file" class="box_list" id="t_image_thumb_01" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">&nbsp;</div></td>
+            <td>&nbsp;</td>
+            <td><img style="max-width: 100%;" src="##productThumbCr2##" alt="product thumb2"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_product_thumb_02## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_thumb_02" type="file" class="box_list" id="t_image_thumb_02" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">&nbsp;</div></td>
+            <td>&nbsp;</td>
+            <td><img style="max-width: 100%;" src="##productThumbCr3##" alt="product thumb3"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_product_thumb_03## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_thumb_03" type="file" class="box_list" id="t_image_thumb_03" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right">&nbsp;</div></td>
+            <td>&nbsp;</td>
+            <td><img style="max-width: 100%;" src="##productThumbCr4##" alt="product thumb4"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_product_thumb_04## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image_thumb_04" type="file" class="box_list" id="t_image_thumb_04" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+           <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+
+
+
+          <tr>
+            <td><div align="right"><strong> * ##lb_product_topdetail## [##lb_en##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_en" class="box_multi" id="t_detail_en">##productdesc_en##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_product_topdetail## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_jp" class="box_multi" id="t_detail_jp">##productdesc_jp##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_product_topdetail## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_vn" class="box_multi" id="t_detail_vn">##productdesc_vn##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_admid" type="hidden" id="h_admid" value="##admid##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_save.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+    </form>   </td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

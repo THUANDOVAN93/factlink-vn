@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##mn_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formedtmemedit" name="formedtmemedit" method="post" enctype="multipart/form-data" action="edt_profile_edit_post.php" class="form_margin" onsubmit="return check_form('f_edtmemedit');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_comname## [##lb_en##]</strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><input name="t_comname_en" type="text" class="box_normal" id="t_comname_en" value="##memcomnameen##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_comname## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_comname_jp" type="text" class="box_normal" id="t_comname_jp" value="##memcomnamejp##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_comname## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_comname_vn" type="text" class="box_normal" id="t_comname_vn" value="##memcomnamevn##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_nationality##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_national" type="radio" value="jp" ##memnjp## />
+##lb_njp##
+  <input name="t_national" type="radio" value="vn" ##memnvn## />
+##lb_nvn##
+<input name="t_national" type="radio" value="oo" ##memnoo## />
+##lb_nother##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_mem_subdesc## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_memsubdesc_en" type="text" class="box_normal" id="t_memsubdesc_en" value="##memsubdescen##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_mem_subdesc## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_memsubdesc_jp" type="text" class="box_normal" id="t_memsubdesc_jp" value="##memsubdescjp##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_mem_subdesc## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_memsubdesc_vn" type="text" class="box_normal" id="t_memsubdesc_vn" value="##memsubdescvn##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_mem_category##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_memcat" class="box_list" id="t_memcat">
+              <option value="" ##catdefault##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cat -->
+              <option value="##catid##" ##catselected##>##catname##</option>
+              <!-- END DYNAMIC BLOCK: rows_cat -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_ie##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_comie" class="box_list" id="t_comie">
+              <option value="" ##inedefault##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_1 -->
+              <option value="##ineid##" ##ineselected##>##inename##</option>
+              <!-- END DYNAMIC BLOCK: rows_1 -->
+              <option value="001" ##ineselected_1##>##inename_1##</option>
+              <option value="002" ##ineselected_2##>##inename_2##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_address## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddress_en" class="box_multi_sub" id="t_comaddress_en">##memaddress1en##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_address## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddress_jp" class="box_multi_sub" id="t_comaddress_jp">##memaddress1jp##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_address## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddress_vn" class="box_multi_sub" id="t_comaddress_vn">##memaddress1vn##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_province##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_comprovince" class="box_list" id="t_comprovince" onchange="javascript:if (document.formedtmemedit.t_comprovince.value=='001') {document.formedtmemedit.t_comcountry.disabled=false; document.formedtmemedit.t_comcountry.value='002';} else {document.formedtmemedit.t_comcountry.value=''; document.formedtmemedit.t_comcountry.disabled=true;}">
+              <option value="" ##prvdefault##>##lb_select##</option>
+              <option value="002" ##prvselected_2##>##prvname_2##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_2 -->
+              <option value="##prvid##" ##prvselected##>##prvname##</option>
+              <!-- END DYNAMIC BLOCK: rows_2 -->
+              <option value="001" ##prvselected_1##>##prvname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_country##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_comcountry" class="box_list" id="t_comcountry" ##ctydisable##>
+              <option value="" ##ctydefault##>##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_3 -->
+              <option value="##ctyid##" ##ctyselected##>##ctyname##</option>
+              <!-- END DYNAMIC BLOCK: rows_3 -->
+              <option value="001" ##ctyselected_1##>##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_zip##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_comzip" type="text" class="box_normal" id="t_comzip" value="##memaddresszip1##" maxlength="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_comtel##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_comtel" type="text" class="box_normal" id="t_comtel" value="##memcomtel##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_comfax##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_comfax" type="text" class="box_normal" id="t_comfax" value="##memcomfax##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_contact## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_contact_en" type="text" class="box_normal" id="t_contact_en" value="##memcontacten##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_contact## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_contact_jp" type="text" class="box_normal" id="t_contact_jp" value="##memcontactjp##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_contact## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_contact_vn" type="text" class="box_normal" id="t_contact_vn" value="##memcontactvn##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_position## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_position_en" type="text" class="box_normal" id="t_position_en" value="##mempositionen##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_position## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_position_jp" type="text" class="box_normal" id="t_position_jp" value="##mempositionjp##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_position## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_position_vn" type="text" class="box_normal" id="t_position_vn" value="##mempositionvn##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_gender##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_gender" type="radio" value="m" ##memgenderm## />
+##lb_male##
+  <input name="t_gender" type="radio" value="f" ##memgenderf## />
+##lb_female##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_mail##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_mail" type="text" class="box_normal" id="t_mail" value="##memmail##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>Other Contact E-mail</strong><br />
+              (Example:mail1@mail.com,mail2@mail.com)</div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_oth_contactmail" class="box_multi" id="t_oth_contactmail" placeholder="Example:mail1@mail.com,mail2@mail.com,">##memmail_oth##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_tel##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tel" type="text" class="box_normal" id="t_tel" value="##memtel##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_memid" type="hidden" id="h_memid" value="##memid##" />
+              <input name="h_memcat" type="hidden" id="h_memcat" value="##memcat##" />
+              <input name="h_memsort" type="hidden" id="h_memsort" value="##memsort##" />
+              <input name="h_bucsort" type="hidden" id="h_bucsort" value="##bucsort##" />
+              <input name="h_mempackage" type="hidden" id="h_mempackage" value="##mempackage##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

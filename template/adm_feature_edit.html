@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##tt_feature_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formadmfeaadd" name="formadmfeaadd" method="post" enctype="multipart/form-data" action="adm_feature_edit_post.php" class="form_margin" onsubmit="return check_form('f_admfeaadd');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_name## [##lb_en##] </strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><input name="t_title_en" type="text" class="box_normal" id="t_title_en" value="##featitleen##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_name## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title_jp" type="text" class="box_normal" id="t_title_jp" value="##featitlejp##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_name## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title_vn" type="text" class="box_normal" id="t_title_vn" value="##featitlevn##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="center">##feaimagepreview##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_fea_topimage## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image" type="file" class="box_list" id="t_image" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_fea_topimage_width## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imagewidth" type="text" class="box_normal" id="t_imagewidth" value="##feaimagewidth##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="grey_n">Maximum width : 540 px</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_fea_image_link## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imagelink" type="text" class="box_normal" id="t_imagelink" value="##feaimagelink##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+
+          <!-- ADD MEDIA -->
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_video_link## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_videolink" type="text" class="box_normal" id="t_videolink" value="" placeholder="##pagvideolink##" maxlength="300" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_media_option## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_media_option" class="box_list" id="t_media_option">
+              <!-- BEGIN DYNAMIC BLOCK: rows_meo -->
+              <option value="##meovalue##" ##meoselected##>##meoname##</option>
+              <!-- END DYNAMIC BLOCK: rows_meo -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable" type="checkbox" id="t_imagedisable" value="t" ##pagimagedisable##/> ##lb_pag_media_remove## </td>
+          </tr>
+          <!-- END ADD MEDIA -->
+          
+          <tr>
+            <td colspan="3"><img src="images/line_frame_06.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_fea_topdetail## [##lb_en##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_en" class="box_multi" id="t_detail_en">##feadetailen##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_fea_topdetail## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_jp" class="box_multi" id="t_detail_jp">##feadetailjp##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_fea_topdetail## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_vn" class="box_multi" id="t_detail_vn">##feadetailvn##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="center">##feaimagepreview1##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_image## 1</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image1" type="file" class="box_list" id="t_image1" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_image_width## 1</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imagewidth1" type="text" class="box_normal" id="t_imagewidth1" value="##feaimagewidth1##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><span class="grey_n">Maximum width : 400 px</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_image_link## 1</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imagelink1" type="text" class="box_normal" id="t_imagelink1" value="##feaimagelink1##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_side## 1</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imageside1" type="radio" value="l" ##feaimageside1_l## />
+##lb_left##
+  <input name="t_imageside1" type="radio" value="r" ##feaimageside1_r## />
+##lb_right##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+
+          <!-- ADD MEDIA 1 -->
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_video_link## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_videolink1" type="text" class="box_normal" id="t_videolink1" value="" placeholder="##pagvideolink1##" maxlength="300" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_media_option## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_media_option1" class="box_list" id="t_media_option1">
+              <!-- BEGIN DYNAMIC BLOCK: rows_meo1 -->
+              <option value="##meovalue##" ##meoselected1##>##meoname##</option>
+              <!-- END DYNAMIC BLOCK: rows_meo1 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable1" type="checkbox" id="t_imagedisable1" value="t" ##pagimagedisable1##/> ##lb_pag_media_remove## </td>
+          </tr>
+          <!-- END ADD MEDIA 1 -->
+          
+          <tr>
+            <td colspan="3"><img src="images/line_frame_06.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_detail## 1 [##lb_en##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_en1" class="box_multi" id="t_detail_en1">##feadetailen1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_detail## 1 [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_jp1" class="box_multi" id="t_detail_jp1">##feadetailjp1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_detail## 1 [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_vn1" class="box_multi" id="t_detail_vn1">##feadetailvn1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="center">##feaimagepreview2##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_image## 2</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_image2" type="file" class="box_list" id="t_image2" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_image_width## 2</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imagewidth2" type="text" class="box_normal" id="t_imagewidth2" value="##feaimagewidth2##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><span class="grey_n">Maximum width : 400 px</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_image_link## 2</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imagelink2" type="text" class="box_normal" id="t_imagelink2" value="##feaimagelink2##" maxlength="500" /></td>
+          </tr>
+          <tr>
+
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_side## 2</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_imageside2" type="radio" value="l" ##feaimageside2_l## />
+##lb_left##
+  <input name="t_imageside2" type="radio" value="r" ##feaimageside2_r## />
+##lb_right##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+
+          <!-- ADD MEDIA 2 -->
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_video_link## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_videolink2" type="text" class="box_normal" id="t_videolink2" value="" placeholder="##pagvideolink2##" maxlength="300" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_media_option## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_media_option2" class="box_list" id="t_media_option2">
+              <!-- BEGIN DYNAMIC BLOCK: rows_meo2 -->
+              <option value="##meovalue##" ##meoselected2##>##meoname##</option>
+              <!-- END DYNAMIC BLOCK: rows_meo2 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable2" type="checkbox" id="t_imagedisable2" value="t" ##pagimagedisable2##/> ##lb_pag_media_remove## </td>
+          </tr>
+          <!-- END ADD MEDIA -->
+          
+          <tr>
+            <td colspan="3"><img src="images/line_frame_06.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_detail## 2 [##lb_en##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_en2" class="box_multi" id="t_detail_en2">##feadetailen2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_detail## 2 [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_jp2" class="box_multi" id="t_detail_jp2">##feadetailjp2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_detail## 2 [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail_vn2" class="box_multi" id="t_detail_vn2">##feadetailvn2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_fea_link##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_link" type="text" class="box_normal" id="t_link" value="##fealink##" maxlength="500" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_admid" type="hidden" id="h_admid" value="##admid##" />
+              <input name="h_feaid" type="hidden" id="h_feaid" value="##feaid##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

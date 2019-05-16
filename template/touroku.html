@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table width="795" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><img src="images/##titleregister##" width="813" height="53" /></td>
+  </tr>
+  <tr>
+    <td valign="top">##DESC_AREA##</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_02.png" width="813" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="795" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="795" valign="top"><img src="images/frame03_02.png" width="795" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formmemadd" name="formmemadd" method="post" enctype="multipart/form-data" action="touroku_add_post.php" class="form_margin" onsubmit="return check_form('f_memadd');">
+		<table width="795" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="3"><input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"></td>
+          </tr>
+
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_username##</strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="330"><input name="t_emanresu" type="text" class="box_web" id="t_emanresu" maxlength="15" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_pathname##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_emanhtap" type="text" class="box_web" id="t_emanhtap" maxlength="25" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="5" /></td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>##lb_pathname_text##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_comname## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_emanmoc_en" type="text" class="box_web" id="t_emanmoc_en" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_comname## [##lb_jp##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_emanmoc_jp" type="text" class="box_web" id="t_emanmoc_jp" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_comname## [##lb_vn##] </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_emanmoc_vn" type="text" class="box_web" id="t_emanmoc_vn" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+          </tr>
+
+          <tr>
+            <td><div align="right"><strong>##t_tax_code##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tax_code" type="text" class="box_web" id="t_tax_code" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>##t_tax_regis##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tax_regis" type="text" class="box_web" id="t_tax_regis" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>##t_tax_date##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tax_date" type="date" class="box_web" id="t_tax_date" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>##t_tax_place##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tax_place" type="text" class="box_web" id="t_tax_place" maxlength="85" /></td>
+          </tr>
+
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+          </tr>
+
+          <tr>
+            <td><div align="right"><strong>* ##lb_nationality##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_national" type="radio" value="jp" checked="checked" />
+##lb_njp##
+  <input name="t_national" type="radio" value="vn" />
+##lb_nvn## 
+<input name="t_national" type="radio" value="oo" />
+##lb_nother##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_category##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_tacmem" class="box_list_web" id="t_tacmem">
+              <option value="" selected="selected">##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cat -->
+              <option value="##catid##">##catname##</option>
+              <!-- END DYNAMIC BLOCK: rows_cat -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_ie##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_eimoc" class="box_list_web" id="t_eimoc">
+              <option value="">##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_1 -->
+              <option value="##ineid##">##inename##</option>
+              <!-- END DYNAMIC BLOCK: rows_1 -->
+              <option value="001" selected="selected">##inename_1##</option>
+              <option value="002">##inename_2##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_address## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_sserddamoc_en" class="box_multi_web3" id="t_sserddamoc_en"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_address## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_sserddamoc_jp" class="box_multi_web3" id="t_sserddamoc_jp"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_address## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_sserddamoc_vn" class="box_multi_web3" id="t_sserddamoc_vn"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_province##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_ecnivorpmoc" class="box_list_web" id="t_ecnivorpmoc" onchange="javascript:if (document.formmemadd.t_ecnivorpmoc.value=='001') {document.formmemadd.t_yrtnuocmoc.disabled=false; document.formmemadd.t_yrtnuocmoc.value='002';} else {document.formmemadd.t_yrtnuocmoc.value=''; document.formmemadd.t_yrtnuocmoc.disabled=true;}">
+              <option value="" selected="selected">##lb_select##</option>
+              <option value="002">##prvname_2##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_2 -->
+              <option value="##prvid##">##prvname##</option>
+              <!-- END DYNAMIC BLOCK: rows_2 -->
+              <option value="001">##prvname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_country##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_yrtnuocmoc" class="box_list_web" id="t_yrtnuocmoc" disabled>
+              <option value="" selected="selected">##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_3 -->
+              <option value="##ctyid##">##ctyname##</option>
+              <!-- END DYNAMIC BLOCK: rows_3 -->
+              <option value="001">##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_zip##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_pizmoc" type="text" class="box_web" id="t_pizmoc" maxlength="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_comtel##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_letmoc" type="text" class="box_web" id="t_letmoc" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_comfax##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_xafmoc" type="text" class="box_web" id="t_xafmoc" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_contact## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tcatnoc_en" type="text" class="box_web" id="t_tcatnoc_en" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_contact## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tcatnoc_jp" type="text" class="box_web" id="t_tcatnoc_jp" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_contact## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_tcatnoc_vn" type="text" class="box_web" id="t_tcatnoc_vn" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_position## [##lb_en##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_noitisop_en" type="text" class="box_web" id="t_noitisop_en" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_position## [##lb_jp##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_noitisop_jp" type="text" class="box_web" id="t_noitisop_jp" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>##lb_position## [##lb_vn##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_noitisop_vn" type="text" class="box_web" id="t_noitisop_vn" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_gender##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_redneg" type="radio" value="m" checked="checked" />
+##lb_male##
+  <input name="t_redneg" type="radio" value="f" />
+##lb_female##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_mail##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_liam" type="text" class="box_web" id="t_liam" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>Other Contact E-mail</strong><br />(Example:mail1@mail.com,<br />mail2@mail.com)</div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_oth_contactmail" class="box_multi_web3" id="t_oth_contactmail" placeholder="Example:mail1@mail.com,mail2@mail.com,"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_tel##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_let" type="text" class="box_web" id="t_let" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_agreement##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_agree" type="radio" value="t" onclick="javascript:document.formmemadd.b_ok.disabled=false;"/>
+##lb_agree##
+<input name="t_agree" type="radio" value="f" checked="checked" onclick="javascript:document.formmemadd.b_ok.disabled=true;"/>
+##lb_disagree## <a href="term.php" target="_blank">##lb_terms##</a></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_confirmcode##</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_confirm" type="text" class="box_web" id="t_confirm" maxlength="4" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="795" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right">##confirmcode##</div></td>
+            <td>&nbsp;</td>
+            <td class="red_n">##lb_confirmcode_text##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_random" type="hidden" id="h_random" value="##randomnum##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="submit" class="button_normal" id="b_ok" value="##lb_register##" disabled="true"/>
+            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame03_07.png" width="795" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+<script src="https://www.google.com/recaptcha/api.js?render=##captcha_site_key##"></script>
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('##captcha_site_key##', {action: 'homepage'}).then(function(token) {
+      document.getElementById("g-recaptcha-response").value = token;
+    });
+    //setInterval(function(){ grecaptcha.reset(); }, 10 * 60 * 1000 );
+
+    // function reCAPTCHA_execute () {
+    //   // grecaptcha instantiated by external script from Google
+    //   // captcha_site_key comes from backend
+    //   grecaptcha.execute('##captcha_site_key##', { action: 'homepage' }).then(function (token) {
+    //     document.getElementById("g-recaptcha-response").value = token;
+    //   }, function (reason) {
+    //     console.log(reason);
+    //   });
+    // }
+
+    // if (typeof grecaptcha !== 'undefined' && typeof '##captcha_site_key##' !== 'undefined') {
+    //   grecaptcha.ready(reCAPTCHA_execute);
+    //   setInterval(reCAPTCHA_execute, 10*60*1000);
+    // }
+  });
+
+</script>
+</body>
+</html>

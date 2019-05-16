@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Formmail</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874">
+</head>
+<body>
+
+<!-- ใส่ URL ของไฟล์ formmail.php ลงไปบรรทัดด้านล่างนี้ครับ -->
+<form method="post" enctype="multipart/form-data" action="formmail.php">
+<!-- ใส่ชื่อ TITLE ของอีเมล์ ที่ต้องการ -->
+<input type="hidden" name="subject"   value="มีคนมาติดต่อเรา">
+<!-- เวลากด SUBMIT แล้วต้องการให้ไปหน้าไหน ก็ใส่ URL ไปที่ด้านล่างนี้ครับ -->
+<input type="hidden" name="redirect"   value="http://www.google.co.th">
+
+
+<!-- ด้านล่างนี้เป็น CODE ของฟอร์ม โดยหากว่าคุณต้องการ เพิ่ม หรือลบอะไรก็ยึดด้านล่างนี้เป็นหลักครับ -->
+<!-- ในแต่ละ CODE ของฟอร์มจะมีคำว่า name="ข้อความ" อยู่ด้วย สังเกตดูได้ ซึ่งตรงคำว่า ข้อความ นี้จะเป็นชื่อของแต่ละฟอร์ม
+เช่น ในช่องฟอร์มไว้กรอกที่อยู่นั้น เราตั้งชื่อฟอร์มไว้ว่า name="address" แล้ว เวลาฟอร์มถูกส่งไปที่อีเมล์ เมื่อเปิดอีเมล์ดูตรงคำว่า address จะขึ้นที่อยู่ของผู้กรอก นั่นเอง
+-->
+ชื่อ : <input type="text" name="name" size="25" maxlength="60" class="thaipara"><br>
+นามสกุล : <input type="text" name="surname" size="25" maxlength="60" class="thaipara"><br>
+คำนำหน้า : 
+<!-- มีแต่ radio button เท่านั้นที่ ให้ใส่ชื่อของฟอร์มตรง value="ข้อความ" แทน -->
+<input type="radio" value="nay" checked name="sex">นาย
+<input type="radio" name="sex" value="nang">นาง
+<input type="radio" name="sex" value="nangsao">นางสาว<br>
+อีเมล์ : <input type="text" name="email" size="30" maxlength="60" class="thaipara"><br>
+ที่อยู่ : <textarea name="address" cols="40" rows="3" class="thaipara"></textarea><br>
+โดเมนเนม : <input type="text" name="url" size="30" maxlength="50" class="thaipara"><br>
+โทรศัพท์ : <input type="text" name="tel" size="20" maxlength="30" class="thaipara"><br>
+แฟกซ์ : <input type="text" name="fax" size="20" maxlength="20" class="thaipara"><br>
+รู้จักเราจาก : <select name="how-to-find us">
+                                            <option selected>กรุณาเลือก</option>
+                                            <option>sanook.com</option>
+                                            <option>pantip.com</option>
+                                            <option>yahoo.com</option>
+                                            <option>google.co.th</option>
+                                            <option>truehits.net</option>
+                                            <option>Internet Magazine</option>
+                                            <option>โฆษณาทางวิทยุ</option>
+                                            <option>เพื่อนแนะนำ</option>
+                                            <option>อื่นๆ</option>
+                                          </select><br>
+บริการที่ท่านต้องการคือ : <br>
+                            <input type="checkbox" name="1_domain_register" value="checkbox">ต้องการจดทะเบียนโดเมนเนม<br>
+                            <input type="checkbox" name="2_web_hosting" value="checkbox">ต้องการรับบริการ Web Hosting<br>
+                            <input type="checkbox" name="3_web_app" value="checkbox">ต้องการพัฒนาระบบ Web-based Application<br>
+                            <input type="checkbox" name="4_web_design" value="checkbox">ต้องการรับบริการออกแบบ Webpage <br>
+บริการ Web Hosting รูปแบบที่ท่านต้องการ : <select name=plan>
+                                                  <option selected>กรุณาเลือก</option>
+                                                  <option>Unix 1</option>
+                                                  <option>Unix 2</option>
+                                                  <option>Unix 3</option>
+                                                  <option>NT 1</option>
+                                                  <option>NT 2</option>
+                                                  <option>NT 3</option>
+                                                  <option>NT 3 - MS SQL</option>
+                                                </select><br>
+ชำระค่าบริการเป็นระยะเวลา : <select name=period>
+                                                    <option selected>ราย 6 เดือน</option>
+                                                    <option>ราย 12 เดือน</option>
+                                                  </select><br><br>
+<!-- CODE ของปุ่ม SUBMIT ข้อมูล และ Reset ข้อมูล -->
+<center>
+<input type="submit" name="Submit" value=" ตกลง " class="but">
+<input type="reset" name="Reset" value="ลบข้อมูล">
+</center>
+</form>
+                      
+</body>
+</html>

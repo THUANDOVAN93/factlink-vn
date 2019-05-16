@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##mm_box_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formedtboxadd" name="formedtboxadd" method="post" enctype="multipart/form-data" action="adm_member_page_box_edit_post.php" class="form_margin" onsubmit="return check_form('f_edtboxadd');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="200" class="default_head">##langcodefull##</td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><div align="right"><a href="adm_member_page_box_add.php?id=##memid##&amp;page=##pagid##&amp;lang=##langcode##">##lb_back##</a></div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3">##memcomname##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_pag_sort## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_boxsort" type="text" class="box_normal" id="t_boxsort" value="##boxsort##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_box## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_box1" type="radio" value="text" ##checkbox1_1## onclick="javascript:document.formedtboxadd.t_title1.disabled=false; document.formedtboxadd.t_clf1.disabled=false; document.formedtboxadd.t_detail1.disabled=false; document.formedtboxadd.t_image1.disabled=true; document.formedtboxadd.t_imagewidth1.disabled=true; document.formedtboxadd.t_imagelink1.disabled=true;"/>
+##lb_text##
+  <input name="t_box1" type="radio" value="image" ##checkbox1_2## onclick="javascript:document.formedtboxadd.t_title1.disabled=true; document.formedtboxadd.t_clf1.disabled=true; document.formedtboxadd.t_detail1.disabled=true; document.formedtboxadd.t_image1.disabled=false; document.formedtboxadd.t_imagewidth1.disabled=false; document.formedtboxadd.t_imagelink1.disabled=false;"/>
+##lb_image##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_title## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title1" type="text" class="box_normal" id="t_title1" value="##boxtitle1##" maxlength="85" ##title1enable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_pag_textcolor## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_clf1" class="box_list" id="t_clf1" ##clf1enable##>
+              <!-- BEGIN DYNAMIC BLOCK: rows_clf1 -->
+              <option value="##clfcode1##" ##clfselected1## style="color:###clfcode1##">##clfname1##</option>
+              <!-- END DYNAMIC BLOCK: rows_clf1 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_pag_detail## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail1" class="box_multi" id="t_detail1" ##detail1enable##>##boxdetail1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE"><div align="center">##boximage1preview##</div></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_image1" type="file" class="box_list" id="t_image1" ##image1enable##/></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><span class="grey_n">##lb_maxwidth## : 220 px || ##lb_filetype## : JPG, PNG</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image_width## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagewidth1" type="text" class="box_normal" id="t_imagewidth1" value="##boximage1width##" maxlength="3" ##imagewidth1enable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagelink1" type="checkbox" id="t_imagelink1" value="t" ##boximage1link## ##imagelink1enable##/>
+##lb_pag_image_link##</td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable1" type="checkbox" id="t_imagedisable1" value="t" ##boximage1disable## ##imagestatus1enable##/>
+##lb_pag_image_disable##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_box## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_box2" type="radio" value="text" ##checkbox2_1## onclick="javascript:document.formedtboxadd.t_title2.disabled=false; document.formedtboxadd.t_clf2.disabled=false; document.formedtboxadd.t_detail2.disabled=false; document.formedtboxadd.t_image2.disabled=true; document.formedtboxadd.t_imagewidth2.disabled=true; document.formedtboxadd.t_imagelink2.disabled=true;"/>
+##lb_text##
+  <input name="t_box2" type="radio" value="image" ##checkbox2_2## onclick="javascript:document.formedtboxadd.t_title2.disabled=true; document.formedtboxadd.t_clf2.disabled=true; document.formedtboxadd.t_detail2.disabled=true; document.formedtboxadd.t_image2.disabled=false; document.formedtboxadd.t_imagewidth2.disabled=false; document.formedtboxadd.t_imagelink2.disabled=false;"/>
+##lb_image##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_title## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title2" type="text" class="box_normal" id="t_title2" value="##boxtitle2##" maxlength="85" ##title2enable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_pag_textcolor## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_clf2" class="box_list" id="t_clf2" ##clf2enable##>
+              <!-- BEGIN DYNAMIC BLOCK: rows_clf2 -->
+              <option value="##clfcode2##" ##clfselected2## style="color:###clfcode2##">##clfname2##</option>
+              <!-- END DYNAMIC BLOCK: rows_clf2 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_pag_detail## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail2" class="box_multi" id="t_detail2" ##detail2enable##>##boxdetail2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE"><div align="center">##boximage2preview##</div></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+		  <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_image2" type="file" class="box_list" id="t_image2" ##image2enable##/></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><span class="grey_n">##lb_maxwidth## : 220 px || ##lb_filetype## : JPG, PNG</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image_width## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagewidth2" type="text" class="box_normal" id="t_imagewidth2" value="##boximage2width##" maxlength="3" ##imagewidth2enable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagelink2" type="checkbox" id="t_imagelink2" value="t" ##boximage2link## ##imagelink2enable##/>
+##lb_pag_image_link##</td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable2" type="checkbox" id="t_imagedisable2" value="t" ##boximage2disable## ##imagestatus2enable##/>
+##lb_pag_image_disable##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+			<tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_box## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_box3" type="radio" value="text" ##checkbox3_1## onclick="javascript:document.formedtboxadd.t_title3.disabled=false; document.formedtboxadd.t_clf3.disabled=false; document.formedtboxadd.t_detail3.disabled=false; document.formedtboxadd.t_image3.disabled=true; document.formedtboxadd.t_imagewidth3.disabled=true; document.formedtboxadd.t_imagelink3.disabled=true;"/>
+##lb_text##
+  <input name="t_box3" type="radio" value="image" ##checkbox3_2## onclick="javascript:document.formedtboxadd.t_title3.disabled=true; document.formedtboxadd.t_clf3.disabled=true; document.formedtboxadd.t_detail3.disabled=true; document.formedtboxadd.t_image3.disabled=false; document.formedtboxadd.t_imagewidth3.disabled=false; document.formedtboxadd.t_imagelink3.disabled=false;"/>
+##lb_image##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_pag_title## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_title3" type="text" class="box_normal" id="t_title3" value="##boxtitle3##" maxlength="85" ##title3enable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_pag_textcolor## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_clf3" class="box_list" id="t_clf3" ##clf3enable##>
+              <!-- BEGIN DYNAMIC BLOCK: rows_clf3 -->
+              <option value="##clfcode3##" ##clfselected3## style="color:###clfcode3##">##clfname3##</option>
+              <!-- END DYNAMIC BLOCK: rows_clf3 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_pag_detail## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_detail3" class="box_multi" id="t_detail3" ##detail3enable##>##boxdetail3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE"><div align="center">##boximage3preview##</div></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+		  <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_image3" type="file" class="box_list" id="t_image3" ##image3enable##/></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><span class="grey_n">##lb_maxwidth## : 220 px || ##lb_filetype## : JPG, PNG</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image_width## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagewidth3" type="text" class="box_normal" id="t_imagewidth3" value="##boximage3width##" maxlength="3" ##imagewidth3enable##/></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagelink3" type="checkbox" id="t_imagelink3" value="t" ##boximage3link## ##imagelink3enable##/>
+##lb_pag_image_link##</td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable3" type="checkbox" id="t_imagedisable3" value="t" ##boximage3disable## ##imagestatus3enable##/>
+##lb_pag_image_disable##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_memid" type="hidden" id="h_memid" value="##memid##" />
+              <input name="h_pagid" type="hidden" id="h_pagid" value="##pagid##" />
+              <input name="h_boxid" type="hidden" id="h_boxid" value="##boxid##" />
+               <input name="h_langcode" type="hidden" id="h_langcode" value="##langcode##" />
+               <input name="h_freemem" type="hidden" id="h_freemem" value="##freemem##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

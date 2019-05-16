@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FACT-LINK.NET</title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##tt_member##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="700" border="1" cellpadding="2" cellspacing="0" bordercolor="#CCCCCC">
+      <tr>
+        <td width="30" height="25" align="center" bgcolor="#D6D6D6">JP:</td>
+        <td width="100" align="left">&nbsp;##memjp11##</td>
+        <td width="30" align="center" bgcolor="#D6D6D6">VN:</td>
+        <td width="100" align="left">&nbsp;##memvn12##</td>
+        <td width="30" align="center" bgcolor="#D6D6D6">Other</td>
+        <td width="100" align="left">&nbsp;##memoth13##</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top"><table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="5"><div align="right"><a href="adm_member_product_search.php">##tt_member_product_search##</a> </div></td>
+          </tr>
+          <tr>
+            <td><a class="flbt fl-mr-5 bt-add text-white" href="adm_product_add.php">Add</a></td>
+          </tr>
+          <tr>
+            <td colspan="5"><img src="images/line_frame_07.png" width="740" height="10" /></td>
+          </tr>
+          <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>NAME</strong></td>
+            <td><strong>CATEGORY</strong></td>
+            <td><strong>ACTION</strong></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="5"><img src="images/line_frame_07.png" width="740" height="10" /></td>
+          </tr>
+          <!-- BEGIN DYNAMIC BLOCK: rows_1 -->
+          <tr>
+            <td width="70">##productid##</td>
+            <td width="300"><p>##productname##</p></td>
+            <td width="170">##productcatname##</td>
+            <td width="160">
+              <table>
+                <tr>
+                  <td>
+                    <form id="" name="" method="post" enctype="multipart/form-data" action="adm_product_edit.php" class="form_margin">
+                      <input type="hidden" id="h_admid" name="h_admid" value="##admid##">
+                      <input type="hidden" id="t_product_id" name="t_product_id" value="##productid##">
+                      <input class="flbt fl-mr-5 bt-edit text-white" type="submit" id="" name="submit" value="Edit">
+                    </form>
+                  </td>
+                  <td>
+                    <form id="" name="" method="post" enctype="multipart/form-data" action="adm_product_delete.php" class="form_margin" onsubmit="return confrm();">
+                      <input type="hidden" id="h_admid" name="h_admid" value="##admid##">
+                      <input type="hidden" id="t_product_id" name="t_product_id" value="##productid##">
+                      <input class="flbt bt-delete text-white" type="submit" id="" name="submit" value="Delete">
+                    </form>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td width="40"><div align="center"></div></td>
+            <script language="javascript">
+			function confrm(){
+				 if(confirm('本当に削除してもよろしいですか? / Are you sure to delete this?')==true){
+          return true;
+        }
+				 else{ return false; }
+				}
+			
+			</script>
+          </tr>
+          <tr>
+            <td colspan="5"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+          </tr>
+          <!-- END DYNAMIC BLOCK: rows_1 -->
+        </table></td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/blank.png" width="760" height="10" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="55" valign="top"><strong>Page || </strong></td>
+        <td width="705" valign="top">##page##</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

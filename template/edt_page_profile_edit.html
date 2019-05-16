@@ -1,0 +1,886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="560" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##mm_prf_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formedtprfadd" name="formedtprfadd" method="post" enctype="multipart/form-data" action="edt_page_profile_edit_post.php" class="form_margin" onsubmit="return check_form('f_edtprfadd');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="default_head">##langcodefull##</td>
+            <td>&nbsp;</td>
+            <td><div align="right"><a href="edt_page.php">##lb_back##</a></div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td width="200"><div align="right"><strong> * ##lb_pag_name## </strong></div></td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><textarea name="t_pagname" class="box_multi_mini" id="t_pagname">##pagname##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_pag_pagetitle## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_pagpagetitle" type="text" class="box_normal" id="t_pagpagetitle" value="##pagpagetitle##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_pag_sort## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_pagsort" type="text" class="box_normal" id="t_pagsort" value="##pagsort##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_pag_title## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_pagtitle" class="box_multi_mini" id="t_pagtitle">##pagtitle##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_pag_textcolor## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_clf" class="box_list" id="t_clf">
+              <!-- BEGIN DYNAMIC BLOCK: rows_clf -->
+              <option value="##clfcode##" ##clfselected## style="color:###clfcode##">##clfname##</option>
+              <!-- END DYNAMIC BLOCK: rows_clf -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_pag_detail## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_pagdetail" class="box_multi" id="t_pagdetail">##pagdetail##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+		  <tr>
+		    <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+		    </tr>
+		  <tr>
+		    <td colspan="3" bgcolor="#EEEEEE"><div align="center">##pagimagepreview##</div></td>
+		    </tr>
+		  <tr>
+		    <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+		    </tr>
+		  <tr>
+		    <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+		    </tr>
+		  <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_image" type="file" class="box_list" id="t_image" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image_width## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagewidth" type="text" class="box_normal" id="t_imagewidth" value="##pagimagewidth##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><span class="grey_n">##lb_maxwidth## : 760 px || ##lb_filetype## : JPG, PNG</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+            <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imageside" type="radio" value="l" ##pagimagesidel## />
+##lb_left##
+  <input name="t_imageside" type="radio" value="r" ##pagimagesider## />
+##lb_right##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagelink" type="checkbox" id="t_imagelink" value="t" ##pagimagelink##/>
+##lb_pag_image_link##</td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable" type="checkbox" id="t_imagedisable" value="t" ##pagimagedisable##/>
+##lb_pag_image_disable##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_textcolor## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_clfdetail" class="box_list" id="t_clfdetail">
+              <!-- BEGIN DYNAMIC BLOCK: rows_clfdetail -->
+              <option value="##clfdetailcode##" ##clfdetailselected## style="color:###clfdetailcode##">##clfdetailname##</option>
+              <!-- END DYNAMIC BLOCK: rows_clfdetail -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_comname## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_comname" type="text" class="box_normal" id="t_comname" value="##memcomname##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_pername## [##val_langlocal##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_pername" type="text" class="box_normal" id="t_pername" value="##mempername##" maxlength="85" /></td>
+          </tr>
+          ##box_conname_en##
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_posname## [##val_langlocal##]</strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_posname" type="text" class="box_normal" id="t_posname" value="##memposname##" maxlength="85" /></td>
+          </tr>
+          ##box_conpos_en##
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_business## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_business" class="box_multi_sub" id="t_business">##membusiness##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_product## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_product" class="box_multi_sub" id="t_product">##memproduct##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+          </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_addlab## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddlab1" class="box_multi_mini" id="t_comaddlab1">##memaddlab1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_add## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comadd1" class="box_multi_sub" id="t_comadd1">##memadd1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_prf_ine## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_ine1" class="box_list" id="t_ine1">
+              <option value="" ##inedefault1##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_ine1 -->
+              <option value="##ineid1##" ##ineselected1##>##inename1##</option>
+              <!-- END DYNAMIC BLOCK: rows_ine1 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_prf_prv## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_prv1" class="box_list" id="t_prv1" onchange="javascript:if (document.formedtprfadd.t_prv1.value=='001') {document.formedtprfadd.t_cty1.disabled=false; document.formedtprfadd.t_cty1.value='002';} else {document.formedtprfadd.t_cty1.value=''; document.formedtprfadd.t_cty1.disabled=true;}">
+              <option value="" ##prvdefault1##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_prv1 -->
+              <option value="##prvid1##" ##prvselected1##>##prvname1##</option>
+              <!-- END DYNAMIC BLOCK: rows_prv1 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> * ##lb_prf_cty## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_cty1" class="box_list" id="t_cty1" ##ctydisable1##>
+              <option value="" ##ctydefault1##>##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cty1 -->
+              <option value="##ctyid1##" ##ctyselected1##>##ctyname1##</option>
+              <!-- END DYNAMIC BLOCK: rows_cty1 -->
+              <option value="001" ##ctyselected1_1##>##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_prf_zip## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_zip1" type="text" class="box_normal" id="t_zip1" value="##memzip1##" maxlength="30" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_prf_addlab## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddlab2" class="box_multi_mini" id="t_comaddlab2">##memaddlab2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_prf_add## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comadd2" class="box_multi_sub" id="t_comadd2">##memadd2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_prf_ine## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_ine2" class="box_list" id="t_ine2">
+              <option value="" ##inedefault2##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_ine2 -->
+              <option value="##ineid2##" ##ineselected2##>##inename2##</option>
+              <!-- END DYNAMIC BLOCK: rows_ine2 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_prf_prv## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_prv2" class="box_list" id="t_prv2" onchange="javascript:if (document.formedtprfadd.t_prv2.value=='001') {document.formedtprfadd.t_cty2.disabled=false; document.formedtprfadd.t_cty2.value='002';} else {document.formedtprfadd.t_cty2.value=''; document.formedtprfadd.t_cty2.disabled=true;}">
+              <option value="" ##prvdefault2##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_prv2 -->
+              <option value="##prvid2##" ##prvselected2##>##prvname2##</option>
+              <!-- END DYNAMIC BLOCK: rows_prv2 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_prf_cty## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_cty2" class="box_list" id="t_cty2" ##ctydisable2##>
+              <option value="" ##ctydefault2##>##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cty2 -->
+              <option value="##ctyid2##" ##ctyselected2##>##ctyname2##</option>
+              <!-- END DYNAMIC BLOCK: rows_cty2 -->
+              <option value="001" ##ctyselected2_1##>##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_prf_zip## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_zip2" type="text" class="box_normal" id="t_zip2" value="##memzip2##" maxlength="10" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_addlab## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddlab3" class="box_multi_mini" id="t_comaddlab3">##memaddlab3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_add## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comadd3" class="box_multi_sub" id="t_comadd3">##memadd3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_ine## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_ine3" class="box_list" id="t_ine3">
+              <option value="" ##inedefault3##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_ine3 -->
+              <option value="##ineid3##" ##ineselected3##>##inename3##</option>
+              <!-- END DYNAMIC BLOCK: rows_ine3 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_prv## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_prv3" class="box_list" id="t_prv3" onchange="javascript:if (document.formedtprfadd.t_prv3.value=='001') {document.formedtprfadd.t_cty3.disabled=false; document.formedtprfadd.t_cty3.value='002';} else {document.formedtprfadd.t_cty3.value=''; document.formedtprfadd.t_cty3.disabled=true;}">
+              <option value="" ##prvdefault3##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_prv3 -->
+              <option value="##prvid3##" ##prvselected3##>##prvname3##</option>
+              <!-- END DYNAMIC BLOCK: rows_prv3 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_prf_cty## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_cty3" class="box_list" id="t_cty3" ##ctydisable3##>
+              <option value="" ##ctydefault3##>##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cty3 -->
+              <option value="##ctyid3##" ##ctyselected3##>##ctyname3##</option>
+              <!-- END DYNAMIC BLOCK: rows_cty3 -->
+              <option value="001" ##ctyselected3_1##>##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_zip## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_zip3" type="text" class="box_normal" id="t_zip3" value="##memzip3##" maxlength="30" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_addlab## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddlab4" class="box_multi_mini" id="t_comaddlab4">##memaddlab4##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_add## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comadd4" class="box_multi_sub" id="t_comadd4">##memadd4##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_ine## 4 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_ine4" class="box_list" id="t_ine4">
+              <option value="" ##inedefault4##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_ine4 -->
+              <option value="##ineid4##" ##ineselected4##>##inename4##</option>
+              <!-- END DYNAMIC BLOCK: rows_ine4 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_prv## 4 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_prv4" class="box_list" id="t_prv4" onchange="javascript:if (document.formedtprfadd.t_prv4.value=='001') {document.formedtprfadd.t_cty4.disabled=false; document.formedtprfadd.t_cty4.value='002';} else {document.formedtprfadd.t_cty4.value=''; document.formedtprfadd.t_cty4.disabled=true;}">
+              <option value="" ##prvdefault4##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_prv4 -->
+              <option value="##prvid4##" ##prvselected4##>##prvname4##</option>
+              <!-- END DYNAMIC BLOCK: rows_prv4 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_prf_cty## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_cty4" class="box_list" id="t_cty4" ##ctydisable4##>
+              <option value="" ##ctydefault4##>##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cty4 -->
+              <option value="##ctyid4##" ##ctyselected4##>##ctyname4##</option>
+              <!-- END DYNAMIC BLOCK: rows_cty4 -->
+              <option value="001" ##ctyselected4_1##>##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_zip## 4 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_zip4" type="text" class="box_normal" id="t_zip4" value="##memzip4##" maxlength="30" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_addlab## 5 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comaddlab5" class="box_multi_mini" id="t_comaddlab5">##memaddlab5##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_add## 5 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comadd5" class="box_multi_sub" id="t_comadd5">##memadd5##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_ine## 5 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_ine5" class="box_list" id="t_ine5">
+              <option value="" ##inedefault5##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_ine5 -->
+              <option value="##ineid5##" ##ineselected5##>##inename5##</option>
+              <!-- END DYNAMIC BLOCK: rows_ine5 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_prv## 5 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_prv5" class="box_list" id="t_prv5" onchange="javascript:if (document.formedtprfadd.t_prv5.value=='001') {document.formedtprfadd.t_cty5.disabled=false; document.formedtprfadd.t_cty5.value='002';} else {document.formedtprfadd.t_cty5.value=''; document.formedtprfadd.t_cty5.disabled=true;}">
+              <option value="" ##prvdefault5##>##lb_select##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_prv5 -->
+              <option value="##prvid5##" ##prvselected5##>##prvname5##</option>
+              <!-- END DYNAMIC BLOCK: rows_prv5 -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+          </tr>
+          <tr bgcolor="#EEEEEE">
+            <td><div align="right"><strong> ##lb_prf_cty## 5</strong></div></td>
+            <td>&nbsp;</td>
+            <td><select name="t_cty5" class="box_list" id="t_cty5" ##ctydisable5##>
+              <option value="" ##ctydefault5##>##ctynamedefault##</option>
+              <!-- BEGIN DYNAMIC BLOCK: rows_cty5 -->
+              <option value="##ctyid5##" ##ctyselected5##>##ctyname5##</option>
+              <!-- END DYNAMIC BLOCK: rows_cty5 -->
+              <option value="001" ##ctyselected5_1##>##ctyname_1##</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_zip## 5 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_zip5" type="text" class="box_normal" id="t_zip5" value="##memzip5##" maxlength="30" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_prf_tellab## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comtellab1" class="box_multi_mini" id="t_comtellab1">##memtellab1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_tel## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_comtel1" type="text" class="box_normal" id="t_comtel1" value="##memtel1##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_tellab## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comtellab2" class="box_multi_mini" id="t_comtellab2">##memtellab2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_tel## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_comtel2" type="text" class="box_normal" id="t_comtel2" value="##memtel2##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_tellab## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comtellab3" class="box_multi_mini" id="t_comtellab3">##memtellab3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_tel## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_comtel3" type="text" class="box_normal" id="t_comtel3" value="##memtel3##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_tellab## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comtellab4" class="box_multi_mini" id="t_comtellab4">##memtellab4##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_tel## 4 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_comtel4" type="text" class="box_normal" id="t_comtel4" value="##memtel4##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_tellab## 5 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comtellab5" class="box_multi_mini" id="t_comtellab5">##memtellab1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_tel## 5 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_comtel5" type="text" class="box_normal" id="t_comtel5" value="##memtel5##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_maillab## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_commaillab1" class="box_multi_mini" id="t_commaillab1">##memmaillab1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_mail## 1 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_commail1" type="text" class="box_normal" id="t_commail1" value="##memmail1##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_maillab## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_commaillab2" class="box_multi_mini" id="t_commaillab2">##memmaillab2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_mail## 2 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_commail2" type="text" class="box_normal" id="t_commail2" value="##memmail2##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_maillab## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_commaillab3" class="box_multi_mini" id="t_commaillab3">##memmaillab3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_mail## 3 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_commail3" type="text" class="box_normal" id="t_commail3" value="##memmail3##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_maillab## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_commaillab4" class="box_multi_mini" id="t_commaillab4">##memmaillab4##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_mail## 4 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_commail4" type="text" class="box_normal" id="t_commail4" value="##memmail4##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_maillab## 5 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_commaillab5" class="box_multi_mini" id="t_commaillab5">##memmaillab5##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_mail## 5 </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_commail5" type="text" class="box_normal" id="t_commail5" value="##memmail5##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_prf_url## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><textarea name="t_url" class="box_multi_mini" id="t_url">##memurl##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_establish## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_establishdate" type="text" class="box_normal" id="t_establishdate" value="##memestdate##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_capital## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_capital" type="text" class="box_normal" id="t_capital" value="##memcapital##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_parent## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_comparent" class="box_multi_sub" id="t_comparent">##memcomparent##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_share## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_shareholder" class="box_multi_sub" id="t_shareholder">##memshareholder##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_employee## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_employee" type="text" class="box_normal" id="t_employee" value="##mememployee##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_accdate## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_accountdate" type="text" class="box_normal" id="t_accountdate" value="##memaccdate##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_bank## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_bank" type="text" class="box_normal" id="t_bank" value="##membank##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> BOI </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_boi" type="text" class="box_normal" id="t_boi" value="##memboi##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ISO </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_iso" type="text" class="box_normal" id="t_iso" value="##memiso##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_valcus## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_valcus" class="box_multi_sub" id="t_valcus">##memvalcus##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_conlab## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_conlab1" class="box_multi_mini" id="t_conlab1">##memconlab1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_con## 1 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_con1" class="box_multi_sub" id="t_con1">##memcon1##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_conlab## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_conlab2" class="box_multi_mini" id="t_conlab2">##memconlab2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_con## 2 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_con2" class="box_multi_sub" id="t_con2">##memcon2##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_conlab## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_conlab3" class="box_multi_mini" id="t_conlab3">##memconlab3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_con## 3 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_con3" class="box_multi_sub" id="t_con3">##memcon3##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_conlab## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_conlab4" class="box_multi_mini" id="t_conlab4">##memconlab4##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_con## 4 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_con4" class="box_multi_sub" id="t_con4">##memcon4##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_conlab## 5 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_conlab5" class="box_multi_mini" id="t_conlab5">##memconlab5##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_prf_con## 5 </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_con5" class="box_multi_sub" id="t_con5">##memcon5##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>* ##lb_mem_footer## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_footer" type="text" class="box_normal" id="t_footer" value="##memfooter##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_memid" type="hidden" id="h_memid" value="##memid##" />
+              <input name="h_pagid" type="hidden" id="h_pagid" value="##pagid##" />
+              <input name="h_langcode" type="hidden" id="h_langcode" value="##langcode##" />
+              <input name="h_memcat" type="hidden" id="h_memcat" value="##memcat##" />
+              <input name="h_memsort" type="hidden" id="h_memsort" value="##memsort##" />
+              <input name="h_mempackage" type="hidden" id="h_mempackage" value="##mempackage##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

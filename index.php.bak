@@ -1,0 +1,567 @@
+<?php
+
+	/* Enable or Disable PHP error messages */
+	// ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
+	
+	/*  */
+	include_once("./include/class.rFastTemplate.php");
+	include_once("./include/global_config.php");
+	include_once("./include/global_function.php");
+	
+	
+	/* Session setting */
+	ini_set("session.gc_maxlifetime", "18000");
+	session_start();
+	
+	
+	/* Config for template */
+	$url1 = "structure-new.html"; 
+	$url2 = "default.html";
+	$url3 = "ads_right.html";
+	$url4 = "ads_left.html";
+	$url5 = "ads_top.html";
+	$pagecode = "idx";
+	
+	/* Set default language cookie */
+	if(empty($_COOKIE['vlang'])) {
+		$_COOKIE['vlang'] = 'en';
+	}
+	
+	/* Prevent unknown cookie language value */
+	if(!in_array($_COOKIE['vlang'],['en','jp','vn'])) {
+		$_COOKIE['vlang'] = 'en';
+	}
+	
+	/* Navigation menu for template (HTML Fragments) */
+	if ($_COOKIE['vlang'] == 'en') {
+		$url6 = "menu-html_en.html";
+	} else if ($_COOKIE['vlang'] == 'vn') {
+		$url6 = "menu-html_vn.html";
+	} else {
+		$url6 = "menu-html_jp.html";
+	}
+	
+	
+	/* Define fragments for template */
+	$tpl = new rFastTemplate("template");
+	$tpl->define(array(
+		"main_tpl"		=> $url1,
+		"detail_tpl"	=> $url2,
+		"right_tpl"		=> $url3,
+		"left_tpl"		=> $url4,
+		"top_tpl"		=> $url5,
+		"menu_tpl"		=> $url6
+	));
+	
+	
+	
+	/*  */
+	mysql_query("use $db_name;");
+	
+	
+	// --- Global Template Section	
+	include_once("./include/global_value.php");
+	include_once("./include/global_expire.php");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// --- Feature Article
+	
+	$sql1 = "select * from flc_feature where fea_show = 't' order by fea_id desc;";
+	$result1 = mysql_query($sql1);
+	while ($dbarr1 = mysql_fetch_array($result1)) {
+		
+		$feaid = $dbarr1['fea_id']; 
+		$featitleen = $dbarr1['fea_title_en']; 
+		$featitlevn = $dbarr1['fea_title_vn']; 
+		$featitlejp = $dbarr1['fea_title_jp']; 
+		$feadetailen = $dbarr1['fea_detail_en']; 
+		$feadetailvn = $dbarr1['fea_detail_vn']; 
+		$feadetailjp = $dbarr1['fea_detail_jp'];
+		$feaimage = $dbarr1['fea_image']; 
+		$feaimagewidth = $dbarr1['fea_image_width']; 
+		$feaimagelink = $dbarr1['fea_image_link'];
+		$feadetailen1 = $dbarr1['fea_detail1_en']; 
+		$feadetailvn1 = $dbarr1['fea_detail1_vn']; 
+		$feadetailjp1 = $dbarr1['fea_detail1_jp'];
+		$feaimage1 = $dbarr1['fea_image1']; 
+		$feaimagewidth1 = $dbarr1['fea_image1_width']; 
+		$feaimagelink1 = $dbarr1['fea_image1_link'];
+		$feaimageside1 = $dbarr1['fea_image1_side'];
+		$feadetailen2 = $dbarr1['fea_detail2_en']; 
+		$feadetailvn2 = $dbarr1['fea_detail2_vn']; 
+		$feadetailjp2 = $dbarr1['fea_detail2_jp'];
+		$feaimage2 = $dbarr1['fea_image2']; 
+		$feaimagewidth2 = $dbarr1['fea_image2_width']; 
+		$feaimagelink2 = $dbarr1['fea_image2_link'];
+		$feaimageside2 = $dbarr1['fea_image2_side'];
+		$fealink = $dbarr1['fea_link'];
+		
+	}
+	
+	if ($_COOKIE['vlang'] == 'en') {
+		$featitle = $featitleen;
+		$feadetail = $feadetailen;
+		$feadetail1 = $feadetailen1;
+		$feadetail2 = $feadetailen2;
+	} else if ($_COOKIE['vlang'] == 'vn') {
+		$featitle = $featitlevn;
+		$feadetail = $feadetailvn;
+		$feadetail1 = $feadetailvn1;
+		$feadetail2 = $feadetailvn2;
+	} else {
+		$featitle = $featitlejp;
+		$feadetail = $feadetailjp;
+		$feadetail1 = $feadetailjp1;
+		$feadetail2 = $feadetailjp2;
+	}
+	
+	/*  */
+	if ($feaimage == 't') {
+		$imgpath = "images/feature/".$feaid."-F.jpg";
+		if ($feaimagewidth == 0) { $imgdms = getimagesize($imgpath); $imgwidth = $imgdms[0]; } else { $imgwidth = $feaimagewidth; }
+		if ($imgwidth > 560) { $imgwidth = 560; }
+		if ($imgwidth >= 555) { $imgclass = "topimgfull"; } else { $imgclass = "topimg"; }
+		// $feaimage = "<img src=\"".$imgpath."\" width=\"".$imgwidth."\" border=\"0\" class=\"".$imgclass."\" alt=\"".$featitle."\"/>";
+		$feaimage = "<img src=\"".$imgpath."\" width=\"100%\" border=\"0\" class=\"".$imgclass."\" alt=\"".$featitle."\"/>";
+		if ($feaimagelink != '') { $feaimage = "<a href=\"".$feaimagelink."\" target=\"_blank\">".$feaimage."</a>"; }
+	} 
+	
+	/*  */
+	if ($feaimage1 == 't') { 
+		$imgpath = "images/feature/".$feaid."-F1.jpg";
+		if ($feaimagewidth1 == 0) { $imgdms = getimagesize($imgpath); $imgwidth = $imgdms[0]; } else { $imgwidth = $feaimagewidth1; }
+		if ($imgwidth > 300) { $imgwidth = 300; }
+		if ($feaimageside1 == 'l') { $imgclass = "colimg-defleft"; } else { $imgclass = "colimg-defright"; }
+		$feaimage1 = "<img src=\"".$imgpath."\" width=\"".$imgwidth."\" border=\"0\" class=\"".$imgclass."\" alt=\"".$featitle."\"/>";
+		if ($feaimagelink1 != '') { $feaimage1 = "<a href=\"".$feaimagelink1."\" target=\"_blank\">".$feaimage1."</a>"; }
+	} 
+	
+	/*  */
+	if ($feaimage2 == 't') { 
+		$imgpath = "images/feature/".$feaid."-F2.jpg";
+		if ($feaimagewidth2 == 0) { $imgdms = getimagesize($imgpath); $imgwidth = $imgdms[0]; } else { $imgwidth = $feaimagewidth2; }
+		if ($imgwidth > 300) { $imgwidth = 300; }
+		if ($feaimageside2 == 'l') { $imgclass = "colimg-defleft"; } else { $imgclass = "colimg-defright"; }
+		$feaimage2 = "<img src=\"".$imgpath."\" width=\"".$imgwidth."\" border=\"0\" class=\"".$imgclass."\" alt=\"".$featitle."\"/>";
+		if ($feaimagelink2 != '') { $feaimage2 = "<a href=\"".$feaimagelink2."\" target=\"_blank\">".$feaimage2."</a>"; }
+	} 
+	
+	/*  */
+	/* Create HTML for FeatureDetail (1st) */
+	$feadetail = "
+		<div>".
+			$feaimage.html($feadetail).
+			"<hr style=\"border-style: dashed; clear:both;\"/>
+		</div>";
+	
+	/* Create HTML for FeatureBox 1 (2nd) */
+	if ($feaimage1 != '' || $feadetail1 != '') { 	
+		$feadetail = $feadetail."
+			<div>"
+				.$feaimage1.html($feadetail1).
+				"<hr style=\"border-style: dashed; clear:both;\"/>
+			</div>";
+	}
+	
+	/* Create HTML for FeatureBox 2 (3nd) */
+	if ($feaimage2 != '' || $feadetail2 != '') {
+		$feadetail = $feadetail."
+			<div>"
+				.$feaimage2.html($feadetail2).
+			"</div>";
+	}
+	
+	/*  */
+	if ($fealink != '') {
+		$fealinktext = "<a href=\"".$fealink."\" target=\"_blank\"><strong>".$lb_fea_comlink."</strong></a> ||";
+	} else {
+		$fealinktext = "";
+	}
+	
+	/*  */
+	$tpl->assign("##featitle##", $featitle);
+	$tpl->assign("##feadetail##", $feadetail);
+	$tpl->assign("##fealinktext##", $fealinktext);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// --- Introduce Company
+	
+	$sql2 = "select * from flc_introduce_set where ins_1 != '' and ins_2 != '' and ins_3 != '' order by ins_id asc;";
+	$result2 = mysql_query($sql2);
+	$cntins = mysql_num_rows($result2); 
+	while ($dbarr2 = mysql_fetch_array($result2)) {
+		
+		$insid = $dbarr2['ins_id'];
+		$ins1 = $dbarr2['ins_1'];
+		$ins2 = $dbarr2['ins_2'];
+		$ins3 = $dbarr2['ins_3'];
+		
+		$sqlint1 = "select * from flc_introduce where int_id = '$ins1';";
+		$resultint1 = mysql_query($sqlint1);
+		while ($dbarrint1 = mysql_fetch_array($resultint1)) {
+		
+			if ($_COOKIE['vlang'] == 'en') {
+				$intname1 = $dbarrint1['int_name_en'];
+				$inttitle1 = $dbarrint1['int_title_en'];
+				$intdetail1 = html($dbarrint1['int_detail_en']);
+			} else if ($_COOKIE['vlang'] == 'vn') {
+				$intname1 = $dbarrint1['int_name_vn'];
+				$inttitle1 = $dbarrint1['int_title_vn'];
+				$intdetail1 = html($dbarrint1['int_detail_vn']);
+			} else {
+				$intname1 = $dbarrint1['int_name_jp'];
+				$inttitle1 = $dbarrint1['int_title_jp'];
+				$intdetail1 = html($dbarrint1['int_detail_jp']);
+			}
+			
+			$intlink1 = $dbarrint1['int_link'];
+			$intimage1 = $dbarrint1['int_image'];
+			
+			if ($intimage1 == 't') {
+				$imgpath = "images/introduce/".$ins1."-T.jpg";
+				$imgwidth = 160; 
+				$intimage1 = "<img src=\"".$imgpath."\" width=\"100%\" border=\"0\" alt=\"".$intname1."\"/>"; 
+			}
+			
+		}
+		
+		$sqlint2 = "select * from flc_introduce where int_id = '$ins2';";
+		$resultint2 = mysql_query($sqlint2);
+		while ($dbarrint2 = mysql_fetch_array($resultint2)) {
+		
+			if ($_COOKIE['vlang'] == 'en') { $intname2 = $dbarrint2['int_name_en']; $inttitle2 = $dbarrint2['int_title_en']; $intdetail2 = html($dbarrint2['int_detail_en']); }
+			else if ($_COOKIE['vlang'] == 'vn') { $intname2 = $dbarrint2['int_name_vn']; $inttitle2 = $dbarrint2['int_title_vn']; $intdetail2 = html($dbarrint2['int_detail_vn']); }
+			else { $intname2 = $dbarrint2['int_name_jp']; $inttitle2 = $dbarrint2['int_title_jp']; $intdetail2 = html($dbarrint2['int_detail_jp']); }
+			$intlink2 = $dbarrint2['int_link'];
+			$intimage2 = $dbarrint2['int_image'];
+			
+			if ($intimage2 == 't') {
+				$imgpath = "images/introduce/".$ins2."-T.jpg";
+				$imgwidth = 160; 
+				$intimage2 = "<img src=\"".$imgpath."\" width=\"100%\" border=\"0\" alt=\"".$intname2."\"/>"; 
+			}
+			
+		}
+		
+		$sqlint3 = "select * from flc_introduce where int_id = '$ins3';";
+		$resultint3 = mysql_query($sqlint3);
+		while ($dbarrint3 = mysql_fetch_array($resultint3)) {
+		
+			if ($_COOKIE['vlang'] == 'en') { $intname3 = $dbarrint3['int_name_en']; $inttitle3 = $dbarrint3['int_title_en']; $intdetail3 = html($dbarrint3['int_detail_en']); }
+			else if ($_COOKIE['vlang'] == 'vn') { $intname3 = $dbarrint3['int_name_vn']; $inttitle3 = $dbarrint3['int_title_vn']; $intdetail3 = html($dbarrint3['int_detail_vn']); }
+			else { $intname3 = $dbarrint3['int_name_jp']; $inttitle3 = $dbarrint3['int_title_jp']; $intdetail3 = html($dbarrint3['int_detail_jp']); }
+			$intlink3 = $dbarrint3['int_link'];
+			$intimage3 = $dbarrint3['int_image'];
+			
+			if ($intimage3 == 't') {
+				$imgpath = "images/introduce/".$ins3."-T.jpg";
+				$imgwidth = 160; 
+				$intimage3 = "<img src=\"".$imgpath."\" width=\"100%\" border=\"0\" alt=\"".$intname3."\"/>"; 
+			}
+			
+		}
+		
+		$cntline = 0;
+		$cntline = $cntline + 1;
+		
+		if ($cntins == $cntline) {
+			$insline = "<img src=\"images/line_body_02.png\" width=\"560\" height=\"20\" />";
+		} else {
+			$insline = "<img src=\"images/line_body_01.png\" width=\"560\" height=\"20\" />";
+		}
+		
+		$tpl->assign("##intname1##", $intname1);
+		$tpl->assign("##inttitle1##", $inttitle1);
+		$tpl->assign("##intdetail1##", $intdetail1);
+		$tpl->assign("##intimage1##", $intimage1);
+		$tpl->assign("##intlink1##", $intlink1);
+		$tpl->assign("##intname2##", $intname2);
+		$tpl->assign("##inttitle2##", $inttitle2);
+		$tpl->assign("##intdetail2##", $intdetail2);
+		$tpl->assign("##intimage2##", $intimage2);
+		$tpl->assign("##intlink2##", $intlink2);
+		$tpl->assign("##intname3##", $intname3);
+		$tpl->assign("##inttitle3##", $inttitle3);
+		$tpl->assign("##intdetail3##", $intdetail3);
+		$tpl->assign("##intimage3##", $intimage3);
+		$tpl->assign("##intlink3##", $intlink3);
+		$tpl->assign("##insline##", $insline);
+		$tpl->parse ("#####ROW#####", '.rows_introduce');
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	// --- Updated Info
+		
+	$sqluif = "select * from flc_upinfo where uif_show = 't';";
+	$resultuif = mysql_query($sqluif);
+	while ($dbarruif = mysql_fetch_array($resultuif)) { 
+	
+		if ($_COOKIE['vlang'] == 'en') {
+			$uifdetail = $dbarruif['uif_detail_en'];
+		} else if ($_COOKIE['vlang'] == 'vn') {
+			$uifdetail = $dbarruif['uif_detail_vn'];
+		} else {
+			$uifdetail = $dbarruif['uif_detail_jp'];
+		}
+		
+	}
+		
+	if ($uifdetail != '') {
+		
+		$uifdetail = "<div style=\"border:1px solid #0ff;\">".html($uifdetail)."</div>";
+
+	} 
+
+	$tpl->assign("##uifdetail##", $uifdetail);
+	
+	
+	
+	
+	
+	
+	
+	
+	// --- Page Update
+	
+	$updidx = 0;
+	$updarr = array();
+	$updarr[0] = "";
+	
+	$sqlupd1 = "select * from flc_page left join flc_member on flc_page.mem_id = flc_member.mem_id where flc_page.pag_update != '0000-00-00 00:00:00' and flc_member.mem_package != '' and flc_page.pag_status != 'd' order by flc_page.pag_update desc;";
+	$resultupd1 = mysql_query($sqlupd1);
+	while ($dbarrupd1 = mysql_fetch_array($resultupd1)) { 
+		
+		$updsameid = "";
+		
+		$updarrcnt = count($updarr);
+		for($upd=0;$upd<$updarrcnt;$upd++) {
+			if($dbarrupd1['mem_id'] == $updarr[$upd]) {
+				$updsameid = "t";
+				break;
+			}
+		}
+		
+		if($updsameid != 't') {
+			$updarr[$updidx] = $dbarrupd1['mem_id'];
+			$updidx = $updidx + 1;
+		} else {
+			continue;
+		}
+		
+		if ($updidx == 5) {
+			break;
+		}
+		
+	}
+	
+	for ($updlist=0;$updlist<=5;$updlist++) { 
+		 
+		if ($updarr[$updlist] == '') { break; } else { $updlistmemid = $updarr[$updlist]; }		
+		$updpagshowen = ""; $updpagshowjp = ""; $updpagshowth = ""; $updlangset = "";
+		
+		$sqlupd11 = "select * from flc_page where mem_id = '$updlistmemid' and pag_status != 'd' order by pag_update desc limit 0,1;";
+		$resultupd11 = mysql_query($sqlupd11);
+		while ($dbarrupd11 = mysql_fetch_array($resultupd11)) {
+			
+			$updpagid = $dbarrupd11['pag_id'];
+			$updpagshowen = $dbarrupd11['pag_show_en'];
+			$updpagshowjp = $dbarrupd11['pag_show_jp'];
+			$updpagshowvn = $dbarrupd11['pag_show_vn'];
+			$updpagtype = $dbarrupd11['pag_type']; 
+			$updpagupdate = $dbarrupd11['pag_update'];
+		
+		}
+		
+		$updpagupdate = explode(" ",$updpagupdate);
+		$upd1 = explode("-",$updpagupdate[0]);
+			
+		if ($_COOKIE['vlang'] == 'en') {
+			$updupdate = $upd1[2]." ".mcvzerotosub($upd1[1])." ".$upd1[0];
+		} else if ($_COOKIE['vlang'] == 'vn') {
+			$updupdate = $upd1[2]." ".mcvzerotosub($upd1[1])." ".$upd1[0];
+		} else {
+			$updupdate = $upd1[0]."年".$upd1[1]."月".$upd1[2]."日";
+		}
+		
+		if ($updpagtype == 'prf') { $updpagtype = "profile"; }
+		else if ($updpagtype == 'hom') { $updpagtype = "home"; }
+		else if ($updpagtype == 'inq') { $updpagtype = "inquiry"; }
+		else if ($updpagtype == 'pst') { $updpagtype = "present"; }
+		else if ($updpagtype == 'con') { $updpagtype = "content"; }
+		
+		$updlangarr = array();
+		if ($updpagshowjp == 't') { $updlangarr[0] = "jp"; } else { $updlangarr[0] = ""; }
+		if ($updpagshowvn == 't') { $updlangarr[1] = "vn"; } else { $updlangarr[1] = ""; }
+		if ($updpagshowen == 't') { $updlangarr[2] = "en"; } else { $updlangarr[2] = ""; }
+			
+		for ($i=0;$i<=2;$i++) { 
+			if ($updlangarr[$i] != '') { $updlangset = $updlangarr[$i]; }
+			if ($updlangset == $_COOKIE['vlang']) { $i = $i + 3; } 
+		}
+		
+		$sqlupd2 = "select * from flc_member where mem_id = '$updlistmemid';";
+		$resultupd2 = mysql_query($sqlupd2);
+		while ($dbarrupd2 = mysql_fetch_array($resultupd2)) { 
+			
+			if ($_COOKIE['vlang'] == 'en') { $updmemname = $dbarrupd2['mem_comname_en']; }
+			else if ($_COOKIE['vlang'] == 'vn') { $updmemname = $dbarrupd2['mem_comname_vn']; }
+			else { $updmemname = $dbarrupd2['mem_comname_jp']; }
+			
+		}
+			
+		$updlink = "mem_".$updpagtype.".php?id=".$updlistmemid."&page=".$updpagid."&lang=".$updlangset;		
+		
+		$tpl->assign("##updmemname##", $updmemname);
+		$tpl->assign("##updlink##", $updlink);
+		$tpl->assign("##updupdate##", $updupdate);
+		$tpl->parse ("#####ROW#####", '.rows_pageupdate');
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	// --- News (JP Only)
+	
+	if ($_COOKIE['vlang'] == 'jp') {
+	
+		$newstable = "
+			<tr data-note=\"JP-ONLY\">
+				<td>
+					<img src=\"images/blank.png\" width=\"560\" height=\"10\" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2 class=\"header\">経済ニュース</h2>
+				</td>
+			</tr>
+			<tr>
+				<td valign=\"top\">
+					<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+		";
+		
+		$sql3 = "select * from flc_news where nws_show = 't' and nws_status != 'd' order by nws_year desc, nws_month desc, nws_day desc, nws_id desc limit 0,5;";
+		$result3 = mysql_query($sql3);
+		while ($dbarr3 = mysql_fetch_array($result3)) {
+		
+			$nwsid = $dbarr3['nws_id'];
+			$nwstitle = stripslashes($dbarr3['nws_title_jp']); 
+			$nwsday = $dbarr3['nws_day'];
+			$nwsmonth = $dbarr3['nws_month'];
+			$nwsyear = $dbarr3['nws_year'];
+			
+			$nwsnewsdate = $nwsyear."年".$nwsmonth."月".$nwsday."日";
+			
+			$newstable = $newstable."
+			<tr>
+				<td width=\"5\" valign=\"top\" bgcolor=\"#999999\">&nbsp;</td>
+				<td width=\"5\" valign=\"top\">&nbsp;</td>
+				<td width=\"450\" valign=\"top\">
+					<a href=\"news_view.php?id=".$nwsid."\">".$nwstitle."</a>
+				</td>
+				<td width=\"100\" align=\"right\" valign=\"top\">".$nwsnewsdate."</td>
+			</tr>
+			<tr>
+				<td colspan=\"4\">
+					<hr style=\"border-style: dashed;\">
+				</td>
+			</tr>
+			";
+			
+		}
+			
+		$newstable = $newstable."
+					</table>
+				</td>
+			</tr>";
+	
+	} else { $newstable = ""; }
+	
+	
+	$tpl->assign("##newstable##", $newstable);
+	
+	
+	
+	// Temp announcement
+	
+	if ($_COOKIE['vlang'] == 'en') {
+		$announcetext = "<strong>What is Fact-Link ?</strong><br />Fact-link is an epoch-making site for company introduction related to manufacturing placed in Vietnam. Initially it has set up as a portal site for Japanese manufacturing in Vietnam, in near future we will offer service of supporting manufacturing as wide range of network connect local and foreign-affiliated company with Japanese company.";
+	} else if ($_COOKIE['vlang'] == 'vn') {
+		$announcetext = "<strong>Fact-link là gì ?</strong><br />Fact-link là một trang web giới thiệu các công ty liên quan đến sản xuất đặt tại Việt Nam. Ban đầu Fact-link Việt Nam được thiết lập như là một trang cổng thông tin cho các nhà sản xuất Nhật Bản tại Việt Nam, trong tương lai gần, chúng tôi sẽ cung cấp dịch vụ hỗ trợ các nhà sản xuất như là một mạng lưới mở rộng phạm vi liên kết giữa các công ty trong nước và nước ngoài với các công ty Nhật Bản.";
+	} else { $announcetext = "<h1 style=\"margin:0; padding:0 0 10px 0; color: #000000; font-size:14px; font-weight:normal;\">ファクトリンクベトナムは、ベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。<br>
+ 当初は在ベトナムの日系製造業のポータルサイトとして、近い将来にはベトナムをはじめとする近隣諸国のロ ーカル企業及び外資系企業と日系企業同士を結ぶ幅広いネットワークとして、製造業を支援するサービスを提供していきます。</h1>"; }
+	
+	if ($announcetext != '') {
+		$announce = "<tr>
+		<td valign=\"top\" class=\"grey_s\">".$announcetext."</td>
+	  </tr>";
+	} else { $announce = ""; }
+	
+	/*if ($announcetext != '') {
+		$announce = "<tr>
+		<td valign=\"top\"><table width=\"560\" border=\"2\" cellpadding=\"5\" cellspacing=\"0\" bordercolor=\"#990000\">
+		  <tr>
+			<td bgcolor=\"#FFCCCC\">".$announcetext."</td>
+		  </tr>
+		</table></td>
+	  </tr>";
+	} else { $announce = ""; }*/
+	
+	$tpl->assign("##announce##", $announce);
+	//
+	
+	
+	
+	
+	$tpl->parse ("##RIGHT_AREA##", "right_tpl");
+	$tpl->parse ("##LEFT_AREA##", "left_tpl");
+	$tpl->parse ("##TOP_AREA##", "top_tpl");
+	$tpl->parse ("##MENU_AREA##", "menu_tpl");
+	$tpl->parse ("##DETAIL_AREA##", "detail_tpl");
+	$tpl->parse ("MAIN", "main_tpl");
+	$tpl->FastPrint ();
+	exit();
+	
+?>

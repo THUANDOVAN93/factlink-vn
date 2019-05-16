@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top"><div class="red_head">##mm_col_edit##</div></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="images/line_body_03.png" width="760" height="20" /></td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="760" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" valign="top"><img src="images/frame03_01.png" width="10" height="10" /></td>
+        <td width="740" valign="top"><img src="images/frame06_01.png" width="740" height="10" /></td>
+        <td width="10" valign="top"><img src="images/frame03_03.png" width="10" height="10" /></td>
+      </tr>
+      <tr>
+        <td valign="top" background="images/frame03_04.png">&nbsp;</td>
+        <td valign="top">
+		<form id="formedtcoladd" name="formedtcoladd" method="post" enctype="multipart/form-data" action="edt_page_column_edit_post.php" class="form_margin" onsubmit="return check_form('f_edtcoladd');">
+		<table width="740" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="200" class="default_head">##langcodefull##</td>
+            <td width="10">&nbsp;</td>
+            <td width="530"><div align="right"><a href="edt_page_column_add.php?page=##pagid##&amp;lang=##langcode##">##lb_back##</a></div></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_pag_sort## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_consort" type="text" class="box_normal" id="t_consort" value="##consort##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> * ##lb_con_pattern## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_ptc" class="box_list" id="t_ptc">
+              <!-- BEGIN DYNAMIC BLOCK: rows_ptc -->
+              <option value="##ptcid##" ##ptcselected##>##ptcname##</option>
+              <!-- END DYNAMIC BLOCK: rows_ptc -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> * ##lb_con_title## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_contitle" class="box_multi_mini" id="t_contitle">##contitle##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong>  ##lb_con_titlecolor## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><select name="t_clf" class="box_list" id="t_clf">
+              <!-- BEGIN DYNAMIC BLOCK: rows_clf -->
+              <option value="##clfcode##" ##clfselected## style="color:###clfcode##">##clfname##</option>
+              <!-- END DYNAMIC BLOCK: rows_clf -->
+            </select></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong> ##lb_con_subtitle## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><input name="t_consubtitle" type="text" class="box_normal" id="t_consubtitle" value="##consubtitle##" maxlength="85" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><div align="right"><strong>  ##lb_pag_detail## </strong></div></td>
+            <td>&nbsp;</td>
+            <td><textarea name="t_condetail" class="box_multi" id="t_condetail">##condetail##</textarea></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE"><div align="center">##conimagepreview##</div></td>
+          </tr>
+          <tr>
+            <td colspan="3" bgcolor="#EEEEEE">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_image" type="file" class="box_list" id="t_image" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE"><div align="right"><strong> ##lb_pag_image_width## </strong></div></td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagewidth" type="text" class="box_normal" id="t_imagewidth" value="##conimagewidth##" maxlength="3" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><span class="grey_n">##lb_maxwidth## : 760 px || ##lb_filetype## : JPG, PNG</span></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/blank.png" width="740" height="10" /></td>
+            </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagelink" type="checkbox" id="t_imagelink" value="t" ##conimagelink##/>
+##lb_pag_image_link##</td>
+          </tr>
+          <tr>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE">&nbsp;</td>
+            <td bgcolor="#EEEEEE"><input name="t_imagedisable" type="checkbox" id="t_imagedisable" value="t" ##conimagedisable##/>
+##lb_pag_image_disable##</td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="images/line_frame_05.png" width="740" height="20" /></td>
+            </tr>
+          <tr>
+            <td><input name="h_memid" type="hidden" id="h_memid" value="##memid##" />
+              <input name="h_pagid" type="hidden" id="h_pagid" value="##pagid##" />
+              <input name="h_conid" type="hidden" id="h_conid" value="##conid##" />
+              <input name="h_langcode" type="hidden" id="h_langcode" value="##langcode##" /></td>
+            <td>&nbsp;</td>
+            <td><div align="right">
+              <input name="b_ok" type="image" id="b_ok" src="images/button_edit.jpg" />
+              <img src="images/button_cancel.jpg" width="180" height="30" border="0" onmouseover="style.cursor='hand'" onclick="history.back()" />            </div></td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td valign="top" background="images/frame03_05.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/frame03_06.png" width="10" height="10" /></td>
+        <td valign="top"><img src="images/frame06_02.png" width="740" height="10" /></td>
+        <td valign="top"><img src="images/frame03_08.png" width="10" height="10" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<script type="text/javascript">
+            function noBack(){
+                window.history.forward()
+            }
+             
+            noBack();
+            window.onload = noBack;
+            window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+            window.onunload = function() { void (0) }
+        </script>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>##pagdetail##</td>
+  </tr>
+   <tr>
+    <td><img src="images/blank.png" width="760" height="9" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="##pagtitlecolor##"><img src="images/blank.png" width="760" height="2" /></td>
+  </tr>
+  <tr>
+    <td><img src="images/blank.png" width="760" height="9" /></td>
+  </tr>
+  <tr>
+    <td> 
+	<script language="javascript">
+	function confrm(){
+		if(confirm('Do you want to submit this form inquiry ?')==true){
+		return check_form('f_meminqadd');
+		}else{ return false;}
+		
+		
+		}
+	</script>
+    <form action="mem_inquiry_add_post.php" method="post" enctype="multipart/form-data" name="formmeminqadd" target="_self" class="form_margin" id="formmeminqadd" onsubmit="return confrm()">
+      <table width="760" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="220"><strong>##lb_company## * </strong></td>
+          <td width="10">&nbsp;</td>
+          <td width="530"><input name="t_company" type="text" class="box_normal" id="t_company" maxlength="85" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+        </tr>
+        <tr>
+          <td><strong>##lb_department## * </strong></td>
+          <td>&nbsp;</td>
+          <td><input name="t_department" type="text" class="box_normal" id="t_department" maxlength="85" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+        </tr>
+        <tr>
+          <td><strong>##lb_contactname## * </strong></td>
+          <td>&nbsp;</td>
+          <td><input name="t_name" type="text" class="box_normal" id="t_name" maxlength="85" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+        </tr>
+        <tr>
+          <td><strong>##lb_tel## * </strong></td>
+          <td>&nbsp;</td>
+          <td><input name="t_tel" type="text" class="box_normal" id="t_tel" maxlength="85" /></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+        </tr>
+  <tr>
+    <td><strong>##lb_fax##</strong></td>
+    <td>&nbsp;</td>
+    <td><input name="t_fax" type="text" class="box_normal" id="t_fax" maxlength="85" /></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+  </tr>
+  <tr>
+    <td><strong>##lb_email## * </strong></td>
+    <td>&nbsp;</td>
+    <td><input name="t_mail" type="text" class="box_normal" id="t_mail" maxlength="85" /></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+  </tr>
+  <tr>
+    <td><strong>##lb_subject## * </strong></td>
+    <td>&nbsp;</td>
+    <td><input name="t_subject" type="text" class="box_normal" id="t_subject" maxlength="85" /></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+  </tr>
+  <tr>
+    <td><strong>##lb_content## * </strong></td>
+    <td>&nbsp;</td>
+    <td><textarea name="t_content" class="box_multi" id="t_content"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+  </tr>
+  <tr>
+    <td> <input name="h_random" type="hidden" id="h_random" value="##randomnum##"  /> 
+      <input name="h_memid" type="hidden" id="h_memid" value="##memid##" />
+      <input name="h_pagid" type="hidden" id="h_pagid" value="##pagid##" />
+      <input name="h_langcode" type="hidden" id="h_langcode" value="##langcode##" /></td>
+    <td>&nbsp;</td>
+    <td><div align="right">
+      <input name="b_ok" type="submit" class="button_normal" id="b_ok" value="##lb_button_send##" />
+    </div></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+  </tr>
+      </table>
+    </form>    </td>
+  </tr>
+</table>

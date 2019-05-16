@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<link href="flc_css.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+  
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col">
+        <nav class="breadcrumb bg-white">
+          <a class="breadcrumb-item" href="##rootBreadcrumbLink##">##search_by_product##</a>
+          <a class="breadcrumb-item ##classBreadcrumb2##" href="##subBreadcrumbLink2##">
+          ##subBreadcrumbName2##
+          <a class="breadcrumb-item active" href="##subBreadcrumbLink1##">
+          ##subBreadcrumbName1##
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row product-list">
+      ##noproductfound##
+
+      <!-- BEGIN DYNAMIC BLOCK: product_list -->
+      <div class="col-12 p-2 bg-secondary text-white ##show_category_class##">##categoryname##</div>
+      <div class="col-6 col-md-3 mb-1">
+        <div class="wrap-product-img">
+            <figure>
+              <a href="product_detail.php?proid=##proid##"><img class="product-detail-img rounded p-2" src="##productlink##" alt="##productname##" width="304" height="228"></a>
+            </figure>
+        </div>
+        
+        <article class="text-center">
+          <p class="product-detail-tit"><a href="product_detail.php?proid=##proid##">##productname##</a></p>
+          <p class="text-center">##supname##</p>
+        </article>
+      </div>
+      <div class="col-12 p-2 text-white flex-row-reverse ##show_more_class##">
+        <a href="##linkshowallproduct##">SHOW MORE</a>
+      </div>
+      <!-- END DYNAMIC BLOCK: product_list -->
+
+      <!-- Pagination -->
+      
+    </div>
+    <div class="row"><div class="col text-center">##pag##</div></div>
+
+
+  </div>
+</body>
+</html>

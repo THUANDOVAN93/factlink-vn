@@ -68,7 +68,10 @@
 		
 		$catnameen = $dbarr2['cat_name_en']; 
 		$catnamejp = $dbarr2['cat_name_jp']; 
-		$catnamevn = $dbarr2['cat_name_vn']; 
+		$catnamevn = $dbarr2['cat_name_vn'];
+		$catdesen = $dbarr2['cat_des_en'];
+		$catdesjp = $dbarr2['cat_des_jp'];
+		$catdesvn = $dbarr2['cat_des_vn'];
 		$catpos = $dbarr2['cat_pos'];
 		$catunder = $dbarr2['cat_under'];
 		
@@ -101,6 +104,9 @@
 	$tpl->assign("##catnameen##", $catnameen);
 	$tpl->assign("##catnamejp##", $catnamejp);
 	$tpl->assign("##catnamevn##", $catnamevn);
+	$tpl->assign("##catdesvn##", $catdesvn);
+	$tpl->assign("##catdesen##", $catdesen);
+	$tpl->assign("##catdesjp##", $catdesjp);
 	$tpl->assign("##posnormal##", $posnormal);
 	$tpl->assign("##posmain##", $posmain);
 	$tpl->assign("##possub##", $possub);

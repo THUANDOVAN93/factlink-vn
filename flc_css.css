@@ -1146,3 +1146,11 @@ button:hover,
 	width: 100%;
 	display: none;
 }
+
+.seach-result-des {
+	display: block;
+	font-weight: initial;
+	font-size: 13px;
+	font-style: initial;
+	margin: 10px 0 0 0;
+}

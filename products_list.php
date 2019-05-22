@@ -64,13 +64,17 @@
 
 		$rsGetCatInfo = mysql_query($sqlGetCatInfo);
 
+		$catProDes = "";
 		while ( $catInfor = mysql_fetch_array($rsGetCatInfo) ) {
 			if ($lang == "en") {
 				$subBreadcrumbName1 = $catInfor['CategoryNameEN'];
+				$catProDes = $catInfor['DescEN'];
 			} elseif ($lang == "vn") {
 				$subBreadcrumbName1 = $catInfor['CategoryNameVN'];
+				$catProDes = $catInfor['DescVN'];
 			} else {
 				$subBreadcrumbName1 = $catInfor['CategoryNameJP'];
+				$catProDes = $catInfor['DescJP'];
 			}
 
 			$catUnder = $catInfor['CatUnder'];
@@ -338,6 +342,11 @@
 	
 	// --- Global Template Section	
 	include_once("./include/beta/global_value.php");
+	// Buid header description SEO
+	if ($catProDes !== "") {
+		$meta_description = $catProDes;
+	}
+	$tpl->assign ("##meta_description##", $meta_description);
 	
 	$tpl->parse ("##RIGHT_AREA##", "right_tpl");
 	$tpl->parse ("##LEFT_AREA##", "left_tpl");

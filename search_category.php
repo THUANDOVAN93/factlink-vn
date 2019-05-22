@@ -54,17 +54,35 @@
 	$start = $_GET['start'];
 	$limit = 30;
 	
-	 $sql9 = "select * from flc_category where cat_id = '$searchid';";
-	 // echo "<pre>".print_r($sql9,true)."</pre>"; exit;
-	 
+	 $sql9 = "select * from flc_category where cat_id = '$searchid';";	 
 	 
 	$result9 = mysql_query($sql9);
-	while ($dbarr9 = mysql_fetch_array($result9)) { $searchworden = str_replace("@"," - ",$dbarr9['cat_name_en']); $searchwordjp = str_replace("@"," - ",$dbarr9['cat_name_jp']); $searchwordvn = str_replace("@"," - ",$dbarr9['cat_name_vn']); }
+	while ($dbarr9 = mysql_fetch_array($result9)) {
+		$searchworden = str_replace("@"," - ",$dbarr9['cat_name_en']);
+		$searchwordjp = str_replace("@"," - ",$dbarr9['cat_name_jp']);
+		$searchwordvn = str_replace("@"," - ",$dbarr9['cat_name_vn']);
+		if ($_COOKIE['vlang'] == 'en') {
+			$catDes = $dbarr9['cat_des_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+			$catDes = $dbarr9['cat_des_vn'];
+		} else {
+			$catDes = $dbarr9['cat_des_jp'];
+		}
+	}
 	
-	if ($_COOKIE['vlang'] == 'en') { $searchword = $searchworden; }
-	else if ($_COOKIE['vlang'] == 'vn') { $searchword = $searchwordvn; }
-	else { $searchword = $searchwordjp; }
+	if ($_COOKIE['vlang'] == 'en') {
+		$searchword = $searchworden;
+	} elseif($_COOKIE['vlang'] == 'vn') {
+		$searchword = $searchwordvn;
+	} else {
+		$searchword = $searchwordjp;
+	}
 	
+	$meta_keyword = $searchword;
+	$searchword = $searchword."<span class=\"seach-result-des\">".$catDes."</span>";
+	
+	// Cat Description SEO
+
 	$pagesql = "select * from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_status != 'd';";
 	$resultsearchlist = mysql_query($pagesql);
 	$cntsearchlist = mysql_num_rows($resultsearchlist); 
@@ -263,6 +281,8 @@
 	$tpl->assign("##resultword##", $searchword);
 	$tpl->assign("##resulttable##", $resulttable);
 	$tpl->assign("##page##", $page);
+	$tpl->assign("##meta_keyword##", $meta_keyword);
+	$tpl->assign("##meta_description##", $catDes);
 	
 	$tpl->parse ("##RIGHT_AREA##", "right_tpl");
 	$tpl->parse ("##LEFT_AREA##", "left_tpl");

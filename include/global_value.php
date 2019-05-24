@@ -442,7 +442,7 @@
 	$newStructure = [
 		'/index.php',
 		'/intro.php',
-		'/manual_01.php',
+		'/manual.php',
 		'/contact.php',
 		'/news.php',
 		'/search_result.php',

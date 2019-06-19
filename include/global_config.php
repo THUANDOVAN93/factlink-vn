@@ -46,5 +46,7 @@ $qtyFeaProduct = 8;
 /* reCaptcha Config */
 $captchaSiteKey = "6Ld0qZIUAAAAADzcBE7QzHfMUVtPp625QUpDSxP7";
 $captchaSecretKey = "6Ld0qZIUAAAAAJ37AJSr1vUeceJYOeiV8TG5AaHL";
+$fileExtAllowed = ["jpg", "png", "gif", "mp4"];
+$langCodeAllowed = ["en", "vn", "jp"];
 
 ?>

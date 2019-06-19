@@ -54,6 +54,11 @@
 		$lb_nationality = "Company Nationality";
 		$lb_njp = "Japanese";
 		$lb_nvn = "Vietnamese";
+		$lb_nkorea = "Korea";
+		$lb_ntaiwan = "Taiwan";
+		$lb_nhongkong = "Hongkong";
+		$lb_nsingapore = "Singapore";
+		$lb_nchina = "China";
 		$lb_nother = "Other Nation";
 		$lb_category = "Category";
 		$lb_ie = "Industrial Estate";
@@ -108,115 +113,121 @@
 
 		$pro_comname_link = "Company name and Link to company";
 		$pro_contact = "Contact";
-		$meta_description = "FactLink Vietnam is a company introduction site for manufacturing companies based in Vietnam. We will introduce the information of the registered company. The information posted includes business domain, products, location, industrial park, and contact information. We also provide services to support the manufacturing industry in Vietnam";
-		$meta_keyword = "Manufacturing business, Manufacture, Vietnam, Japan, Factory, Expansion into Thailand";
-	} elseif ($_COOKIE['vlang'] == 'vn') { 
+	} 
+	
+	else if ($_COOKIE['vlang'] == 'vn') { 
 		
-	$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
-	$headlogo = "header_07_vn.png";
-	$texttitlebar = "FACT-LINK : Dành cho các doanh nghiệp Nhật Bản và Việt Nam";
-	$displaytext = "dptext_vn.png";
-	$bnregister = "bn_register_vn.png";
-	
-	$titlelogin = "title_login_vn.png";
-	$titlesearchcompany = "title_searchcompany_vn.png";
-	$titlesearchcategory = "title_searchcategory_1_vn.png";
-	$titlesearchie = "title_searchie_vn.png";
-	$titlesearchprovince = "title_searchprovince_vn.png";
-	$titlesearchcountry = "title_searchcountry_vn.png";
-	
-	$titlefeature = "title_feature_vn.png";
-	$titleupdate = "title_update_vn.png";
-	$titleintroduce = "title_introduce_vn.png";
-	$titlesearchresult = "title_searchresult_vn.png";
-	$titlenews = "title_news_vn.png";
-	$titleintro = "title_intro_vn.png";
-	$titlemanual = "title_manual_vn.png";
-	$titleregister = "title_register_vn.png";
-	$titlecontact = "title_contact_vn.png";
-	$titleabout = "title_about_vn.png";
-	
-	$buttonsearch = "framebutton_search_vn.png";
-	$buttonlogin = "framebutton_login_vn.png";
-	
-	$lb_companyname = "Tên công ty";
-	$lb_keyword = "Từ khóa";
-	$lb_categoryselect = "Chọn mục";
-	$lb_ieselect = "Chọn khu công nghiệp";
-	$lb_provinceselect = "Chọn Tỉnh thành";
-	$lb_countryselect = "Chọn quốc gia";
-	$lb_more = "Thêm thông tin";
-	$lb_newsmore = "Thêm chi tiết";
-	$lb_news = "Tin tức";
-	$lb_back = "Quay lại";
-	
-	$lb_en = "EN";
-	$lb_jp = "JP";
-	$lb_vn = "VN";
-	
-	$lb_username = "Tên người dùng";
-	$lb_password = "Mật khẩu";
-	$lb_password_text = "Mật khẩu sẽ được gửi tới địa chỉ mail đã đăng ký của bạn.";
-	$lb_pathname = "Tên đường dẫn";
-	$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Only english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
-	$lb_comname = "Tên công ty";
-	$lb_nationality = "Company Nationality";
-	$lb_njp = "Japanese";
-	$lb_nvn = "Vietnamese";
-	$lb_nother = "Other Nation";
-	$lb_category = "Mục";
-	$lb_ie = "Khu công nghiệp";
-	$lb_address = "Địa chỉ";
-	$lb_province = "Tỉnh thành";
-	$lb_country = "Quốc gia";
-	$lb_zip = "Mã bưu chính";
-	$lb_comtel = "Số điện thoại";
-	$lb_comfax = "Số FAX";
-	$lb_commobile = "Điện thoại di động";
-	$lb_commail = "Địa chỉ mail";
-	$lb_contact = "Tên liên hệ";
-	$lb_position = "Vị trí liên hệ";
-	$lb_gender = "Giới tính";
-	$lb_mail = "Địa chỉ mail liên lạc";
-	
-	$lb_tel = "Số điện thoại liên lạc";
-	$lb_confirmcode = "Mã xác nhận";
-	$lb_confirmcode_text = "Xin vui lòng điền vào 4 chữ số trong ô này để xác nhận.";
-	$lb_male = "Nam";
-	$lb_female = "Nữ";
-	$lb_register = "Đăng ký";
-	$lb_send = "Gửi";
-	$lb_subject = "Tiêu đề";
-	$lb_detail = "Chi tiết";
-	$lb_result = "Kết quả của";
-	$lb_agreement = "Sự đồng ý";
-	$lb_terms = "(Điều khoản sử dụng)";
-	$lb_agree = "Đồng ý";
-	$lb_disagree = "Không đồng ý";
-	$lb_select = "----- Vui long lựa chọn -----";
-	
-	$lb_fea_comlink = "Thêm thông tin của công ty này";
-	$lb_fea_archive = "Các bài viết lưu trữ";
-	
-	$lb_usercheck = "Tên người dùng mong muốn đã được sử dụng bởi người khác. Hãy tạo một cái mới.";
-	$lb_searchfail = "Không có kết quả nào.";
-	$t_tax_code = "MST";
-	$t_tax_regis = "Giấy CNĐKKD: Số";
-	$t_tax_date = "Ngày cấp";
-	$t_tax_place = "Nơi cấp";
-	$stockinvietnam = "Kho ở Việt Nam";
-	$business_desc = "Mô tả kinh doanh";
-	$wep_page = "Địa chỉ website";
-	$search_by_company = "Company";
-	$search_by_product = "Product";
+		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
+		$headlogo = "header_07_vn.png";
+		$texttitlebar = "FACT-LINK : Dành cho các doanh nghiệp Nhật Bản và Việt Nam";
+		$displaytext = "dptext_vn.png";
+		$bnregister = "bn_register_vn.png";
+		
+		$titlelogin = "title_login_vn.png";
+		$titlesearchcompany = "title_searchcompany_vn.png";
+		$titlesearchcategory = "title_searchcategory_1_vn.png";
+		$titlesearchie = "title_searchie_vn.png";
+		$titlesearchprovince = "title_searchprovince_vn.png";
+		$titlesearchcountry = "title_searchcountry_vn.png";
+		
+		$titlefeature = "title_feature_vn.png";
+		$titleupdate = "title_update_vn.png";
+		$titleintroduce = "title_introduce_vn.png";
+		$titlesearchresult = "title_searchresult_vn.png";
+		$titlenews = "title_news_vn.png";
+		$titleintro = "title_intro_vn.png";
+		$titlemanual = "title_manual_vn.png";
+		$titleregister = "title_register_vn.png";
+		$titlecontact = "title_contact_vn.png";
+		$titleabout = "title_about_vn.png";
+		
+		$buttonsearch = "framebutton_search_vn.png";
+		$buttonlogin = "framebutton_login_vn.png";
+		
+		$lb_companyname = "Tên công ty";
+		$lb_keyword = "Từ khóa";
+		$lb_categoryselect = "Chọn mục";
+		$lb_ieselect = "Chọn khu công nghiệp";
+		$lb_provinceselect = "Chọn Tỉnh thành";
+		$lb_countryselect = "Chọn quốc gia";
+		$lb_more = "Thêm thông tin";
+		$lb_newsmore = "Thêm chi tiết";
+		$lb_news = "Tin tức";
+		$lb_back = "Quay lại";
+		
+		$lb_en = "EN";
+		$lb_jp = "JP";
+		$lb_vn = "VN";
+		
+		$lb_username = "Tên người dùng";
+		$lb_password = "Mật khẩu";
+		$lb_password_text = "Mật khẩu sẽ được gửi tới địa chỉ mail đã đăng ký của bạn.";
+		$lb_pathname = "Tên đường dẫn";
+		$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Only english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
+		$lb_comname = "Tên công ty";
+		$lb_nationality = "Company Nationality";
+		$lb_njp = "Japanese";
+		$lb_nvn = "Vietnamese";
+		$lb_nkorea = "Korea";
+		$lb_ntaiwan = "Taiwan";
+		$lb_nhongkong = "Hongkong";
+		$lb_nsingapore = "Singapore";
+		$lb_nchina = "China";
+		$lb_nother = "Other Nation";
+		$lb_category = "Mục";
+		$lb_ie = "Khu công nghiệp";
+		$lb_address = "Địa chỉ";
+		$lb_province = "Tỉnh thành";
+		$lb_country = "Quốc gia";
+		$lb_zip = "Mã bưu chính";
+		$lb_comtel = "Số điện thoại";
+		$lb_comfax = "Số FAX";
+		$lb_commobile = "Điện thoại di động";
+		$lb_commail = "Địa chỉ mail";
+		$lb_contact = "Tên liên hệ";
+		$lb_position = "Vị trí liên hệ";
+		$lb_gender = "Giới tính";
+		$lb_mail = "Địa chỉ mail liên lạc";
+		
+		$lb_tel = "Số điện thoại liên lạc";
+		$lb_confirmcode = "Mã xác nhận";
+		$lb_confirmcode_text = "Xin vui lòng điền vào 4 chữ số trong ô này để xác nhận.";
+		$lb_male = "Nam";
+		$lb_female = "Nữ";
+		$lb_register = "Đăng ký";
+		$lb_send = "Gửi";
+		$lb_subject = "Tiêu đề";
+		$lb_detail = "Chi tiết";
+		$lb_result = "Kết quả của";
+		$lb_agreement = "Sự đồng ý";
+		$lb_terms = "(Điều khoản sử dụng)";
+		$lb_agree = "Đồng ý";
+		$lb_disagree = "Không đồng ý";
+		$lb_select = "----- Vui long lựa chọn -----";
+		
+		$lb_fea_comlink = "Thêm thông tin của công ty này";
+		$lb_fea_archive = "Các bài viết lưu trữ";
+		
+		$lb_usercheck = "Tên người dùng mong muốn đã được sử dụng bởi người khác. Hãy tạo một cái mới.";
+		$lb_searchfail = "Không có kết quả nào.";
+		$t_tax_code = "MST";
+		$t_tax_regis = "Giấy CNĐKKD: Số";
+		$t_tax_date = "Ngày cấp";
+		$t_tax_place = "Nơi cấp";
+		$stockinvietnam = "Kho ở Việt Nam";
+		$business_desc = "Mô tả kinh doanh";
+		$wep_page = "Địa chỉ website";
+		$search_by_company = "Company";
+		$search_by_product = "Product";
 
-	$product_name = "Tên sản phẩm";
-	$supplier_name = "Tên nhà cung cấp";
-	$pro_comname_link = "Tên công ty và đường dẫn tới công ty";
-	$pro_contact = "Liên hệ";
-	$meta_description = "FactLink Vietnam là trang web chuyên giới thiệu các công ty trong ngành công nghiệp sản xuất có trụ sở tại Việt Nam. Chúng tôi sẽ giới thiệu thông tin của các công ty thành viên bao gồm lĩnh vực kinh doanh, mô tả sản phẩm, địa chỉ, thông tin liên hệ.... Chúng tôi cũng cung cấp các dịch vụ để hỗ trợ ngành sản xuất tại Việt Nam, như hỗ trợ tìm kiếm nhà máy, nhà kho. ";
-	$meta_keyword = "sản xuất , chế tạo,sản xuất kinh doanh ,ngành công nghiệp";
-	} else { 
+		$product_name = "Tên sản phẩm";
+		$supplier_name = "Tên nhà cung cấp";
+		$pro_comname_link = "Tên công ty và đường dẫn tới công ty";
+		$pro_contact = "Liên hệ";
+		
+	} 
+	
+	else { 
 		
 		$langpicjp = "lang_jp_02.png";
 		$langpicvn = "lang_vn_01.png";
@@ -272,6 +283,11 @@
 		$lb_nationality = "Company Nationality";
 		$lb_njp = "Japanese";
 		$lb_nvn = "Vietnamese";
+		$lb_nkorea = "Korea";
+		$lb_ntaiwan = "Taiwan";
+		$lb_nhongkong = "Hongkong";
+		$lb_nsingapore = "Singapore";
+		$lb_nchina = "China";
 		$lb_nother = "Other Nation";
 		$lb_category = "業種";
 		$lb_ie = "工業団地";
@@ -295,7 +311,7 @@
 		$lb_female = "女性";
 		$lb_register = "確認画面へ進む";
 		$lb_send = "送信";
-		$lb_subject = "件名";
+		$lb_subject = "質問事項";
 		$lb_detail = "ご相談内容";
 		$lb_result = "結果";
 		$lb_agreement = "会員規約";
@@ -323,8 +339,6 @@
 		$supplier_name = "企業情報";
 		$pro_comname_link = "企業名";
 		$pro_contact = "問い合わせ";
-		$meta_description = "ファクトリンクベトナムは、ベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。ご登録いただいた企業様の情報をご紹介致します。掲載情報は、事業内容、取扱品目、住所、工業団地、連絡先など製造業に特化した項目を設けております。また工場進出サポートなど在ベトナムの製造業を支援するサービスを提供しております。";
-		$meta_keyword = "製造業,製造,ベトナム,日本,工場,進出";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -380,6 +394,11 @@
 	$tpl->assign("##lb_nationality##", $lb_nationality);
 	$tpl->assign("##lb_njp##", $lb_njp);
 	$tpl->assign("##lb_nvn##", $lb_nvn);
+	$tpl->assign("##lb_nkorea##", $lb_nkorea);
+	$tpl->assign("##lb_ntaiwan##", $lb_ntaiwan);
+	$tpl->assign("##lb_nhongkong##", $lb_nhongkong);
+	$tpl->assign("##lb_nsingapore##", $lb_nsingapore);
+	$tpl->assign("##lb_nchina##", $lb_nchina);
 	$tpl->assign("##lb_nother##", $lb_nother);
 	$tpl->assign("##lb_category##", $lb_category);
 	$tpl->assign("##lb_ie##", $lb_ie);
@@ -433,9 +452,6 @@
 	$tpl->assign("##supplier_name##", $supplier_name);
 	$tpl->assign("##pro_comname_link##", $pro_comname_link);
 	$tpl->assign("##pro_contact##", $pro_contact);
-	$tpl->assign("##meta_description##", $meta_description);
-	$tpl->assign("##meta_keyword##", $meta_keyword);
-
 
 	
 	/** Please input PHP filename that use "template/structure-new.html" */
@@ -1418,6 +1434,14 @@
 						  <embed src=\"".$bantoppath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\"></embed>
 						</object>";
 	
+	} elseif ($bantopfiletype == 'mp4') {
+
+		$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\">
+		<video width=\"".$bantopwidth."\" height=\"".$bantopheight."\" autoplay muted loop playsinline id=\"jsBannerTop\">
+		<source src=\"".$bantoppath."\" type=\"video/mp4\">
+		</video>
+		</a>
+		";
 	} else { 
 		
 		if ($bantoplink != '') { $bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" border=\"0\"/></a>"; }
@@ -1462,6 +1486,14 @@
 						  <embed src=\"".$banrightpath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$banrightwidth."\" height=\"".$banrightheight."\"></embed>
 						</object>";
 	
+		} elseif ($banrightfiletype == 'mp4') {
+
+			$banrightbanner = "<a href=\"".$banrightlink."\" target=\"_blank\">
+			<video width=\"".$banrightwidth."\" height=\"".$banrightheight."\" autoplay muted loop playsinline>
+			<source src=\"".$banrightpath."\" type=\"video/mp4\">
+			</video>
+			</a>
+			";	
 		} else { 
 		
 			if ($banrightlink != '') { $banrightbanner = "<a href=\"".$banrightlink."\" target=\"_blank\"><img src=\"".$banrightpath."\" width=\"".$banrightwidth."\" border=\"0\"/></a>"; }
@@ -1481,16 +1513,6 @@
 	}
 	
 	$tpl->assign("##banrightrow##", $banrightrow);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	// Banner - L
 	$sqlbanleft = "select * from flc_banner where ban_type = 'bsc' and ban_page = '$pagecode' and ban_side = 'l' and ban_status != 'd' order by ban_sort asc;";
@@ -1527,6 +1549,14 @@
 						  <embed src=\"".$banleftpath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$banleftwidth."\" height=\"".$banleftheight."\"></embed>
 						</object>";
 	
+		} elseif ($banleftfiletype == 'mp4') {
+
+			$banleftbanner = "<a href=\"".$banleftlink."\" target=\"_blank\">
+			<video width=\"".$banleftwidth."\" height=\"".$banleftheight."\" autoplay muted loop playsinline>
+			<source src=\"".$banleftpath."\" type=\"video/mp4\">
+			</video>
+			</a>
+			";	
 		} else { 
 		
 			if ($banleftlink != '') { $banleftbanner = "<a href=\"".$banleftlink."\" target=\"_blank\"><img src=\"".$banleftpath."\" width=\"".$banleftwidth."\" border=\"0\"/></a>"; }
@@ -1590,6 +1620,14 @@
 							  <embed src=\"".$banbsccatpath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$banbsccatwidth."\" height=\"".$banbsccatheight."\"></embed>
 							</object>";
 		
+			} elseif ($banbsccatfiletype == 'mp4') {
+
+				$banbsccatbanner = "<a href=\"".$banbsccatlink."\" target=\"_blank\">
+				<video width=\"".$banbsccatwidth."\" height=\"".$banbsccatheight."\" autoplay muted loop playsinline>
+				<source src=\"".$banbsccatpath."\" type=\"video/mp4\">
+				</video>
+				</a>
+				";
 			} else { 
 			
 				if ($banbsccatlink != '') { $banbsccatbanner = "<a href=\"".$banbsccatlink."\" target=\"_blank\"><img src=\"".$banbsccatpath."\" width=\"".$banbsccatwidth."\" border=\"0\"/></a>"; }
@@ -1910,6 +1948,7 @@
 						</ul>";
 	}
 	$tpl->assign("##MenuFooterTerm_tpl##", $footerTerm);
+	$tpl->assign("##urlHomePage##", "/");
 	
 ?>
 

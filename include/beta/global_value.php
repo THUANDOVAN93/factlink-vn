@@ -1884,6 +1884,9 @@
 	}
 	$footerInfo .= "<p><a rel=\"nofollow\" target=\"_blank\" href=\"http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=50823\"><img alt=\"\" title=\"\" src=\"/image/authent.png\" /></a></p>";
 	$tpl->assign("##FOOTER_INFO##", $footerInfo);
+
+	// URL Friendly
+	$tpl->assign("##urlHomePage##", "/");
 	
 ?>
 

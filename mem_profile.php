@@ -32,7 +32,7 @@
 
 	mysql_query("use $db_name;");
 	
-	if($_SESSION['repage']!=date("m")){
+	if ($_SESSION['repage']!=date("m")) {
 		echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$_GET['id']."&page=".$_GET['page']."&lang=".$_GET['lang']."\">";
 		$_SESSION['repage']=date("m");
 		exit();
@@ -71,7 +71,6 @@
 		$memseokey = $dbarr1['mem_seokeyword'];
 		$memCatId = $dbarr1['mem_category'];
 
-		// Add footer for free member here
 		if ($dbarr1['mem_package'] === '') {
 			$tpl->assign("##footerVisible##", "block");
 			$tpl->assign("##footerVisibleNoneFree##", "none");
@@ -79,47 +78,71 @@
 			$tpl->assign("##footerVisible##", "none");
 			$tpl->assign("##footerVisibleNoneFree##", "");
 		}
-		// End add footer
 
 	}
-
-	
 	
 	$sql2 = "select * from flc_template_main where tpm_id = '$memtemplate';";
 	$result2 = mysql_query($sql2);
-	while ($dbarr2 = mysql_fetch_array($result2)) { $tpmcode = $dbarr2['tpm_name_file']; } if ($tpmcode == '') { $tpmcode = "red"; }
+	while ($dbarr2 = mysql_fetch_array($result2)) {
+		$tpmcode = $dbarr2['tpm_name_file'];
+	}
+	if ($tpmcode == '') {
+		$tpmcode = "red";
+	}
 
-	if ($langcode != 'en' && $langcode != 'jp' && $langcode != 'vn') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+	if ($langcode != 'en' && $langcode != 'jp' && $langcode != 'vn') {
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+		 exit();
+	}
 	
 	$sql4 = "select * from flc_page where mem_id = '$memid' and pag_id = '$pagid';";
 	$result4 = mysql_query($sql4);
 	while ($dbarr4 = mysql_fetch_array($result4)) {
 
 		$pagcheck = "t";
-		
 		$dbarr4 = array_map('stripslashes',$dbarr4);
+		if ($dbarr4['pag_status'] == 'd') {
+			if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+				exit();
+			}
+		}
 
-		if ($dbarr4['pag_status'] == 'd') { if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
+		if ($dbarr4['pag_type'] != 'prf') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
 
-		if ($dbarr4['pag_type'] != 'prf') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+		if ($langcode == 'en' && $dbarr4['pag_show_en'] != 't') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
+		if ($langcode == 'jp' && $dbarr4['pag_show_jp'] != 't') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
+		if ($langcode == 'vn' && $dbarr4['pag_show_vn'] != 't') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
 
-		if ($langcode == 'en' && $dbarr4['pag_show_en'] != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
-		if ($langcode == 'jp' && $dbarr4['pag_show_jp'] != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
-		if ($langcode == 'vn' && $dbarr4['pag_show_vn'] != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') {
+			$langen = "<a href=\"mem_profile.php?id=".$memid."&page=".$pagid."&lang=en\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>";
+		} else {
+			$langen = "<img src=\"images/tpl_en_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
+		}
 
-		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') { $langen = "<a href=\"mem_profile.php?id=".$memid."&page=".$pagid."&lang=en\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
-		else { $langen = "<img src=\"images/tpl_en_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
+		if ($dbarr4['pag_show_jp'] == 't' || $prfshowjp == 't') {
+			$langjp = "<a href=\"mem_profile.php?id=".$memid."&page=".$pagid."&lang=jp\"><img src=\"images/tpl_".$memlangpicjp."\" title=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>";
+		} else {
+			$langjp = "<img src=\"images/tpl_jp_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
+		}
 
-		if ($dbarr4['pag_show_jp'] == 't' || $prfshowjp == 't') { $langjp = "<a href=\"mem_profile.php?id=".$memid."&page=".$pagid."&lang=jp\"><img src=\"images/tpl_".$memlangpicjp."\" title=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
-		else { $langjp = "<img src=\"images/tpl_jp_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
-
-		if ($dbarr4['pag_show_vn'] == 't' || $prfshowvn == 't') { $langvn = "<a href=\"mem_profile.php?id=".$memid."&page=".$pagid."&lang=vn\"><img src=\"images/tpl_".$memlangpicvn."\" title=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
-		else { $langvn = "<img src=\"images/tpl_vn_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
-
-		// echo "<pre>".print_r($dbarr4['pag_detail_en'],true)."</pre>"; exit('debug');
-
-		// $namePage = getNamePage($memid, $pagid, $langcode);
-		// $tpl->assign("##namePage##", $namePage);
+		if ($dbarr4['pag_show_vn'] == 't' || $prfshowvn == 't') {
+			$langvn = "<a href=\"mem_profile.php?id=".$memid."&page=".$pagid."&lang=vn\"><img src=\"images/tpl_".$memlangpicvn."\" title=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>";
+		} else {
+			$langvn = "<img src=\"images/tpl_vn_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
+		}
 		
 		$pagpagetitleen = $dbarr4['pag_pagetitle_en'];
 		$pagpagetitlejp = $dbarr4['pag_pagetitle_jp'];
@@ -127,8 +150,14 @@
 		$pagtitleen = $dbarr4['pag_title_en'];
 		$pagtitlejp = $dbarr4['pag_title_jp'];
 		$pagtitlevn = $dbarr4['pag_title_vn'];
-		$pagtitlecolor = "#".$dbarr4['pag_title_color']; if ($pagtitlecolor == '#') { $pagtitlecolor = "#CC0000"; }
-		$pagprfcolor = "#".$dbarr4['pag_profile_color']; if ($pagprfcolor == '#') { $pagprfcolor = "#CC0000"; }
+		$pagtitlecolor = "#".$dbarr4['pag_title_color'];
+		if ($pagtitlecolor == '#') {
+			$pagtitlecolor = "#CC0000";
+		}
+		$pagprfcolor = "#".$dbarr4['pag_profile_color'];
+		if ($pagprfcolor == '#') {
+			$pagprfcolor = "#CC0000";
+		}
 		$pagdetailen = $dbarr4['pag_detail_en'];
 		$pagdetailjp = $dbarr4['pag_detail_jp'];
 		$pagdetailvn = $dbarr4['pag_detail_vn'];
@@ -138,7 +167,6 @@
 		$pagimageside = $dbarr4['pag_image_side'];
 		$pagvideo_html = '';
 		$pagemedia_option = $dbarr4['pag_media_option'];
-
 		if ($pagimageside == 'r') { 
 			$imgside = "colimg-defright";
 			$imgsidefull = "colimg-defright-full";
@@ -155,11 +183,26 @@
 		if ($pagimage == 't' && $pagemedia_option == 'image') {
 
 			$imgpath = "home/".$memfolder."/".$memid."-".$pagid."-P.jpg";
-			if ($pagimagewidth == 0) { $imgdms = getimagesize($imgpath); $imgwidth = $imgdms[0]; } else { $imgwidth = $pagimagewidth; }
-			if ($imgwidth > 760) { $imgwidth = 760; }
-			if ($imgwidth >= 755) { $imgclass = $imgsidefull; } else { $imgclass = $imgside; }
+			if ($pagimagewidth == 0) {
+				$imgdms = getimagesize($imgpath);
+				$imgwidth = $imgdms[0];
+			} else {
+				$imgwidth = $pagimagewidth;
+			}
+
+			if ($imgwidth > 760) {
+				$imgwidth = 760;
+			}
+
+			if ($imgwidth >= 755) {
+				$imgclass = $imgsidefull;
+			} else {
+				$imgclass = $imgside;
+			}
 			$pagimage = "<img src=\"".$imgpath."\" width=\"".$imgwidth."\" border=\"0\" class=\"".$imgclass."\" />";
-			if ($pagimagelink == 't') { $pagimage = "<a href=\"".$imgpath."\" target=\"_blank\">".$pagimage."</a>"; }
+			if ($pagimagelink == 't') {
+				$pagimage = "<a href=\"".$imgpath."\" target=\"_blank\">".$pagimage."</a>";
+			}
 		}
 
 		if ($pagimage == 't' && $pagemedia_option == 'video') {
@@ -171,7 +214,10 @@
 		}
 	}
 
-	if ($pagcheck != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+	if ($pagcheck != 't') {
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+		exit();
+	}
 
 	
 	
@@ -182,9 +228,18 @@
 		$dbarr5 = array_map('stripslashes',$dbarr5);
 		$dbarr5 = array_map('html',$dbarr5);
 
-		$memposnameen = $dbarr5['mem_posname_en']; if ($memposnameen != '') { $memposnameen = $memposnameen." : "; }
-		$memposnamejp = $dbarr5['mem_posname_jp']; if ($memposnamejp != '') { $memposnamejp = $memposnamejp." : "; }
-		$memposnamevn = $dbarr5['mem_posname_vn']; if ($memposnamevn != '') { $memposnamevn = $memposnamevn." : "; }
+		$memposnameen = $dbarr5['mem_posname_en'];
+		if ($memposnameen != '') {
+			$memposnameen = $memposnameen." : ";
+		}
+		$memposnamejp = $dbarr5['mem_posname_jp'];
+		if ($memposnamejp != '') {
+			$memposnamejp = $memposnamejp." : ";
+		}
+		$memposnamevn = $dbarr5['mem_posname_vn'];
+		if ($memposnamevn != '') {
+			$memposnamevn = $memposnamevn." : ";
+		}
 		$mempernameen = $dbarr5['mem_pername_en'];
 		$mempernamejp = $dbarr5['mem_pername_jp'];
 		$mempernamevn = $dbarr5['mem_pername_vn'];
@@ -347,9 +402,6 @@
 		$memcon5vn = $dbarr5['mem_content5_vn'];
 
 	}
-
-
-
 	// language
 	if ($langcode == 'en') {
 		$memsubdesc = $memsubdescen;
@@ -408,9 +460,7 @@
 		$membusiness = $membusinessen;
 		$memproduct = $memproducten;
 
-	}
-
-	else if ($langcode == 'vn') {
+	} elseif ($langcode == 'vn') {
 		$memsubdesc = $memsubdescvn;
 		$memfooter = $memfootervn;
 		$memcomname = $memcomnamevn;
@@ -420,7 +470,9 @@
 
 		$memcomnamefull = subhtml($memcomnamevn)."<br />".subhtml($memcomnameen);
 		$memrepname = subhtml($memposnamevn.$mempernamevn);
-		if ($memposnameen != '' || $mempernameen != '') { $memrepname = $memrepname."<br />".subhtml($memposnameen.$mempernameen); }
+		if ($memposnameen != '' || $mempernameen != '') {
+			$memrepname = $memrepname."<br />".subhtml($memposnameen.$mempernameen);
+		}
 		$memaddlab1 = $memaddlab1vn;
 		$memadd1 = $memadd1vn;
 		$memaddlab2 = $memaddlab2vn;
@@ -468,9 +520,7 @@
 		$membusiness = $membusinessvn;
 		$memproduct = $memproductvn;
 
-	}
-
-	else {
+	} else {
 		$memsubdesc = $memsubdescjp;
 		$memfooter = $memfooterjp;
 		$memcomname = $memcomnamejp;
@@ -480,7 +530,9 @@
 
 		$memcomnamefull = subhtml($memcomnamejp)."<br />".subhtml($memcomnameen);
 		$memrepname = subhtml($memposnamejp.$mempernamejp);
-		if ($memposnameen != '' || $mempernameen != '') { $memrepname = $memrepname."<br />".subhtml($memposnameen.$mempernameen); }
+		if ($memposnameen != '' || $mempernameen != '') {
+			$memrepname = $memrepname."<br />".subhtml($memposnameen.$mempernameen);
+		}
 		$memaddlab1 = $memaddlab1jp;
 		$memadd1 = $memadd1jp;
 		$memaddlab2 = $memaddlab2jp;
@@ -529,13 +581,10 @@
 		$memproduct = $memproductjp;
 
 	}
-	
-	// echo "<pre>".print_r($pagdetail,true)."</pre>"; exit;
-	
+		
 	$pagtitle = "<font color=\"".$pagtitlecolor."\"><h2 class=\"h2_title\">".subhtml($pagtitle)."</h2></font>";
 	$pagdetail = $pagimage.$pagvideo_html.$pagtitle.html($pagdetail);
 	
-
 	function call_ine($memineid, $langcode) {
 
 		if ($memineid != '1' && $memineid != '2' && $memineid != '') {
@@ -544,18 +593,19 @@
 			$result6 = mysql_query($sql6);
 			while ($dbarr6 = mysql_fetch_array($result6)) {
 
-				if ($langcode == 'en') { $inename = $dbarr6['ine_name_en']; }
-				else if ($langcode == 'vn') { $inename = $dbarr6['ine_name_vn']; }
-				else { $inename = $dbarr6['ine_name_en']; } // *** default = jp
-
+				if ($langcode == 'en') {
+					$inename = $dbarr6['ine_name_en'];
+				} elseif ($langcode == 'vn') {
+					$inename = $dbarr6['ine_name_vn'];
+				} else {
+					$inename = $dbarr6['ine_name_en'];
+				}
 			}
-
-			// $inename = $inename."<br/>";
-
-		} else { $inename = ""; }
+		} else {
+			$inename = "";
+		}
 
 		return $inename;
-
 	}
 
 	function call_prv($memprvid, $langcode) {
@@ -566,18 +616,21 @@
 			$result6 = mysql_query($sql6);
 			while ($dbarr6 = mysql_fetch_array($result6)) {
 
-				if ($langcode == 'en') { $prvname = $dbarr6['prv_name_en']; }
-				else if ($langcode == 'vn') { $prvname = $dbarr6['prv_name_vn']; }
-				else { $prvname = $dbarr6['prv_name_en']; } // *** default = jp
-
+				if ($langcode == 'en') {
+					$prvname = $dbarr6['prv_name_en'];
+				} elseif ($langcode == 'vn') {
+					$prvname = $dbarr6['prv_name_vn'];
+				} else {
+					$prvname = $dbarr6['prv_name_en'];
+				}
 			}
 
 			$prvname = "<br/>".$prvname;
-
-		} else { $prvname = ""; }
+		} else {
+			$prvname = "";
+		}
 
 		return $prvname;
-
 	}
 
 	function call_cty($memctyid, $langcode) {
@@ -588,16 +641,19 @@
 			$result6 = mysql_query($sql6);
 			while ($dbarr6 = mysql_fetch_array($result6)) {
 
-				if ($langcode == 'en') { $ctyname = $dbarr6['cty_name_en']; }
-				else if ($langcode == 'vn') { $ctyname = $dbarr6['cty_name_vn']; }
-				else { $ctyname = $dbarr6['cty_name_en']; } // *** default = jp
-
+				if ($langcode == 'en') {
+					$ctyname = $dbarr6['cty_name_en'];
+				} elseif ($langcode == 'vn') {
+					$ctyname = $dbarr6['cty_name_vn'];
+				} else {
+					$ctyname = $dbarr6['cty_name_en'];
+				}
 			}
-
-		} else { $ctyname = ""; }
+		} else {
+			$ctyname = "";
+		}
 
 		return $ctyname;
-
 	}
 
 	if (trim($memadd1) != '') {
@@ -721,11 +777,6 @@
 			<td valign=\"top\">".subhtml($memmail5)."</td>
 		  </tr>".$prfline;
 	}
-
-	
-	
-	
-	
 	if (trim($memcon1) != '') {
 		$memcontent = $memcontent."<tr>
 			<td valign=\"top\"><font color=\"".$pagprfcolor."\"><strong>".subhtml($memconlab1)."</strong></font></td>
@@ -761,9 +812,6 @@
 			<td valign=\"top\">".convertURL2HTML($memcon5)."</td>
 		  </tr>".$prfline;
 	}
-
-	// exit($memproduct); 
-
 	// Customize CSS For Special Company
 	if ($memid == "00001109") {
 		$memsubdesc = "<p style=\"margin: 0;padding-left: 25px;line-height: 18px;\">".$memsubdesc."</p>";

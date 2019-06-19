@@ -1,11 +1,19 @@
 
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
 <Files 403.shtml>
 order allow,deny
 allow from all
 </Files>
-RewriteEngine On
 RewriteCond %{HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteRule ^fl-admin$ adm_index.php [L]
 
 deny from 27.8.0.0/13
 deny from 27.16.0.0/12

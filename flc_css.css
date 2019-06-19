@@ -1154,3 +1154,7 @@ button:hover,
 	font-style: initial;
 	margin: 10px 0 0 0;
 }
+
+.active-page {
+	color: red;
+}

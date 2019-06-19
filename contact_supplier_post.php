@@ -3,25 +3,16 @@
 	session_start();
 	include_once("./include/global_config.php");
 	include_once("./include/global_function.php");
-	
-	
-	
-	
-	
+
 	/* Only accept submit data from following URI to prevent XSS attack */
 	$allow[] = 'https://www.fact-link.com.vn/contact_supplier.php';
 	$allow[] = 'https://fact-link.com.vn/contact_supplier.php';
 	
-	if(!in_array($_SERVER["HTTP_REFERER"],$allow)){
-		echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">";
+	$reURI = substr($_SERVER["HTTP_REFERER"], 0, strpos($_SERVER["HTTP_REFERER"], "?"));
+	if(!in_array($reURI,$allow)) {
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=uri\">";
 		exit();
 	}
-
-	
-	
-	
-	
-	
 	
 	mysql_query("use $db_name;");
 
@@ -43,33 +34,33 @@
 
 		// Spam mail check
 
-		if (substr_count($t_detail,"</a>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"</a>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"<>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"<>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,">") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,">") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"<") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"<") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"<a>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"<a>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"<br>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"<br>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"</br>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"</br>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"br>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"br>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"<br") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"<br") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"br") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"br") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"[/url]") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"[/url]") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		 }
-		if (substr_count($t_detail,"[/link]") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"[/link]") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"€") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"€") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
-		if (substr_count($t_detail,"ㄣ") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php\">"; exit();
+		if (substr_count($t_detail,"ㄣ") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=secure\">"; exit();
 		}
 
 
@@ -275,7 +266,7 @@
 		}
 
 	} else {
-		echo "<meta http-equiv=\"refresh\" content = \"0;URL = contact_supplier_done.php\">";
+		echo "<meta http-equiv=\"refresh\" content = \"0;URL = contact_supplier_done.php?case=misva\">";
 		exit();
 	}
 	echo "<meta http-equiv=\"refresh\" content = \"0;URL = contact_supplier_done.php\">";

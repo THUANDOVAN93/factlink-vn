@@ -13,17 +13,17 @@
 	$t_name = $_POST['t_name'];
 	$t_member = $_POST['t_member'];
 	$t_image_en = $_FILES['t_image_en'];
-	$t_filetype_en = imagetype($_FILES['t_image_en']['type']);
+	$t_filetype_en = getFileExtend($_FILES['t_image_en'], $fileExtAllowed);
 	$t_width_en = "180";
 	$t_height_en = $_POST['t_height_en'];
 	$t_link_en = $_POST['t_link_en'];
 	$t_image_jp = $_FILES['t_image_jp'];
-	$t_filetype_jp = imagetype($_FILES['t_image_jp']['type']);
+	$t_filetype_jp = getFileExtend($_FILES['t_image_jp'], $fileExtAllowed);
 	$t_width_jp = "180";
 	$t_height_jp = $_POST['t_height_jp'];
 	$t_link_jp = $_POST['t_link_jp'];
 	$t_image_vn = $_FILES['t_image_vn'];
-	$t_filetype_vn = imagetype($_FILES['t_image_vn']['type']);
+	$t_filetype_vn = getFileExtend($_FILES['t_image_vn'], $fileExtAllowed);
 	$t_width_vn = "180";
 	$t_height_vn = $_POST['t_height_vn'];
 	$t_link_vn = $_POST['t_link_vn'];
@@ -45,7 +45,6 @@
 		$sql3 = "select * from flc_package where pck_id = '$t_package';";
 		$result3 = mysql_query($sql3);
 		while ($dbarr3 = mysql_fetch_array($result3)) { $pckmonth = $dbarr3['pck_month']; }
-		//while ($dbarr3 = mysql_fetch_array($result3)) { $pckday = $dbarr3['pck_day']; }
 
 		// Expire
 		$gap = explode(" ", $startdate);
@@ -74,42 +73,6 @@
 		if ($gap[0] > $mlimit[2]) { $preday = $mlimit[2]; } else { $preday = $gap[0]; }
 
 		$preenddate = addzero2($preday)." ".mcvnumtosub($premonth)." ".$preyear;
-
-		/*
-		// Expire date
-		$len = $pckday;
-		$gap = explode(" ", $startdate);
-		$gap[1] = mcvsubtonum($gap[1]);
-		$gap[3] = "";
-		$end = expcal($gap[0], $gap[1], $gap[2], $gap[3], $len);
-
-		$tmpend = explode(" ", $end);
-
-		$checkend = $tmpend[2]."-".addzero2($tmpend[1])."-".addzero2($tmpend[0])." 00:00:00";
-		if ($checkend <= date("Y-m-d H:i:s")) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_banner.php?type=$h_bantype&start=0\">"; exit(); }
-
-		$tmpend[1] = mcvnumtosub($tmpend[1]);
-		$tmpend[0] = addzero2($tmpend[0]);
-
-		$enddate = $tmpend[0]." ".$tmpend[1]." ".$tmpend[2];
-
-		// Pre-Expire date
-		$len = $pckday - 30;
-		$gap = explode(" ", $startdate);
-		$gap[1] = mcvsubtonum($gap[1]);
-		$gap[3] = "";
-		$preend = expcal($gap[0], $gap[1], $gap[2], $gap[3], $len);
-
-		$tmppreend = explode(" ", $preend);
-
-		$checkpreend = $tmppreend[2]."-".addzero2($tmppreend[1])."-".addzero2($tmppreend[0])." 00:00:00";
-		if ($checkpreend <= date("Y-m-d H:i:s")) { $warning = "t"; } else { $warning = ""; }
-
-		$tmppreend[1] = mcvnumtosub($tmppreend[1]);
-		$tmppreend[0] = addzero2($tmppreend[0]);
-
-		$preenddate = $tmppreend[0]." ".$tmppreend[1]." ".$tmppreend[2];
-		*/
 
 		$sql0 = "select * from flc_banner where ban_type = '$h_bantype' and ban_page = '$t_pospage'  and ban_side = '$t_posside' order by ban_sort desc limit 0,1;";
 		$result0 = mysql_query($sql0);
@@ -140,7 +103,7 @@
 	$result2 = mysql_query($sql2);
 	while ($dbarr2 = mysql_fetch_array($result2)) { $banid = $dbarr2['ban_id']; }
 
-	if ($_FILES['t_image_en']['size'] > 0) {
+	if ($_FILES['t_image_en']['size'] > 0 && $t_filetype_en) {
 		$newfile = $banid."_en.".$t_filetype_en;
 		$imgpath = "images/banner/".$newfile;
 		move_uploaded_file($_FILES['t_image_en']['tmp_name'], $imgpath);
@@ -148,7 +111,7 @@
 		$result4 = mysql_query($sql4);
 	}
 
-	if ($_FILES['t_image_jp']['size'] > 0) {
+	if ($_FILES['t_image_jp']['size'] > 0 && $t_filetype_jp) {
 		$newfile = $banid."_jp.".$t_filetype_jp;
 		$imgpath = "images/banner/".$newfile;
 		move_uploaded_file($_FILES['t_image_jp']['tmp_name'], $imgpath);
@@ -156,7 +119,7 @@
 		$result5 = mysql_query($sql5);
 	}
 
-	if ($_FILES['t_image_vn']['size'] > 0) {
+	if ($_FILES['t_image_vn']['size'] > 0 && $t_filetype_vn) {
 		$newfile = $banid."_vn.".$t_filetype_vn;
 		$imgpath = "images/banner/".$newfile;
 		move_uploaded_file($_FILES['t_image_vn']['tmp_name'], $imgpath);

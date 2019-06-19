@@ -118,12 +118,24 @@
           <tr>
             <td><div align="right"><strong>* ##lb_nationality##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_national" type="radio" value="jp" checked="checked" />
+            <!-- <td><input name="t_national" type="radio" value="jp" checked="checked" />
 ##lb_njp##
   <input name="t_national" type="radio" value="vn" />
 ##lb_nvn## 
 <input name="t_national" type="radio" value="oo" />
-##lb_nother##</td>
+##lb_nother##</td> -->
+            <td>
+              <select name="t_national">
+                <option value="jp" selected="selected">##lb_njp##</option>
+                <option value="vn">##lb_nvn##</option>
+                <option value="kr">##lb_nkorea##</option>
+                <option value="tw">##lb_ntaiwan##</option>
+                <option value="hk">##lb_nhongkong##</option>
+                <option value="sg">##lb_nsingapore##</option>
+                <option value="cn">##lb_nchina##</option>
+                <option value="oo">##lb_nother##</option>
+              </select>
+            </td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/line_frame_02.png" width="795" height="20" /></td>

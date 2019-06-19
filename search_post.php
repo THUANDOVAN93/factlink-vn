@@ -24,8 +24,7 @@
 			$_SESSION['vsearch_word'] = ""; 
 			echo "<meta http-equiv = \"refresh\" content = \"0;URL = search_result.php?start=0\">"; 
 			exit();
-		}
-		else {
+		} else {
 			$sql = "select * from flc_member where ";
 		}
 		
@@ -67,7 +66,6 @@
 					$sql = $sql."mem_product_en like '%$word2[$i]%' or mem_product_jp like '%$word2[$i]%' or mem_product_vn like '%$word2[$i]%' or ";
 					$sql = $sql."mem_business_en like '%$word2[$i]%' or mem_business_jp like '%$word2[$i]%' or mem_business_vn like '%$word2[$i]%' or ";
 					$sql = $sql."mem_address1_en like '%$word2[$i]%' or mem_address1_jp like '%$word2[$i]%' or mem_address1_vn like '%$word2[$i]%') and ";
-					 
 				}
 			
 			$sql = substr($sql,0,-5);
@@ -75,7 +73,9 @@
 			
 			$searchword = $searchword.$searchkey.$t_searchkeyword." / ";
 		
-		} else { $sql = substr($sql,0,-5); }
+		} else {
+			$sql = substr($sql,0,-5);
+		}
 		
 		$searchword = substr($searchword,0,-3);
 		$_SESSION['vsearch_word'] = $searchword;
@@ -89,9 +89,13 @@
 			
 			$sql1 = "select * from flc_category where cat_id = '$searchid';"; 
 			$result1 = mysql_query($sql1);
-			while ($dbarr1 = mysql_fetch_array($result1)) { $searchen = str_replace("@"," - ",$dbarr1['cat_name_en']); $searchjp = str_replace("@"," - ",$dbarr1['cat_name_jp']); $searchvn = str_replace("@"," - ",$dbarr1['cat_name_vn']); }
+			while ($dbarr1 = mysql_fetch_array($result1)) {
+				$searchen = str_replace("@"," - ",$dbarr1['cat_name_en']);
+				$searchjp = str_replace("@"," - ",$dbarr1['cat_name_jp']);
+				$searchvn = str_replace("@"," - ",$dbarr1['cat_name_vn']);
+			}
 			
-		} else if ($type == 'ie') {
+		} elseif ($type == 'ie') {
 		
 			$sql = "select * from flc_member where (mem_addressine1 = '$searchid' or ";
 			$sql = $sql."mem_addressine2 = '$searchid' or ";
@@ -107,7 +111,7 @@
 				$searchvn = $dbarr1['ine_name_vn'];
 			}
 		
-		} else if ($type == 'prov') {
+		} elseif ($type == 'prov') {
 		
 			$sql = "select * from flc_member where (mem_addressprv1 = '$searchid' or ";
 			$sql = $sql."mem_addressprv2 = '$searchid' or ";
@@ -117,23 +121,41 @@
 			
 			$sql1 = "select * from flc_province where prv_id = '$searchid';"; 
 			$result1 = mysql_query($sql1);
-			while ($dbarr1 = mysql_fetch_array($result1)) { $searchen = $dbarr1['prv_name_en']; $searchjp = $dbarr1['prv_name_jp']; $searchvn = $dbarr1['prv_name_vn']; }
+			while ($dbarr1 = mysql_fetch_array($result1)) {
+				$searchen = $dbarr1['prv_name_en'];
+				$searchjp = $dbarr1['prv_name_jp'];
+				$searchvn = $dbarr1['prv_name_vn'];
+			}
 		
-		} else if ($type == 'ctry') {
+		} elseif ($type == 'ctry') {
 		
 			$sql1 = "select * from flc_country where cty_id = '$searchid';"; 
 			$result1 = mysql_query($sql1);
-			while ($dbarr1 = mysql_fetch_array($result1)) { $searchen = $dbarr1['cty_name_en']; $searchjp = $dbarr1['cty_name_jp']; $searchvn = $dbarr1['cty_name_vn']; }
+			while ($dbarr1 = mysql_fetch_array($result1)) {
+				$searchen = $dbarr1['cty_name_en'];
+				$searchjp = $dbarr1['cty_name_jp'];
+				$searchvn = $dbarr1['cty_name_vn'];
+			}
 			
 			$sql = "select * from flc_member where (mem_addresscty1 = '$searchid') ";
 		
-		} else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=6\">"; exit(); }
+		} else {
+
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=6\">";
+			exit();
+
+		}
 		
 		if ($_COOKIE['vlang'] == 'en') {
+
 			$searchtitle = $searchen;
-		} else if ($_COOKIE['vlang'] == 'vn') {
+
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
 			$searchtitle = $searchvn;
+
 		} else {
+
 			$searchtitle = $searchjp;
 		}
 		
@@ -146,10 +168,6 @@
 	$_SESSION['vsearch_type'] = $type;
 	$_SESSION['vsearch_option'] = $t_search_op;
 	
-	echo "<meta http-equiv = \"refresh\" content = \"0;URL = search_result.php?start=0\">"; 
+	echo "<meta http-equiv = \"refresh\" content = \"0;URL = search_result.php?start=0\">";
 	exit();
-
-	// End By ThuanDo
-
-	
 ?>

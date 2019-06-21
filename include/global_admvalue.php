@@ -1,18 +1,19 @@
 <?php
 	
-	// language
 	if ($_COOKIE['vlang'] == 'en') { 
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_02.png";
 		$headlogo = "header_07_en.png";
 		$texttitlebar = "FACT-LINK : : Japan - Vietnam Industrial Directory";
-		
 		$lb_nationality = "Company Nationality";
-		$lb_njp = "Japanese";
-		$lb_nvn = "Vietnamese";
+		$lb_njp = "Japan";
+		$lb_nvn = "Vietnam";
+		$lb_nkorea = "Korea";
+		$lb_ntaiwan = "Taiwan";
+		$lb_nhongkong = "Hongkong";
+		$lb_nsingapore = "Singapore";
+		$lb_nchina = "China";
 		$lb_nother = "Other Nation";
-		
 		$lb_title_admin = "Admin Editor";
-		
 		$lb_en = "EN";
 		$lb_jp = "JP";
 		$lb_vn = "VN";
@@ -22,7 +23,6 @@
 		$lb_back = "Back";
 		$lb_enable = "Enable";
 		$lb_disable = "Disable";
-		
 		$lb_alt_on = "ON (Click to set OFF)";
 		$lb_alt_off = "OFF (Click to set ON)";
 		$lb_alt_show = "SHOW (Click to set HIDE)";
@@ -33,7 +33,6 @@
 		$lb_alt_create = "Create New Page";
 		$lb_alt_delete = "Delete";
 		$lb_alt_page = "Page Management";
-		
 		$lb_pag_name = "Menu Name";
 		$lb_pag_pagetitle = "Title Bar Name";
 		$lb_pag_sort = "Order No.";
@@ -79,7 +78,6 @@
 		$lb_prf_valcus = "Value Customer";
 		$lb_prf_conlab = "Content Label";
 		$lb_prf_con = "Content Detail";
-		
 		$lb_pag_status = "Page Status";
 		$lb_status = "Disable";
 		$lb_hom_keytemplate = "Key Panel Style";
@@ -96,13 +94,11 @@
 		$lb_hom_lineimage = "Appeal Image";
 		$lb_hom_lineimage_width = "Appeal Image Width (px)";
 		$lb_hom_desc = "Bottom Note";
-		
 		$lb_con_status = "Column Status";
 		$lb_con_pattern = "Column Pattern";
 		$lb_con_title = "Column Title";
 		$lb_con_subtitle = "Column Subtitle";
 		$lb_con_titlecolor = "Column Title Color";
-		
 		$lb_ban_name = "Banner Name";
 		$lb_ban_image = "Banner Image";
 		$lb_ban_link = "Banner Link";
@@ -348,20 +344,20 @@
 		$tt_member_product_search = "Search Product";
 		$lb_prf_product_name = "Product Name";
 		$lb_prf_product_sku = "SKU";
-		
-		
 		$tx_confirmdelete = "Are you sure to delete this?"; 
-		
-	} 
-	
-	else if ($_COOKIE['vlang'] == 'vn') { 
+	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_vn.png";
 		$texttitlebar = "FACT-LINK : : Cổng thông tin dành cho các doanh nghiệp Nhật Bản và Việt Nam";
 		
 		$lb_nationality = "Company Nationality";
-		$lb_njp = "Japanese";
-		$lb_nvn = "Vietnamese";
+		$lb_njp = "Japan";
+		$lb_nvn = "Vietnam";
+		$lb_nkorea = "Korea";
+		$lb_ntaiwan = "Taiwan";
+		$lb_nhongkong = "Hongkong";
+		$lb_nsingapore = "Singapore";
+		$lb_nchina = "China";
 		$lb_nother = "Other Nation";
 		
 		$lb_title_admin = "Bộ soạn thảo của admin";
@@ -704,16 +700,20 @@
 		$lb_prf_product_name = "Product Name";
 		$lb_prf_product_sku = "SKU";
 		
-	} 
-	
-	else { 
+	} else {
+
 		$langpicjp = "lang_jp_02.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_jp.png";
 		$texttitlebar = "FACT-LINK : : ベトナムの日系製造業のためのポータルサイト";
 		
 		$lb_nationality = "Company Nationality";
-		$lb_njp = "Japanese";
-		$lb_nvn = "Vietnamese";
+		$lb_njp = "Japan";
+		$lb_nvn = "Vietnam";
+		$lb_nkorea = "Korea";
+		$lb_ntaiwan = "Taiwan";
+		$lb_nhongkong = "Hongkong";
+		$lb_nsingapore = "Singapore";
+		$lb_nchina = "China";
 		$lb_nother = "Other Nation";
 		
 		$lb_title_admin = "管理編集";
@@ -1053,9 +1053,7 @@
 		$lb_prf_product_name = "Product Name";
 		$lb_prf_product_sku = "SKU";
 		$tt_product_category_edit = "Edit Category";
-		
 		$tx_confirmdelete = "Are you sure to delete this?"; 
-		
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -1066,6 +1064,11 @@
 	$tpl->assign("##lb_nationality##", $lb_nationality);
 	$tpl->assign("##lb_njp##", $lb_njp);
 	$tpl->assign("##lb_nvn##", $lb_nvn);
+	$tpl->assign("##lb_nkorea##", $lb_nkorea);
+	$tpl->assign("##lb_ntaiwan##", $lb_ntaiwan);
+	$tpl->assign("##lb_nhongkong##", $lb_nhongkong);
+	$tpl->assign("##lb_nsingapore##", $lb_nsingapore);
+	$tpl->assign("##lb_nchina##", $lb_nchina);
 	$tpl->assign("##lb_nother##", $lb_nother);
 	$tpl->assign("##lb_title_admin##", $lb_title_admin);
 	$tpl->assign("##lb_en##", $lb_en);
@@ -1384,45 +1387,46 @@
 	$tpl->assign("##tt_product_category_edit##", $tt_product_category_edit);
 
 	//Count mail magazine
-	 $sqljp = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp';"; 
-	 $sqljp2 = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp' AND mem_oth_contactmail<>'' ;";  
-	 $queryjp=mysql_query($sqljp);
-	 	while ($result_jp = mysql_fetch_array($queryjp)) {
-		$summail_jp[]= (explode(",",$result_jp['mem_contactmail']));
-		if($result_jp['mem_oth_contactmail']!=''){
-		$summail_oth_jp[]= $result_jp['mem_oth_contactmail'];
-		}
-	   }
-	 $sqlvn = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'vn' AND mem_contactmail<>'' ;";
-	 $queryvn=mysql_query($sqlvn); 
-	 $sqloth= "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national <> 'jp' AND mem_national <>  'vn' AND mem_contactmail<>'' ;";
-	 $queryoth=mysql_query( $sqloth); 
-	 $tpl->assign("##summailjp##", count($summail_jp));
-	 $tpl->assign("##summailvn##", mysql_num_rows($queryvn));
-	 $tpl->assign("##summailoth##", mysql_num_rows($queryoth));
-	//
-	
-	
-		//................................................Start Count member..................................................................
-	
+	$sqljp = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp';"; 
+	$sqljp2 = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp' AND mem_oth_contactmail<>'' ;"; 
 
-	 $sql11 = "select * from flc_member where mem_national =  'jp';";   
-	 $query11=mysql_query($sql11);
-	 while ($result_11 = mysql_fetch_array($query11)) {
+	$queryjp=mysql_query($sqljp);
+
+	while ($result_jp = mysql_fetch_array($queryjp)) {
+
+		$summail_jp[]= (explode(",",$result_jp['mem_contactmail']));
+
+		if ($result_jp['mem_oth_contactmail']!='') {
+
+			$summail_oth_jp[]= $result_jp['mem_oth_contactmail'];
+		}
+	}
+
+	$sqlvn = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'vn' AND mem_contactmail<>'' ;";
+	$queryvn=mysql_query($sqlvn); 
+	$sqloth= "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national <> 'jp' AND mem_national <>  'vn' AND mem_contactmail<>'' ;";
+
+	$queryoth=mysql_query( $sqloth); 
+	$tpl->assign("##summailjp##", count($summail_jp));
+	$tpl->assign("##summailvn##", mysql_num_rows($queryvn));
+	$tpl->assign("##summailoth##", mysql_num_rows($queryoth));
+
+	//..........Start Count member..........
+
+	$sql11 = "select * from flc_member where mem_national =  'jp';";   
+	$query11=mysql_query($sql11);
+	while ($result_11 = mysql_fetch_array($query11)) {
 		$summam_jp[]= (explode(",",$result_11['mem_national']));
-	   }
-	 	
-	 $sqlvn12 = "select * from flc_member where mem_national =  'vn';";
-	 $queryvn12=mysql_query($sqlvn12); 
-	 $sqloth13= "select * from flc_member where mem_national =  'oo';";
-	 $queryoth13=mysql_query( $sqloth13); 
-	 $tpl->assign("##memjp11##", count($summam_jp));
-	 $tpl->assign("##memvn12##", mysql_num_rows($queryvn12));
-	 $tpl->assign("##memoth13##", mysql_num_rows($queryoth13));
-	//
+	}
+
+	$sqlvn12 = "select * from flc_member where mem_national =  'vn';";
+	$queryvn12=mysql_query($sqlvn12); 
+	$sqloth13= "select * from flc_member where mem_national =  'oo';";
+	$queryoth13=mysql_query( $sqloth13);
+
+	$tpl->assign("##memjp11##", count($summam_jp));
+	$tpl->assign("##memvn12##", mysql_num_rows($queryvn12));
+	$tpl->assign("##memoth13##", mysql_num_rows($queryoth13));
 	
-	//.............................................End Count member.................................................................
-	
-	
-	
+	//................End Count member.............
 ?>

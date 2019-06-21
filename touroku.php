@@ -179,7 +179,22 @@
 	$random = random(0);
 	$confirmcode = $random[1].$random[2].$random[3].$random[4];
 	
-	#end region
+	// Parse National Option Here
+
+	foreach ($nationalOptionAllowed as $shortNameNational => $fullNameNational) {
+
+		$memNationalChecked = "";
+		if ($shortNameNational == "jp") {
+
+			$memNationalChecked = "selected";
+		}
+
+		$tpl->assign("##shortNameNational##", $shortNameNational);
+		$tpl->assign("##fullNameNational##", $fullNameNational);
+		$tpl->assign("##memNationalChecked##", $memNationalChecked);
+		$tpl->parse ("#####ROW#####", '.rows_national_option');
+	}
+
 	
 	
 	$tpl->assign("##inename_1##", $inename_1);

@@ -53,12 +53,13 @@
           <tr>
             <td><div align="right"><strong>* ##lb_nationality##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_national" type="radio" value="jp" ##memnjp## />
-##lb_njp##
-  <input name="t_national" type="radio" value="vn" ##memnvn## />
-##lb_nvn##
-<input name="t_national" type="radio" value="oo" ##memnoo## />
-##lb_nother##</td>
+            <td>
+              <select name="t_national">
+                <!-- BEGIN DYNAMIC BLOCK: rows_national_option -->
+                <option value="##shortNameNational##" ##memNationalChecked##>##fullNameNational##</option>
+                <!-- END DYNAMIC BLOCK: rows_national_option -->
+              </select>
+            </td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/line_frame_08.png" width="740" height="10" /></td>

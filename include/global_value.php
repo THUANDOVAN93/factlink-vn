@@ -1,6 +1,5 @@
 <?php
 
-	// language
 	if ($_COOKIE['vlang'] == 'en') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_02.png";
@@ -52,8 +51,8 @@
 		$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Only english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "Company Name";
 		$lb_nationality = "Company Nationality";
-		$lb_njp = "Japanese";
-		$lb_nvn = "Vietnamese";
+		$lb_njp = "Japan";
+		$lb_nvn = "Vietnam";
 		$lb_nkorea = "Korea";
 		$lb_ntaiwan = "Taiwan";
 		$lb_nhongkong = "Hongkong";
@@ -166,8 +165,8 @@
 		$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Only english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "Tên công ty";
 		$lb_nationality = "Company Nationality";
-		$lb_njp = "Japanese";
-		$lb_nvn = "Vietnamese";
+		$lb_njp = "Japan";
+		$lb_nvn = "Vietnam";
 		$lb_nkorea = "Korea";
 		$lb_ntaiwan = "Taiwan";
 		$lb_nhongkong = "Hongkong";
@@ -281,8 +280,8 @@
 		$lb_pathname_text = html("※機種依存文字を使用することはできません。[br]ハイフン( - )、アンダーバー( _ )は可。[br][br]www.fact-link.com.vn/home/[font red][u]WEBアドレスはこの場所に反映されます。[/u][/font]　(例 : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "会社名";
 		$lb_nationality = "Company Nationality";
-		$lb_njp = "Japanese";
-		$lb_nvn = "Vietnamese";
+		$lb_njp = "Japan";
+		$lb_nvn = "Vietnam";
 		$lb_nkorea = "Korea";
 		$lb_ntaiwan = "Taiwan";
 		$lb_nhongkong = "Hongkong";

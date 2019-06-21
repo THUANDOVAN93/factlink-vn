@@ -2,7 +2,11 @@
 	ini_set("session.gc_maxlifetime", "18000");
 	session_start();
 	
-	if ($_SESSION['vp'] != 'exe') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_login.html\">"; exit(); }
+	if ($_SESSION['vp'] != 'exe') {
+
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_login.html\">";
+		exit();
+	}
 	
 	include_once("./include/class.rFastTemplate.php");
 	include_once("./include/global_config.php");
@@ -12,7 +16,11 @@
 	$url2 = "adm_member_edit.html";
 	
 	$tpl = new rFastTemplate("template");
-	$tpl->define (array("main_tpl" => $url1, "detail_tpl" => $url2));
+
+	$tpl->define (array(
+		"main_tpl" => $url1,
+		"detail_tpl" => $url2
+	));
 	
 	mysql_query("use $db_name;");
 	
@@ -22,7 +30,6 @@
 	include_once("./include/global_admvalue.php");
 	
 	// --- Check Use Log
-	
 	$limittimestamp = date("Y-m-d H:i:s", $timelength);
 	$currenttimestamp = date("Y-m-d H:i:s");
 	
@@ -36,6 +43,7 @@
 	
 	$sqlusl1 = "select * from flc_uselog where usl_filepage = '$currentpage' and usl_filerec = '$currentrec';"; 
 	$resultusl1 = mysql_query($sqlusl1);
+
 	while ($dbarrusl1 = mysql_fetch_array($resultusl1)) { 
 	
 		$usltimestamp = $dbarrusl1['usl_timestamp'];
@@ -44,24 +52,23 @@
 			
 			$_SESSION['vlock_userid'] = $dbarrusl1['usl_userid'];
 			$_SESSION['vlock_userper'] = $dbarrusl1['usl_userper'];
-			echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_lock.php\">"; exit(); 
-			
-		} else { $usldel = "t"; }
-		
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_lock.php\">";
+			exit();
+		} else {
+
+			$usldel = "t";
+		}
 	}
 	
 	if ($usldel == 't') { 
 	
 		$sqlusl2 = "delete from flc_uselog where usl_timestamp = '$usltimestamp';"; 
 		$resultusl2 = mysql_query($sqlusl2);
-		
 	}
 	
 	$sqlusl3 = "insert into flc_uselog (usl_filepage, usl_filerec, usl_userid, usl_userper) values ('$currentpage', '$currentrec', '$currentuserid', '$currentuserper');"; 
 	$resultusl3 = mysql_query($sqlusl3);
-	
-	// --------------------
-	
+		
 	$sql3 = "select * from flc_member where mem_id = '$memid';"; 
 	$result3 = mysql_query($sql3);
 	while ($dbarr3 = mysql_fetch_array($result3)) {
@@ -77,7 +84,16 @@
 		$memaddress1jp = $dbarr3['mem_address1_jp']; 
 		$memaddress1vn = $dbarr3['mem_address1_vn'];
 		$memaddressine1 = $dbarr3['mem_addressine1'];
-		$memaddressprv1 = $dbarr3['mem_addressprv1']; if ($memaddressprv1 == '001') { $ctydisable = ""; } else { $ctydisable = "disabled"; }
+		$memaddressprv1 = $dbarr3['mem_addressprv1'];
+
+		if ($memaddressprv1 == '001') {
+
+			$ctydisable = "";
+		} else {
+
+			$ctydisable = "disabled";
+		}
+
 		$memaddresscty1 = $dbarr3['mem_addresscty1'];
 		$memaddresszip1 = $dbarr3['mem_addresszip1'];
 		$memcomtel = $dbarr3['mem_comtel'];
@@ -100,10 +116,8 @@
 		$memcate = $memcategory[0];
 		$memcategory_second = explode(" ", $dbarr3['mem_category_second']); 
 		$memcate_second = $memcategory_second[0];
-
 	}
 	
-	/* Convert [br] to actual [LineBreak] for <textarea> */
 	$memaddress1en = str_replace('[br]',PHP_EOL,$memaddress1en);
 	$memaddress1jp = str_replace('[br]',PHP_EOL,$memaddress1jp);
 	$memaddress1vn = str_replace('[br]',PHP_EOL,$memaddress1vn);
@@ -111,174 +125,368 @@
 	$memmemo1 = str_replace('[br]',PHP_EOL,$memmemo1);
 	$memmemo2 = str_replace('[br]',PHP_EOL,$memmemo2);
 	
-	if ($memnational == 'jp') { $memnjp = "checked"; $memnvn = ""; $memnoo = ""; } 
-	else if ($memnational == 'vn') { $memnjp = ""; $memnvn = "checked"; $memnoo = ""; } 
-	else { $memnjp = ""; $memnvn = ""; $memnoo = "checked"; } 
+
+	// Parse National Option Here
+
+	foreach ($nationalOptionAllowed as $shortNameNational => $fullNameNational) {
+
+		$memNationalChecked = "";
+		if ($memnational == $shortNameNational) {
+
+			$memNationalChecked = "selected";
+		}
+
+		$tpl->assign("##shortNameNational##", $shortNameNational);
+		$tpl->assign("##fullNameNational##", $fullNameNational);
+		$tpl->assign("##memNationalChecked##", $memNationalChecked);
+		$tpl->parse ("#####ROW#####", '.rows_national_option');
+	}
+
+	if ($memgender == 'm') {
+
+		$memgenderm = "checked";
+		$memgenderf = "";
+	} else {
+
+		$memgenderm = "";
+		$memgenderf = "checked";
+	} 
 	
-	if ($memgender == 'm') { $memgenderm = "checked"; $memgenderf = ""; } else { $memgenderm = ""; $memgenderf = "checked"; } 
-	
-	if ($_COOKIE['vlang'] == 'en') { $sql1 = "select * from flc_ie where ine_id != '1' and ine_id != '2' order by ine_name_en asc;"; }
-	else if ($_COOKIE['vlang'] == 'vn') { $sql1 = "select * from flc_ie where ine_id != '1' and ine_id != '2' order by ine_name_vn asc;"; }
-	else { $sql1 = "select * from flc_ie where ine_id != '1' and ine_id != '2' order by ine_name_jp asc;"; }
+	if ($_COOKIE['vlang'] == 'en') {
+
+		$sql1 = "select * from flc_ie where ine_id != '1' and ine_id != '2' order by ine_name_en asc;";
+	} elseif ($_COOKIE['vlang'] == 'vn') {
+
+		$sql1 = "select * from flc_ie where ine_id != '1' and ine_id != '2' order by ine_name_vn asc;";
+	} else {
+		$sql1 = "select * from flc_ie where ine_id != '1' and ine_id != '2' order by ine_name_jp asc;";
+	}
+
 	$result1 = mysql_query($sql1);
 	while ($dbarr1 = mysql_fetch_array($result1)) {
 		
-		if ($_COOKIE['vlang'] == 'en') { $inename = $dbarr1['ine_name_en']; }
-		else if ($_COOKIE['vlang'] == 'vn') { $inename = $dbarr1['ine_name_vn']; }
-		else { $inename = $dbarr1['ine_name_jp']; }
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$inename = $dbarr1['ine_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$inename = $dbarr1['ine_name_vn'];
+		} else {
+
+			$inename = $dbarr1['ine_name_jp'];
+		}
+
 		$ineid = $dbarr1['ine_id'];
 		
-		if ($memaddressine1 == $ineid) { $ineselected = "selected"; $inedefault = ""; } else { $ineselected = ""; $inedefault = "selected"; }
+		if ($memaddressine1 == $ineid) {
+
+			$ineselected = "selected";
+			$inedefault = "";
+		} else {
+
+			$ineselected = "";
+			$inedefault = "selected";
+		}
 		
 		$tpl->assign("##ineid##", $ineid);
 		$tpl->assign("##inename##", $inename);
 		$tpl->assign("##ineselected##", $ineselected);
 		$tpl->parse ("#####ROW#####", '.rows_1');
-		
 	}
 	
 	$sql1_1 = "select * from flc_ie where ine_id = '1';";
 	$result1_1 = mysql_query($sql1_1);
-	while ($dbarr1_1 = mysql_fetch_array($result1_1)) { 
-		if ($_COOKIE['vlang'] == 'en') { $inename_1 = $dbarr1_1['ine_name_en']; } 
-		else if ($_COOKIE['vlang'] == 'vn') { $inename_1 = $dbarr1_1['ine_name_vn']; }
-		else { $inename_1 = $dbarr1_1['ine_name_jp']; }
+
+	while ($dbarr1_1 = mysql_fetch_array($result1_1)) {
+
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$inename_1 = $dbarr1_1['ine_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$inename_1 = $dbarr1_1['ine_name_vn'];
+		} else {
+
+			$inename_1 = $dbarr1_1['ine_name_jp'];
+		}
 	}
 	
-	if ($memaddressine1 == '1') { $ineselected_1 = "selected"; $inedefault = ""; } else { $ineselected_1 = ""; $inedefault = "selected"; }
+	if ($memaddressine1 == '1') {
+
+		$ineselected_1 = "selected";
+		$inedefault = "";
+	} else {
+
+		$ineselected_1 = "";
+		$inedefault = "selected";
+	}
 	
 	$sql1_2 = "select * from flc_ie where ine_id = '2';";
 	$result1_2 = mysql_query($sql1_2);
+
 	while ($dbarr1_2 = mysql_fetch_array($result1_2)) { 
-		if ($_COOKIE['vlang'] == 'en') { $inename_2 = $dbarr1_2['ine_name_en']; } 
-		else if ($_COOKIE['vlang'] == 'vn') { $inename_2 = $dbarr1_2['ine_name_vn']; }
-		else { $inename_2 = $dbarr1_2['ine_name_jp']; }
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$inename_2 = $dbarr1_2['ine_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$inename_2 = $dbarr1_2['ine_name_vn'];
+		} else {
+
+			$inename_2 = $dbarr1_2['ine_name_jp'];
+		}
 	}
 	
-	if ($memaddressine1 == '2') { $ineselected_2 = "selected"; $inedefault = ""; } else { $ineselected_2 = ""; $inedefault = "selected"; }
+	if ($memaddressine1 == '2') {
+
+		$ineselected_2 = "selected";
+		$inedefault = "";
+	} else {
+
+		$ineselected_2 = "";
+		$inedefault = "selected";
+	}
 	
-	if ($_COOKIE['vlang'] == 'en') { $sql2 = "select * from flc_province where prv_id != '1' and prv_id != '2' order by prv_name_en asc;"; }
-	else if ($_COOKIE['vlang'] == 'vn') { $sql2 = "select * from flc_province where prv_id != '1' and prv_id != '2' order by prv_name_vn asc;"; }
-	else { $sql2 = "select * from flc_province where prv_id != '1' and prv_id != '2' order by prv_name_jp asc;"; }
+	if ($_COOKIE['vlang'] == 'en') {
+
+		$sql2 = "select * from flc_province where prv_id != '1' and prv_id != '2' order by prv_name_en asc;";
+	} elseif ($_COOKIE['vlang'] == 'vn') {
+
+		$sql2 = "select * from flc_province where prv_id != '1' and prv_id != '2' order by prv_name_vn asc;";
+	} else {
+
+		$sql2 = "select * from flc_province where prv_id != '1' and prv_id != '2' order by prv_name_jp asc;";
+	}
+
 	$result2 = mysql_query($sql2);
 	while ($dbarr2 = mysql_fetch_array($result2)) {
 		
-		if ($_COOKIE['vlang'] == 'en') { $prvname = $dbarr2['prv_name_en']; }
-		else if ($_COOKIE['vlang'] == 'vn') { $prvname = $dbarr2['prv_name_vn']; }
-		else { $prvname = $dbarr2['prv_name_jp']; }
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$prvname = $dbarr2['prv_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$prvname = $dbarr2['prv_name_vn'];
+		} else {
+
+			$prvname = $dbarr2['prv_name_jp'];
+		}
+
 		$prvid = $dbarr2['prv_id'];
 		
-		if ($memaddressprv1 == $prvid) { $prvselected = "selected"; $prvdefault = ""; } else { $prvselected = ""; $prvdefault = "selected"; }
+		if ($memaddressprv1 == $prvid) {
+
+			$prvselected = "selected"; $prvdefault = "";
+		} else {
+			$prvselected = "";
+			$prvdefault = "selected";
+		}
 		
 		$tpl->assign("##prvid##", $prvid);
 		$tpl->assign("##prvname##", $prvname);
 		$tpl->assign("##prvselected##", $prvselected);
 		$tpl->parse ("#####ROW#####", '.rows_2');
-		
 	}
 	
 	$sql2_1 = "select * from flc_province where prv_id = '1';";
 	$result2_1 = mysql_query($sql2_1);
-	while ($dbarr2_1 = mysql_fetch_array($result2_1)) { 
-		if ($_COOKIE['vlang'] == 'en') { $prvname_1 = $dbarr2_1['prv_name_en']; } 
-		else if ($_COOKIE['vlang'] == 'vn') { $prvname_1 = $dbarr2_1['prv_name_vn']; }
-		else { $prvname_1 = $dbarr2_1['prv_name_jp']; }
+
+	while ($dbarr2_1 = mysql_fetch_array($result2_1)) {
+
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$prvname_1 = $dbarr2_1['prv_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$prvname_1 = $dbarr2_1['prv_name_vn'];
+		} else {
+
+			$prvname_1 = $dbarr2_1['prv_name_jp'];
+		}
 	}
 	
-	if ($memaddressprv1 == '1') { $prvselected_1 = "selected"; $prvdefault = ""; } else { $prvselected_1 = ""; $prvdefault = "selected"; }
+	if ($memaddressprv1 == '1') {
+
+		$prvselected_1 = "selected";
+		$prvdefault = "";
+	} else {
+
+		$prvselected_1 = "";
+		$prvdefault = "selected";
+	}
 	
 	$sql2_2 = "select * from flc_province where prv_id = '2';";
 	$result2_2 = mysql_query($sql2_2);
-	while ($dbarr2_2 = mysql_fetch_array($result2_2)) { 
-		if ($_COOKIE['vlang'] == 'en') { $prvname_2 = $dbarr2_2['prv_name_en']; } 
-		else if ($_COOKIE['vlang'] == 'vn') { $prvname_2 = $dbarr2_2['prv_name_vn']; }
-		else { $prvname_2 = $dbarr2_2['prv_name_jp']; }
+
+	while ($dbarr2_2 = mysql_fetch_array($result2_2)) {
+
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$prvname_2 = $dbarr2_2['prv_name_en'];
+		}	elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$prvname_2 = $dbarr2_2['prv_name_vn'];
+		} else {
+
+			$prvname_2 = $dbarr2_2['prv_name_jp'];
+		}
 	}
 	
-	if ($memaddressprv1 == '2') { $prvselected_2 = "selected"; $prvdefault = ""; } else { $prvselected_2 = ""; $prvdefault = "selected"; }
-	//
+	if ($memaddressprv1 == '2') {
+
+		$prvselected_2 = "selected";
+		$prvdefault = "";
+	} else {
+
+		$prvselected_2 = "";
+		$prvdefault = "selected";
+	}
+
 	$sql4 = "select * from flc_country where cty_id != '1' order by cty_order asc;"; 
 	$result4 = mysql_query($sql4);
+
 	while ($dbarr4 = mysql_fetch_array($result4)) {
 		
-		if ($_COOKIE['vlang'] == 'en') { $ctyname = $dbarr4['cty_name_en']; }
-		else if ($_COOKIE['vlang'] == 'vn') { $ctyname = $dbarr4['cty_name_vn']; }
-		else { $ctyname = $dbarr4['cty_name_jp']; }
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$ctyname = $dbarr4['cty_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$ctyname = $dbarr4['cty_name_vn'];
+		} else {
+
+			$ctyname = $dbarr4['cty_name_jp'];
+		}
+
 		$ctyid = $dbarr4['cty_id'];
 		
-		if ($memaddresscty1 == $ctyid) { $ctyselected = "selected"; $ctydefault = ""; } else { $ctyselected = ""; $ctydefault = "selected"; }
+		if ($memaddresscty1 == $ctyid) {
+
+			$ctyselected = "selected";
+			$ctydefault = "";
+		} else {
+
+			$ctyselected = "";
+			$ctydefault = "selected";
+		}
 		
 		$tpl->assign("##ctyid##", $ctyid);
 		$tpl->assign("##ctyname##", $ctyname);
 		$tpl->assign("##ctyselected##", $ctyselected);
 		$tpl->parse ("#####ROW#####", '.rows_3');
-		
 	}
 	
 	$sql4_1 = "select * from flc_country where cty_id = '1';";
 	$result4_1 = mysql_query($sql4_1);
-	while ($dbarr4_1 = mysql_fetch_array($result4_1)) { 
-		if ($_COOKIE['vlang'] == 'en') { $ctyname_1 = $dbarr4_1['cty_name_en']; $ctynamedefault = "Vietnam"; } 
-		else if ($_COOKIE['vlang'] == 'vn') { $ctyname_1 = $dbarr4_1['cty_name_vn']; $ctynamedefault = "Việt Nam"; }
-		else { $ctyname_1 = $dbarr4_1['cty_name_jp']; $ctynamedefault = "ベトナム"; }
+
+	while ($dbarr4_1 = mysql_fetch_array($result4_1)) {
+
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$ctyname_1 = $dbarr4_1['cty_name_en'];
+			$ctynamedefault = "Vietnam";
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$ctyname_1 = $dbarr4_1['cty_name_vn'];
+			$ctynamedefault = "Việt Nam";
+		} else {
+
+			$ctyname_1 = $dbarr4_1['cty_name_jp'];
+			$ctynamedefault = "ベトナム";
+		}
 	}
 	
-	if ($memaddresscty1 == '1') { $ctyselected_1 = "selected"; $ctydefault = ""; } else { $ctyselected_1 = ""; $ctydefault = "selected"; }
-	//
+	if ($memaddresscty1 == '1') {
+
+		$ctyselected_1 = "selected";
+		$ctydefault = "";
+	} else {
+		$ctyselected_1 = "";
+		$ctydefault = "selected";
+	}
+
 	$sql5 = "select * from flc_bulletin_cate where mem_id = '$memid';"; 
 	$result5 = mysql_query($sql5);
-	while ($dbarr5 = mysql_fetch_array($result5)) { $bucsort = $dbarr5['buc_sort']; }
+
+	while ($dbarr5 = mysql_fetch_array($result5)) {
+		$bucsort = $dbarr5['buc_sort'];
+	}
 	
 	$sqlcat = "select * from flc_category where cat_pos != 'm' order by cat_order asc;"; 
 	$resultcat = mysql_query($sqlcat);
+
 	while ($dbarrcat = mysql_fetch_array($resultcat)) {
 	
 		$catid = $dbarrcat['cat_id'];
 		$catpos = $dbarrcat['cat_pos'];
 		$catunder = $dbarrcat['cat_under'];
 		
-		if ($_COOKIE['vlang'] == 'en') { $catname = $dbarrcat['cat_name_en']; }
-		else if ($_COOKIE['vlang'] == 'vn') { $catname = $dbarrcat['cat_name_vn']; }
-		else { $catname = $dbarrcat['cat_name_jp']; }
+		if ($_COOKIE['vlang'] == 'en') {
+
+			$catname = $dbarrcat['cat_name_en'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+
+			$catname = $dbarrcat['cat_name_vn'];
+		} else {
+
+			$catname = $dbarrcat['cat_name_jp'];
+		}
 		
 		if ($catpos == 's') { 
 		
 			$sqlcatunder = "select * from flc_category where cat_id = '$catunder';"; 
 			$resultcatunder = mysql_query($sqlcatunder);
-			while ($dbarrcatunder = mysql_fetch_array($resultcatunder)) { 
-				if ($_COOKIE['vlang'] == 'en') { $catundername = $dbarrcatunder['cat_name_en']; }
-				else if ($_COOKIE['vlang'] == 'vn') { $catundername = $dbarrcatunder['cat_name_vn']; }
-				else { $catundername = $dbarrcatunder['cat_name_jp']; }
+
+			while ($dbarrcatunder = mysql_fetch_array($resultcatunder)) {
+
+				if ($_COOKIE['vlang'] == 'en') {
+
+					$catundername = $dbarrcatunder['cat_name_en'];
+				} elseif ($_COOKIE['vlang'] == 'vn') {
+
+					$catundername = $dbarrcatunder['cat_name_vn'];
+				} else {
+
+					$catundername = $dbarrcatunder['cat_name_jp'];
+				}
 			}
 			
 			$catname = $catundername."　・ ".$catname; 
-			
 		}
 		
-		if ($catid == $memcate) { $catselected = "selected"; $catdefault = ""; } else { $catselected = ""; $catdefault = "selected"; }
+		if ($catid == $memcate) {
 
-		if ($catid == $memcate_second) { $catselected_second = "selected"; $catdefault_second = ""; } else { $catselected_second = ""; $catdefault_second = "selected"; }
+			$catselected = "selected";
+			$catdefault = "";
+		} else {
+			$catselected = "";
+			$catdefault = "selected";
+		}
+
+		if ($catid == $memcate_second) {
+
+			$catselected_second = "selected";
+			$catdefault_second = "";
+		} else {
+
+			$catselected_second = "";
+			$catdefault_second = "selected";
+		}
 		
 		$tpl->assign("##catid##", $catid);
 		$tpl->assign("##catname##", $catname);
 		$tpl->assign("##catselected##", $catselected);
-		//$tpl->assign("##catselected_second##", $catselected_second);
 		$tpl->parse ("#####ROW#####", '.rows_cat');
-
 		$tpl->assign("##catid##", $catid);
 		$tpl->assign("##catname##", $catname);
 		$tpl->assign("##catselected_second##", $catselected_second);
 		$tpl->parse ("#####ROW#####", '.rows_cat_second');
-		
 	}
 	
 	$tpl->assign("##memid##", $memid);
 	$tpl->assign("##memcomnameen##", $memcomnameen);
 	$tpl->assign("##memcomnamejp##", $memcomnamejp);
 	$tpl->assign("##memcomnamevn##", $memcomnamevn);
-	$tpl->assign("##memnjp##", $memnjp);
-	$tpl->assign("##memnvn##", $memnvn);
-	$tpl->assign("##memnoo##", $memnoo);
 	$tpl->assign("##memsubdescen##", $memsubdescen);
 	$tpl->assign("##memsubdescjp##", $memsubdescjp);
 	$tpl->assign("##memsubdescvn##", $memsubdescvn);

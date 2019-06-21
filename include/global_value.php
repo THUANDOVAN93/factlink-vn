@@ -310,7 +310,7 @@
 		$lb_female = "女性";
 		$lb_register = "確認画面へ進む";
 		$lb_send = "送信";
-		$lb_subject = "質問事項";
+		$lb_subject = "件名";
 		$lb_detail = "ご相談内容";
 		$lb_result = "結果";
 		$lb_agreement = "会員規約";

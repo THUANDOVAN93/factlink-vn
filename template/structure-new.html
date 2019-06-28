@@ -8,9 +8,7 @@
 <meta name="google-site-verification" content="la59twvP76ef_9Ax0RmaqGn3lOh2TrNPXJ5t_pmUMrw" />
 <meta name="robots" content="index,FOLLOW,ALL"/>
 
-
 <title>##texttitlebar##</title>
-
 
 <link href="/flc_css.css?v=3" rel="stylesheet" type="text/css" />
 <link href="/theme.css" rel="stylesheet" type="text/css" />
@@ -18,7 +16,6 @@
 
 <!-- Add the slick-theme.css if you want default styling -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
 
 </head>
 <body>
@@ -29,17 +26,14 @@
 		
 			<div class="container relative">
 
-				<!-- -->
 				<p id="top-text">##HeadBL##</p>
 				
-				<!-- -->
 				<nav id="nav-logo">
 					<a href="##urlHomePage##">
 						##Logo##
 					</a>
 				</nav>
 				
-				<!-- Language navigation -->
 				<nav id="nav-language">
 				
 					<span>Language</span>
@@ -58,12 +52,10 @@
 					
 				</nav>
 				
-				<!-- -->
 				<div id="nav-menu-area">
 					##MENU_AREA##
 				</div>
 				
-				<!-- -->
 				<div id="top-banner">
 					##TOP_AREA##
 				</div>
@@ -209,9 +201,7 @@
 											</tr>
 										</tbody>
 									</table>
-								
 								</td>
-								
 							</tr>
 							
 							<tr>
@@ -410,28 +400,18 @@
 		</footer>
 		
 	</div>
-	
-	<!--
-	<select name="">
-	##opt2##
-	</select>
-	-->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-	
 	<script type="text/javascript">
 		
-		/* dt = DropDown Toggle */
 		function dt(selector) {
-			
-			/* Target element */
+
 			var target = document.querySelector(selector);
 			var parent = document.querySelector("#dropdown-toggle");
 			var childs = document.querySelectorAll(".dropdown-toggle-box");
 			var opened = null;
 			var elWrap =  document.getElementById('trigger');
 			
-			/* */
 			for(var i=0;i<childs.length;i++) {
 			
 				if(!childs[i].hasAttribute("hidden")) {
@@ -439,18 +419,20 @@
 				}
 			
 				childs[i].setAttribute("hidden","");
-			
 			}
 			
 			if(parent.hasAttribute("hidden")) {
+
 				parent.removeAttribute("hidden");
 				target.removeAttribute("hidden");
 				elWrap.style.display = 'block';
 			} else if(opened == target.id) {
+
 				parent.setAttribute("hidden","");
 				target.setAttribute("hidden","");
 				elWrap.style.display = 'none';
 			} else {
+
 				parent.removeAttribute("hidden");
 				target.removeAttribute("hidden");
 				elWrap.style.display = 'block';
@@ -462,95 +444,64 @@
 
 			var elHookDropdown =  document.querySelectorAll(".dropdown-toggle-box");
 			var elWrap =  document.getElementById('trigger');
+
 			elWrap.addEventListener('click', function() {
+
 				for(var i=0;i<elHookDropdown.length;i++) {
+
 					if(!elHookDropdown[i].hasAttribute("hidden")) {
+
 						elHookDropdown[i].setAttribute("hidden","");
 						elWrap.style.display = 'none';
 					}
 				}
 			}, false);
-			
 		}
-		
 	</script>
 	<script type="text/javascript" src="./include/global_java.js"></script>
-	<!-- <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script> -->
 	<script type="text/javascript">
-	var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-29194652-1']);
-	  _gaq.push(['_trackPageview']);
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-29194652-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
 	</script>
 	<script type="text/JavaScript">
-	<!--
-	function MM_jumpMenu(targ,selObj,restore){ //v3.0
-	  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-	  if (restore) selObj.selectedIndex=0;
-	}
-	//-->
+
+		function MM_jumpMenu(targ,selObj,restore){
+		  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+		  if (restore) selObj.selectedIndex=0;
+		}
 	</script>
 	<script type="text/javascript">
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-19322499-1']);
-	  _gaq.push(['_trackPageview']);
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19322499-1']);
+		_gaq.push(['_trackPageview']);
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
 	</script>
-	<script language="Javascript">
-	// function replaceText(text){
-	//   while(text.lastIndexOf("&") > 0){
-	// 	  text = text.replace('&', '[i-Stats]');
-	//   }
-	//   return text;
-	// }
-
-	// var web_referrer = replaceText(document.referrer);
-	// <!--
-	// istat = new Image(1,1);
-	// istat.src = "http://www.fact-link.com.vn/_Traffic/counter.php?sw="+screen.width+"&sc="+screen.colorDepth+"&referer="+web_referrer+"&page="+location.href;
-	//-->
-	</script>
-	<script>
-		
-		// var triggerPre = document.getElementById("js-btn-pre");
-		// var triggerNext = document.getElementById("js-btn-next");
-		// var eleCarousel = document.getElementById("js-wrap-products-list");
-
-		// triggerPre.addEventListener("click", function() {
-		// 	eleCarousel.classList.remove("slide-left");
-		// });
-
-		// triggerNext.addEventListener("click", function() {
-		// 	eleCarousel.classList.add("slide-left");
-		// });
-
-	</script>
-
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
 	<script type="text/javascript">
-	    $(document).ready(function(){
-	      $('#js-wrap-products-list').slick({
-	    	infinite: true,
-		  	slidesToShow: 4,
-		  	slidesToScroll: 1,
-		  	prevArrow: '<span class="arrow btn-pre"></span>',
-		  	nextArrow: '<span class="arrow btn-next"></span>'
-	      });
-	    });
-  </script>
 
+		$(document).ready(function(){
+			$('#js-wrap-products-list').slick({
+			infinite: true,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			prevArrow: '<span class="arrow btn-pre"></span>',
+			nextArrow: '<span class="arrow btn-next"></span>'
+			});
+		});
+  </script>
 </body>
 </html>

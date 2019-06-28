@@ -401,7 +401,11 @@ function check_form(formname) {
 			else if (document.formadmprocatedit.t_desc_en.value=="") { alert ("Category Description [EN] is required."); document.formadmprocatedit.t_desc_en.focus(); return false; }
 				
 			break;
-			
+
+		case 'f_admeventadd' :
+			if (document.formadmeventadd.t_title_en.value=="") { alert("Title [EN] is required."); document.formadmeventadd.t_title_en.focus(); return false; }
+			else if (document.formadmeventadd.t_detail_en.value=="") { alert("Detail [EN] is required."); document.formadmeventadd.t_detail_en.focus(); return false; }
+			break;		
 	}
 	
 }

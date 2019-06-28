@@ -112,9 +112,9 @@
 
 		$pro_comname_link = "Company name and Link to company";
 		$pro_contact = "Contact";
-	} 
-	
-	else if ($_COOKIE['vlang'] == 'vn') { 
+		$headingEvent = "FEATURED EVENTS";
+		$seeMore = "See More";
+	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_vn.png";
@@ -223,10 +223,9 @@
 		$supplier_name = "Tên nhà cung cấp";
 		$pro_comname_link = "Tên công ty và đường dẫn tới công ty";
 		$pro_contact = "Liên hệ";
-		
-	} 
-	
-	else { 
+		$headingEvent = "Sự Kiện";
+		$seeMore = "Xem Thêm";
+	} else { 
 		
 		$langpicjp = "lang_jp_02.png";
 		$langpicvn = "lang_vn_01.png";
@@ -338,6 +337,8 @@
 		$supplier_name = "企業情報";
 		$pro_comname_link = "企業名";
 		$pro_contact = "問い合わせ";
+		$headingEvent = "FEATURED EVENTS";
+		$seeMore = "詳しくはこちら";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -451,7 +452,8 @@
 	$tpl->assign("##supplier_name##", $supplier_name);
 	$tpl->assign("##pro_comname_link##", $pro_comname_link);
 	$tpl->assign("##pro_contact##", $pro_contact);
-
+	$tpl->assign("##headingEvent##", $headingEvent);
+	$tpl->assign("##seeMore##", $seeMore);
 	
 	/** Please input PHP filename that use "template/structure-new.html" */
 	$newStructure = [

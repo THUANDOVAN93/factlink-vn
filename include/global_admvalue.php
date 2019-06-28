@@ -344,8 +344,16 @@
 		$tt_member_product_search = "Search Product";
 		$lb_prf_product_name = "Product Name";
 		$lb_prf_product_sku = "SKU";
-		$tx_confirmdelete = "Are you sure to delete this?"; 
-	} elseif ($_COOKIE['vlang'] == 'vn') { 
+		$tx_confirmdelete = "Are you sure to delete this?";
+		$tm_events = "Events";
+		$tt_event_add = "Add Event";
+		$lb_event_title = "Event Title";
+		$lb_event_detail = "Event Detail";
+		$lb_event_status = "Status";
+		$tt_oncoming_events = "Oncoming Events";
+		$tt_events = "Events List";
+	} elseif ($_COOKIE['vlang'] == 'vn') {
+
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_vn.png";
 		$texttitlebar = "FACT-LINK : : Cổng thông tin dành cho các doanh nghiệp Nhật Bản và Việt Nam";
@@ -699,7 +707,13 @@
 		$tt_member_product_search = "Search Product";
 		$lb_prf_product_name = "Product Name";
 		$lb_prf_product_sku = "SKU";
-		
+		$tm_events = "Events";
+		$tt_event_add = "Add Event";
+		$lb_event_title = "Event Title";
+		$lb_event_detail = "Event Detail";
+		$lb_event_status = "Status";
+		$tt_oncoming_events = "Oncoming Events";
+		$tt_events = "Events List";
 	} else {
 
 		$langpicjp = "lang_jp_02.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_01.png";
@@ -1053,7 +1067,14 @@
 		$lb_prf_product_name = "Product Name";
 		$lb_prf_product_sku = "SKU";
 		$tt_product_category_edit = "Edit Category";
-		$tx_confirmdelete = "Are you sure to delete this?"; 
+		$tx_confirmdelete = "Are you sure to delete this?";
+		$tm_events = "Events";
+		$tt_event_add = "Add Event";
+		$lb_event_title = "Event Title";
+		$lb_event_detail = "Event Detail";
+		$lb_event_status = "Status";
+		$tt_oncoming_events = "Oncoming Events";
+		$tt_events = "Events List";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -1385,6 +1406,13 @@
 	$tpl->assign("##lb_prf_product_name##", $lb_prf_product_name);
 	$tpl->assign("##lb_prf_product_sku##", $lb_prf_product_sku);
 	$tpl->assign("##tt_product_category_edit##", $tt_product_category_edit);
+	$tpl->assign("##tm_events##", $tm_events);
+	$tpl->assign("##tt_event_add##", $tt_event_add);
+	$tpl->assign("##lb_event_title##", $lb_event_title);
+	$tpl->assign("##lb_event_detail##", $lb_event_detail);
+	$tpl->assign("##lb_event_status##", $lb_event_status);
+	$tpl->assign("##tt_oncoming_events##", $tt_oncoming_events);
+	$tpl->assign("##tt_events##", $tt_events);
 
 	//Count mail magazine
 	$sqljp = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp';"; 

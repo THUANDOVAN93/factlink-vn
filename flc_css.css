@@ -1158,3 +1158,26 @@ button:hover,
 .active-page {
 	color: red;
 }
+
+.box-sizing-box {
+	box-sizing: border-box;
+}
+
+.event-table .event-thumb {
+	padding: 5px;
+	vertical-align: top;
+}
+
+.event-table .event-thumb img {
+	max-width: 100%;
+}
+
+.event-table .event-content {
+	padding: 5px;
+	vertical-align: top;
+}
+
+.event-table .event-content h3,
+.event-table .event-content p {
+	margin: 0;
+}

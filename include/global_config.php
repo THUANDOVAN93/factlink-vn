@@ -59,4 +59,12 @@ $nationalOptionAllowed = array(
 	'oo' => 'Other Nation'
 );
 
+$urlBaseArray = explode('/', dirname(__FILE__));
+array_pop($urlBaseArray);
+$absPath = implode('/', $urlBaseArray);
+
+if (!defined('ABSPATH'))
+	define('ABSPATH', $absPath.'/');
+
+define('WPINC', 'include');
 ?>

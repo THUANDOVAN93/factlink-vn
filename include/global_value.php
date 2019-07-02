@@ -1950,6 +1950,7 @@
 	}
 	$tpl->assign("##MenuFooterTerm_tpl##", $footerTerm);
 	$tpl->assign("##urlHomePage##", "/");
+	$tpl->assign("##breadcrumbStatus##", "none");
 	
 ?>
 

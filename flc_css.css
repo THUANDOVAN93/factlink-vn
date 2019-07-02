@@ -1181,3 +1181,36 @@ button:hover,
 .event-table .event-content p {
 	margin: 0;
 }
+
+.icon-arrow-right {
+	background: url(../images/icon/icon-arrow-right.gif) no-repeat;
+}
+
+.fl-breadcrumb {
+	padding: 0;
+	margin: 0;
+}
+
+.fl-breadcrumb .fl-breadcrumb-item {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	padding-right: 18px;
+	font-size: 12px;
+}
+
+.fl-breadcrumb .fl-breadcrumb-item:after {
+	background: url(../images/icon/icon-arrow-right.gif) no-repeat;
+	background-size: contain;
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+
+.fl-breadcrumb .fl-breadcrumb-item:last-child::after {
+	display: none;
+}

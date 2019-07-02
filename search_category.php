@@ -1,11 +1,11 @@
-<?php 
+<?php
+
 	ini_set("session.gc_maxlifetime", "18000");
 	session_start();
 	
 	include_once("./include/class.rFastTemplate.php");
 	include_once("./include/global_config.php");
 	include_once("./include/global_function.php");
-	
 	
 	$url1 = "structure-new.html"; 
 	$url2 = "search_result.html";
@@ -26,22 +26,26 @@
 	$searchcatid = $searchid;
 	$searchtype = "cate";
 	
-	
 	/* Set default language cookie */
-	if(empty($_COOKIE['vlang'])) {
+	if (empty($_COOKIE['vlang'])) {
+
 		$_COOKIE['vlang'] = 'en';
 	}
 	
 	/* Prevent unknown cookie language value */
-	if(!in_array($_COOKIE['vlang'],['en','jp','vn'])) {
+	if (!in_array($_COOKIE['vlang'], $langCodeAllowed)) {
+
 		$_COOKIE['vlang'] = 'en';
 	}
 	
 	if ($_COOKIE['vlang'] == 'en') {
+
 		$url6 = "menu-html_en.html";
 	} elseif ($_COOKIE['vlang'] == 'vn') {
+
 		$url6 = "menu-html_vn.html";
 	} else {
+
 		$url6 = "menu-html_jp.html";
 	}
 	
@@ -67,29 +71,44 @@
 	
 	// --- Global Template Section	
 	include_once("./include/global_value.php");
-	// exit(microtime(true));
 	
 	$start = $_GET['start'];
 	$limit = 30;
-	
+
 	$sql9 = "select * from flc_category where cat_id = '$searchid';";	 
 	 
 	$result9 = mysql_query($sql9);
 	while ($dbarr9 = mysql_fetch_array($result9)) {
+
 		$searchworden = str_replace("@"," - ",$dbarr9['cat_name_en']);
 		$searchwordjp = str_replace("@"," - ",$dbarr9['cat_name_jp']);
 		$searchwordvn = str_replace("@"," - ",$dbarr9['cat_name_vn']);
+
 		if ($_COOKIE['vlang'] == 'en') {
 
 			$catDes = $dbarr9['cat_des_en'];
+			$catName = $dbarr9['cat_name_en'];
+			$namePageHome = "Home";
 		} elseif ($_COOKIE['vlang'] == 'vn') {
 
 			$catDes = $dbarr9['cat_des_vn'];
+			$catName = $dbarr9['cat_name_vn'];
+			$namePageHome = "Trang chủ";
 		} else {
 
 			$catDes = $dbarr9['cat_des_jp'];
+			$catName = $dbarr9['cat_name_jp'];
+			$namePageHome = "ホーム";
 		}
 	}
+
+	// Build breadcrumb here
+	$breadcrumbMaterial = array(
+		$namePageHome => '/',
+		$catName => '#'
+	);
+	$breadcrumb = breadcrumb($breadcrumbMaterial);
+	// Build breadcrumb here
 	
 	if ($_COOKIE['vlang'] == 'en') {
 
@@ -105,8 +124,6 @@
 	$meta_keyword = $searchword;
 	$searchword = $searchword."<span class=\"seach-result-des\">".$catDes."</span>";
 	
-	// Cat Description SEO
-
 	$pagesql = "select * from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_status != 'd';";
 	$resultsearchlist = mysql_query($pagesql);
 	$cntsearchlist = mysql_num_rows($resultsearchlist); 
@@ -126,6 +143,7 @@
 		$result1 = mysql_query($sql1);
 		$specMemberId = array();
 		while ($dbarr1 = mysql_fetch_array($result1)) {
+
 			if ($dbarr1['mem_id'] === '00002479') {
 
 				$specMemberId = $dbarr1['mem_id'];
@@ -141,6 +159,7 @@
 
 		// add special member to position top 3
 		if (!empty($specMemberId)) {
+
 			$positionTop3 = rand(0,2);
 			array_splice($arrlist, $positionTop3, 0, $specMemberId);
 			$cntlist = $cntlist + 1;
@@ -148,45 +167,40 @@
 
 		array_unshift($arrlist,"");
 		unset($arrlist[0]);
+
 		//FREE
 		$sql1 = "select mem_id from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_package = '' and mem_status != 'd' order by mem_id asc;"; 
 		$result1 = mysql_query($sql1);
+
 		while ($dbarr1 = mysql_fetch_array($result1)) {
+
 			$arrlist[$cntlist] = $dbarr1['mem_id'];
 			$cntlist = $cntlist + 1;
 		}
 		
 		$startlist = $start + 1;
-		$alllist = $start + $limit; 
-		if ($alllist > $cntsearchlist) { $alllist = $cntsearchlist; }
+		$alllist = $start + $limit;
+
+		if ($alllist > $cntsearchlist) {
+
+			$alllist = $cntsearchlist;
+		}
 		
-		for ($list=$startlist;$list<=$alllist;$list++) {
+		for ( $list=$startlist; $list <= $alllist; $list++ ) {
 		
 			$memidlist = $arrlist[$list];
 			
 			$sql1 = "select * from flc_member where mem_id = '$memidlist';"; 
 			$result1 = mysql_query($sql1);
+
 			while ($dbarr1 = mysql_fetch_array($result1)) {
 
 				$memfolder = $dbarr1['mem_folder']; 
 				$mempackage = $dbarr1['mem_package'];
 				$memnational = $dbarr1['mem_national']; 
 				$mem_addressine1 = $dbarr1['mem_addressine1'];
-			  $mem_addressine2 = $dbarr1['mem_addressine2'];
-
-				// if ($memnational == 'jp') {
-
-				// 	$memnationalbg = "#FFFFFF";
-				// 	$memnationaltitle = $lb_njp;
-				// } elseif ($memnational == 'vn') {
-
-				// 	$memnationalbg = "#CC0000";
-				// 	$memnationaltitle = $lb_nvn;
-				// } else {
-
-				// 	$memnationalbg = "#004F94";
-				// 	$memnationaltitle = $lb_nother;
-				// }
+				$mem_addressine2 = $dbarr1['mem_addressine2'];
+				
 				$elNationalHtml = getNationalTemplate($memnational);
 				
 				if ($_COOKIE['vlang'] == 'en') {
@@ -206,13 +220,18 @@
 					$memsubdesc = "<br />".$memsubdesc;
 				}
 
-				$pagshowen = ""; $pagshowjp = ""; $pagshowvn = ""; $langset = ""; 
+				$pagshowen = "";
+				$pagshowjp = "";
+				$pagshowvn = "";
+				$langset = "";
+
 				$langen = "<img src=\"images/tpl_en_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
 				$langjp = "<img src=\"images/tpl_jp_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
 				$langvn = "<img src=\"images/tpl_vn_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
 				
 				$sql2 = "select * from flc_page where pag_type = 'prf' and mem_id = '$memidlist';"; 
 				$result2 = mysql_query($sql2);
+
 				while ($dbarr2 = mysql_fetch_array($result2)) {
 					
 					$pagid = $dbarr2['pag_id'];
@@ -221,14 +240,17 @@
 					$pagshowvn = $dbarr2['pag_show_vn'];
 					
 					if ($pagshowen == 't') {
+
 						$langen = "<a href=\"mem_profile.php?id=".$memidlist."&page=".$pagid."&lang=en\" target=\"_blank\"><img src=\"images/tpl_en_01.png\" alt=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>";
 					}
 							
 					if ($pagshowjp == 't') {
+
 						$langjp = "<a href=\"mem_profile.php?id=".$memidlist."&page=".$pagid."&lang=jp\" target=\"_blank\"><img src=\"images/tpl_jp_01.png\" alt=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>";
 					}
 								
 					if ($pagshowvn == 't') {
+
 						$langvn = "<a href=\"mem_profile.php?id=".$memidlist."&page=".$pagid."&lang=vn\" target=\"_blank\"><img src=\"images/tpl_vn_01.png\" alt=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>";
 					}
 				}
@@ -258,76 +280,95 @@
 					$langarr[2] = "";
 				}
 				
-				for ($i=0;$i<=2;$i++) {
+				for ( $i=0; $i<=2; $i++ ) {
 
 					if ($langarr[$i] != '') {
+
 						$langset = $langarr[$i];
 					}
 
 					if ($langset == $_COOKIE['vlang']) {
+
 						$i = $i + 3;
 					}
 				}
 				
 				if ($langset != '') {
+
 					$memcomname = "<a href=\"home/".$memfolder."\" target=\"_blank\">".$memcomname."</a>";
 				} 
 				
 				if ($mempackage != '') {
 
-					$sql_sector="SELECT * FROM flc_member WHERE mem_id='$memidlist'";
-					$query_sector=mysql_db_query($db_name,$sql_sector);
+					$sql_sector = "SELECT * FROM flc_member WHERE mem_id='$memidlist'";
+					$query_sector = mysql_db_query($db_name,$sql_sector);
+
 					while ($fetch_sector=mysql_fetch_array($query_sector)) {
 
-						$addressine1=$fetch_sector['mem_addressine1'];
-						$addressine2=$fetch_sector['mem_addressine2'];
+						$addressine1 = $fetch_sector['mem_addressine1'];
+						$addressine2 = $fetch_sector['mem_addressine2'];
 					 
-						if($addressine1!= "") {
+						if ($addressine1 != "") {
 
-			     		$sql_ie_sector1="SELECT * FROM  flc_ie WHERE flc_ie.ine_id='$addressine1'";
+			     		$sql_ie_sector1 = "SELECT * FROM  flc_ie WHERE flc_ie.ine_id='$addressine1'";
 				    	$query_ie1=mysql_query($sql_ie_sector1);
-				    	while ($fetch_ie1=mysql_fetch_array($query_ie1)) {
 
-						 		$sector1=$fetch_ie1['sector'];
-								if ($sector1=='north') {
-									$img_sector1="&nbsp;&nbsp;<img src=\"images/sector/north_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+				    	while ($fetch_ie1 = mysql_fetch_array($query_ie1)) {
+
+						 		$sector1 = $fetch_ie1['sector'];
+								if ($sector1 == 'north') {
+
+									$img_sector1 = "&nbsp;&nbsp;<img src=\"images/sector/north_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}
-								if ($sector1=='south') {
-									$img_sector1="&nbsp;&nbsp;<img src=\"images/sector/south_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
-								}	
-								if ($sector1=='central') {
-									$img_sector1="&nbsp;&nbsp;<img src=\"images/sector/central_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+
+								if ($sector1 == 'south') {
+
+									$img_sector1 = "&nbsp;&nbsp;<img src=\"images/sector/south_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}
-								if ($sector1!='north' && $sector1!='south' && $sector1!='central'  ) {
+
+								if ($sector1 == 'central') {
+
+									$img_sector1 = "&nbsp;&nbsp;<img src=\"images/sector/central_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+								}
+
+								if ($sector1 != 'north' && $sector1 != 'south' && $sector1 != 'central') {
+
 									$img_sector1="&nbsp;&nbsp;<img src=\"images/sector/other_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}
 							}
 						}
 					
-						if ($addressine2!= "" && $addressine2!=$addressine1) {
+						if ($addressine2 != "" && $addressine2 != $addressine1) {
 
-					    $sql_ie_sector2="SELECT * FROM  flc_ie WHERE flc_ie.ine_id='$addressine2'";
-							$query_ie2=mysql_query($sql_ie_sector2);
-							while ($fetch_ie2=mysql_fetch_array($query_ie2)) {
+					    $sql_ie_sector2 = "SELECT * FROM  flc_ie WHERE flc_ie.ine_id = '$addressine2'";
+							$query_ie2 = mysql_query($sql_ie_sector2);
 
-								$sector2=$fetch_ie2['sector'];
+							while ($fetch_ie2 = mysql_fetch_array($query_ie2)) {
+
+								$sector2 = $fetch_ie2['sector'];
 								
-								if ($sector2=='north') {
-									$img_sector2="&nbsp;&nbsp;<img src=\"images/sector/north_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+								if ($sector2 == 'north') {
+
+									$img_sector2 = "&nbsp;&nbsp;<img src=\"images/sector/north_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}
-								if ($sector2=='south') {
-									$img_sector2="&nbsp;&nbsp;<img src=\"images/sector/south_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+
+								if ($sector2 == 'south') {
+
+									$img_sector2 = "&nbsp;&nbsp;<img src=\"images/sector/south_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}	
-								if ($sector2=='central') {
-									$img_sector2="&nbsp;&nbsp;<img src=\"images/sector/central_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+								if ($sector2 == 'central') {
+
+									$img_sector2 = "&nbsp;&nbsp;<img src=\"images/sector/central_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}
-								if ($sector2!='north' && $sector2!='south' && $sector2!='central') {
-									$img_sector2="&nbsp;&nbsp;<img src=\"images/sector/other_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
+
+								if ($sector2 !=' north' && $sector2 != 'south' && $sector2 != 'central') {
+
+									$img_sector2 = "&nbsp;&nbsp;<img src=\"images/sector/other_".$_COOKIE['vlang'].".png\" width=\"72\" height=\"24\" border=\"0\" />";
 								}
 							}
 						} else {
 
-							$img_sector2="";
+							$img_sector2 = "";
 						}			
 					}
 					
@@ -369,6 +410,8 @@
 	$tpl->assign("##page##", $page);
 	$tpl->assign("##meta_keyword##", $meta_keyword);
 	$tpl->assign("##meta_description##", $catDes);
+	$tpl->assign("##breadcrumb##", $breadcrumb);
+	$tpl->assign("##breadcrumbStatus##", "block");
 	
 	$tpl->parse ("##RIGHT_AREA##", "right_tpl");
 	$tpl->parse ("##LEFT_AREA##", "left_tpl");

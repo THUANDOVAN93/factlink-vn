@@ -783,5 +783,23 @@ function shorten_text($text, $max_length = 140, $cut_off = '...', $keep_word = f
 
 //Get Short Text function.=====================
 
+//Breadcrumb function.=====================
+function breadcrumb($array)
+{
+	$html = '<ul class="fl-breadcrumb">';
+	foreach ($array as $name => $url) {
+	
+		$html .= '
+			<li class="fl-breadcrumb-item">
+				<a href="'.$url.'">'.$name.'</a>
+			</li>';
+		$count++;
+	}
+	$html .= '</ul>';
+
+	return $html;
+}
+
+//Breadcrumb function.=====================
 
 ?>

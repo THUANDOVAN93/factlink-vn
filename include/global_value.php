@@ -341,7 +341,7 @@
 		$pro_contact = "問い合わせ";
 		$headingEvent = "FEATURED EVENTS";
 		$seeMore = "詳しくはこちら";
-		$search_by_category = "業種から探す";
+		$search_by_category = "Search by Category";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);

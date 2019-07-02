@@ -16,9 +16,12 @@
 
 <!-- Add the slick-theme.css if you want default styling -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 </head>
 <body>
+	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
 	<div id="trigger"></div>
 	<div id="wrap">
 		
@@ -502,6 +505,26 @@
 			nextArrow: '<span class="arrow btn-next"></span>'
 			});
 		});
+  </script>
+  <script>
+	// ===== Scroll to Top ==== 
+	$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {
+
+      $('#return-to-top').fadeIn(200);
+    } else {
+
+      $('#return-to-top').fadeOut(200);
+    }
+	});
+
+	$('#return-to-top').click(function() {
+
+    $('body,html').animate({
+    	
+      scrollTop : 0
+    }, 500);
+	});
   </script>
 </body>
 </html>

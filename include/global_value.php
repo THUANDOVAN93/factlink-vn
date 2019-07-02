@@ -114,6 +114,7 @@
 		$pro_contact = "Contact";
 		$headingEvent = "FEATURED EVENTS";
 		$seeMore = "See More";
+		$search_by_category = "Search by Category";
 	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
@@ -225,6 +226,7 @@
 		$pro_contact = "Liên hệ";
 		$headingEvent = "Sự Kiện";
 		$seeMore = "Xem Thêm";
+		$search_by_category = "Tìm theo danh mục";
 	} else { 
 		
 		$langpicjp = "lang_jp_02.png";
@@ -339,6 +341,7 @@
 		$pro_contact = "問い合わせ";
 		$headingEvent = "FEATURED EVENTS";
 		$seeMore = "詳しくはこちら";
+		$search_by_category = "業種から探す";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -454,6 +457,7 @@
 	$tpl->assign("##pro_contact##", $pro_contact);
 	$tpl->assign("##headingEvent##", $headingEvent);
 	$tpl->assign("##seeMore##", $seeMore);
+	$tpl->assign("##search_by_category##", $search_by_category);
 	
 	/** Please input PHP filename that use "template/structure-new.html" */
 	$newStructure = [

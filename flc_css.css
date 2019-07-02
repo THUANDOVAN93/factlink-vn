@@ -1214,3 +1214,23 @@ button:hover,
 .fl-breadcrumb .fl-breadcrumb-item:last-child::after {
 	display: none;
 }
+
+.columns-3 {
+	padding: 0;
+	-webkit-columns: 3 220px;
+	-moz-columns: 3 220px;
+	columns: 3 220px;
+	-webkit-column-gap: 2em;
+	-moz-column-gap: 2em;
+	column-gap: 2em;
+}
+
+.footer-cat-list .footer-cat-content {
+	text-align: left;
+	padding: 12px;
+	margin: 0;
+}
+
+.footer-cat-list .footer-cat-content .cat-child {
+	padding-left: 15px;
+}

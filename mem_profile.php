@@ -74,6 +74,8 @@
 		if ($dbarr1['mem_package'] === '') {
 			$tpl->assign("##footerVisible##", "block");
 			$tpl->assign("##footerVisibleNoneFree##", "none");
+			// add inquiry form here for free member
+
 		} else {
 			$tpl->assign("##footerVisible##", "none");
 			$tpl->assign("##footerVisibleNoneFree##", "");

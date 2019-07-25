@@ -1,3 +1,30 @@
+<style>
+  .expand-data {
+    overflow:hidden;
+    -webkit-transition: height 1s ease;
+    -moz-transition: height 1s ease;
+    -o-transition: height 1s ease;
+    transition: height 1s ease;
+  }
+  .expand-enimation.close {
+    height: 0
+  }
+  .expand-enimation.open {
+    height: 380px;
+  }
+  #js-expand-trick:active {
+    outline: none;
+  }
+  .expand-trick {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    background: #CC0000;
+    color: #fff;
+  }
+</style>
 <div class="panelcontent">
 <div style="margin: 0px; padding: 0px; width: 760px; overflow: hidden;">
 <table width="760" border="0" align="center" cellpadding="0" cellspacing="0" style="table-layout: fixed;">
@@ -115,16 +142,6 @@
         <td valign="top">##membank##</td>
       </tr>
       <tr>
-      <!-- =============== ใช้งานได้ คุณ คุวาดะ แจ้งให้ปิดไว้ ================== 
-      
-        <td colspan="3" valign="top"><img src="images/line_h_02.png" width="760" height="10" /></td>
-      </tr>
-      <tr>
-        <td valign="top"><font color="##pagprfcolor##"><strong>BOI</strong></font></td>
-        <td valign="top">&nbsp;</td>
-        <td valign="top">##memboi##</td>
-      </tr>
-      -->
       <tr>
         <td colspan="3" valign="top"><img src="images/line_h_02.png" width="760" height="10" /></td>
       </tr>
@@ -145,11 +162,120 @@
         <td colspan="3" valign="top"><img src="images/line_h_02.png" width="760" height="10" /></td>
       </tr>
       ##memcontent##
+
+      <!-- add contact here -->
+      <script>
+        function confrm() {
+          if(confirm('Do you want to submit this form Contact ?')==true) {
+            return check_form('f_mailFreeMember');
+          } else {
+            return false;
+          }
+        }
+      </script>
+      <tr style="display: ##showForFree##">
+        <td valign="top"><font color="##pagprfcolor##"><strong>##pro_contact##</strong></font></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" style="text-align: center;">
+          <span id="js-expand-trick" class="expand-trick">##contactFreeMember##</span>
+        </td>
+      </tr>
+
+      <tr style="display: ##showForFree##">
+        <td colspan="3">
+          <form id="js-expand-data" class="expand-data expand-enimation close"  action="/Controller/SendMailAction.php" method="post" enctype="multipart/form-data" name="mailMemberForm" target="_self" onsubmit="return confrm()">
+            <table width="760" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td colspan="3" valign="top"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td width="220"><strong>##lb_company## * </strong></td>
+                <td width="10">&nbsp;</td>
+                <td width="530"><input name="companyName" type="text" class="box_normal" id="companyName" maxlength="85" /></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td><strong>##lb_contactname## * </strong></td>
+                <td>&nbsp;</td>
+                <td><input name="userName" type="text" class="box_normal" id="userName" maxlength="85" /></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td><strong>##lb_tel## * </strong></td>
+                <td>&nbsp;</td>
+                <td><input name="userPhone"  class="box_normal" id="userPhone" type="tel" pattern="[0-9]*" maxlength="14" /></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td><strong>##lb_email## * </strong></td>
+                <td>&nbsp;</td>
+                <td><input name="userMail" type="email" class="box_normal" id="userMail" maxlength="85" /></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td><strong>##lb_subject## * </strong></td>
+                <td>&nbsp;</td>
+                <td><input name="mailSubject" type="text" class="box_normal" id="mailSubject" maxlength="85" /></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td><strong>##lb_content## * </strong></td>
+                <td>&nbsp;</td>
+                <td><textarea name="mailContent" class="box_multi" id="mailContent"></textarea></td>
+              </tr>
+              <tr>
+                <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <input name="memberId" type="hidden" id="memberId" value="##memid##" />
+                  <input name="pageId" type="hidden" id="pageId" value="##pagid##" />
+                  <input name="langCode" type="hidden" id="langCode" value="##langcode##" />
+                  <input name="memberName" type="hidden" id="memberName" value="##memcomname##" />
+                </td>
+                <td>&nbsp;</td>
+                <td><div align="right">
+                  <input name="submit" type="submit" style="padding: 10px 50px;text-transform: uppercase;background: #CC0000;color: #fff;font-weight: bold;font-size: 15px;" id="submit" value="##lb_button_send##" />
+                </div></td>
+              </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+      <!-- add contact here -->
     </table>
 	</td>
   </tr>
 </table>
 </div>
 </div>
+
+<script>
+  window.onload = function() {
+    var elExpandTrick = document.getElementById('js-expand-trick');
+    var dataExpand = document.getElementById('js-expand-data');
+
+    elExpandTrick.addEventListener('click', function() {
+      if (dataExpand.classList.contains('close')) {
+        dataExpand.classList.remove('close');
+        dataExpand.classList.add('open');
+      } else {
+        dataExpand.classList.remove('open');
+        dataExpand.classList.add('close');
+      }
+    });
+  };
+  
+</script>
 
 <!-- End mem_profile temp -->

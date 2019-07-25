@@ -41,7 +41,7 @@
 		$lb_sologan = "Vietnam Industrial Directory";
 		$lb_back_top_page = "Back to Fact-Link top";
 		$srcLogo = "logo_en.png";
-	
+		$contactFreeMember = "Send inquiry to this company";
 	} 
 	
 	else if ($langcode == 'vn') { 
@@ -83,6 +83,7 @@
 		$lb_sologan = "Dành cho các doanh nghiệp Việt Nam";
 		$lb_back_top_page = "Quay về trang chủ Fact-Link";
 		$srcLogo = "logo_vn.png";
+		$contactFreeMember = "Liên hệ với công ty này";
 	} 
 	
 	else { 
@@ -123,6 +124,7 @@
 		$lb_sologan = "ベトナムの製造業、工場検索ポータルサイト";
 		$lb_back_top_page = "ファクトリンクTOP";
 		$srcLogo = "logo_jp.png";
+		$contactFreeMember = "この企業に問い合わせる";
 		
 	} 
 	
@@ -163,6 +165,7 @@
 	$tpl->assign("##lb_sologan##", $lb_sologan);
 	$tpl->assign("##lb_back_top_page##", $lb_back_top_page);
 	$tpl->assign("##srcLogo##", $srcLogo);
+	$tpl->assign("##contactFreeMember##", $contactFreeMember);
 
 	// profile table
 	$prfline = "<tr><td colspan=\"3\" valign=\"top\"><img src=\"images/line_h_02.png\" width=\"760\" height=\"10\" /></td></tr>";

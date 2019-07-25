@@ -1288,3 +1288,26 @@ button:hover,
 	border: none;
     outline: none;
 }
+
+.sticky-type {
+	display: block;
+	position: relative;
+}
+
+.sticky-type:after {
+	background: #ccc;
+	border-radius: 2px;
+	font-size: 10px;
+	padding: 2px;
+	margin-left: 10px;
+}
+
+.sticky-type-free:after {
+	content: "Free";
+	color: #CC0000;
+}
+
+.sticky-type-paid:after {
+	content: "Paid";
+	color: #1faa06;
+}

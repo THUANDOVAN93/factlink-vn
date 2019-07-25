@@ -315,7 +315,13 @@
 			} else {
 
 				$memcomname = $dbarr7['mem_comname_jp'];
-			}		
+			}
+
+			if ($dbarr7['mem_package'] !== "") {
+				$stickyInqType = "sticky-type-paid";
+			} else {
+				$stickyInqType = "sticky-type-free";
+			}
 		}
 		
 		if ($inrstatus == 'n') {
@@ -343,6 +349,7 @@
 		$tpl->assign("##inrdate##", $inrdate);
 		$tpl->assign("##inrstatus##", $inrstatus);
 		$tpl->assign("##memcomname##", $memcomname);
+		$tpl->assign("##stickyInqType##", $stickyInqType);
 		$tpl->parse ("#####ROW#####", '.rows_meminq');
 	}
 	

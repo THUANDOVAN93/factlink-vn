@@ -70,23 +70,23 @@
 		
 		$pagcheck = "t";
 		
-		if ($dbarr4['pag_status'] == 'd') { if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
+		if ($dbarr4['pag_status'] == 'd') { if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?case=1\">"; exit(); } }
 		
-		if ($dbarr4['pag_type'] != 'inq') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+		//if ($dbarr4['pag_type'] != 'inq') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?case=2\">"; exit(); }
 		
 		if ($langcode == 'en' && $dbarr4['pag_show_en'] != 't') { 
 			if ($prfshowen == 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=en\">"; exit(); }
-			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } 
+			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?case=3\">"; exit(); } 
 		}
 		
 		if ($langcode == 'jp' && $dbarr4['pag_show_jp'] != 't') { 
 			if ($prfshowjp == 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=jp\">"; exit(); }
-			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } 
+			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?case=4\">"; exit(); } 
 		}
 		
 		if ($langcode == 'vn' && $dbarr4['pag_show_vn'] != 't') { 
 			if ($prfshowvn == 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=vn\">"; exit(); }
-			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?id\">"; exit(); } 
+			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?case=5\">"; exit(); } 
 		}
 		
 		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') { $langen = "<a href=\"mem_inquiry_done.php?id=".$memid."&page=".$pagid."&lang=en&code=".$code."\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }

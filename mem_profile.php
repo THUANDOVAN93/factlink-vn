@@ -74,11 +74,11 @@
 		if ($dbarr1['mem_package'] === '') {
 			$tpl->assign("##footerVisible##", "block");
 			$tpl->assign("##footerVisibleNoneFree##", "none");
-			// add inquiry form here for free member
-
+			$tpl->assign("##showForFree##", "");
 		} else {
 			$tpl->assign("##footerVisible##", "none");
 			$tpl->assign("##footerVisibleNoneFree##", "");
+			$tpl->assign("##showForFree##", "none");
 		}
 
 	}
@@ -821,6 +821,8 @@
 	}
 	
 	$tpl->assign("##memid##", $memid);
+	$tpl->assign("##pagid##", $pagid);
+	$tpl->assign("##langcode##", $langcode);
 	$tpl->assign("##memcomname##", subhtml($memcomname));
 	$tpl->assign("##memcomnamefull##", $memcomnamefull);
 	$tpl->assign("##memrepname##", $memrepname);

@@ -405,7 +405,25 @@ function check_form(formname) {
 		case 'f_admeventadd' :
 			if (document.formadmeventadd.t_title_en.value=="") { alert("Title [EN] is required."); document.formadmeventadd.t_title_en.focus(); return false; }
 			else if (document.formadmeventadd.t_detail_en.value=="") { alert("Detail [EN] is required."); document.formadmeventadd.t_detail_en.focus(); return false; }
-			break;		
+			break;
+
+
+		case 'f_mailFreeMember' :
+			
+			var validRegExp = /^\w(\.?[\w-])*@\w(\.?[\w-])*\.[a-z]{2,6}$/i;
+			var strEmail = document.mailMemberForm.userMail.value;
+			var strPhone = document.mailMemberForm.userPhone.value;
+			var numberPaternReg = /^(\(0\))?[0-9]+$/i;
+			
+			if (document.mailMemberForm.companyName.value=="") { alert("貴社名の要求が許可されました。\nCompany Name is required."); document.mailMemberForm.companyName.focus(); return false; }
+			else if (document.mailMemberForm.userName.value=="") { alert ("お名前の要求が許可されました。\nYour name is required."); document.mailMemberForm.userName.focus(); return false; }
+			else if (strPhone=="") { alert ("TEL の要求が許可されました。\nTEL is required."); document.mailMemberForm.userPhone.focus(); return false; }
+			else if (strPhone.search(numberPaternReg) == -1) { alert ("有効な TEL を入力してください。\nPlease enter a valid TEL."); document.mailMemberForm.userPhone.focus(); return false; }
+			else if (document.mailMemberForm.userMail.value=="") { alert ("E-mail の要求が許可されました。\nE-mail is required."); document.mailMemberForm.userMail.focus(); return false; }
+			else if (strEmail.search(validRegExp) == -1) { alert ("有効な E-mail を入力してください。\nPlease enter a valid E-mail."); document.mailMemberForm.userMail.focus(); return false; }
+			else if (document.mailMemberForm.mailSubject.value=="") { alert ("件名の要求が許可されました。\nSubject is required."); document.mailMemberForm.mailSubject.focus(); return false; }
+			else if (document.mailMemberForm.mailContent.value=="") { alert ("内容の要求が許可されました。\nContent is required."); document.mailMemberForm.mailContent.focus(); return false; }
+			break;	
 	}
 	
 }

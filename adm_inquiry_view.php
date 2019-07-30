@@ -35,7 +35,13 @@
 		$inrtel = $dbarr1['mal_tel'];
 		$inrfax = $dbarr1['mal_fax'];
 		$mal_id = $dbarr1['mal_id'];
-	
+	}
+
+	$sql2 = "select mem_comname_en, mem_contactmail from flc_member where mem_id = '$mem_id';";
+	$result2 = mysql_query($sql2);
+	while ($dbarr2 = mysql_fetch_array($result2)) {
+		$memcomname = $dbarr2['mem_comname_en'];
+		$memcontactmail = $dbarr2['mem_contactmail'];
 	}
 	
 	$tpl->assign("##inrid##", $inrid);
@@ -49,6 +55,8 @@
 	$tpl->assign("##inrmail##", $inrmail);
 	$tpl->assign("##mal_id##", $mal_id);
 	$tpl->assign("##mem_id##", $mem_id);
+	$tpl->assign("##memcomname##", $memcomname);
+	$tpl->assign("##memcontactmail##", $memcontactmail);
 	
 	$tpl->parse ("##DETAIL_AREA##", "detail_tpl");
 	$tpl->parse ("MAIN", "main_tpl");

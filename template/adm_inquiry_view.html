@@ -95,11 +95,12 @@
           </tr>
           <tr>
             <td height="60" align="right" valign="bottom"><form id="del" name="del" method="post" action="adm_mail_delete.php?id=##mal_id##">
-              <input type="submit" name="delete" id="delete" value="Delete this mail" class="bt_mail"/>
+              <input style="color: #fff;" type="submit" name="delete" id="delete" value="Delete this mail" class="bt_mail"/>
               <input name="mal_id" type="hidden" id="mal_id" value="##mal_id##" />
             </form></td>
             <td valign="top">&nbsp;</td>
-            <td valign="bottom"><form id="form1" name="form1" method="post" action="adm_member_inquiry_sendmail.php?id=##inrid##&mem_id=##mem_id##">
+            <td valign="bottom">
+              <form id="form1" name="form1" method="post" action="adm_member_inquiry_sendmail.php?id=##inrid##&mem_id=##mem_id##">
               <label for="mailid"></label>
               &nbsp; 
               &nbsp; 
@@ -108,9 +109,31 @@
               &nbsp; 
               <input name="mailid" id="mailid" value="##mal_id##" type="hidden" />
               <input name="member" id="member" value="##mem_id##" type="hidden" />
-              <input type="submit" name="sendmail" id="sendmail" value="Sendmail" class="bt_mail" />
-            </form></td>
+              <input style="color: #fff;" type="submit" name="sendmail" id="sendmail" value="Sendmail" class="bt_mail" />
+              </form>
+            </td>
           </tr>
+          <tr>
+            <td valign="top"></td>
+            <td>&nbsp;</td>
+            <td valign="bottom">
+              <form id="CheckMailForm" name="CheckMailForm" method="post">
+              <label for=""></label>
+              &nbsp; 
+              &nbsp; 
+              &nbsp; 
+              &nbsp; 
+              &nbsp; 
+              <input name="emailOfMember" id="emailOfMember" value="##memcontactmail##" type="hidden" />
+              <input style="color: #fff;" type="submit" name="checkmail" id="checkmail" value="Checkmail" class="bt_mail" />
+              <span>Please Check Email Address Before Send It</span>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><span id="contentAjaxLoaded"></span></td></tr>
           <tr>
             <td height="25">&nbsp;</td>
             <td valign="top">&nbsp;</td>
@@ -135,5 +158,29 @@
     <td valign="top">&nbsp;</td>
   </tr>
 </table>
+
+<script>
+  function LoadAjax(formData) {
+    var xhttp = new XMLHttpRequest() || ActiveXObject("Microsoft.XMLHTTP");
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("contentAjaxLoaded").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("POST", "Controller/CheckMailAction.php", true);
+    xhttp.send(formData);
+  }
+
+  window.onload = function(e) {
+    var formValidate = document.getElementById('CheckMailForm');
+    var emailToCheck = document.getElementById('emailOfMember').value;
+    var formData = new FormData();
+    formData.append("emailToCheck", emailToCheck);
+    formValidate.onsubmit = function(event) {
+      event.preventDefault();
+      LoadAjax(formData);
+    }
+  }
+</script>
 </body>
 </html>

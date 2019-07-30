@@ -152,7 +152,12 @@ Or, you can reply through system as follows.
 <strong>UserName : ".$memberUserLogin."</strong><br />
 <strong>Password : ".$memberPassLogin."</strong><br />
 2. Login to your account<br />
-3. Click on 'Mail - Inbox' menu to read your new enquiry message<br />
+3. Click on 'Mail - Inbox' menu to read your new enquiry message<br /><br />
+料会員になると、ファクトリンク内で上位に表示され、より多くの情報を提供できます。
+詳しくは<a herf=\"https://www.fact-link.com.vn/intro\" target=\"_blank\">こちら</a>をご覧ください有。
+<br />
+If you become a paid member of Fact-Link Vietnam, your page will be shown more. Also you can provide richer information than now. For more details, please refer to <a herf=\"https://www.fact-link.com.vn/intro\" target=\"_blank\">this page</a>.
+<br />
 <br />
 ------------------------------------------------------------</font><br />
 <br />

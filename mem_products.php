@@ -290,7 +290,7 @@
 				$contactSupLink = "contact_supplier.php?pid=".$productId;
 
 				$showMore = "";
-				$catIdForward = $categoryItem['CategoryID'];
+				$catIdForward = $categoryItem;
 				if ($productItem == $lastProductOfCat) {
 					$showMoreLink = "mem_products.php?id=$memid&page=$pagid&cat=$catIdForward&lang=$langcode&start=$start";
 					$showMore = "<td style = \"display : block; text-align: right;\"><a href=\"".$showMoreLink."\">SHOW MORE</a></td>";

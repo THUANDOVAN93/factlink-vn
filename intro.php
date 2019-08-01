@@ -12,7 +12,7 @@
 	$url4 = "ads_left.html";
 	$url5 = "ads_top.html";
 	$pagecode = "int";
-	
+
 	/* Set default language cookie */
 	if(empty($_COOKIE['vlang'])) {
 		$_COOKIE['vlang'] = 'en';
@@ -22,7 +22,10 @@
 	if(!in_array($_COOKIE['vlang'],['en','jp','vn'])) {
 		$_COOKIE['vlang'] = 'en';
 	}
-	
+
+	if (isset($_GET['lang'])) {
+		$_COOKIE['vlang'] = $_GET['lang'];
+	}
 	
 	if ($_COOKIE['vlang'] == 'en') {
 		$url6 = "menu-html_en.html";

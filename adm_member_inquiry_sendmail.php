@@ -70,7 +70,7 @@ if (!isset($_SESSION['vd'])) {
 	  <font color=\"#00000\"><strong>".$memcomname."</strong><br />
 	  Dear ".$memcontactname."<br />
 	  <br />
-        <font color=\"#00000\">製造業ポータルサイト <a herf=\"https://www.fact-link.com.vn\" target=\"_blank\">Fact-Link.com</a> にて開設されております 御社ホームページのメールフォームから、<br />新しいお問合わせがありました。
+        <font color=\"#00000\">製造業ポータルサイト <a href=\"https://www.fact-link.com.vn\" target=\"_blank\">Fact-Link.com.vn</a> にて開設されております 御社ホームページのメールフォームから、<br />新しいお問合わせがありました。
 お客様のアカウントにログインして、内容をご確認ください。<br /><br />You have received a new enquiry message from your website. <br />Please login in order to read your new message.</font><br />
 		<br />
  <font color=\"#00000\">------------------------------------------------------------<br />
@@ -80,12 +80,12 @@ if (!isset($_SESSION['vd'])) {
 ------------------------------------------------------------</font><br />
 		<br />
 <font color=\"#00000\">内容を確認するには....<br />
-1. <a herf=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a> へアクセスします。<br />
+1. <a href=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a> へアクセスします。<br />
 2. アカウントにログインします。<br />
 3. メール - 受信をクリックします。<br />
 <br />
 To read your new message<br />
-1. Please go to <a herf=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a><br />
+1. Please go to <a href=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a><br />
 2. Login to your account<br />
 3. Click on 'Mail - Inbox' menu to read your new enquiry message<br />
 <br />
@@ -125,7 +125,7 @@ $detailForFree = "<html>
 	  <font color=\"#00000\"><strong>".$memcomname."</strong><br />
 	  Dear ".$memcontactname."<br />
 	  <br />
-        <font color=\"#00000\">製造業ポータルサイト <a herf=\"https://www.fact-link.com.vn\" target=\"_blank\">Fact-Link.com にて開設されております</a><br />御社ホームページのメールフォームから新しいお問合わせが<br />ありました。お客様のアカウントにログインして、内容をご確認ください。<br /><br />You have received a new enquiry message from your website. <br />Please login in order to read your new message.</font><br />
+        <font color=\"#00000\">製造業ポータルサイト <a href=\"https://www.fact-link.com.vn\" target=\"_blank\">Fact-Link.com.vn</a>にて開設されております<br />御社ホームページのメールフォームから新しいお問合わせが<br />ありました。お客様のアカウントにログインして、内容をご確認ください。<br /><br />You have received a new enquiry message from your website. <br />Please login in order to read your new message.</font><br />
 		<br />新しいお問い合わせ / New Inquiry<br />
  <font color=\"#00000\">------------------------------------------------------------<br />
  <strong>名前 / Name :</strong> ".$inrname."<br />
@@ -138,7 +138,7 @@ $detailForFree = "<html>
 		<br />
 <font color=\"#00000\">お問い合わせの連絡先に直接ご連絡いただくか、システムから返信することも可能です。<br />
 返信をするには、<br />
-1. <a herf=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a> へアクセスします。<br />
+1. <a href=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a> へアクセスします。<br />
 2. アカウントにログインします。<br />
 <strong>ユーザー名 : ".$memberUserLogin."</strong><br />
 <strong>パスワード : ".$memberPassLogin."</strong><br />
@@ -148,15 +148,15 @@ To answer to this inquiry, you can contact directly to the contact above.
 <br />
 Or, you can reply through system as follows.
 <br />
-1. Please go to <a herf=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a><br />
+1. Please go to <a href=\"https://www.fact-link.com.vn\" target=\"_blank\">https://www.fact-link.com.vn</a><br />
 <strong>UserName : ".$memberUserLogin."</strong><br />
 <strong>Password : ".$memberPassLogin."</strong><br />
 2. Login to your account<br />
 3. Click on 'Mail - Inbox' menu to read your new enquiry message<br /><br />
-料会員になると、ファクトリンク内で上位に表示され、より多くの情報を提供できます。
-詳しくは<a herf=\"https://www.fact-link.com.vn/intro\" target=\"_blank\">こちら</a>をご覧ください有。
+有料会員になると、ファクトリンク内で上位に表示され、より多くの情報を提供できます。
+詳しくは<a href=\"https://www.fact-link.com.vn/intro?lang=jp\" target=\"_blank\">こちら</a>をご覧ください。
 <br />
-If you become a paid member of Fact-Link Vietnam, your page will be shown more. Also you can provide richer information than now. For more details, please refer to <a herf=\"https://www.fact-link.com.vn/intro\" target=\"_blank\">this page</a>.
+If you become a paid member of Fact-Link Vietnam, your page will be shown more. Also you can provide richer information than now. For more details, please refer to <a href=\"https://www.fact-link.com.vn/intro?lang=en\" target=\"_blank\">this page</a>.
 <br />
 <br />
 ------------------------------------------------------------</font><br />
@@ -208,7 +208,6 @@ try {
 	$mail->SetFrom("info@fact-link.com.vn", "Fact-Link Vietnam");
 	$mail->AddReplyTo("$inrmail", "$inrname");
 	$mail->Subject = $subject;
-	$mail->Body = $detail;
 	$mail->MsgHTML($detail);
 	$mail->AddAddress("$memcontactmail", "$memcomname");
 	

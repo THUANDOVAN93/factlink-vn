@@ -97,6 +97,7 @@
 				$listCategoryId[] = (int)$subCatItem['CategoryID'];
 			}
 
+			$totalProductAllCat = 0;
 			foreach ($listCategoryId as $key => $categoryId) {
 
 				$sqlPagin = sprintf("select * from flc_products where CategoryID = %d", $categoryId);
@@ -106,8 +107,8 @@
 
 				$rsGetProductByCat =  mysql_query($sqlGetProductByCat);
 				$totalProduct = mysql_num_rows($rsGetProductByCat);
-
-				$htmlNotFound = "";
+				$totalProductAllCat += $totalProduct;
+				
 				if ( $totalProduct > 0 ) {
 
 					while ( $productItem = mysql_fetch_array($rsGetProductByCat) ) {
@@ -142,12 +143,12 @@
 						$tpl->assign("##show_more_class##", "d-none");
 						$tpl->parse("#####ROW#####", ".product_list");
 					}
-
-				} else {
-
-					$htmlNotFound = "<p>No Product Found !</p>";
-
 				}
+			}
+
+			$htmlNotFound = "<p>No Product Found !</p>";
+			if ($totalProductAllCat !== 0) {
+				$htmlNotFound = "";
 			}
 		} else {
 

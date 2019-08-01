@@ -545,7 +545,7 @@
 		else { $pagstatus = "<a href=\"edt_page_set_enable.php?id=".$memid."&page=".$pagid."\"><img src=\"images/icon_disable_01.png\" title=\"".$lb_alt_off."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; }
 		
 		if ($pagshowen == 't') { 
-			$iconviewen = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=en\"target=\"_blank\"><img src=\"images/icon_view_01.png\" title=\"".$lb_alt_view."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
+			$iconviewen = "<a href=\"mem_products.php?id=".$memid."&page=".$pagid."&lang=en&start=0\"target=\"_blank\"><img src=\"images/icon_view_01.png\" title=\"".$lb_alt_view."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
 			$iconediten = "<a href=\"adm_member_page_inquiry_edit.php?id=".$memid."&page=".$pagid."&lang=en\"><img src=\"images/icon_edit_01.png\" title=\"".$lb_alt_edit."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
 			$iconexpanden = "<img src=\"images/icon_expand_02.png\" width=\"20\" height=\"20\" border=\"0\" />"; 
 		} else { 
@@ -556,7 +556,7 @@
 		}
 		
 		if ($pagshowvn == 't') { 
-			$iconviewvn = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=vn\"target=\"_blank\"><img src=\"images/icon_view_01.png\" title=\"".$lb_alt_view."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
+			$iconviewvn = "<a href=\"mem_products.php?id=".$memid."&page=".$pagid."&lang=vn&start=0\"target=\"_blank\"><img src=\"images/icon_view_01.png\" title=\"".$lb_alt_view."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
 			$iconeditvn = "<a href=\"adm_member_page_inquiry_edit.php?id=".$memid."&page=".$pagid."&lang=vn\"><img src=\"images/icon_edit_01.png\" title=\"".$lb_alt_edit."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
 			$iconexpandvn = "<img src=\"images/icon_expand_02.png\" width=\"20\" height=\"20\" border=\"0\" />"; 
 		} else { 
@@ -567,7 +567,7 @@
 		}
 		
 		if ($pagshowjp == 't') { 
-			$iconviewjp = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=jp\"target=\"_blank\"><img src=\"images/icon_view_01.png\" title=\"".$lb_alt_view."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
+			$iconviewjp = "<a href=\"mem_products.php?id=".$memid."&page=".$pagid."&lang=jp&start=0\"target=\"_blank\"><img src=\"images/icon_view_01.png\" title=\"".$lb_alt_view."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
 			$iconeditjp = "<a href=\"adm_member_page_inquiry_edit.php?id=".$memid."&page=".$pagid."&lang=jp\"><img src=\"images/icon_edit_01.png\" title=\"".$lb_alt_edit."\" width=\"20\" height=\"20\" border=\"0\" /></a>"; 
 			$iconexpandjp = "<img src=\"images/icon_expand_02.png\" width=\"20\" height=\"20\" border=\"0\" />"; 
 		} else { 

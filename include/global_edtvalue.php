@@ -336,6 +336,7 @@
 		$tt_fea_products_manager = "Featured Products";
 		$tt_mail_products_manager = "Mail Product List";
 		$product_name = "Product Name";
+		$access_report = "Access Report";
 		
 	} 
 	
@@ -675,6 +676,7 @@
 		$tt_mail_products_manager = "Mail Product List";
 
 		$product_name = "Tên sản phẩm";
+		$access_report = "Thống Kê Truy Cập";
 	}
 	
 	else { 
@@ -1014,6 +1016,7 @@
 		$tt_mail_products_manager = "Mail Product List";
 
 		$product_name = "製品名";
+		$access_report = "アクセスレポート";
 		
 	} 
 	
@@ -1330,6 +1333,7 @@
 	$tpl->assign("##tt_mail_products_manager##", $tt_mail_products_manager);
 
 	$tpl->assign("##product_name##", $product_name);
+	$tpl->assign("##access_report##", $access_report);
 	
 	
 	

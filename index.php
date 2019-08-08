@@ -349,7 +349,7 @@
 	$getFeaCatProId = mysql_fetch_array($rsFeaCatProId);
 	$feaCatProId = $getFeaCatProId['CategoryID'];
 
-	$sqlFeaturedProduct = "select p.*, m.mem_folder from flc_products p, flc_member m where CategoryID = '$feaCatProId' and p.SupplierID = m.mem_id limit $qtyFeaProduct;";	
+	$sqlFeaturedProduct = "select p.*, m.mem_folder from flc_products p, flc_member m where CategoryID = '$feaCatProId' and p.SupplierID = m.mem_id order by RAND() limit $qtyFeaProduct;";
 	$rsFeaturedproduct = mysql_query($sqlFeaturedProduct);
 	while ($feaProductItem = mysql_fetch_array($rsFeaturedproduct)) {
 

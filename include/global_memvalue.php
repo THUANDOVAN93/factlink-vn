@@ -348,12 +348,17 @@
 	</tr>
 				
 	";
+
+	// ADS Banner Right For Free Member
+	if ($memPackage == '') {
+		$menulist = $menulist."<tr>
+          <td class=\"pd-5\">
+            <img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner.png\">
+          </td>
+        </tr>";
+	}
 	
 	$tpl->assign("##menulist##", $menulist);
-
-
-
-	
 
 	// Temp Link Foooter
 	if ($langcode == 'en') {

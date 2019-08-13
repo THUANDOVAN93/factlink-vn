@@ -351,11 +351,52 @@
 
 	// ADS Banner Right For Free Member
 	if ($memPackage == '') {
-		$menulist = $menulist."<tr>
-          <td class=\"pd-5\">
-            <img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner.png\">
-          </td>
-        </tr>";
+		if ($langcode == 'en') {
+			$menulist = $menulist."<tr>
+				<td class=\"pd-5\">
+				<a href=\"https://factory-vn.com/\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner-en.png\">
+				</a>
+				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
+				<a href=\"index.php?lang=en\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/factlink-right-banner-en.png\">
+				</a>
+				</td>
+				</tr>";
+		} elseif ($langcode == 'vn') {
+			$menulist = $menulist."<tr>
+				<td class=\"pd-5\">
+				<a href=\"https://factory-vn.com/\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner-vn.png\">
+				</a>
+				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
+				<a href=\"index.php?lang=vn\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/factlink-right-banner-vn.png\">
+				</a>
+				</td>
+				</tr>";
+		} else {
+			$menulist = $menulist."<tr>
+			<td class=\"pd-5\">
+			<a href=\"https://www.tdc-vietnam.com/\" target=\"_blank\">
+			<img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner-jp.png\">
+			</a>
+			</td>
+			</tr>
+			<tr>
+			<td class=\"pd-5\">
+			<a href=\"index.php?lang=jp\" target=\"_blank\">
+			<img class=\"img-reposive br-5\" src=\"/images/ads/factlink-right-banner-jp.png\">
+			</a>
+			</td>
+			</tr>";
+		}
 	}
 	
 	$tpl->assign("##menulist##", $menulist);

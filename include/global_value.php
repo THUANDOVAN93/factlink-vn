@@ -115,6 +115,8 @@
 		$headingEvent = "FEATURED EVENTS";
 		$seeMore = "See More";
 		$search_by_category = "Search by Category";
+		$meta_description = "FactLink Vietnam is a company introduction site for manufacturing companies based in Vietnam. We will introduce the information of the registered company. The information posted includes business domain, products, location, industrial park, and contact information. We also provide services to support the manufacturing industry in Vietnam";
+		$meta_keyword = "Manufacturing business, Manufacture, Vietnam, Japan, Factory, Expansion into Thailand";
 	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
@@ -227,6 +229,8 @@
 		$headingEvent = "Sự Kiện";
 		$seeMore = "Xem Thêm";
 		$search_by_category = "Tìm theo danh mục";
+		$meta_description = "FactLink Vietnam là trang web chuyên giới thiệu các công ty trong ngành công nghiệp sản xuất có trụ sở tại Việt Nam. Chúng tôi sẽ giới thiệu thông tin của các công ty thành viên bao gồm lĩnh vực kinh doanh, mô tả sản phẩm, địa chỉ, thông tin liên hệ.... Chúng tôi cũng cung cấp các dịch vụ để hỗ trợ ngành sản xuất tại Việt Nam, như hỗ trợ tìm kiếm nhà máy, nhà kho. ";
+		$meta_keyword = "sản xuất , chế tạo,sản xuất kinh doanh ,ngành công nghiệp";
 	} else { 
 		
 		$langpicjp = "lang_jp_02.png";
@@ -342,6 +346,8 @@
 		$headingEvent = "FEATURED EVENTS";
 		$seeMore = "詳しくはこちら";
 		$search_by_category = "Search by Category";
+		$meta_description = "ファクトリンクベトナムは、ベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。ご登録いただいた企業様の情報をご紹介致します。掲載情報は、事業内容、取扱品目、住所、工業団地、連絡先など製造業に特化した項目を設けております。また工場進出サポートなど在ベトナムの製造業を支援するサービスを提供しております。";
+		$meta_keyword = "製造業,製造,ベトナム,日本,工場,進出";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -458,6 +464,8 @@
 	$tpl->assign("##headingEvent##", $headingEvent);
 	$tpl->assign("##seeMore##", $seeMore);
 	$tpl->assign("##search_by_category##", $search_by_category);
+	$tpl->assign("##meta_description##", $meta_description);
+	$tpl->assign("##meta_keyword##", $meta_keyword);
 	
 	/** Please input PHP filename that use "template/structure-new.html" */
 	$newStructure = [

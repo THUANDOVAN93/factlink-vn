@@ -50,35 +50,39 @@
 ?>
 
 <?php
-set_time_limit(0);
+//set_time_limit(0);
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
-        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
         <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
         <title>Sample</title>
     </head>
-    <body>
+    <body> -->
         <?php
-        include_once 'Controller/class.verifyEmail.php';
+        // include_once 'Controller/class.verifyEmail.php';
 
-        $email = 'nhalinh@lioa.com';
+        // $email = 'nhalinh@lioa.com';
 
-        $vmail = new verifyEmail();
-        $vmail->setStreamTimeoutWait(20);
-        //$vmail->Debug= TRUE;
-        $vmail->Debugoutput= 'html';
+        // $vmail = new verifyEmail();
+        // $vmail->setStreamTimeoutWait(20);
+        // $vmail->Debugoutput= 'html';
 
-        $vmail->setEmailFrom('factlinkportvn@gmail.com');
+        // $vmail->setEmailFrom('factlinkportvn@gmail.com');
 
-        if ($vmail->check($email)) {
-            echo 'email &lt;' . $email . '&gt; exist!';
-        } elseif (verifyEmail::validate($email)) {
-            echo 'email &lt;' . $email . '&gt; valid, but not exist!';
-        } else {
-            echo 'email &lt;' . $email . '&gt; not valid and not exist!';
-        }
+        // if ($vmail->check($email)) {
+        //     echo 'email &lt;' . $email . '&gt; exist!';
+        // } elseif (verifyEmail::validate($email)) {
+        //     echo 'email &lt;' . $email . '&gt; valid, but not exist!';
+        // } else {
+        //     echo 'email &lt;' . $email . '&gt; not valid and not exist!';
+        // }
         ?>
-    </body>
-</html>
+    <!-- </body>
+</html> -->
+<?php
+    echo date("Ymd");
+    //$query1 = "SELECT * FROM `flc_member` ORDER BY rand("20190817") LIMIT 10;";
+    $query2 = "SELECT * FROM `flc_member` ORDER BY rand(" . date("Ymd") . ") LIMIT 10;";
+    var_dump($query2);
+?>

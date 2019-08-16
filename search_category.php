@@ -169,29 +169,31 @@
 		unset($arrlist[0]);
 
 		//FREE
-		$sql1 = "select mem_id from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_package = '' and mem_status != 'd' order by mem_id asc;"; 
+		//$sql1 = "select mem_id from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_package = '' and mem_status != 'd' order by mem_id asc;";
+		$sql1 = "select mem_id from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_package = '' and mem_status != 'd' order by  rand(". date("Ymd") .");";
 		$result1 = mysql_query($sql1);
 
 
 		// Rotate Free Member Here
-		$freeMemberIdList = array();
-		while ( $dbarr1 = mysql_fetch_array($result1) ) {
-			$freeMemberIdList[$cntlist] = $dbarr1['mem_id'];
-			$cntlist = $cntlist + 1;
-		}
-
-		//randum free member
-		shuffle($freeMemberIdList);
-
-		$arrlist = array_merge($arrlist, $freeMemberIdList);
-		array_unshift($arrlist,"");
-		unset($arrlist[0]);
-		// End Rotate Free Member Here
-		// while ($dbarr1 = mysql_fetch_array($result1)) {
-
-		// 	$arrlist[$cntlist] = $dbarr1['mem_id'];
+		// $freeMemberIdList = array();
+		// while ( $dbarr1 = mysql_fetch_array($result1) ) {
+		// 	$freeMemberIdList[$cntlist] = $dbarr1['mem_id'];
 		// 	$cntlist = $cntlist + 1;
 		// }
+
+		//randum free member
+		// shuffle($freeMemberIdList);
+
+		// $arrlist = array_merge($arrlist, $freeMemberIdList);
+		// array_unshift($arrlist,"");
+		// unset($arrlist[0]);
+		// End Rotate Free Member Here
+
+		while ($dbarr1 = mysql_fetch_array($result1)) {
+
+			$arrlist[$cntlist] = $dbarr1['mem_id'];
+			$cntlist = $cntlist + 1;
+		}
 		
 		$startlist = $start + 1;
 		$alllist = $start + $limit;

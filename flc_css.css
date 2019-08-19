@@ -1324,3 +1324,7 @@ button:hover,
 .pd-5 {
 	padding: 5px;
 }
+
+.fl-d-none {
+	display: none;
+}

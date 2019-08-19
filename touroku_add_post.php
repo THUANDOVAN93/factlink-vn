@@ -201,10 +201,10 @@
 		<body>
 		<table width=\"650\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#FFFFFF\">
 		  <tr>
-			<td colspan=\"3\"><img src=\"http://www.fact-link.com.vn/images/mail_01.jpg\" width=\"650\" height=\"75\" /></td>
+			<td colspan=\"3\"><img src=\"https://www.fact-link.com.vn/images/mail_01.jpg\" width=\"650\" height=\"75\" /></td>
 		  </tr>
 		  <tr>
-			<td width=\"20\" background=\"http://www.fact-link.com.vn/images/mail_02.jpg\">&nbsp;</td>
+			<td width=\"20\" background=\"https://www.fact-link.com.vn/images/mail_02.jpg\">&nbsp;</td>
 			<td width=\"610\"><p><font style=\"color: #CC0000; font-weight: bold; font-size: 18px;\">会員情報の確認 / Membership confirmation</font><br />
 			  <br />
 			  <font color=\"#00000\">この度は 製造業ポータルサイト <strong>fact-link.com.vn</strong> へご入会いただき、誠にありがとうございます。<br />
@@ -220,7 +220,7 @@
 		------------------------------------------------------------<br />
 		■ログイン画面 / Login at :<br />
 		<br />
-		　　　http://www.fact-link.com.vn/<br />
+		　　　https://www.fact-link.com.vn/<br />
 		<br />
 		------------------------------------------------------------<br />
 		■アカウント情報 / Your account information :<br />
@@ -229,7 +229,7 @@
 		　<strong>パスワード / Password :</strong> ".$t_password."<br />
 		<br />
 		パスワードはサイト上で変更できます。ログイン→パスワード変更<br />
-		You can change your password by login at http://www.fact-link.com.vn/ and Change Password.<br />
+		You can change your password by login at https://www.fact-link.com.vn/ and Change Password.<br />
 		<br />
 		★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★<br />
 		当サイトの最大の魅力は、簡単にお客様自身のホームページを開設<br />
@@ -246,7 +246,7 @@
 		------------------------------------------------------------<br />
 		■専用ホームページ領域 / This is your domain name :<br />
 		<br />
-		　http://www.fact-link.com.vn/home/".$t_emanhtap." <br />
+		　https://www.fact-link.com.vn/home/".$t_emanhtap." <br />
 		<br />
 		この領域にお客様のホームページが作成されます。<br />
 		ページ構築を行なうには、ホームページ作成ツールにログインしてください。<br />
@@ -280,6 +280,11 @@
 		登録情報はサイト上で変更できます。ログイン→ユーザー情報<br />
 		To change your company's profile you need to login to our website.<br />
 		------------------------------------------------------------<br />
+		有料会員になると、ファクトリンク内で上位に表示され、より多くの情報を提供できます。詳しくは<a href=\"https://www.fact-link.com.vn/intro?lang=jp\" target=\"_blank\">こちら</a>をご覧ください。<br />
+		If you become a paid member of Fact-Link Vietnam, your page will be shown more. Also you can provide richer information than now. For more
+		details, please refer to <a href=\"https://www.fact-link.com.vn/intro?lang=en\" target=\"_blank\">this page</a>. 
+		<br />
+		------------------------------------------------------------<br />
 		このメールは自動的に送信されております。一部のサービスは、<br />
 		当サイトにて登録承認が行なわれた後に利用可能となりますので、<br />
 		今しばらくお待ちください。<br />
@@ -297,10 +302,10 @@
 		http://www.fact-link.com.vn</font>
 			</p>
 			</td>
-			<td width=\"20\" background=\"http://www.fact-link.com.vn/images/mail_03.jpg\">&nbsp;</td>
+			<td width=\"20\" background=\"https://www.fact-link.com.vn/images/mail_03.jpg\">&nbsp;</td>
 		  </tr>
 		  <tr>
-			<td colspan=\"3\"><img src=\"http://www.fact-link.com.vn/images/mail_04.jpg\" width=\"650\" height=\"40\" /></td>
+			<td colspan=\"3\"><img src=\"https://www.fact-link.com.vn/images/mail_04.jpg\" width=\"650\" height=\"40\" /></td>
 		  </tr>
 		</table>
 		</body>

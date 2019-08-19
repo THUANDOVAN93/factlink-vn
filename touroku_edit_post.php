@@ -97,113 +97,118 @@ if ($t_letmoc != '123456') {
 
 		$subject = "[ ファクトリンク (Fact-link.com.vn) ] 会員登録のご確認　Membership Confirmation.";
 		$detail = "<html>
-<body>
-<table width=\"650\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#FFFFFF\">
-  <tr>
-    <td colspan=\"3\"><img src=\"http://www.fact-link.com.vn/images/mail_01.jpg\" width=\"650\" height=\"75\" /></td>
-  </tr>
-  <tr>
-    <td width=\"20\" background=\"http://www.fact-link.com.vn/images/mail_02.jpg\">&nbsp;</td>
-    <td width=\"610\"><p><font style=\"color: #CC0000; font-weight: bold; font-size: 18px;\">会員情報の確認 / Membership confirmation</font><br />
-      <br />
-	  <font color=\"#00000\">この度は 製造業ポータルサイト <strong>fact-link.com.vn</strong> へご入会いただき、誠にありがとうございます。<br />
-お客様からのご登録を、以下の通り受け付けさせていただきました。<br />
-<br />
-当サイトのサービスを利用するには、まず基本情報の登録を行なってください。<br />
-お客様のユーザー名とパスワードは以下の通りです。<br />
-<br />
-Thank you for your registration at <strong>fact-link.com.vn</strong>.<br />
-To make use of our service, you need to provide your company's information.<br />
-Your username and password is shown below :<br />
-<br />
-------------------------------------------------------------<br />
-■ログイン画面 / Login at :<br />
-<br />
-　　　http://www.fact-link.com.vn/<br />
-<br />
-------------------------------------------------------------<br />
-■アカウント情報 / Your account information :<br />
-<br />
-　<strong>ユーザー名 / Username :</strong> ".$t_emanresu."<br />
-　<strong>パスワード / Password :</strong> ".$t_password."<br />
-<br />
-パスワードはサイト上で変更できます。ログイン→パスワード変更<br />
-You can change your password by login at http://www.fact-link.com.vn/ and Change Password.<br />
-<br />
-★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★<br />
-当サイトの最大の魅力は、簡単にお客様自身のホームページを開設<br />
-できることです。専用ホームページを作ることで、インターネット<br />
-上で広く情報を発信したり、お問合せを受け付けたり、当サイトの<br />
-企業データベースへ登録することが可能となります。<br />
-ホームページの作成は非常に簡単です、ぜひご活用ください。<br />
-★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★<br />
-<br />
-You can make your website easily at http://www.fact-link.com.vn/<br />
-which will also link your website to our company's database<br />
-therefore you can promote your company and obtain more<br />
-business offers. Make the most use our service !<br />
-------------------------------------------------------------<br />
-■専用ホームページ領域 / This is your domain name :<br />
-<br />
-　http://www.fact-link.com.vn/home/".$t_emanhtap." <br />
-<br />
-この領域にお客様のホームページが作成されます。<br />
-ページ構築を行なうには、ホームページ作成ツールにログインしてください。<br />
-This URL will link to your webpage after created.<br />
-To create your webpage, please login and click Page Mangagement.<br />
-------------------------------------------------------------<br />
-■登録情報 / Your company's profile :<br />
-<br />
-　<strong>会社名 / Company name</strong><br />
-　".$t_emanmoc_jp."<br />
-　".$t_emanmoc_en."<br />
-　<strong>住所 / Address</strong><br />
-　".$t_sserddamoc_en." ".$prvname." ".$t_pizmoc." ".$t_yrtnuocmoc."<br />
-　<strong>工業団地 / Industrial Estate</strong><br />
-　".$inename."<br />
-　<strong>TEL</strong><br />
-　".$t_letmoc."<br />
-　<strong>FAX</strong><br />
-　".$t_xafmoc."<br />
-　<br />
-　<strong>担当者名 / Contact Name</strong><br />
-　".$t_tcatnoc_jp."<br />
-　".$t_tcatnoc_en."<br />
-　<strong>役職 / Position</strong><br />
-　".$t_noitisop_en."<br />
-　<strong>E-mail</strong><br />
-　".$t_liam."<br />
-　<strong>TEL</strong><br />
-　".$t_let."<br />
-　<br />
-登録情報はサイト上で変更できます。ログイン→ユーザー情報<br />
-To change your company's profile you need to login to our website.<br />
-------------------------------------------------------------<br />
-このメールは自動的に送信されております。一部のサービスは、<br />
-当サイトにて登録承認が行なわれた後に利用可能となりますので、<br />
-今しばらくお待ちください。<br />
-<br />
-もし、このメールに心当たりが無い場合は info@fact-link.com.vn までお知らせください。<br />
-今後とも 製造業ポータルサイト fact-link.com.vn をよろしくお願い申し上げます。<br />
-<br />
-This mail is automatically sent to you.<br />
-Part of our service will be activated after we confirm your registration.<br />
-If you have no information why this mail was sent to you,<br />
-contact : info@fact-link.com.vn <br />
-<br />
-------------------------------------------------------------<br />
-ベトナムの日系製造業を結ぶポータルサイト<br />
-http://www.fact-link.com.vn</font>
-    </p>
-    </td>
-    <td width=\"20\" background=\"http://www.fact-link.com.vn/images/mail_03.jpg\">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan=\"3\"><img src=\"http://www.fact-link.com.vn/images/mail_04.jpg\" width=\"650\" height=\"40\" /></td>
-  </tr>
-</table>
-</body>
-</html>";
+		<body>
+		<table width=\"650\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#FFFFFF\">
+		  <tr>
+		    <td colspan=\"3\"><img src=\"http://www.fact-link.com.vn/images/mail_01.jpg\" width=\"650\" height=\"75\" /></td>
+		  </tr>
+		  <tr>
+		    <td width=\"20\" background=\"http://www.fact-link.com.vn/images/mail_02.jpg\">&nbsp;</td>
+		    <td width=\"610\"><p><font style=\"color: #CC0000; font-weight: bold; font-size: 18px;\">会員情報の確認 / Membership confirmation</font><br />
+		      <br />
+			  <font color=\"#00000\">この度は 製造業ポータルサイト <strong>fact-link.com.vn</strong> へご入会いただき、誠にありがとうございます。<br />
+		お客様からのご登録を、以下の通り受け付けさせていただきました。<br />
+		<br />
+		当サイトのサービスを利用するには、まず基本情報の登録を行なってください。<br />
+		お客様のユーザー名とパスワードは以下の通りです。<br />
+		<br />
+		Thank you for your registration at <strong>fact-link.com.vn</strong>.<br />
+		To make use of our service, you need to provide your company's information.<br />
+		Your username and password is shown below :<br />
+		<br />
+		------------------------------------------------------------<br />
+		■ログイン画面 / Login at :<br />
+		<br />
+		　　　http://www.fact-link.com.vn/<br />
+		<br />
+		------------------------------------------------------------<br />
+		■アカウント情報 / Your account information :<br />
+		<br />
+		　<strong>ユーザー名 / Username :</strong> ".$t_emanresu."<br />
+		　<strong>パスワード / Password :</strong> ".$t_password."<br />
+		<br />
+		パスワードはサイト上で変更できます。ログイン→パスワード変更<br />
+		You can change your password by login at http://www.fact-link.com.vn/ and Change Password.<br />
+		<br />
+		★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★<br />
+		当サイトの最大の魅力は、簡単にお客様自身のホームページを開設<br />
+		できることです。専用ホームページを作ることで、インターネット<br />
+		上で広く情報を発信したり、お問合せを受け付けたり、当サイトの<br />
+		企業データベースへ登録することが可能となります。<br />
+		ホームページの作成は非常に簡単です、ぜひご活用ください。<br />
+		★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★<br />
+		<br />
+		You can make your website easily at http://www.fact-link.com.vn/<br />
+		which will also link your website to our company's database<br />
+		therefore you can promote your company and obtain more<br />
+		business offers. Make the most use our service !<br />
+		------------------------------------------------------------<br />
+		■専用ホームページ領域 / This is your domain name :<br />
+		<br />
+		　http://www.fact-link.com.vn/home/".$t_emanhtap." <br />
+		<br />
+		この領域にお客様のホームページが作成されます。<br />
+		ページ構築を行なうには、ホームページ作成ツールにログインしてください。<br />
+		This URL will link to your webpage after created.<br />
+		To create your webpage, please login and click Page Mangagement.<br />
+		------------------------------------------------------------<br />
+		■登録情報 / Your company's profile :<br />
+		<br />
+		　<strong>会社名 / Company name</strong><br />
+		　".$t_emanmoc_jp."<br />
+		　".$t_emanmoc_en."<br />
+		　<strong>住所 / Address</strong><br />
+		　".$t_sserddamoc_en." ".$prvname." ".$t_pizmoc." ".$t_yrtnuocmoc."<br />
+		　<strong>工業団地 / Industrial Estate</strong><br />
+		　".$inename."<br />
+		　<strong>TEL</strong><br />
+		　".$t_letmoc."<br />
+		　<strong>FAX</strong><br />
+		　".$t_xafmoc."<br />
+		　<br />
+		　<strong>担当者名 / Contact Name</strong><br />
+		　".$t_tcatnoc_jp."<br />
+		　".$t_tcatnoc_en."<br />
+		　<strong>役職 / Position</strong><br />
+		　".$t_noitisop_en."<br />
+		　<strong>E-mail</strong><br />
+		　".$t_liam."<br />
+		　<strong>TEL</strong><br />
+		　".$t_let."<br />
+		　<br />
+		登録情報はサイト上で変更できます。ログイン→ユーザー情報<br />
+		To change your company's profile you need to login to our website.<br />
+		------------------------------------------------------------<br />
+		有料会員になると、ファクトリンク内で上位に表示され、より多くの情報を提供できます。詳しくは<a href=\"https://www.fact-link.com.vn/intro?lang=jp\" target=\"_blank\">こちら</a>をご覧ください。<br />
+		If you become a paid member of Fact-Link Vietnam, your page will be shown more. Also you can provide richer information than now. For more
+		details, please refer to <a href=\"https://www.fact-link.com.vn/intro?lang=en\" target=\"_blank\">this page</a>. 
+		<br />
+		------------------------------------------------------------<br />
+		このメールは自動的に送信されております。一部のサービスは、<br />
+		当サイトにて登録承認が行なわれた後に利用可能となりますので、<br />
+		今しばらくお待ちください。<br />
+		<br />
+		もし、このメールに心当たりが無い場合は info@fact-link.com.vn までお知らせください。<br />
+		今後とも 製造業ポータルサイト fact-link.com.vn をよろしくお願い申し上げます。<br />
+		<br />
+		This mail is automatically sent to you.<br />
+		Part of our service will be activated after we confirm your registration.<br />
+		If you have no information why this mail was sent to you,<br />
+		contact : info@fact-link.com.vn <br />
+		<br />
+		------------------------------------------------------------<br />
+		ベトナムの日系製造業を結ぶポータルサイト<br />
+		http://www.fact-link.com.vn</font>
+			</p>
+			</td>
+			<td width=\"20\" background=\"https://www.fact-link.com.vn/images/mail_03.jpg\">&nbsp;</td>
+		  </tr>
+		  <tr>
+			<td colspan=\"3\"><img src=\"https://www.fact-link.com.vn/images/mail_04.jpg\" width=\"650\" height=\"40\" /></td>
+		  </tr>
+		</table>
+		</body>
+		</html>";
 
 	$body = "$detail";
 

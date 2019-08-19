@@ -809,6 +809,11 @@
 	// ONCOMING SECTION
 	$sqlGetEvents = "SELECT * FROM flc_events WHERE status != 'd' LIMIT 2;";
 	$events = mysql_query($sqlGetEvents);
+	$classHaveEvent = "";
+	if (mysql_num_rows($events) == 0) {
+		$classHaveEvent = "fl-d-none";
+	}
+	$tpl->assign("##classHaveEvent##", $classHaveEvent);
 	while ($event = mysql_fetch_array($events)) {
 		
 		if ($_COOKIE['vlang'] == 'en') {

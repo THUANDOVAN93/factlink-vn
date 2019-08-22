@@ -39,9 +39,9 @@
 		$_COOKIE['vlang'] = 'en';
 	}
 
-	if (isset($_GET['lang']) && !empty($_GET['lang'])) {
-		$_COOKIE['vlang'] = $_GET['lang'];
-	}
+	// if (isset($_GET['lang']) && !empty($_GET['lang'])) {
+	// 	$_COOKIE['vlang'] = $_GET['lang'];
+	// }
 	
 	/* Navigation menu for template (HTML Fragments) */
 	if ($_COOKIE['vlang'] == 'en') {

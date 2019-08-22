@@ -81,12 +81,12 @@
     <!-- </body>
 </html> -->
 <?php
-    //var_dump(phpinfo());die();
+    var_dump(phpinfo());
     //echo date("Ymd");
     //$query1 = "SELECT * FROM `flc_member` ORDER BY rand("20190817") LIMIT 10;";
     //$query2 = "SELECT * FROM `flc_member` ORDER BY rand(" . date("Ymd") . ") LIMIT 10;";
-    $object = new stdClass();
-    var_dump($object);
+    // $object = new stdClass();
+    // var_dump($object);
 ?>
 
 <!-- <meta HTTP-EQUIV="Pragma" content="no-cache">

@@ -1934,9 +1934,9 @@
 
 	
 	if ( $_COOKIE['vlang'] == 'vn' ) {
-		$footerInfo = "<p>CÔNG TY TNHH FACT-LINK MARKETPLACE</br>Địa chỉ: 602/43 Điện Biên Phủ, Phường 22, Quận Bình Thạnh, Thành phố Hồ Chí Minh</br>SĐT: 0888 767 138 - Email: info@fact-link.com.vn</br>Số GCNĐKDN (MST): 0313 560 828</br>Cấp ngày:  03/12/2015 bởi Sở Kế Hoạch và Đầu Tư TP. HCM</p>";
+		$footerInfo = "<p>CÔNG TY TNHH FACT-LINK MARKETPLACE</br>Địa chỉ: 602/43 Điện Biên Phủ, Phường 22, Quận Bình Thạnh, Thành phố Hồ Chí Minh</br>SĐT: (+84) 888 767 138 - Email: info@fact-link.com.vn</br>Số GCNĐKDN (MST): 0313 560 828</br>Cấp ngày:  03/12/2015 bởi Sở Kế Hoạch và Đầu Tư TP. HCM</p>";
 	} else {
-		$footerInfo = "<p>FACT-LINK MARKETPLACE CO.,LTD</br>Address: 602/43 Dien Bien Phu, Ward 22, Binh Thanh District, Ho Chi Minh City.</br>Tel: 0888 767 138 - Email: info@fact-link.com.vn</br>Tax code: 0313 560 828</br>Date: 03/12/2015 by Ho Chi Minh City Department of Planning and Investment</p>";
+		$footerInfo = "<p>FACT-LINK MARKETPLACE CO.,LTD</br>Address: 602/43 Dien Bien Phu, Ward 22, Binh Thanh District, Ho Chi Minh City.</br>Tel: (+84) 888 767 138 - Email: info@fact-link.com.vn</br>Tax code: 0313 560 828</br>Date: 03/12/2015 by Ho Chi Minh City Department of Planning and Investment</p>";
 	}
 	$footerInfo .= "<p><a rel=\"nofollow\" target=\"_blank\" href=\"http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=50823\"><img alt=\"\" title=\"\" src=\"/image/authent.png\" /></a></p>";
 	$tpl->assign("##FOOTER_INFO##", $footerInfo);

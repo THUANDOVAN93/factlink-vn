@@ -676,12 +676,12 @@ iframe {
 }
 
 .product-box .wrap-product-des .product-name a {
-    color: #000;
+    color: #36C;
+    font-weight: bold;
     outline: none;
 }
 
 .product-box .wrap-product-des .product-name a:hover {
-    text-decoration: none;
     opacity: 0.8;
 }
 

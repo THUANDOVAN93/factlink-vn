@@ -117,6 +117,9 @@
 		$search_by_category = "Search by Category";
 		$meta_description = "FactLink Vietnam is a company introduction site for manufacturing companies based in Vietnam. We will introduce the information of the registered company. The information posted includes business domain, products, location, industrial park, and contact information. We also provide services to support the manufacturing industry in Vietnam";
 		$meta_keyword = "Manufacturing business, Manufacture, Vietnam, Japan, Factory, Expansion into Thailand";
+		$headingNewRegister = "RECENTLY REGISTERED COMPANY";
+		$headingFeaturedProduct = "FEATURED PRODUCTS";
+		$headingInfoEvent = "INFORMATION / EVENTS";
 	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
@@ -231,6 +234,9 @@
 		$search_by_category = "Tìm theo danh mục";
 		$meta_description = "FactLink Vietnam là trang web chuyên giới thiệu các công ty trong ngành công nghiệp sản xuất có trụ sở tại Việt Nam. Chúng tôi sẽ giới thiệu thông tin của các công ty thành viên bao gồm lĩnh vực kinh doanh, mô tả sản phẩm, địa chỉ, thông tin liên hệ.... Chúng tôi cũng cung cấp các dịch vụ để hỗ trợ ngành sản xuất tại Việt Nam, như hỗ trợ tìm kiếm nhà máy, nhà kho. ";
 		$meta_keyword = "sản xuất , chế tạo,sản xuất kinh doanh ,ngành công nghiệp";
+		$headingNewRegister = "THÀNH VIÊN GẦN ĐÂY";
+		$headingFeaturedProduct = "SẢN PHẨM YÊU THÍCH";
+		$headingInfoEvent = "THÔNG TIN / SỰ KIỆN";
 	} else { 
 		
 		$langpicjp = "lang_jp_02.png";
@@ -345,11 +351,17 @@
 		$pro_contact = "問い合わせ";
 		$headingEvent = "FEATURED EVENTS";
 		$seeMore = "詳しくはこちら";
-		$search_by_category = "Search by Category";
+		$search_by_category = "業種から探す";
 		$meta_description = "ファクトリンクベトナムは、ベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。ご登録いただいた企業様の情報をご紹介致します。掲載情報は、事業内容、取扱品目、住所、工業団地、連絡先など製造業に特化した項目を設けております。また工場進出サポートなど在ベトナムの製造業を支援するサービスを提供しております。";
 		$meta_keyword = "製造業,製造,ベトナム,日本,工場,進出";
+		$headingNewRegister = "新規登録企業";
+		$headingFeaturedProduct = "ピックアップ製品";
+		$headingInfoEvent = "イベント・ニュース";
 	} 
 	
+	$tpl->assign("##headingNewRegister##", $headingNewRegister);
+	$tpl->assign("##headingFeaturedProduct##", $headingFeaturedProduct);
+	$tpl->assign("##headingInfoEvent##", $headingInfoEvent);
 	$tpl->assign("##langpicjp##", $langpicjp);
 	$tpl->assign("##langpicvn##", $langpicvn);
 	$tpl->assign("##langpicen##", $langpicen);
@@ -642,7 +654,7 @@
 			$headingtext = "<h2 class=\"header\">FEATURE ARTICLE</h2>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
 			$headingtext = "<h2 class=\"header\">Bài viết nổi bật</h2>";
-		} else { $headingtext = "<h2 class=\"header\">FEATURE ARTICLE</h2>"; }
+		} else { $headingtext = "<h2 class=\"header\">特集企業</h2>"; }
 		
 		if ($headingtext != '') {
 			$heading = "<tr>
@@ -655,8 +667,8 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$headingtext2 = "<h2 class=\"header\">UPDATE</h2>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$headingtext2 = "<h2 class=\"header\">Cập nhật</h2>";
-		} else { $headingtext2 = "<h2 class=\"header\">UPDATE</h2>"; }
+			$headingtext2 = "<h2 class=\"header\">CẬP NHẬT</h2>";
+		} else { $headingtext2 = "<h2 class=\"header\">更新</h2>"; }
 		
 		if ($headingtext2 != '') {
 			$heading2 = "<tr>
@@ -669,8 +681,8 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$headingtext3 = "<h2 class=\"header\">INTRODUCE COMPANY</h2>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$headingtext3 = "<h2 class=\"header\">Giới thiệu công ty</h2>";
-		} else { $headingtext3 = "<h2 class=\"header\">INTRODUCE COMPANY</h2>"; }
+			$headingtext3 = "<h2 class=\"header\">GIỚI THIỆU CÔNG TY</h2>";
+		} else { $headingtext3 = "<h2 class=\"header\">ピックアップ企業</h2>"; }
 		
 		if ($headingtext3 != '') {
 			$heading3 = "<tr>

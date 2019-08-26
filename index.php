@@ -353,19 +353,22 @@
 	$getFeaCatProId = mysql_fetch_array($rsFeaCatProId);
 	$feaCatProId = $getFeaCatProId['CategoryID'];
 
-	$sqlFeaturedProduct = "select p.*, m.mem_folder from flc_products p, flc_member m where CategoryID = '$feaCatProId' and p.SupplierID = m.mem_id order by RAND() limit $qtyFeaProduct;";
+	$sqlFeaturedProduct = "select p.*, m.mem_folder, m.mem_comname_en, m.mem_comname_jp, m.mem_comname_vn from flc_products p, flc_member m where CategoryID = '$feaCatProId' and p.SupplierID = m.mem_id order by RAND() limit $qtyFeaProduct;";
 	$rsFeaturedproduct = mysql_query($sqlFeaturedProduct);
 	while ($feaProductItem = mysql_fetch_array($rsFeaturedproduct)) {
 
 		if ($_COOKIE['vlang'] == 'en') {
 
 			$feaProductName = $feaProductItem['ProductNameEN'];
+			$feaProductCompanyName = $feaProductItem['mem_comname_en'];
 		} elseif ($_COOKIE['vlang'] == 'vn') {
 
 			$feaProductName = $feaProductItem['ProductNameVN'];
+			$feaProductCompanyName = $feaProductItem['mem_comname_vn'];
 		} else {
 
 			$feaProductName = $feaProductItem['ProductNameJP'];
+			$feaProductCompanyName = $feaProductItem['mem_comname_jp'];
 		}
 
 		$sourceImage = 'home/'.$feaProductItem['mem_folder'].'/products/';
@@ -373,6 +376,7 @@
 
 		$tpl->assign("##feaproductimagelink##", $imgLink);
 		$tpl->assign("##feaproductname##", $feaProductName);
+		$tpl->assign("##feaProductCompanyName##", $feaProductCompanyName);
 		$tpl->assign("##feaproductid##", $feaProductItem['ProductID']);
 		$tpl->parse("#####ROW#####", '.rows_featured_products');
 	}
@@ -720,7 +724,7 @@
 		</tr>
 		<tr>
 			<td>
-				<h2 class=\"header\">INFORMATION / EVENTS</h2>
+				<h2 class=\"header\">".$headingInfoEvent."</h2>
 			</td>
 		</tr>
 		<tr>
@@ -843,6 +847,33 @@
 		$tpl->parse("#####ROW#####", ".rows_events");
 	}
 	// END ONCOMING SECTION
+
+	// MEMBER NEWLEST REGIST HAVE PROFILE
+	//$sqlRecentMembersRegist = "SELECT * FROM `flc_member` WHERE mem_id IN (SELECT mem_id FROM flc_page WHERE pag_type = 'prf') order by STR_TO_DATE(mem_registdate, '%d %b %Y') DESC LIMIT 5;";
+	$sqlRecentMembersRegist = "SELECT * FROM `flc_member` WHERE mem_id IN (SELECT mem_id FROM flc_page WHERE pag_type = 'prf') order by mem_id DESC LIMIT 5;";
+	$resultRecentMembersRegist = mysql_query($sqlRecentMembersRegist);
+	while ($RcMemberRegist = mysql_fetch_array($resultRecentMembersRegist)) {
+
+		$dateRegistArr = explode(" ",$RcMemberRegist['mem_registdate']);
+
+		if ($_COOKIE['vlang'] == 'en') {
+			$RcNameMemberRegist = $RcMemberRegist['mem_comname_en'];
+			$RcDateMemberRegist = $RcMemberRegist['mem_registdate'];
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+			$RcNameMemberRegist = $RcMemberRegist['mem_comname_vn'];
+			$RcDateMemberRegist = $RcMemberRegist['mem_registdate'];
+		} else {
+			$RcNameMemberRegist = $RcMemberRegist['mem_comname_jp'];
+			$RcDateMemberRegist = $dateRegistArr[2]."年".mcvsubtonum($dateRegistArr[1])."月".$dateRegistArr[0]."日";
+		}
+		$RcLinkMemberRegist = 'home/'.$RcMemberRegist['mem_folder'];
+		$tpl->assign('##RcNameMemberRegist##', $RcNameMemberRegist);
+		$tpl->assign('##RcLinkMemberRegist##', $RcLinkMemberRegist);
+		$tpl->assign('##RcDateMemberRegist##', $RcDateMemberRegist);
+		$tpl->parse("#####ROW#####", ".rows_recentmemregist");
+	}
+
+	// END MEMBER NEWLEST REGIST HAVE PROFILE
 		
 	$tpl->assign("##announce##", $announce);
 	$tpl->parse ("##RIGHT_AREA##", "right_tpl");

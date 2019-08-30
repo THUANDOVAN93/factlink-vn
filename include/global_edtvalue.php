@@ -337,6 +337,7 @@
 		$tt_mail_products_manager = "Mail Product List";
 		$product_name = "Product Name";
 		$access_report = "Access Report";
+		$mapCode = "Map Code";
 		
 	} 
 	
@@ -677,6 +678,7 @@
 
 		$product_name = "Tên sản phẩm";
 		$access_report = "Thống Kê Truy Cập";
+		$mapCode = "Map Code";
 	}
 	
 	else { 
@@ -1017,9 +1019,11 @@
 
 		$product_name = "製品名";
 		$access_report = "アクセスレポート";
+		$mapCode = "Map Code";
 		
 	} 
 	
+	$tpl->assign("##mapCode##", $mapCode);
 	$tpl->assign("##langpicjp##", $langpicjp);
 	$tpl->assign("##langpicvn##", $langpicvn);
 	$tpl->assign("##langpicen##", $langpicen);

@@ -11,9 +11,11 @@
 	/* Only accept submit data from following URI to prevent XSS attack */
 	$allow[] = 'https://www.fact-link.com.vn/contact.php';
 	$allow[] = 'https://fact-link.com.vn/contact.php';
+	$allow[] = 'https://www.fact-link.com.vn/contact';
+	$allow[] = 'https://fact-link.com.vn/contact';
 	
 	if(!in_array($_SERVER["HTTP_REFERER"],$allow)){
-		echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_done.php\">";
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_done.php?case=url\">";
 		exit();
 	}
 

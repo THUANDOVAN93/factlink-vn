@@ -122,6 +122,7 @@
 		$pagshowen = $dbarr1['pag_show_en'];
 		$pagshowjp = $dbarr1['pag_show_jp'];
 		$pagshowvn = $dbarr1['pag_show_vn'];
+		$pagmapcode = $dbarr1['pag_memo'];
 	
 	}
 	
@@ -224,6 +225,7 @@
 	$tpl->assign("##pagimagesider##", $pagimagesider);
 	$tpl->assign("##pagimagelink##", $pagimagelink);
 	$tpl->assign("##pagimagedisable##", $pagimagedisable);
+	$tpl->assign("##pagmapcode##", $pagmapcode);
 	
 	$tpl->parse ("##DETAIL_AREA##", "detail_tpl");
 	$tpl->parse ("MAIN", "main_tpl");

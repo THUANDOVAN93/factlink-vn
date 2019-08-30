@@ -81,13 +81,57 @@
     <!-- </body>
 </html> -->
 <?php
-    var_dump(phpinfo());
+    //var_dump(phpinfo());
     //echo date("Ymd");
     //$query1 = "SELECT * FROM `flc_member` ORDER BY rand("20190817") LIMIT 10;";
     //$query2 = "SELECT * FROM `flc_member` ORDER BY rand(" . date("Ymd") . ") LIMIT 10;";
     // $object = new stdClass();
     // var_dump($object);
 ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 600px;
+        width: 760px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 500px;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+        var map;
+        var myLatLng = {lat: 20.9115551, lng: 106.0720911};
 
-<!-- <meta HTTP-EQUIV="Pragma" content="no-cache">
-<meta HTTP-EQUIV="Expires" content="-1"> -->
+        function initMap() {
+
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: myLatLng,
+              zoom: 17
+            });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: myLatLng,
+                icon: {
+                    url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                }
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPZz1ZJ5hXxJUrrFNi9qGPazd06XUFik&callback=initMap"
+    async defer></script>
+  </body>
+</html>

@@ -164,6 +164,9 @@
 
 	// Render Product List
 	$start = $_GET['start'];
+	if (empty($start)) {
+		$start = 0;
+	}
 	$limit = 6; // limit category
 	
 	

@@ -16,13 +16,9 @@
    <tr>
     <td><img src="images/blank.png" width="760" height="9" /></td>
   </tr>
-
   <tr>
-    <td>
-      ##mapHTML##
-    </td>
+    <td><div id="map2" style="width: ##mapWidth##; height: ##mapHeight##;"></div></td>
   </tr>
-
   <tr>
     <td bgcolor="##pagtitlecolor##"><img src="images/blank.png" width="760" height="2" /></td>
   </tr>
@@ -153,3 +149,31 @@
   </tr>
 </table>
 </div>
+<script>
+  var map;
+  var myLat = '##myLat##';
+  var myLng = '##myLng##';
+  if (myLat !== '' && myLat !== '') {
+    var myLat = Number('##myLat##');
+    var myLng = Number('##myLng##');
+    var myLatLng = {lat: myLat, lng: myLng};
+
+    function initMap() {
+
+      map = new google.maps.Map(document.getElementById('map2'), {
+        center: myLatLng,
+        zoom: 17
+      });
+
+      var marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        icon: {
+        url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+        }
+      });
+    }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPZz1ZJ5hXxJUrrFNi9qGPazd06XUFik&callback=initMap"
+async defer></script>

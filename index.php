@@ -706,7 +706,10 @@
 			}
 		}
 			
-		$updlink = "mem_".$updpagtype.".php?id=".$updlistmemid."&page=".$updpagid."&lang=".$updlangset;		
+		$updlink = "mem_".$updpagtype.".php?id=".$updlistmemid."&page=".$updpagid."&lang=".$updlangset;
+		if ($updpagtype == 'pro') {
+			$updlink = "mem_products.php?id=".$updlistmemid."&page=".$updpagid."&lang=".$updlangset."&start=0";
+		}
 		
 		$tpl->assign("##updmemname##", $updmemname);
 		$tpl->assign("##updlink##", $updlink);

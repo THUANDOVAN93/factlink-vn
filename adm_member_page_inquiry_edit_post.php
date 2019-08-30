@@ -19,6 +19,7 @@
 	$t_clf = addslashes($_POST['t_clf']);
 	$t_pagtitle = addslashes($_POST['t_pagtitle']);
 	$t_pagdetail = addslashes($_POST['t_pagdetail']);
+	$t_codemap = addslashes($_POST['t_codemap']);
 	$t_image = $_FILES['t_image'];
 	$t_imagewidth = $_POST['t_imagewidth'];
 	$t_imageside = $_POST['t_imageside'];
@@ -39,19 +40,19 @@
 	if ($h_langcode == 'en') {
 
 		$sql1 = "update flc_page set pag_show_en = '$t_setlang', pag_name_en = '$t_pagname', pag_pagetitle_en = '$t_pagpagetitle', pag_title_color = '$t_clf',
-						pag_title_en = '$t_pagtitle', pag_detail_en = '$t_pagdetail', pag_sort = '$t_pagsort', pag_editdate = '$nowdate', pag_edittime = '$nowtime'
+						pag_title_en = '$t_pagtitle', pag_detail_en = '$t_pagdetail', pag_sort = '$t_pagsort', pag_editdate = '$nowdate', pag_edittime = '$nowtime', pag_memo = '$t_codemap' 
 						where pag_id = '$h_pagid';";
 
 	} else if ($h_langcode == 'vn') {
 
 		$sql1 = "update flc_page set pag_show_vn = '$t_setlang', pag_name_vn = '$t_pagname', pag_pagetitle_vn = '$t_pagpagetitle', pag_title_color = '$t_clf',
-						pag_title_vn = '$t_pagtitle', pag_detail_vn = '$t_pagdetail', pag_sort = '$t_pagsort', pag_editdate = '$nowdate', pag_edittime = '$nowtime'
-						where pag_id = '$h_pagid';";
+						pag_title_vn = '$t_pagtitle', pag_detail_vn = '$t_pagdetail', pag_sort = '$t_pagsort', pag_editdate = '$nowdate', pag_edittime = '$nowtime', pag_memo = '$t_codemap' 
+						where pag_id = '$h_pagid' ;";
 
 	} else  {
 
 		$sql1 = "update flc_page set pag_show_jp = '$t_setlang', pag_name_jp = '$t_pagname', pag_pagetitle_jp = '$t_pagpagetitle', pag_title_color = '$t_clf',
-						pag_title_jp = '$t_pagtitle', pag_detail_jp = '$t_pagdetail', pag_sort = '$t_pagsort', pag_editdate = '$nowdate', pag_edittime = '$nowtime'
+						pag_title_jp = '$t_pagtitle', pag_detail_jp = '$t_pagdetail', pag_sort = '$t_pagsort', pag_editdate = '$nowdate', pag_edittime = '$nowtime', pag_memo = '$t_codemap' 
 						where pag_id = '$h_pagid';";
 
 	}

@@ -27,7 +27,11 @@
 	$result1 = mysql_query($sql1);
 	while ($dbarr1 = mysql_fetch_array($result1)) {
 		
-		if ($dbarr1['mem_status'] == 'd') { if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
+		if ($dbarr1['mem_status'] == 'd') {
+			if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit();
+			}
+		}
 		
 		$memcomnameen = $dbarr1['mem_comname_en'];
 		$memcomnamejp = $dbarr1['mem_comname_jp'];
@@ -49,17 +53,41 @@
 	
 	$sql2 = "select * from flc_template_main where tpm_id = '$memtemplate';";
 	$result2 = mysql_query($sql2);
-	while ($dbarr2 = mysql_fetch_array($result2)) { $tpmcode = $dbarr2['tpm_name_file']; } if ($tpmcode == '') { $tpmcode = "red"; }
+	while ($dbarr2 = mysql_fetch_array($result2)) {
+		$tpmcode = $dbarr2['tpm_name_file'];
+	}
+	if ($tpmcode == '') {
+		$tpmcode = "red";
+	}
 	
 	
 	$sql3 = "select * from flc_page where mem_id = '$memid' and pag_type = 'prf';";
 	$result3 = mysql_query($sql3);
-	while ($dbarr3 = mysql_fetch_array($result3)) { $prfshowid = $dbarr3['pag_id']; $prfshowen = $dbarr3['pag_show_en']; $prfshowjp = $dbarr3['pag_show_jp']; $prfshowvn = $dbarr3['pag_show_vn']; }
+	while ($dbarr3 = mysql_fetch_array($result3)) {
+		$prfshowid = $dbarr3['pag_id'];
+		$prfshowen = $dbarr3['pag_show_en'];
+		$prfshowjp = $dbarr3['pag_show_jp'];
+		$prfshowvn = $dbarr3['pag_show_vn'];
+	}
 	
-	if ($langcode == 'en') { if ($prfshowen != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
-	else if ($langcode == 'jp') { if ($prfshowjp != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
-	else if ($langcode == 'vn') { if ($prfshowvn != 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
-	else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+	if ($langcode == 'en') {
+		if ($prfshowen != 't') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit();
+		}
+	} elseif ($langcode == 'jp') {
+		if ($prfshowjp != 't') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
+	} elseif ($langcode == 'vn') {
+		if ($prfshowvn != 't') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
+	} else {
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+		exit();
+	}
 	
 	
 	$sql4 = "select * from flc_page where mem_id = '$memid' and pag_id = '$pagid';";
@@ -68,33 +96,63 @@
 		
 		$pagcheck = "t";
 		
-		if ($dbarr4['pag_status'] == 'd') { if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } }
+		if ($dbarr4['pag_status'] == 'd') {
+			if ($_SESSION['vp'] != 'exe' && $_SESSION['vp'] != 'adm') {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+				exit();
+			}
+		}
 		
-		if ($dbarr4['pag_type'] != 'inq') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); }
+		if ($dbarr4['pag_type'] != 'inq') {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+			exit();
+		}
 		
 		if ($langcode == 'en' && $dbarr4['pag_show_en'] != 't') { 
-			if ($prfshowen == 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=en\">"; exit(); }
-			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } 
+			if ($prfshowen == 't') {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=en\">";
+				exit();
+			} else {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+				exit();
+			} 
 		}
 		
 		if ($langcode == 'jp' && $dbarr4['pag_show_jp'] != 't') { 
-			if ($prfshowjp == 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=jp\">"; exit(); }
-			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">"; exit(); } 
+			if ($prfshowjp == 't') {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=jp\">";
+				exit();
+			} else {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php\">";
+				exit(); } 
 		}
 		
 		if ($langcode == 'vn' && $dbarr4['pag_show_vn'] != 't') { 
-			if ($prfshowvn == 't') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=vn\">"; exit(); }
-			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?id\">"; exit(); } 
+			if ($prfshowvn == 't') {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_profile.php?id=".$memid."&page=".$prfshowid."&lang=vn\">"; exit();
+			} else {
+				echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?id\">";
+				exit();
+			} 
 		}
 		
-		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') { $langen = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=en\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
-		else { $langen = "<img src=\"images/tpl_en_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
+		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') {
+			$langen = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=en\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>";
+		} else {
+			$langen = "<img src=\"images/tpl_en_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
+		}
 		
-		if ($dbarr4['pag_show_jp'] == 't' || $prfshowjp == 't') { $langjp = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=jp\"><img src=\"images/tpl_".$memlangpicjp."\" title=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
-		else { $langjp = "<img src=\"images/tpl_jp_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
+		if ($dbarr4['pag_show_jp'] == 't' || $prfshowjp == 't') {
+			$langjp = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=jp\"><img src=\"images/tpl_".$memlangpicjp."\" title=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>";
+		} else {
+			$langjp = "<img src=\"images/tpl_jp_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
+		}
 		
-		if ($dbarr4['pag_show_vn'] == 't' || $prfshowvn == 't') { $langvn = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=vn\"><img src=\"images/tpl_".$memlangpicvn."\" title=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
-		else { $langvn = "<img src=\"images/tpl_vn_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
+		if ($dbarr4['pag_show_vn'] == 't' || $prfshowvn == 't') {
+			$langvn = "<a href=\"mem_inquiry.php?id=".$memid."&page=".$pagid."&lang=vn\"><img src=\"images/tpl_".$memlangpicvn."\" title=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>";
+		} else {
+			$langvn = "<img src=\"images/tpl_vn_00.png\" width=\"24\" height=\"24\" border=\"0\" />";
+		}
 		
 		$pagpagetitleen = $dbarr4['pag_pagetitle_en'];
 		$pagpagetitlejp = $dbarr4['pag_pagetitle_jp'];
@@ -109,7 +167,9 @@
 		$pagimage = $dbarr4['pag_image'];
 		$pagimagewidth = $dbarr4['pag_image_width'];
 		$pagimagelink = $dbarr4['pag_image_link'];
-		$pagimageside = $dbarr4['pag_image_side']; 
+		$pagimageside = $dbarr4['pag_image_side'];
+		$pagmemo = $dbarr4['pag_memo'];
+
 		if ($pagimageside == 'r') { $imgside = "colimg-defright"; $imgsidefull = "colimg-defright-full"; } else { $imgside = "colimg-defleft"; $imgsidefull = "colimg-defleft-full"; }
 		
 		if ($pagimage == 't') { 
@@ -409,115 +469,28 @@ function ranDomStr($length){
 		$memcomname = "<span style=\"display: inline-block;width: 25px;\"></span>".$memcomname;
 	}
 
-	// Add map to Special Company
-	$mapHTML = "";
-	if ($memid == "00001314") {
-		$mapHTML = "<div id=\"map\" style=\"height:300px;\"></div>
-			<script>
-			  var map;
-			  function initMap() {
-			    map = new google.maps.Map(document.getElementById('map'), {
-			      center: {lat: 10.977809, lng: 106.480166},
-			      zoom: 15,
-			      styles: [
-			      	{elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            		{elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            		{elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-            		{
-		              featureType: 'administrative.locality',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#d59563'}]
-		            },
-		            {
-		              featureType: 'poi',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#d59563'}]
-		            },
-		            {
-		              featureType: 'poi.park',
-		              elementType: 'geometry',
-		              stylers: [{color: '#263c3f'}]
-		            },
-		            {
-		              featureType: 'poi.park',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#6b9a76'}]
-		            },
-		            {
-		              featureType: 'road',
-		              elementType: 'geometry',
-		              stylers: [{color: '#38414e'}]
-		            },
-		            {
-		              featureType: 'road',
-		              elementType: 'geometry.stroke',
-		              stylers: [{color: '#212a37'}]
-		            },
-		            {
-		              featureType: 'road',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#9ca5b3'}]
-		            },
-		            {
-		              featureType: 'road.highway',
-		              elementType: 'geometry',
-		              stylers: [{color: '#746855'}]
-		            },
-		            {
-		              featureType: 'road.highway',
-		              elementType: 'geometry.stroke',
-		              stylers: [{color: '#1f2835'}]
-		            },
-		            {
-		              featureType: 'road.highway',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#f3d19c'}]
-		            },
-		            {
-		              featureType: 'transit',
-		              elementType: 'geometry',
-		              stylers: [{color: '#2f3948'}]
-		            },
-		            {
-		              featureType: 'transit.station',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#d59563'}]
-		            },
-		            {
-		              featureType: 'water',
-		              elementType: 'geometry',
-		              stylers: [{color: '#17263c'}]
-		            },
-		            {
-		              featureType: 'water',
-		              elementType: 'labels.text.fill',
-		              stylers: [{color: '#515c6d'}]
-		            },
-		            {
-		              featureType: 'water',
-		              elementType: 'labels.text.stroke',
-		              stylers: [{color: '#17263c'}]
-		            }
-			      ]
-			    });
-			    let marker = new google.maps.Marker({
-				    map: map,
-				    position: {lat: 10.977809, lng: 106.480166},
-				    icon: {
-				      url: \"https://maps.google.com/mapfiles/ms/icons/green-dot.png\"
-				    }
-				 });
-			  }
-			</script>
-			<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPZz1ZJ5hXxJUrrFNi9qGPazd06XUFik&callback=initMap\" async defer></script>";
-	}
+	
 
+	// ADD GOOGLE MAP
+	$myMapX = "";
+	$myMapY = "";
+	if($pagmemo !== "" && !empty($pagmemo)) {
+		$myMapArr = explode(",", $pagmemo);
+		$myMapX = $myMapArr[0];
+		$myMapY = $myMapArr[1];
+		$tpl->assign("##mapWidth##", "100%");
+		$tpl->assign("##mapHeight##", "500px");
+	} else {
+		$tpl->assign("##mapWidth##", "0");
+		$tpl->assign("##mapHeight##", "0");
+	}
+	$tpl->assign("##myLat##", $myMapX);
+	$tpl->assign("##myLng##", $myMapY);
 	
 	$tpl->assign("##randomccmd5##", $randomccmd5);
 	//$tpl->assign("##rand##", include("pic_text.php"));
 //	$confirmcode = $random[1].$random[2].$random[3].$random[4];
 	 $PHP_SELF;
-	$tpl->assign("##mapHTML##", $mapHTML);
 	$tpl->assign("##memid##", $memid);
 	$tpl->assign("##pagid##", $pagid);
 	$tpl->assign("##confirmcode##", $confirmcode);
@@ -534,7 +507,7 @@ function ranDomStr($length){
 	$tpl->assign("##langcode##", $langcode);
 	$tpl->assign("##langen##", $langen);
 	$tpl->assign("##langjp##", $langjp);
-	$tpl->assign("##langvn##", $langvn);
+	$tpl->assign("##langvn##", $langvn);	
 	
 	$tpl->parse ("##DETAIL_AREA##", "detail_tpl");
 	$tpl->parse ("MAIN", "main_tpl");

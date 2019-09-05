@@ -196,7 +196,7 @@ a:active {
 	width: 528px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 13px;
 }
@@ -205,7 +205,7 @@ a:active {
 	width: 330px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 13px;
 }
@@ -214,7 +214,7 @@ a:active {
 	width: 166px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 12px;
 }
@@ -222,7 +222,7 @@ a:active {
 	width: 170px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 12px;
 }
@@ -231,7 +231,7 @@ a:active {
 	width: 172px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 13px;
 }
@@ -239,7 +239,7 @@ a:active {
 	width: 175px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 13px;
 	margin:0px;
@@ -248,7 +248,7 @@ a:active {
 	width: 532px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 13px;
 	margin:0px;
@@ -257,7 +257,7 @@ a:active {
 	width: 332px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
-	color: #33333;
+	color: #333;
 	font-family: Microsoft Sans Serif;
 	font-size: 13px;
 	margin:0px;
@@ -1315,6 +1315,7 @@ button:hover,
 .img-reposive {
 	max-width: 100%;
 	height: auto;
+	width: 100%;
 }
 
 .br-5 {

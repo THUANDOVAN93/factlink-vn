@@ -297,7 +297,6 @@ function check_form(formname) {
 			
        
 			if (document.formmeminqadd.t_company.value=="") { alert("貴社名の要求が許可されました。\nCompany Name is required."); document.formmeminqadd.t_company.focus(); return false; }
-			else if (document.formmeminqadd.t_department.value=="") { alert ("部署名の要求が許可されました。\nDepartment is required."); document.formmeminqadd.t_department.focus(); return false; }
 			else if (document.formmeminqadd.t_name.value=="") { alert ("お名前の要求が許可されました。\nYour name is required."); document.formmeminqadd.t_name.focus(); return false; }
 			else if (document.formmeminqadd.t_tel.value=="") { alert ("TEL の要求が許可されました。\nTEL is required."); document.formmeminqadd.t_tel.focus(); return false; }
 			else if (document.formmeminqadd.t_mail.value=="") { alert ("E-mail の要求が許可されました。\nE-mail is required."); document.formmeminqadd.t_mail.focus(); return false; }

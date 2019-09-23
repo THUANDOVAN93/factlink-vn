@@ -222,8 +222,8 @@
 		$stockinvietnam = "Kho ở Việt Nam";
 		$business_desc = "Mô tả kinh doanh";
 		$wep_page = "Địa chỉ website";
-		$search_by_company = "Company";
-		$search_by_product = "Product";
+		$search_by_company = "Công ty";
+		$search_by_product = "Sản phẩm";
 
 		$product_name = "Tên sản phẩm";
 		$supplier_name = "Tên nhà cung cấp";
@@ -528,7 +528,7 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$SearchMenubarProduct = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-product');\"><span lang=\"en\">Search by Product</span></button></div>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$SearchMenubarProduct = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-product');\"><span lang=\"en\">Search by Product</span></button></div>";
+			$SearchMenubarProduct = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-product');\"><span lang=\"en\">Tìm theo sản phẩm</span></button></div>";
 		} else {
 			$SearchMenubarProduct = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-product');\"><span lang=\"en\">製品から探す</span></button></div>";
 		}
@@ -538,7 +538,7 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$SearchMenubar1 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-category');\"><span lang=\"en\">Search by Category</span></button></div>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$SearchMenubar1 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-category');\"><span lang=\"en\">Search by Category</span></button></div>";
+			$SearchMenubar1 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-category');\"><span lang=\"en\">Tìm theo danh mục</span></button></div>";
 		} else {
 			$SearchMenubar1 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-category');\"><span lang=\"en\">業種から探す</span></button></div>";
 		}
@@ -559,7 +559,7 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$SearchMenubar2 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-ie');\"><span lang=\"en\">Search by I.E.</span></button></div>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$SearchMenubar2 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-ie');\"><span lang=\"en\">Search by I.E.</span></button></div>";
+			$SearchMenubar2 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-ie');\"><span lang=\"en\">Tìm theo khu CN</span></button></div>";
 		} else {
 			$SearchMenubar2 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-ie');\"><span lang=\"en\">工業団地から探す</span></button></div>";
 		}
@@ -570,7 +570,7 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$SearchMenubar3 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-province');\"><span lang=\"en\">Search by Province</span></button></div>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$SearchMenubar3 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-province');\"><span lang=\"en\">Search by Province</span></button></div>";
+			$SearchMenubar3 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-province');\"><span lang=\"en\">Tìm theo tỉnh</span></button></div>";
 		} else {
 			$SearchMenubar3 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-province');\"><span lang=\"en\">県から探す</span></button></div>";
 		}
@@ -581,7 +581,7 @@
 		if ($_COOKIE['vlang'] == 'en') {
 			$SearchMenubar4 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-country');\"><span lang=\"en\">Search by Country</span></button></div>";
 		} else if ($_COOKIE['vlang'] == 'vn') {
-			$SearchMenubar4 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-country');\"><span lang=\"en\">Search by Country</span></button></div>";
+			$SearchMenubar4 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-country');\"><span lang=\"en\">Tìm theo quốc gia</span></button></div>";
 		} else {
 			$SearchMenubar4 = "<div class=\"dropdown-head\"><button type=\"button\" onclick=\"dt('#dropdown-country');\"><span lang=\"en\">国から探す</span></button></div>";
 		}

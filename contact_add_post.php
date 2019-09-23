@@ -136,12 +136,10 @@
 		$mail->IsSMTP();		
 		
 		/* Prepare Email content */
-		$mail->SetFrom("admin_vn@fact-link.com.vn",'Fact-Link');
+		$mail->SetFrom("factlinkportvn@gmail.com",'Fact-Link');
 		$mail->Subject = $subject;
 		$mail->MsgHTML($detail);
-		//$mail->AddAddress("factlinkvn@gmail.com");
 		$mail->AddAddress("info@fact-link.com.vn");
-		// $mail->AddAddress($t_mail);
 
 		/* Send email! */
 		if(!$mail->Send()) {

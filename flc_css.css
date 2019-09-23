@@ -888,6 +888,7 @@ iframe {
 
 .mem-box-pro .mem-pro-name {
 	text-align: center;
+	overflow-wrap: break-word;
 }
 .row-pro .mem-category {
 	background: #ccc;

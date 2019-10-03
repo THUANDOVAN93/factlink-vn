@@ -825,8 +825,8 @@
 			$getCategoryCount = function($catid){
 				
 				$catid = mysql_real_escape_string($catid);
-				$query = 'SELECT * FROM flc_member WHERE  `mem_category` = \'%s\';';
-				$query = sprintf($query,$catid);
+				$query = 'SELECT * FROM flc_member WHERE  (`mem_category` = \'%s\' or mem_category_second = \'%s\') and mem_status != \'d\';';
+				$query = sprintf($query,$catid,$catid);
 				$query = mysql_query($query);
 				$count = mysql_num_rows($query);
 				return $count;
@@ -888,7 +888,8 @@
 	} else {
 		
 		// category
-		$sqlcategory = "select * from flc_category order by cat_order asc;"; 
+		$query = 'SELECT * FROM flc_member WHERE  (`mem_category` = \'%s\' or mem_category_second = \'%s\') and mem_status != \'d\';';
+		$sqlcategory = sprintf($query,$catid,$catid);
 		$resultcategory = mysql_query($sqlcategory);
 		while ($dbarrcategory = mysql_fetch_array($resultcategory)) { 
 			

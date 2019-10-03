@@ -122,11 +122,12 @@
 	}
 	
 	$meta_keyword = $searchword;
-	$searchword = $searchword."<span class=\"seach-result-des\">".$catDes."</span>";
 	
 	$pagesql = "select * from flc_member where (mem_category = '$searchid' or mem_category_second = '$searchid') and mem_status != 'd';";
 	$resultsearchlist = mysql_query($pagesql);
-	$cntsearchlist = mysql_num_rows($resultsearchlist); 
+	$cntsearchlist = mysql_num_rows($resultsearchlist);
+
+	$searchword = $searchword." (".$cntsearchlist.")<span class=\"seach-result-des\">".$catDes."</span>";
 	
 	if ($cntsearchlist == 0 || $start > $cntsearchlist) {
 
@@ -134,6 +135,11 @@
 	} else {
 		
 		$page = pagecal($limit, $start, $pagesql, "search_category.php", "?id=$searchid");
+		$pageOf = intval($limit)+intval($start);
+		if ($pageOf >= $cntsearchlist) {
+			$pageOf = $cntsearchlist;
+		}
+		$page .= "<span> - (".$pageOf." out of ".$cntsearchlist."</span>)";
 		
 		$arrlist = array();
 		$cntlist = 1;

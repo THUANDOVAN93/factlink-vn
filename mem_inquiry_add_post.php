@@ -14,7 +14,8 @@
 	$h_pagid = $_POST['h_pagid'];
 	$h_langcode = $_POST['h_langcode'];
 	$t_company = $_POST['t_company'];
-	$t_department = $_POST['t_department'];
+	//$t_department = $_POST['t_department'];
+	$t_address = $_POST['t_address'];
 	$t_name = $_POST['t_name'];
 	$t_tel = $_POST['t_tel'];
 	$t_fax = $_POST['t_fax'];
@@ -95,9 +96,9 @@
 							flc_mail (
 								mem_id,
 								mal_from_name,
+								mal_address,
 								mal_from_mail,
 								mal_company,
-								mal_department,
 								mal_tel,
 								mal_fax,
 								mal_subj,
@@ -113,9 +114,9 @@
 							)	values (
 								'$h_memid',
 								'$t_name',
+								'$t_address',
 								'$t_mail',
 								'$t_company',
-								'$t_department',
 								'$t_tel',
 								'$t_fax',
 								'$t_subject',
@@ -222,6 +223,7 @@
 					//$mail->AddAddress("factlinkvn@gmail.com");
 					$mail->AddReplyTo("info@fact-link.com.vn", "Staff");
 					$mail->AddAddress("info@fact-link.com.vn", "staff");
+					//$mail->AddAddress("thuandovan93@gmail.com", "staff");
 					if(!$mail->Send()) {
  				 		"Mailer Error: " . $mail->ErrorInfo;
 					};

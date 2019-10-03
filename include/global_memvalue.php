@@ -23,11 +23,12 @@
 		$lb_company = "Company";
 		$lb_department = "Department";
 		$lb_contactname = "Your Name";
+		$lb_address = "Address";
 		$lb_tel = "TEL";
 		$lb_fax = "FAX";
 		$lb_email = "E-mail";
 		$lb_subject = "Subject";
-		$lb_content = "Content";
+		$lb_content = "Your Inquiry";
 		$lb_confirmcode = "Confirm Code";
 		$lb_confirmcode_text = "Please fill 4 digits in this box to confirm submit.";
 		
@@ -66,6 +67,7 @@
 		$lb_company = "Công ty";
 		$lb_department = "Lĩnh vực";
 		$lb_contactname = "Tên của bạn";
+		$lb_address = "Địa chỉ";
 		$lb_tel = "Số điện thoại";
 		$lb_fax = "Số FAX";
 		$lb_email = "Địa chỉ mail";
@@ -107,11 +109,12 @@
 		$lb_company = "貴社名";
 		$lb_department = "部署名";
 		$lb_contactname = "お名前";
+		$lb_address = "住所";
 		$lb_tel = "TEL";
 		$lb_fax = "FAX";
 		$lb_email = "メールアドレス";
 		$lb_subject = "件名";
-		$lb_content = "内容";
+		$lb_content = "お問い合わせ内容";
 		$lb_confirmcode = "認証コード";
 		$lb_confirmcode_text = "表示されている４ケタの数字を入力してください。";
 		
@@ -148,6 +151,7 @@
 	$tpl->assign("##lb_company##", $lb_company);
 	$tpl->assign("##lb_department##", $lb_department);
 	$tpl->assign("##lb_contactname##", $lb_contactname);
+	$tpl->assign("##lb_address##", $lb_address);
 	$tpl->assign("##lb_tel##", $lb_tel);
 	$tpl->assign("##lb_fax##", $lb_fax);
 	$tpl->assign("##lb_email##", $lb_email);

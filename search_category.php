@@ -135,11 +135,11 @@
 	} else {
 		
 		$page = pagecal($limit, $start, $pagesql, "search_category.php", "?id=$searchid");
-		$pageOf = intval($limit)+intval($start);
-		if ($pageOf >= $cntsearchlist) {
-			$pageOf = $cntsearchlist;
-		}
-		$page .= "<span> - (".$pageOf." out of ".$cntsearchlist."</span>)";
+		// $pageOf = intval($limit)+intval($start);
+		// if ($pageOf >= $cntsearchlist) {
+		// 	$pageOf = $cntsearchlist;
+		// }
+		// $page .= "<span> - (".$pageOf." out of ".$cntsearchlist."</span>)";
 		
 		$arrlist = array();
 		$cntlist = 1;

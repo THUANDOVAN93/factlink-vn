@@ -118,6 +118,7 @@
 		$lb_mail_company = "Company";
 		$lb_mail_department = "Department";
 		$lb_mail_contactname = "Your Name";
+		$lb_mail_address = "Address";
 		$lb_mail_tel = "TEL";
 		$lb_mail_fax = "FAX";
 		$lb_mail_email = "E-mail";
@@ -458,6 +459,7 @@
 		$lb_mail_company = "Công ty";
 		$lb_mail_department = "Lĩnh vực";
 		$lb_mail_contactname = "Tên của bạn";
+		$lb_mail_address = "Địa chỉ";
 		$lb_mail_tel = "Số điện thoại";
 		$lb_mail_fax = "Số fax";
 		$lb_mail_email = "Địa chỉ mail";
@@ -798,6 +800,7 @@
 		$lb_mail_company = "貴社名";
 		$lb_mail_department = "部署名";
 		$lb_mail_contactname = "お名前";
+		$lb_mail_address = "住所";
 		$lb_mail_tel = "TEL";
 		$lb_mail_fax = "FAX";
 		$lb_mail_email = "メールアドレス";
@@ -1134,6 +1137,7 @@
 	$tpl->assign("##lb_mail_company##", $lb_mail_company);
 	$tpl->assign("##lb_mail_department##", $lb_mail_department);
 	$tpl->assign("##lb_mail_contactname##", $lb_mail_contactname);
+	$tpl->assign("##lb_mail_address##", $lb_mail_address);
 	$tpl->assign("##lb_mail_tel##", $lb_mail_tel);
 	$tpl->assign("##lb_mail_fax##", $lb_mail_fax);
 	$tpl->assign("##lb_mail_email##", $lb_mail_email);

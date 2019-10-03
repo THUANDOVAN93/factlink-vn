@@ -29,7 +29,7 @@
 		$inrsubject = $dbarr1['mal_subj'];
 		$inrcontent = html($dbarr1['mal_detail']);
 		$inrcompany = $dbarr1['mal_company'];
-		$inrdepartment = $dbarr1['mal_department'];
+		$inraddress = $dbarr1['mal_address'];
 		$inrname = $dbarr1['mal_from_name'];
 		$inrmail = $dbarr1['mal_from_mail'];
 		$inrtel = $dbarr1['mal_tel'];
@@ -42,7 +42,7 @@
 	$tpl->assign("##inrsubject##", $inrsubject);
 	$tpl->assign("##inrcontent##", $inrcontent);
 	$tpl->assign("##inrcompany##", $inrcompany);
-	$tpl->assign("##inrdepartment##", $inrdepartment);
+	$tpl->assign("##inraddress##", $inraddress);
 	$tpl->assign("##inrname##", $inrname);
 	$tpl->assign("##inrtel##", $inrtel);
 	$tpl->assign("##inrfax##", $inrfax);

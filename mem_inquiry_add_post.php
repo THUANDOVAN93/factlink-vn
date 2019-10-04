@@ -160,6 +160,7 @@
 													<br />
 											 <font color=\"#00000\">------------------------------------------------------------<br />
 											 <strong>名前 / Name :</strong> ".$t_name."<br />
+											 <strong>住所 / Address :</strong> ".$t_address."<br />
 											 <strong>件名 / Subject :</strong> ".$t_subject."<br />
 											 <strong>時刻 / Date :</strong> ".$nowdate." ".$nowtime."<br />
 											------------------------------------------------------------</font><br />

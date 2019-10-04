@@ -29,6 +29,7 @@ $urlRedirectFail = "Location: ".$http."://".$host."/mem_inquiry_done.php?id=".$d
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 	$dataForm['companyName'] = $_POST['companyName'];
 	$dataForm['userName'] = $_POST['userName'];
+	$dataForm['userAddress'] = $_POST['userAddress'];
 	$dataForm['userPhone'] = $_POST['userPhone'];
 	$dataForm['userMail'] = $_POST['userMail'];
 	$dataForm['mailSubject'] = $_POST['mailSubject'];
@@ -98,6 +99,7 @@ $warndate = $tmpwarn[0]." ".$tmpwarn[1]." ".$tmpwarn[2];
 $sqlAddInquiry = "insert into flc_mail (
 		mem_id,
 		mal_from_name,
+		mal_address,
 		mal_from_mail,
 		mal_company,
 		mal_tel,
@@ -115,6 +117,7 @@ $sqlAddInquiry = "insert into flc_mail (
 	values (
 		'".$dataForm['memberId']."',
 		'".$dataForm['userName']."',
+		'".$dataForm['userAddress']."',
 		'".$dataForm['userMail']."',
 		'".$dataForm['companyName']."',
 		'".$dataForm['userPhone']."',
@@ -153,6 +156,12 @@ $body = "
 		<td>Name</td>
 		<td>
 			".$dataForm['userName']."
+		</td>
+	</tr>
+	<tr>
+		<td>Address</td>
+		<td>
+			".$dataForm['userAddress']."
 		</td>
 	</tr>
 	<tr>

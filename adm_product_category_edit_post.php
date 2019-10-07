@@ -18,6 +18,7 @@
 	$catParent = $_POST['t_under'];
 	$catMakeOrderId = $_POST['t_position'];
 
+	$catOrderInProPage = $_POST['t_cat_order_product_page'];
 
 	$catNameJp = $_POST['t_title_jp'];
 	$catDescEn = $_POST['t_desc_en'];
@@ -80,7 +81,7 @@
 	
 	
 	// End change sort here
-	$sqlUpdateCat = "update flc_product_category set CategoryNameJP = '$catNameJp', CategoryNameVN = '$catNameVn', CategoryNameEN = '$catNameEn', DescJP = '$catDescJp', DescVN = '$catDescVn', DescEN = '$catDescEn', CatPos = '$catLevel', CatUnder = '$catParent', CatOrder = '$catOrderMaterial' where CategoryID = $catId;";
+	$sqlUpdateCat = "update flc_product_category set CategoryNameJP = '$catNameJp', CategoryNameVN = '$catNameVn', CategoryNameEN = '$catNameEn', DescJP = '$catDescJp', DescVN = '$catDescVn', DescEN = '$catDescEn', CatPos = '$catLevel', CatUnder = '$catParent', CatOrder = '$catOrderMaterial', CatOrderInProPag = '$catOrderInProPage' where CategoryID = $catId;";
 	if (!mysql_query($sqlUpdateCat)) {
 		echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=2\">"; exit();
 	}

@@ -20,6 +20,7 @@
 	$catDescEn = $_POST['t_desc_en'];
 	$catDescVn = $_POST['t_desc_vn'];
 	$catDescJp = $_POST['t_desc_jp'];
+	$CatOrderInProPag = $_POST['t_cat_order_product_page'];
 
 
 	if ($_SESSION['vd'] != $h_admid) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=2\">"; exit(); }
@@ -36,8 +37,8 @@
 	if ($catPos == 's') { $catOrder = 0; }
 
 
-	$sqlInsertCat = "insert into flc_product_category (CategoryNameJP, CategoryNameVN, CategoryNameEN, DescJP, DescVN, DescEN, CatPos, CatUnder, CatOrder)
-		values ('$catNameJp', '$catNameVn', '$catNameEn', '$catDescJp', '$catDescVn', '$catDescEn', '$catPos', '$catUnder', '$catOrder');";
+	$sqlInsertCat = "insert into flc_product_category (CategoryNameJP, CategoryNameVN, CategoryNameEN, DescJP, DescVN, DescEN, CatPos, CatUnder, CatOrder, CatOrderInProPag)
+		values ('$catNameJp', '$catNameVn', '$catNameEn', '$catDescJp', '$catDescVn', '$catDescEn', '$catPos', '$catUnder', '$catOrder', '$CatOrderInProPag');";
 	if (!mysql_query($sqlInsertCat)) {
 		exit("Can not insert category");
 	}

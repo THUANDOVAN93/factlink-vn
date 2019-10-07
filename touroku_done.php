@@ -12,7 +12,14 @@
 	$url4 = "ads_left.html";
 	$url5 = "ads_top.html";
 	$pagecode = "reg";
-	if ($_COOKIE['vlang'] == 'en') { $url6 = "menu_en.html"; } else if ($_COOKIE['vlang'] == 'vn') { $url6 = "menu_vn.html"; } else { $url6 = "menu_jp.html"; }
+
+	if ($_COOKIE['vlang'] == 'en') {
+		$url6 = "menu_en.html";
+	} elseif ($_COOKIE['vlang'] == 'vn') {
+		$url6 = "menu_vn.html";
+	} else {
+		$url6 = "menu_jp.html";
+	}
 	
 	$tpl = new rFastTemplate("template");
 	$tpl->define (array("main_tpl" => $url1, "detail_tpl" => $url2, "right_tpl" => $url3, "left_tpl" => $url4, "top_tpl" => $url5, "menu_tpl" => $url6));

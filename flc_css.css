@@ -1330,3 +1330,9 @@ button:hover,
 .fl-d-none {
 	display: none;
 }
+
+.new-theme #formsearchquick #t_searchcomname {
+	height: 16px;
+	width: 166px;
+	margin: 0;
+}

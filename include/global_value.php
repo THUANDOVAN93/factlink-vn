@@ -349,7 +349,7 @@
 		$supplier_name = "企業情報";
 		$pro_comname_link = "企業名";
 		$pro_contact = "問い合わせ";
-		$headingEvent = "FEATURED EVENTS";
+		$headingEvent = "ピックアップイベント";
 		$seeMore = "詳しくはこちら";
 		$search_by_category = "業種から探す";
 		$meta_description = "ファクトリンクベトナムは、ベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。ご登録いただいた企業様の情報をご紹介致します。掲載情報は、事業内容、取扱品目、住所、工業団地、連絡先など製造業に特化した項目を設けております。また工場進出サポートなど在ベトナムの製造業を支援するサービスを提供しております。";

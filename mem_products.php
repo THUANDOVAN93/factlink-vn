@@ -241,7 +241,7 @@
 
 		$tpl->assign("##page##", $page);
 
-		$sqlGetCategory = "select p.CategoryID from flc_products p, flc_product_category c where p.SupplierId = '$memid' and p.CategoryID = c.CategoryID group by c.CategoryID order by c.CategoryID desc limit $start,$limit;";
+		$sqlGetCategory = "select p.CategoryID from flc_products p, flc_product_category c where p.SupplierId = '$memid' and p.CategoryID = c.CategoryID group by c.CategoryID order by c.CatOrderInProPag desc limit $start,$limit;";
 		$rsGetCategory = mysql_query($sqlGetCategory);
 		//$categoryCount = mysql_quer
 		$categorys = array();

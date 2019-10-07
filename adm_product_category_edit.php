@@ -47,6 +47,7 @@
 		$catPos = $catItem['CatPos'];
 		$catUnder = $catItem['CatUnder'];
 		$catOrder = $catItem['CatOrder'];
+		$CatOrderInProPag = $catItem['CatOrderInProPag'];
 
 		$tpl->assign("##catid##", $catItem['CategoryID']);
 		$tpl->assign("##catnamevn##", $catNameVn);
@@ -55,6 +56,7 @@
 		$tpl->assign("##catdescen##", $catDescEn);
 		$tpl->assign("##catnamejp##", $catNameJp);
 		$tpl->assign("##catdescjp##", $catDescJp);
+		$tpl->assign("##CatOrderInProPag##", $CatOrderInProPag);
 	}
 
 

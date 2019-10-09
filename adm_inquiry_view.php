@@ -19,7 +19,7 @@
 	$inrid = $_GET['id'];
 	
 	// --- Global Template Section	
-	include_once("./include/global_edtvalue.php");
+	include_once("./include/global_admvalue.php");
 	
 	$sql1 = "select * from flc_mail where mal_id = '$inrid';";
 	$result1 = mysql_query($sql1);

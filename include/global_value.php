@@ -65,7 +65,7 @@
 		$lb_address = "Address";
 		$lb_province = "Province";
 		$lb_country = "Country";
-		$lb_zip = "Portal Code";
+		$lb_zip = "Postal Code";
 		$lb_comtel = "Tel.";
 		$lb_comfax = "Fax";
 		$lb_commobile = "Mobile";
@@ -120,6 +120,7 @@
 		$headingNewRegister = "RECENTLY REGISTERED COMPANY";
 		$headingFeaturedProduct = "FEATURED PRODUCTS";
 		$headingInfoEvent = "INFORMATION / EVENTS";
+		$name_regist_rule = "※Shorter than 15 characters, only lowercase english characters, dash ( - ), underscore ( _ ) will allowed";
 	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
@@ -168,7 +169,7 @@
 		$lb_password = "Mật khẩu";
 		$lb_password_text = "Mật khẩu sẽ được gửi tới địa chỉ mail đã đăng ký của bạn.";
 		$lb_pathname = "Tên đường dẫn";
-		$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Only english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
+		$lb_pathname_text = html("※Tạo tên đường dẫn mong muốn của bạn chuyển hướng đến trang của công ty bạn. Chỉ cho phép các ký tự tiếng Anh, dấu gạch ngang (-), dấu gạch dưới (_).[br][br]www.fact-link.com.vn/home/[font red][u]Tên đường dẫn bạn đã tạo sẽ ở đây.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "Tên công ty";
 		$lb_nationality = "Company Nationality";
 		$lb_njp = "Japan";
@@ -237,6 +238,7 @@
 		$headingNewRegister = "THÀNH VIÊN GẦN ĐÂY";
 		$headingFeaturedProduct = "SẢN PHẨM YÊU THÍCH";
 		$headingInfoEvent = "THÔNG TIN / SỰ KIỆN";
+		$name_regist_rule = "※Ngắn hơn 15 ký tự, chỉ bao gồm chữ cái alphabet thường, số, dấu gạch ngang và dấu gạch dưới	";
 	} else { 
 		
 		$langpicjp = "lang_jp_02.png";
@@ -357,8 +359,10 @@
 		$headingNewRegister = "新規登録企業";
 		$headingFeaturedProduct = "ピックアップ製品";
 		$headingInfoEvent = "イベント・ニュース";
+		$name_regist_rule = "※15文字より短く、英語の小文字のみ、ダッシュ（-）、アンダースコア（_）が許可されます";
 	} 
 	
+	$tpl->assign("##name_regist_rule##", $name_regist_rule);
 	$tpl->assign("##headingNewRegister##", $headingNewRegister);
 	$tpl->assign("##headingFeaturedProduct##", $headingFeaturedProduct);
 	$tpl->assign("##headingInfoEvent##", $headingInfoEvent);

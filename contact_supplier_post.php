@@ -5,14 +5,14 @@
 	include_once("./include/global_function.php");
 
 	/* Only accept submit data from following URI to prevent XSS attack */
-	$allow[] = 'https://www.fact-link.com.vn/contact_supplier.php';
-	$allow[] = 'https://fact-link.com.vn/contact_supplier.php';
+	// $allow[] = 'https://www.fact-link.com.vn/contact_supplier.php';
+	// $allow[] = 'https://fact-link.com.vn/contact_supplier.php';
 	
-	$reURI = substr($_SERVER["HTTP_REFERER"], 0, strpos($_SERVER["HTTP_REFERER"], "?"));
-	if(!in_array($reURI,$allow)) {
-		echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=uri\">";
-		exit();
-	}
+	// $reURI = substr($_SERVER["HTTP_REFERER"], 0, strpos($_SERVER["HTTP_REFERER"], "?"));
+	// if(!in_array($reURI,$allow)) {
+	// 	echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_supplier_done.php?case=uri\">";
+	// 	exit();
+	// }
 	
 	mysql_query("use $db_name;");
 
@@ -249,6 +249,7 @@
 					$mail->Subject = $subject;
 					$mail->MsgHTML($detail);
 					$mail->AddAddress("info@fact-link.com.vn");
+					//$mail->AddAddress("thuandovan93@gmail.com");
 					//$mail->AddAddress($mailSup);
 
 					/* Send email! */

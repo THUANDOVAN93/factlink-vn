@@ -1141,7 +1141,6 @@
 	$tpl->assign("##lb_mail_tel##", $lb_mail_tel);
 	$tpl->assign("##lb_mail_fax##", $lb_mail_fax);
 	$tpl->assign("##lb_mail_email##", $lb_mail_email);
-	$tpl->assign("##lb_mail_subject##", $lb_mail_subject);
 	$tpl->assign("##lb_mail_content##", $lb_mail_content);
 	$tpl->assign("##lb_mem_contactinfo##", $lb_mem_contactinfo);
 	$tpl->assign("##lb_mem_id##", $lb_mem_id);

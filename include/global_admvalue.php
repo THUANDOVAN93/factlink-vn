@@ -352,6 +352,16 @@
 		$lb_event_status = "Status";
 		$tt_oncoming_events = "Oncoming Events";
 		$tt_events = "Events List";
+
+		$mn_mailin = "Mail - Inbox";
+		$lb_mail_subject = "Subject";
+		$lb_mail_content = "Content";
+		$lb_mail_company = "Company";
+		$lb_mail_contactname = "Your Name";
+		$lb_mail_tel = "TEL";
+		$lb_mail_fax = "FAX";
+		$lb_mail_email = "E-mail";
+
 	} elseif ($_COOKIE['vlang'] == 'vn') {
 
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
@@ -714,6 +724,15 @@
 		$lb_event_status = "Status";
 		$tt_oncoming_events = "Oncoming Events";
 		$tt_events = "Events List";
+
+		$mn_mailin = "Hộp thư đến";
+		$lb_mail_subject = "Tiêu đề";
+		$lb_mail_content = "Nội dung";
+		$lb_mail_company = "Công ty";
+		$lb_mail_contactname = "Tên của bạn";
+		$lb_mail_tel = "Số điện thoại";
+		$lb_mail_fax = "Số fax";
+		$lb_mail_email = "Địa chỉ mail";
 	} else {
 
 		$langpicjp = "lang_jp_02.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_01.png";
@@ -1075,6 +1094,15 @@
 		$lb_event_status = "Status";
 		$tt_oncoming_events = "Oncoming Events";
 		$tt_events = "Events List";
+
+		$mn_mailin = "メール - 受信";
+		$lb_mail_subject = "題名";
+		$lb_mail_content = "内容";
+		$lb_mail_company = "貴社名";
+		$lb_mail_contactname = "お名前";
+		$lb_mail_tel = "TEL";
+		$lb_mail_fax = "FAX";
+		$lb_mail_email = "メールアドレス";
 	} 
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
@@ -1413,6 +1441,15 @@
 	$tpl->assign("##lb_event_status##", $lb_event_status);
 	$tpl->assign("##tt_oncoming_events##", $tt_oncoming_events);
 	$tpl->assign("##tt_events##", $tt_events);
+
+	$tpl->assign("##mn_mailin##", $mn_mailin);
+	$tpl->assign("##lb_mail_subject##", $lb_mail_subject);
+	$tpl->assign("##lb_mail_content##", $lb_mail_content);
+	$tpl->assign("##lb_mail_company##", $lb_mail_company);
+	$tpl->assign("##lb_mail_contactname##", $lb_mail_contactname);
+	$tpl->assign("##lb_mail_tel##", $lb_mail_tel);
+	$tpl->assign("##lb_mail_fax##", $lb_mail_fax);
+	$tpl->assign("##lb_mail_email##", $lb_mail_email);
 
 	//Count mail magazine
 	$sqljp = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp';"; 

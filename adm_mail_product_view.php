@@ -19,7 +19,8 @@
 	$inrid = $_GET['id'];
 	
 	// --- Global Template Section	
-	include_once("./include/global_edtvalue.php");
+	//include_once("./include/global_edtvalue.php");
+	include_once("./include/global_admvalue.php");
 	
 	$sql1 = "select m.*, p.ProductNameJP, p.ProductNameVN, p.ProductNameEN  from flc_mail m, flc_products p where mal_id = '$inrid' and m.product_id = p.ProductID;";
 	$result1 = mysql_query($sql1);

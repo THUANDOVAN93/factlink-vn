@@ -289,7 +289,7 @@
 	}
 	
 	// Inquiry
-	$sql6 = "select * from flc_mail where mal_warning = 't' order by mal_id desc;";
+	$sql6 = "select * from flc_mail where mal_warning = 't' or (mal_case = '4' and mal_send = 'n') order by mal_id desc;";
 	$result6 = mysql_query($sql6);
 
 	while ($dbarr6 = mysql_fetch_array($result6)) {
@@ -300,6 +300,16 @@
 		$inrstatus = $dbarr6['mal_status']; 
 		$inrmemid = $dbarr6['mem_id'];
 		$mal_send = $dbarr6['mal_send'];
+		$mal_case = $dbarr6['mal_case'];
+
+		// Build link iquiry view
+		$malViewLink = "adm_inquiry_view.php?id=".$inrid."&inrmemid=".$inrmemid;
+		if ($mal_case == '4') {
+			$malViewLink = "adm_mail_product_view.php?id=".$inrid."&inrmemid=".$inrmemid;
+		}
+
+
+		// End
 		
 		$sql7 = "select * from flc_member where mem_id = '$inrmemid';";
 		$result7 = mysql_query($sql7);
@@ -342,6 +352,7 @@
 			$isenmail="approve.jpg";
 		}
 
+		$tpl->assign("##malViewLink##", $malViewLink);
 		$tpl->assign("##sendmail##", $isenmail);
 		$tpl->assign("##inrid##", $inrid);
 		$tpl->assign("##inrmemid##", $inrmemid);

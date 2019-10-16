@@ -48,7 +48,7 @@
 		$lb_password = "Password";
 		$lb_password_text = "Password will send to your register e-mail.";
 		$lb_pathname = "Path Name";
-		$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Only english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
+		$lb_pathname_text = html("※Create your desire path name redirect to your company's page. Shorter than 25 characters, only lowercase english characters, dash ( - ), underscore ( _ ) will allowed.[br][br]www.fact-link.com.vn/home/[font red][u]Path name you created will be here.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "Company Name";
 		$lb_nationality = "Company Nationality";
 		$lb_njp = "Japan";
@@ -121,6 +121,8 @@
 		$headingFeaturedProduct = "FEATURED PRODUCTS";
 		$headingInfoEvent = "INFORMATION / EVENTS";
 		$name_regist_rule = "※Shorter than 15 characters, only lowercase english characters, dash ( - ), underscore ( _ ) will allowed";
+		$name_in_contactform = "Name";
+		$inquiry_in_contactform = "Inquiry";
 	} elseif ($_COOKIE['vlang'] == 'vn') { 
 		
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
@@ -169,7 +171,7 @@
 		$lb_password = "Mật khẩu";
 		$lb_password_text = "Mật khẩu sẽ được gửi tới địa chỉ mail đã đăng ký của bạn.";
 		$lb_pathname = "Tên đường dẫn";
-		$lb_pathname_text = html("※Tạo tên đường dẫn mong muốn của bạn chuyển hướng đến trang của công ty bạn. Chỉ cho phép các ký tự tiếng Anh, dấu gạch ngang (-), dấu gạch dưới (_).[br][br]www.fact-link.com.vn/home/[font red][u]Tên đường dẫn bạn đã tạo sẽ ở đây.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
+		$lb_pathname_text = html("※Tạo tên đường dẫn mong muốn của bạn chuyển hướng đến trang của công ty bạn. Chỉ cho phép các ký tự tiếng Anh, dấu gạch ngang (-), dấu gạch dưới (_) và giới hạng 25 kí tự.[br][br]www.fact-link.com.vn/home/[font red][u]Tên đường dẫn bạn đã tạo sẽ ở đây.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "Tên công ty";
 		$lb_nationality = "Company Nationality";
 		$lb_njp = "Japan";
@@ -238,7 +240,9 @@
 		$headingNewRegister = "THÀNH VIÊN GẦN ĐÂY";
 		$headingFeaturedProduct = "SẢN PHẨM YÊU THÍCH";
 		$headingInfoEvent = "THÔNG TIN / SỰ KIỆN";
-		$name_regist_rule = "※Ngắn hơn 15 ký tự, chỉ bao gồm chữ cái alphabet thường, số, dấu gạch ngang và dấu gạch dưới	";
+		$name_regist_rule = "※Ngắn hơn 15 ký tự, chỉ bao gồm chữ cái alphabet thường, số, dấu gạch ngang và dấu gạch dưới";
+		$name_in_contactform = "Tên người liên hệ";
+		$inquiry_in_contactform = "Nội dung";
 	} else { 
 		
 		$langpicjp = "lang_jp_02.png";
@@ -290,7 +294,7 @@
 		$lb_password = "パスワード";
 		$lb_password_text = "登録したE-mailアドレスに自動送付されます";
 		$lb_pathname = "希望WEBアドレス";
-		$lb_pathname_text = html("※機種依存文字を使用することはできません。[br]ハイフン( - )、アンダーバー( _ )は可。[br][br]www.fact-link.com.vn/home/[font red][u]WEBアドレスはこの場所に反映されます。[/u][/font]　(例 : www.fact-link.com.vn/home/tdc-vn)");
+		$lb_pathname_text = html("※25文字以下、アルファベットの小文字、ハイフン（-）、アンダーバー（_）のみ使用可。[br][br]www.fact-link.com.vn/home/[font red][u]WEBアドレスはこの場所に反映されます。[/u][/font]　(例 : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "会社名";
 		$lb_nationality = "Company Nationality";
 		$lb_njp = "Japan";
@@ -359,9 +363,13 @@
 		$headingNewRegister = "新規登録企業";
 		$headingFeaturedProduct = "ピックアップ製品";
 		$headingInfoEvent = "イベント・ニュース";
-		$name_regist_rule = "※15文字より短く、英語の小文字のみ、ダッシュ（-）、アンダースコア（_）が許可されます";
+		$name_regist_rule = "※15文字以下、アルファベットの小文字、ハイフン（-）、アンダーバー（_）のみ使用可。";
+		$name_in_contactform = "お名前";
+		$inquiry_in_contactform = "お問い合わせ内容";
 	} 
 	
+	$tpl->assign("##inquiry_in_contactform##", $inquiry_in_contactform);
+	$tpl->assign("##name_in_contactform##", $name_in_contactform);
 	$tpl->assign("##name_regist_rule##", $name_regist_rule);
 	$tpl->assign("##headingNewRegister##", $headingNewRegister);
 	$tpl->assign("##headingFeaturedProduct##", $headingFeaturedProduct);

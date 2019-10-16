@@ -107,13 +107,12 @@ if ($t_letmoc != '123456') {
 		    <td width=\"610\"><p><font style=\"color: #CC0000; font-weight: bold; font-size: 18px;\">会員情報の確認 / Membership confirmation</font><br />
 		      <br />
 			  <font color=\"#00000\">この度は 製造業ポータルサイト <strong>fact-link.com.vn</strong> へご入会いただき、誠にありがとうございます。<br />
-		お客様からのご登録を、以下の通り受け付けさせていただきました。<br />
+		お客様からのご登録を、以下の通り受け付けさせていただきました。お客様のユーザー名とパスワードは以下の通りです。<br />
 		<br />
-		当サイトのサービスを利用するには、まず基本情報の登録を行なってください。<br />
-		お客様のユーザー名とパスワードは以下の通りです。<br />
+		貴社ページを作成するには、ログインの上ページ情報の作成を行なってください。ページ情報の作成はログイン後の管理画面のメニュー「ページ管理」から行うことができます。ページ情報の作成後、貴社ページが公開されます。<br />
 		<br />
 		Thank you for your registration at <strong>fact-link.com.vn</strong>.<br />
-		To make use of our service, you need to provide your company's information.<br />
+		To create your page, you need to create / edit your company's information. Please log in with your account information and go to ' Page Management' Menu. After you create / edit your company's information, your companys' page will be published.<br />
 		Your username and password is shown below :<br />
 		<br />
 		------------------------------------------------------------<br />

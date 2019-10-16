@@ -51,6 +51,7 @@ $langCodeAllowed = ["en", "vn", "jp"];
 $nationalOptionAllowed = array(
 	'jp' => 'Japan',
 	'vn' => 'Vietnam',
+	'th' => 'Thailand',
 	'kr' => 'Korea',
 	'tw' => 'Taiwan',
 	'hk' => 'Hongkong',

@@ -38,6 +38,7 @@
 	$t_mail = mysql_real_escape_string($_POST['t_mail']);
 	$t_subject = mysql_real_escape_string($_POST['t_subject']);
 	$t_detail = mysql_real_escape_string($_POST['t_detail']);
+	$t_address = mysql_real_escape_string($_POST['t_address']);
 
 	// Spam mail check
 	if (substr_count($t_detail,"</a>") != 0) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = contact_done.php\">"; exit(); }
@@ -89,6 +90,8 @@
     <font color=\"#000000\">".$t_contact."</font><br />
 	<font color=\"#000000\"><strong>会社名 / Company</strong></font><br />
 	<font color=\"#000000\">".$t_company."</font><br />
+	<font color=\"#000000\"><strong>住所 / Address</strong></font><br />
+	<font color=\"#000000\">".$t_address."</font><br />
 	<font color=\"#000000\"><strong>E-mail</strong></font><br />
 	<font color=\"#000000\">".$t_mail."</font><br />
     <font color=\"#000000\"><strong>Tel.</strong></font><br />

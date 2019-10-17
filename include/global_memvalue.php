@@ -369,6 +369,13 @@
 				<img class=\"img-reposive br-5\" src=\"/images/ads/factlink-right-banner-en.png\">
 				</a>
 				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
+				<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
+				</a>
+				</td>
 				</tr>";
 		} elseif ($langcode == 'vn') {
 			$menulist = $menulist."<tr>
@@ -384,6 +391,13 @@
 				<img class=\"img-reposive br-5\" src=\"/images/ads/factlink-right-banner-vn.png\">
 				</a>
 				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
+				<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
+				</a>
+				</td>
 				</tr>";
 		} else {
 			$menulist = $menulist."<tr>
@@ -397,6 +411,13 @@
 			<td class=\"pd-5\">
 			<a href=\"index.php?lang=jp\" target=\"_blank\">
 			<img class=\"img-reposive br-5\" src=\"/images/ads/factlink-right-banner-jp.png\">
+			</a>
+			</td>
+			</tr>
+			<tr>
+			<td class=\"pd-5\">
+			<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
+			<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-jp.png\">
 			</a>
 			</td>
 			</tr>";

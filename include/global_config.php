@@ -68,4 +68,7 @@ if (!defined('ABSPATH'))
 	define('ABSPATH', $absPath.'/');
 
 define('WPINC', 'include');
+
+if (!defined('BASE_URL'))
+	define('BASE_URL', 'https://fact-link.com.vn');
 ?>

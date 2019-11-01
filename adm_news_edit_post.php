@@ -15,9 +15,9 @@
 	$t_title_en = addslashes($_POST['t_title_en']);
 	$t_title_jp = addslashes($_POST['t_title_jp']);
 	$t_title_vn = addslashes($_POST['t_title_vn']);
-	$t_sum_en = addslashes($_POST['t_sum_en']);
-	$t_sum_jp = addslashes($_POST['t_sum_jp']);
-	$t_sum_vn = addslashes($_POST['t_sum_vn']);
+	// $t_sum_en = addslashes($_POST['t_sum_en']);
+	// $t_sum_jp = addslashes($_POST['t_sum_jp']);
+	// $t_sum_vn = addslashes($_POST['t_sum_vn']);
 	$t_detail_en = addslashes($_POST['t_detail_en']);
 	$t_detail_jp = addslashes($_POST['t_detail_jp']);
 	$t_detail_vn = addslashes($_POST['t_detail_vn']);
@@ -29,28 +29,27 @@
 	$t_status = $_POST['t_status'];
 	
 	/* Convert LineBreak character to string [br] */
-	$t_title_jp = str_replace('\\r\\n','[br]',stripcslashes($t_title_jp));
-	$t_sum_jp = str_replace('\\r\\n','[br]',stripcslashes($t_sum_jp));	
-	$t_detail_jp = str_replace('\\r\\n','[br]',stripcslashes($t_detail_jp));
+	$t_title_jp = str_replace('\\r\\n','[br]', stripcslashes($t_title_jp));
+	//$t_sum_jp = str_replace('\\r\\n','[br]', stripcslashes($t_sum_jp));	
+	$t_detail_jp = str_replace('\\r\\n','[br]', stripcslashes($t_detail_jp));
 
-	$t_title_en = str_replace('\\r\\n','[br]',stripcslashes($t_title_en));
-	$t_sum_en = str_replace('\\r\\n','[br]',stripcslashes($t_sum_en));	
-	$t_detail_en = str_replace('\\r\\n','[br]',stripcslashes($t_detail_en));
+	$t_title_en = str_replace('\\r\\n','[br]', stripcslashes($t_title_en));
+	//$t_sum_en = str_replace('\\r\\n','[br]', stripcslashes($t_sum_en));	
+	$t_detail_en = str_replace('\\r\\n','[br]', stripcslashes($t_detail_en));
 
-	$t_title_vn = str_replace('\\r\\n','[br]',stripcslashes($t_title_vn));
-	$t_sum_vn = str_replace('\\r\\n','[br]',stripcslashes($t_sum_vn));	
-	$t_detail_vn = str_replace('\\r\\n','[br]',stripcslashes($t_detail_vn));
+	$t_title_vn = str_replace('\\r\\n','[br]', stripcslashes($t_title_vn));
+	//$t_sum_vn = str_replace('\\r\\n','[br]', stripcslashes($t_sum_vn));	
+	$t_detail_vn = str_replace('\\r\\n','[br]', stripcslashes($t_detail_vn));
 
-	$t_memo = str_replace('\\r\\n','[br]',stripcslashes($t_memo));
+	$t_memo = str_replace('\\r\\n','[br]', stripcslashes($t_memo));
 
-	if ($_SESSION['vd'] != $h_admid) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=2\">"; exit(); }
+	if ($_SESSION['vd'] != $h_admid) {
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=2\">";
+		exit();
+	}
 
-	$sql1 = "update flc_news set nwg_id = '$t_nwg', nwe_id = '$t_nwe', nws_title_en = '$t_title_en', nws_title_jp = '$t_title_jp', nws_title_vn = '$t_title_vn',
-					nws_compend_en = '$t_sum_en', nws_compend_jp = '$t_sum_jp', nws_compend_vn = '$t_sum_vn',
-					nws_detail_en = '$t_detail_en', nws_detail_jp = '$t_detail_jp', nws_detail_vn = '$t_detail_vn',
-					nws_year = '$t_year', nws_month = '$t_month', nws_day = '$t_day', nws_show = '$t_show', nws_status = '$t_status', nws_memo = '$t_memo'
-					where nws_id = '$h_nwsid';";
-	$result1 = mysql_query($sql1);
+	$sql1 = "update flc_news set nwg_id = '$t_nwg', nwe_id = '$t_nwe', nws_title_en = '$t_title_en', nws_title_jp = '$t_title_jp', nws_title_vn = '$t_title_vn', nws_detail_en = '$t_detail_en', nws_detail_jp = '$t_detail_jp', nws_detail_vn = '$t_detail_vn', nws_year = '$t_year', nws_month = '$t_month', nws_day = '$t_day', nws_show = '$t_show', nws_status = '$t_status', nws_memo = '$t_memo' where nws_id = '$h_nwsid';";
+	mysql_query($sql1);
 
 	echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_news.php?start=0\">";
 	exit();

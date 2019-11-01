@@ -14,18 +14,37 @@
 	$pagecode = "nws";
 	
 	/* Set default language cookie */
-	if(empty($_COOKIE['vlang'])) {
+	if (empty($_COOKIE['vlang'])) {
 		$_COOKIE['vlang'] = 'en';
 	}
 	
 	/* Prevent unknown cookie language value */
-	if(!in_array($_COOKIE['vlang'],['en','jp','vn'])) {
+	if (!in_array($_COOKIE['vlang'],['en','jp','vn'])) {
 		$_COOKIE['vlang'] = 'en';
 	}
-	if ($_COOKIE['vlang'] == 'en') { $url6 = "menu-html_en.html"; $url7 = "news_jp.html"; } else if ($_COOKIE['vlang'] == 'vn') { $url6 = "menu-html_vn.html"; $url7 = "news_jp.html"; } else { $url6 = "menu-html_jp.html"; $url7 = "news_jp.html"; }
+
+	if ($_COOKIE['vlang'] == 'en') {
+		$url6 = "menu-html_en.html";
+		$url7 = "news_jp.html";
+	} elseif ($_COOKIE['vlang'] == 'vn') {
+		$url6 = "menu-html_vn.html";
+		$url7 = "news_jp.html";
+	} else {
+		$url6 = "menu-html_jp.html";
+		$url7 = "news_jp.html";
+	}
 	
 	$tpl = new rFastTemplate("template");
-	$tpl->define (array("main_tpl" => $url1, "detail_tpl" => $url2, "right_tpl" => $url3, "left_tpl" => $url4, "top_tpl" => $url5, "menu_tpl" => $url6, "desc_tpl" => $url7));
+	$tpl->define (array(
+			"main_tpl" => $url1,
+			"detail_tpl" => $url2,
+			"right_tpl" => $url3,
+			"left_tpl" => $url4,
+			"top_tpl" => $url5,
+			"menu_tpl" => $url6,
+			"desc_tpl" => $url7
+		)
+	);
 	
 	mysql_query("use $db_name;");
 	
@@ -46,21 +65,20 @@
 
 		if ( $_COOKIE['vlang'] == 'en' ) {
 			$nwstitle = $dbarr1['nws_title_en'];
-			$nwssum = html($dbarr1['nws_compend_en']);
 			$nwsdetail = html($dbarr1['nws_detail_en']);
 			$monthName = mcvnumtofull($nwsmonth);
 			$nwsnewsdate = $nwsday." ".$monthName." ".$nwsyear;
 		} elseif ( $_COOKIE['vlang'] == 'vn' ) {
 			$nwstitle = $dbarr1['nws_title_vn'];
-			$nwssum = html($dbarr1['nws_compend_vn']);
 			$nwsdetail = html($dbarr1['nws_detail_vn']);
 			$nwsnewsdate = $nwsday." - ".$nwsmonth." - ".$nwsyear;
 		} else {
 			$nwstitle = $dbarr1['nws_title_jp'];
-			$nwssum = html($dbarr1['nws_compend_jp']);
 			$nwsdetail = html($dbarr1['nws_detail_jp']);
 			$nwsnewsdate = $nwsyear."年".$nwsmonth."月".$nwsday."日";
 		}
+
+		$test = $nwstitle;
 		
 		$sql2 = "select * from flc_news_genre where nwg_id = '$nwgid';"; 
 		$result2 = mysql_query($sql2);
@@ -89,12 +107,22 @@
 
 		$nwstitle = $nwgname." ".$nwstitle;	
 	}
-	
+
+	$breadcrumbMaterial = array(
+		"TOP" => BASE_URL,
+		"NEWS LIST" => BASE_URL."/news_list.php?start=0",
+		$nwstitle => "#"
+	);
+	$breadcrumbHTML = breadcrumb($breadcrumbMaterial);
+
+	$metaTitle = $nwstitle." | Fact-Link Vietnam";
+
+	$tpl->assign("##texttitlebar##", $metaTitle);
+	$tpl->assign("##breadcrumbHTML##", $breadcrumbHTML);
 	$tpl->assign("##nwstitle##", stripslashes($nwstitle));
-	$tpl->assign("##nwssum##", stripslashes($nwssum));
 	$tpl->assign("##nwsdetail##", stripslashes($nwsdetail));
 	$tpl->assign("##nwsnewsdate##", $nwsnewsdate);
-	$tpl->assign("##nwename##", stripslashes($nwename)); 
+	$tpl->assign("##nwename##", stripslashes($nwename));
 	
 	$tpl->parse ("##RIGHT_AREA##", "right_tpl");
 	$tpl->parse ("##LEFT_AREA##", "left_tpl");

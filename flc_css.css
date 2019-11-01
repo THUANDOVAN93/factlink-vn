@@ -1327,6 +1327,21 @@ button:hover,
 	padding: 5px;
 }
 
+.pd-x-10 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mg-x-5 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.mg-x-10 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .fl-d-none {
 	display: none;
 }
@@ -1335,4 +1350,12 @@ button:hover,
 	height: 16px;
 	width: 166px;
 	margin: 0;
+}
+
+.wrapper-image-overflow img {
+	max-width: 100%;
+}
+
+.f-14 {
+	font-size: 14px;
 }

@@ -64,7 +64,7 @@
 		$lb_ie2 = "Industrial Estate2";
 		$lb_address = "Address";
 		$lb_province = "Province";
-		$lb_country = "Country";
+		$lb_country = "Company's Location (country)";
 		$lb_zip = "Postal Code";
 		$lb_comtel = "Tel.";
 		$lb_comfax = "Fax";
@@ -173,7 +173,7 @@
 		$lb_pathname = "Tên đường dẫn";
 		$lb_pathname_text = html("※Tạo tên đường dẫn mong muốn của bạn chuyển hướng đến trang của công ty bạn. Chỉ cho phép các ký tự tiếng Anh, dấu gạch ngang (-), dấu gạch dưới (_) và giới hạng 25 kí tự.[br][br]www.fact-link.com.vn/home/[font red][u]Tên đường dẫn bạn đã tạo sẽ ở đây.[/u][/font] (EX : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "Tên công ty";
-		$lb_nationality = "Company Nationality";
+		$lb_nationality = "Quốc tịch";
 		$lb_njp = "Japan";
 		$lb_nvn = "Vietnam";
 		$lb_nkorea = "Korea";
@@ -186,7 +186,7 @@
 		$lb_ie = "Khu công nghiệp";
 		$lb_address = "Địa chỉ";
 		$lb_province = "Tỉnh thành";
-		$lb_country = "Quốc gia";
+		$lb_country = "Vị trí công ty (Quốc gia)";
 		$lb_zip = "Mã bưu chính";
 		$lb_comtel = "Số điện thoại";
 		$lb_comfax = "Số FAX";
@@ -296,7 +296,7 @@
 		$lb_pathname = "希望WEBアドレス";
 		$lb_pathname_text = html("※25文字以下、アルファベットの小文字、ハイフン（-）、アンダーバー（_）のみ使用可。[br][br]www.fact-link.com.vn/home/[font red][u]WEBアドレスはこの場所に反映されます。[/u][/font]　(例 : www.fact-link.com.vn/home/tdc-vn)");
 		$lb_comname = "会社名";
-		$lb_nationality = "Company Nationality";
+		$lb_nationality = "国籍";
 		$lb_njp = "Japan";
 		$lb_nvn = "Vietnam";
 		$lb_nkorea = "Korea";
@@ -309,7 +309,7 @@
 		$lb_ie = "工業団地";
 		$lb_address = "住所";
 		$lb_province = "県名";
-		$lb_country = "国名";
+		$lb_country = "国名（所在地）";
 		$lb_zip = "郵便番号";
 		$lb_comtel = "TEL";
 		$lb_comfax = "FAX";

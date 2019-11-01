@@ -734,7 +734,7 @@
 			<td valign=\"top\">
 				<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
 	";
-	$sql3 = "select * from flc_news where nws_show = 't' and nws_status != 'd' order by nws_year desc, nws_month desc, nws_day desc, nws_id desc limit 0,4;";
+	$sql3 = "select * from flc_news where nws_show = 't' and nws_status != 'd' order by nws_year desc, nws_month desc, nws_day desc, nws_id desc limit 0,6;";
 
 	$result3 = mysql_query($sql3);
 	while ($dbarr3 = mysql_fetch_array($result3)) {
@@ -764,7 +764,7 @@
 			<td width=\"5\" valign=\"top\" bgcolor=\"#999999\">&nbsp;</td>
 			<td width=\"5\" valign=\"top\">&nbsp;</td>
 			<td width=\"450\" valign=\"top\">
-				<a href=\"news_view.php?id=".$nwsid."\">".$nwstitle."</a>
+				<a href=\"news_view.php?id=".$nwsid."\" target=\"_blank\">".$nwstitle."</a>
 			</td>
 			<td width=\"100\" align=\"right\" valign=\"top\">".$nwsnewsdate."</td>
 		</tr>

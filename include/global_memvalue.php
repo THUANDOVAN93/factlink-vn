@@ -372,6 +372,13 @@
 				</tr>
 				<tr>
 				<td class=\"pd-5\">
+				<a href=\"https://fact-depot.com\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-en.png\">
+				</a>
+				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
 				<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
 				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
 				</a>
@@ -394,8 +401,15 @@
 				</tr>
 				<tr>
 				<td class=\"pd-5\">
+				<a href=\"https://fact-depot.com\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-vn.png\">
+				</a>
+				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
 				<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
-				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-vn.png\">
 				</a>
 				</td>
 				</tr>";
@@ -414,6 +428,13 @@
 			</a>
 			</td>
 			</tr>
+			<tr>
+				<td class=\"pd-5\">
+				<a href=\"https://fact-depot.com\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-jp.png\">
+				</a>
+				</td>
+				</tr>
 			<tr>
 			<td class=\"pd-5\">
 			<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">

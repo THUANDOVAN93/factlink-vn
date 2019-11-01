@@ -125,9 +125,9 @@ function check_form(formname) {
 			else if (document.formadmnwsadd.t_title_en.value=="") { alert("Title [EN] is required."); document.formadmnwsadd.t_title_en.focus(); return false; }
 			else if (document.formadmnwsadd.t_title_jp.value=="") { alert ("Title [JP] is required."); document.formadmnwsadd.t_title_jp.focus(); return false; }
 			else if (document.formadmnwsadd.t_title_vn.value=="") { alert ("Title [VN] is required."); document.formadmnwsadd.t_title_vn.focus(); return false; }
-			else if (document.formadmnwsadd.t_sum_en.value=="") { alert("Compend [EN] is required."); document.formadmnwsadd.t_sum_en.focus(); return false; }
-			else if (document.formadmnwsadd.t_sum_jp.value=="") { alert ("Compend [JP] is required."); document.formadmnwsadd.t_sum_jp.focus(); return false; }
-			else if (document.formadmnwsadd.t_sum_vn.value=="") { alert ("Compend [VN] is required."); document.formadmnwsadd.t_sum_vn.focus(); return false; }
+			// else if (document.formadmnwsadd.t_sum_en.value=="") { alert("Compend [EN] is required."); document.formadmnwsadd.t_sum_en.focus(); return false; }
+			// else if (document.formadmnwsadd.t_sum_jp.value=="") { alert ("Compend [JP] is required."); document.formadmnwsadd.t_sum_jp.focus(); return false; }
+			// else if (document.formadmnwsadd.t_sum_vn.value=="") { alert ("Compend [VN] is required."); document.formadmnwsadd.t_sum_vn.focus(); return false; }
 			else if (document.formadmnwsadd.t_detail_en.value=="") { alert("Detail [EN] is required."); document.formadmnwsadd.t_detail_en.focus(); return false; }
 			else if (document.formadmnwsadd.t_detail_jp.value=="") { alert ("Detail [JP] is required."); document.formadmnwsadd.t_detail_jp.focus(); return false; }
 			else if (document.formadmnwsadd.t_detail_vn.value=="") { alert ("Detail [VN] is required."); document.formadmnwsadd.t_detail_vn.focus(); return false; }

@@ -788,12 +788,16 @@ function breadcrumb($array)
 {
 	$html = '<ul class="fl-breadcrumb">';
 	foreach ($array as $name => $url) {
-	
-		$html .= '
+		
+		if ($url == "#" || $url == "") {
+			$html .= '
+			<li class="fl-breadcrumb-item">'.$name.'</li>';
+		} else {
+			$html .= '
 			<li class="fl-breadcrumb-item">
 				<a href="'.$url.'">'.$name.'</a>
 			</li>';
-		$count++;
+		}
 	}
 	$html .= '</ul>';
 

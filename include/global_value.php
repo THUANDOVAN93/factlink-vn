@@ -606,24 +606,29 @@
 		
 		// Temp Link Foooter
 		if ($_COOKIE['vlang'] == 'en') {
+			$linkBannerFooterTdc = "https://www.tdc-vietnam.com/eng/";
 			$Linktext = "<p class=\"linkfooter\"><a href=\"http://www.fact-link.com/index.php?lang=th\" target=\"_blank\">Fact-Link Thailand is here</a></p>";
 			$Linktext2 = "<p class=\"linkfooter\"><a href=\"http://indonesia.fact-link.com\" target=\"_blank\">Fact-Link Indonesia is here</a></p>";
 			$Linktext3 = "<p class=\"linkfooter\"><a href=\"http://www.tdc-thai.com/\" target=\"_blank\">Thailand real estate information is here.</a></p>";
 			$Linktext4 = "<p class=\"linkfooter\"><a href=\"https://fact-depot.com\" target=\"_blank\">Online purchasing service for MRO products in Vietnam</a></p>";
-			$Linktext5 = "<p class=\"linkfooter\"><a href=\"http://www.tdc-vietnam.com\" target=\"_blank\">Vietnamese Factory information is here</a></p>";
+			$Linktext5 = "<p class=\"linkfooter\"><a href=\"".$linkBannerFooterTdc."\" target=\"_blank\">Vietnamese Factory information is here</a></p>";
 		} elseif ($_COOKIE['vlang'] == 'vn') {
+			$linkBannerFooterTdc = "https://www.tdc-vietnam.com/eng/";
 			$Linktext = "<p class=\"linkfooter\"><a href=\"http://www.fact-link.com/index.php?lang=th\" target=\"_blank\">Fact-Link Thailand is here</a></p>";
 			$Linktext2 = "<p class=\"linkfooter\"><a href=\"http://indonesia.fact-link.com\" target=\"_blank\">Fact-Link Indonesia is here</a></p>";
 			$Linktext3 = "<p class=\"linkfooter\"><a href=\"http://www.tdc-thai.com/\" target=\"_blank\">Thailand real estate information is here.</a></p>";
 			$Linktext4 = "<p class=\"linkfooter\"><a href=\"https://fact-depot.com\" target=\"_blank\">Chuyên thiết bị công nghiệp online tại Việt Nam</a></p>";
-			$Linktext5 = "<p class=\"linkfooter\"><a href=\"http://www.tdc-vietnam.com\" target=\"_blank\">Thông tin nhà xưởng cho thuê tại Việt Nam</a></p>";
+			$Linktext5 = "<p class=\"linkfooter\"><a href=\"".$linkBannerFooterTdc."\" target=\"_blank\">Thông tin nhà xưởng cho thuê tại Việt Nam</a></p>";
+			
 		} else {
+			$linkBannerFooterTdc = "https://www.tdc-vietnam.com/jpn/";
 			$Linktext = "<p class=\"linkfooter\"><a href=\"http://www.fact-link.com/index.php?lang=th\" target=\"_blank\">ファクトリンク タイはこちら</a></p>";
 			$Linktext2 = "<p class=\"linkfooter\"><a href=\"http://indonesia.fact-link.com\" target=\"_blank\">ファクトリンク インドネシアはこちら</a></p>";
 			$Linktext3 = "<p class=\"linkfooter\"><a href=\"http://www.tdc-thai.com/\" target=\"_blank\">タイの不動産情報はこちら</a></p>";
 			$Linktext4 = "<p class=\"linkfooter\"><a href=\"https://fact-depot.com\" target=\"_blank\">ベトナムのオンライン工具通販はこちら</a></p>";
-			$Linktext5 = "<p class=\"linkfooter\"><a href=\"http://www.tdc-vietnam.com\" target=\"_blank\">ベトナムの工場情報はこちら</a></p>";
+			$Linktext5 = "<p class=\"linkfooter\"><a href=\"".$linkBannerFooterTdc."\" target=\"_blank\">ベトナムの工場情報はこちら</a></p>";
 		}
+		$tpl->assign("##linkBannerFooterTdc##", $linkBannerFooterTdc);
 		
 		if ($Linktext != '') {
 			$LinkF = "<tr>

@@ -358,7 +358,7 @@
 		if ($langcode == 'en') {
 			$menulist = $menulist."<tr>
 				<td class=\"pd-5\">
-				<a href=\"https://factory-vn.com/\" target=\"_blank\">
+				<a href=\"https://www.tdc-vietnam.com/eng/\" target=\"_blank\">
 				<img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner-en.png\">
 				</a>
 				</td>
@@ -379,15 +379,22 @@
 				</tr>
 				<tr>
 				<td class=\"pd-5\">
-				<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
+				<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
 				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
+				</a>
+				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
+				<a href=\"/news_view.php?id=00000782\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/longhau-free-right-banner.jpg\">
 				</a>
 				</td>
 				</tr>";
 		} elseif ($langcode == 'vn') {
 			$menulist = $menulist."<tr>
 				<td class=\"pd-5\">
-				<a href=\"https://factory-vn.com/\" target=\"_blank\">
+				<a href=\"https://www.tdc-vietnam.com/eng/\" target=\"_blank\">
 				<img class=\"img-reposive br-5\" src=\"/images/ads/tdc-right-banner-vn.png\">
 				</a>
 				</td>
@@ -408,8 +415,15 @@
 				</tr>
 				<tr>
 				<td class=\"pd-5\">
-				<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
+				<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
 				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-vn.png\">
+				</a>
+				</td>
+				</tr>
+				<tr>
+				<td class=\"pd-5\">
+				<a href=\"/news_view.php?id=00000782\" target=\"_blank\">
+				<img class=\"img-reposive br-5\" src=\"/images/ads/longhau-free-right-banner.jpg\">
 				</a>
 				</td>
 				</tr>";
@@ -437,8 +451,15 @@
 				</tr>
 			<tr>
 			<td class=\"pd-5\">
-			<a href=\"https://docs.google.com/spreadsheets/d/1VLNOMLM1QqcMRRmaa99HEOYOFIVYAy1t1-NpQ2Z6QYM/edit#gid=0\" target=\"_blank\">
+			<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
 			<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-jp.png\">
+			</a>
+			</td>
+			</tr>
+			<tr>
+			<td class=\"pd-5\">
+			<a href=\"/news_view.php?id=00000782\" target=\"_blank\">
+			<img class=\"img-reposive br-5\" src=\"/images/ads/longhau-free-right-banner.jpg\">
 			</a>
 			</td>
 			</tr>";

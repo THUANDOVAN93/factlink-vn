@@ -729,6 +729,47 @@
         </tr>";*/
 		
 	}
+
+	/* Convert [br] to actual [LineBreak] for <textarea> */
+	$pagname = str_replace('[br]',PHP_EOL,$pagname);
+	$pagtitle = str_replace('<br>',PHP_EOL,$pagtitle);
+	$pagdetail = str_replace('[br]',PHP_EOL,$pagdetail);
+	$membusiness = str_replace('[br]',PHP_EOL,$membusiness);
+	$memproduct = str_replace('[br]',PHP_EOL,$memproduct);
+	$memaddlab1 = str_replace('[br]',PHP_EOL,$memaddlab1);
+	$memadd1 = str_replace('[br]',PHP_EOL,$memadd1);
+	$memaddlab2 = str_replace('[br]',PHP_EOL,$memaddlab2);
+	$memadd2 = str_replace('[br]',PHP_EOL,$memadd2);
+	$memaddlab3 = str_replace('[br]',PHP_EOL,$memaddlab3);
+	$memadd3 = str_replace('[br]',PHP_EOL,$memadd3);
+	$memaddlab4 = str_replace('[br]',PHP_EOL,$memaddlab4);
+	$memadd4 = str_replace('[br]',PHP_EOL,$memadd4);
+	$memaddlab5 = str_replace('[br]',PHP_EOL,$memaddlab5);
+	$memadd5 = str_replace('[br]',PHP_EOL,$memadd5);
+	$memtellab1 = str_replace('[br]',PHP_EOL,$memtellab1);
+	$memtellab2 = str_replace('[br]',PHP_EOL,$memtellab2);
+	$memtellab3 = str_replace('[br]',PHP_EOL,$memtellab3);
+	$memtellab4 = str_replace('[br]',PHP_EOL,$memtellab4);
+	$memtellab5 = str_replace('[br]',PHP_EOL,$memtellab5);
+	$memmaillab1 = str_replace('[br]',PHP_EOL,$memmaillab1);
+	$memmaillab2 = str_replace('[br]',PHP_EOL,$memmaillab2);
+	$memmaillab3 = str_replace('[br]',PHP_EOL,$memmaillab3);
+	$memmaillab4 = str_replace('[br]',PHP_EOL,$memmaillab4);
+	$memmaillab5 = str_replace('[br]',PHP_EOL,$memmaillab5);
+	$memurl = str_replace('[br]',PHP_EOL,$memurl);
+	$memcomparent = str_replace('[br]',PHP_EOL,$memcomparent);
+	$memshareholder = str_replace('[br]',PHP_EOL,$memshareholder);
+	$memvalcus = str_replace('[br]',PHP_EOL,$memvalcus);
+	$memconlab1 = str_replace('[br]',PHP_EOL,$memconlab1);
+	$memcon1 = str_replace('[br]',PHP_EOL,$memcon1);
+	$memconlab2 = str_replace('[br]',PHP_EOL,$memconlab2);
+	$memcon2 = str_replace('[br]',PHP_EOL,$memcon2);
+	$memconlab3 = str_replace('[br]',PHP_EOL,$memconlab3);
+	$memcon3 = str_replace('[br]',PHP_EOL,$memcon3);
+	$memconlab4 = str_replace('[br]',PHP_EOL,$memconlab4);
+	$memcon4 = str_replace('[br]',PHP_EOL,$memcon4);
+	$memconlab5 = str_replace('[br]',PHP_EOL,$memconlab5);
+	$memcon5 = str_replace('[br]',PHP_EOL,$memcon5);
 	
 	$tpl->assign("##memid##", $memid);
 	$tpl->assign("##pagid##", $pagid);

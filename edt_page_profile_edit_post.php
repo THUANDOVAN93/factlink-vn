@@ -108,6 +108,47 @@
 	$t_con5 = addslashes($_POST['t_con5']);
 	$t_footer = addslashes($_POST['t_footer']);
 
+	/* Convert LineBreak character to string [br] */
+	$t_pagname = str_replace('\\r\\n','[br]',($t_pagname));
+	$t_pagtitle = str_replace('\\r\\n','<br>',stripcslashes($t_pagtitle));
+	$t_pagdetail = str_replace('\\r\\n','[br]',stripcslashes($t_pagdetail));
+	$t_business = str_replace('\\r\\n','[br]',stripcslashes($t_business));
+	$t_product = str_replace('\\r\\n','[br]',stripcslashes($t_product));
+	$t_comaddlab1 = str_replace('\\r\\n','[br]',stripcslashes($t_comaddlab1));
+	$t_comadd1 = str_replace('\\r\\n','[br]',stripcslashes($t_comadd1));
+	$t_comaddlab2 = str_replace('\\r\\n','[br]',stripcslashes($t_comaddlab2));
+	$t_comadd2 = str_replace('\\r\\n','[br]',stripcslashes($t_comadd2));
+	$t_comaddlab3 = str_replace('\\r\\n','[br]',stripcslashes($t_comaddlab3));
+	$t_comadd3 = str_replace('\\r\\n','[br]',stripcslashes($t_comadd3));
+	$t_comaddlab4 = str_replace('\\r\\n','[br]',stripcslashes($t_comaddlab4));
+	$t_comadd4 = str_replace('\\r\\n','[br]',stripcslashes($t_comadd4));
+	$t_comaddlab5 = str_replace('\\r\\n','[br]',stripcslashes($t_comaddlab5));
+	$t_comadd5 = str_replace('\\r\\n','[br]',stripcslashes($t_comadd5));
+	$t_comtellab1 = str_replace('\\r\\n','[br]',stripcslashes($t_comtellab1));
+	$t_comtellab2 = str_replace('\\r\\n','[br]',stripcslashes($t_comtellab2));
+	$t_comtellab3 = str_replace('\\r\\n','[br]',stripcslashes($t_comtellab3));
+	$t_comtellab4 = str_replace('\\r\\n','[br]',stripcslashes($t_comtellab4));
+	$t_comtellab5 = str_replace('\\r\\n','[br]',stripcslashes($t_comtellab5));
+	$t_commaillab1 = str_replace('\\r\\n','[br]',stripcslashes($t_commaillab1));
+	$t_commaillab2 = str_replace('\\r\\n','[br]',stripcslashes($t_commaillab2));
+	$t_commaillab3 = str_replace('\\r\\n','[br]',stripcslashes($t_commaillab3));
+	$t_commaillab4 = str_replace('\\r\\n','[br]',stripcslashes($t_commaillab4));
+	$t_commaillab5 = str_replace('\\r\\n','[br]',stripcslashes($t_commaillab5));
+	$t_url = str_replace('\\r\\n','[br]',($t_url));
+	$t_comparent = str_replace('\\r\\n','[br]',stripcslashes($t_comparent));
+	$t_shareholder = str_replace('\\r\\n','[br]',stripcslashes($t_shareholder));
+	$t_valcus = str_replace('\\r\\n','[br]',stripcslashes($t_valcus));
+	$t_conlab1 = str_replace('\\r\\n','[br]',stripcslashes($t_conlab1));
+	$t_con1 = str_replace('\\r\\n','[br]',stripcslashes($t_con1));
+	$t_conlab2 = str_replace('\\r\\n','[br]',stripcslashes($t_conlab2));
+	$t_con2 = str_replace('\\r\\n','[br]',stripcslashes($t_con2));
+	$t_conlab3 = str_replace('\\r\\n','[br]',stripcslashes($t_conlab3));
+	$t_con3 = str_replace('\\r\\n','[br]',stripcslashes($t_con3));
+	$t_conlab4 = str_replace('\\r\\n','[br]',stripcslashes($t_conlab4));
+	$t_con4 = str_replace('\\r\\n','[br]',stripcslashes($t_con4));
+	$t_conlab5 = str_replace('\\r\\n','[br]',stripcslashes($t_conlab5));
+	$t_con5 = str_replace('\\r\\n','[br]',stripcslashes($t_con5));
+
 	if ($_SESSION['vmd'] != $h_memid) { echo "<meta http-equiv = \"refresh\" content = \"0;URL = error.php?code=2\">"; exit(); }
 
 	$sql0 = "select * from flc_member where mem_id = '$h_memid';";

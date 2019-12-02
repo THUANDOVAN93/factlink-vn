@@ -60,7 +60,8 @@
 	$qyear = date("Y") - 2;
 	
 	$pagesql = "select * from flc_news where nws_year >= '$qyear' and nws_status != 'd';";
-	$page = pagecal($limit, $start, $pagesql, "news_list.php", "");
+	//$page = pagecal($limit, $start, $pagesql, "news_list.php", "");
+	$page = pagecal($limit, $start, $pagesql, "news.html", "");
 	
 	if ($_COOKIE['vlang'] == 'en') {
 		$sql1 = "select * from flc_news where nws_year >= '$qyear' and nws_status != 'd' order by nws_year desc, nws_month desc, nws_day desc, nws_id desc limit $start,$limit;";

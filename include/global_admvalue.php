@@ -361,9 +361,7 @@
 		$lb_mail_tel = "TEL";
 		$lb_mail_fax = "FAX";
 		$lb_mail_email = "E-mail";
-
 	} elseif ($_COOKIE['vlang'] == 'vn') {
-
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_vn.png";
 		$texttitlebar = "FACT-LINK : : Cổng thông tin dành cho các doanh nghiệp Nhật Bản và Việt Nam";
@@ -734,7 +732,6 @@
 		$lb_mail_fax = "Số fax";
 		$lb_mail_email = "Địa chỉ mail";
 	} else {
-
 		$langpicjp = "lang_jp_02.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_jp.png";
 		$texttitlebar = "FACT-LINK : : ベトナムの日系製造業のためのポータルサイト";
@@ -1104,6 +1101,13 @@
 		$lb_mail_fax = "FAX";
 		$lb_mail_email = "メールアドレス";
 	} 
+	
+	$meta_description_en = "FactLink Vietnam is a company introduction site for manufacturing companies based in Vietnam. We will introduce the information of the registered company. The information posted includes business domain, products, location, industrial park, and contact information. We also provide services to support the manufacturing industry in Vietnam";
+	$meta_keyword_en = "Manufacturing business, Manufacture, Vietnam, Japan, Factory, Expansion into Thailand";
+	$meta_description_jp = "ファクトリンクベトナムは、ベトナムに拠点を置く「製造関連企業」の、会社紹介サイトです。ご登録いただいた企業様の情報をご紹介致します。掲載情報は、事業内容、取扱品目、住所、工業団地、連絡先など製造業に特化した項目を設けております。また工場進出サポートなど在ベトナムの製造業を支援するサービスを提供しております。";
+	$meta_keyword_jp = "製造業,製造,ベトナム,日本,工場,進出";
+	$meta_description_vn = "FactLink Vietnam là trang web chuyên giới thiệu các công ty trong ngành công nghiệp sản xuất có trụ sở tại Việt Nam. Chúng tôi sẽ giới thiệu thông tin của các công ty thành viên bao gồm lĩnh vực kinh doanh, mô tả sản phẩm, địa chỉ, thông tin liên hệ.... Chúng tôi cũng cung cấp các dịch vụ để hỗ trợ ngành sản xuất tại Việt Nam, như hỗ trợ tìm kiếm nhà máy, nhà kho. ";
+	$meta_keyword_jp = "sản xuất , chế tạo,sản xuất kinh doanh ,ngành công nghiệp";
 	
 	$tpl->assign("##langpicjp##", $langpicjp);
 	$tpl->assign("##langpicvn##", $langpicvn);

@@ -16,6 +16,9 @@
 	$sql1 = "delete from flc_news where nws_id = '$h_nwsid';";
 	$result1 = mysql_query($sql1);
 
+	$sql1 = "DELETE FROM flc_pag_metadata WHERE pag_id = '$h_nwsid' AND attribute_code = 'new' AND attribute_name = 'seo';";
+	$result1 = mysql_query($sql1);
+
 	echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_news.php?start=0\">";
 	exit();
 ?>

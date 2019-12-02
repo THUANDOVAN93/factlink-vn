@@ -115,9 +115,47 @@
 	);
 	$breadcrumbHTML = breadcrumb($breadcrumbMaterial);
 
-	$metaTitle = $nwstitle." | Fact-Link Vietnam";
+	// GET META TAG HERE
+	$sqlGetSeoData = "SELECT attribute_value FROM flc_pag_metadata WHERE pag_id = '$nwsid' AND attribute_code = 'new' AND attribute_name = 'seo';";
+	$seoDataList = mysql_query($sqlGetSeoData);
+	if ($seoDataList) {
+		$rs = mysql_fetch_assoc($seoDataList);
+		$seoDataItem = $rs['attribute_value'];
+		$seoDataItem = json_decode($seoDataItem, true);
+
+		foreach ($seoDataItem as $key => $value) {
+			$metaTitEN = $seoDataItem['meta_title']['en'];
+			$metaTitJP = $seoDataItem['meta_title']['jp'];
+			$metaTitVN = $seoDataItem['meta_title']['vn'];
+			$metaDescEN = $seoDataItem['meta_desc']['en'];
+			$metaDescJP = $seoDataItem['meta_desc']['jp'];
+			$metaDescVN = $seoDataItem['meta_desc']['vn'];
+		}
+
+		if ($_COOKIE['vlang'] == 'en') {
+			$metaTitle = $metaTitEN;
+			$metaDesc = $metaDescEN;
+		} elseif ($_COOKIE['vlang'] == 'vn') {
+			$metaTitle = $metaTitVN;
+			$metaDesc = $metaDescVN;
+		} else {
+			$metaTitle = $metaTitJP;
+			$metaDesc = $metaDescJP;
+		}
+	}
+	
+	if (!isset($metaTitle) || empty($metaTitle)) {
+		$metaTitle = $nwstitle." | Fact-Link Vietnam";
+	}
+
+	if (!isset($metaDesc) || empty($metaDesc)) {
+		$metaDesc = $meta_description;
+	}
+	
+	// END GET META TAG
 
 	$tpl->assign("##texttitlebar##", $metaTitle);
+	$tpl->assign("##meta_description##", $metaDesc);
 	$tpl->assign("##breadcrumbHTML##", $breadcrumbHTML);
 	$tpl->assign("##nwstitle##", stripslashes($nwstitle));
 	$tpl->assign("##nwsdetail##", stripslashes($nwsdetail));

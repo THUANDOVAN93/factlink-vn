@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <title>FACT-LINK MANAGEMENT</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+          <div id="header">{% block header %}{% endblock %}</div>
+
+          <div id="content">
+
+            <div id="left-siderbar">{% block leftsiderbar %}{% endblock %}</div>
+
+            <div id="right-siderbar">{% block rightsiderbar %}{% endblock %}</div>
+
+            <div id="main-content">{% block maincontent %}{% endblock %}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/popper.js/dist/popper.js" type="module"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- Ajax Handler -->
+    {% block ajaxHandler %}{% endblock%}
+  </body>
+</html>

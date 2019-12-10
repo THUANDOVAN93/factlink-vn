@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block header %}
+<section class="row my-4">
+  <div class="col text-center">
+    <h1 class="text-secondary">{{ title }}</h1>
+  </div>
+</section>
+{% endblock %}
+{% block maincontent %}
+<section class="row">
+  <div class="col-4 text-center">
+    <h5 class="mb-4 text-danger">{{ action }}</h5>
+    <a id="js-reqAjax" href="{{ buttonActionHandler }}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">{{ buttonActionContent }}</a>
+    <p class="mt-5">Link to submit Google Seach Console : </p>
+    <a href="{{ linkGoogleConsole }}">{{ linkGoogleConsole }}</a>
+  </div>
+  <div class="col-8 text-center">
+    <h5 class="mb-4 text-success">{{ result }}</h5>
+    <table class="table">
+      <thead>
+        <tr class="table-active">
+          <td>DATE CREATED</td>
+          <td>URL TOTAL</td>
+          <td>FILE</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</section>
+{% endblock %}
+
+{% block ajaxHandler %}
+<script>
+  $('#js-reqAjax').click(function(event) {
+    event.preventDefault();
+    var url = $(this).attr('href');
+    var items = ["table-primary","table-secondary","table-active","table-warning","table-info","table-light","table-dark","table-danger"];
+    var classItem = items[Math.floor(Math.random()*items.length)];
+    $.ajax({
+      type : 'GET',
+      url : url,
+      dataType : 'json',
+      success : function(res) {
+        var contentAppend = "<tr class=\""+classItem+"\"><td>"+res['date']+"</td><td><a href=\""+res['url']+"\">Get Sitemap</a></td><td>"+res['total']+"</td></tr>";
+        $("tr").last().after(contentAppend);
+      },
+      error :  function(request, status, error) {
+        console.log("ajax call went wrong:");
+      }
+    });
+  });
+</script>
+{% endblock %}

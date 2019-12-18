@@ -288,7 +288,11 @@
 	
 	$pagtitle = "<font color=\"".$pagtitlecolor."\"><h2 class=\"h2_title\">".subhtml($pagtitle)."</h2></font>";
 	$pagdetail = $pagimage.$pagtitle.html($pagdetail);
+	if (!empty($memPackage) && !empty($pagpagetitle)) {
+		$metaTitle = $pagpagetitle;
+	}
 	
+	$tpl->assign("##metaTitle##", $metaTitle);
 	$tpl->assign("##memid##", $memid);
 	$tpl->assign("##pagdetail##", $pagdetail);
 	$tpl->assign("##pagpagetitle##", $pagpagetitle);

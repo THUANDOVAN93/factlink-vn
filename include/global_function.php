@@ -806,4 +806,26 @@ function breadcrumb($array)
 
 //Breadcrumb function.=====================
 
+function clean($string) {
+	$string = str_replace('[br]', '', $string);
+	$string = str_replace('[/br]', '', $string);
+	$string = str_replace('<br>', '', $string);
+	$string = str_replace('</br>', '', $string);
+	$string = str_replace('< br>', '', $string);
+	$string = str_replace('< /br>', '', $string);
+	$string = str_replace('<BR>', '', $string);
+	$string = str_replace('</BR>', '', $string);
+	$string = str_replace('< BR>', '', $string);
+	$string = str_replace('< /BR>', '', $string);
+	$string = str_replace('<B>', '', $string);
+	$string = str_replace('</B>', '', $string);
+	$string = str_replace('< B>', '', $string);
+	$string = str_replace('< /B>', '', $string);
+	$string = str_replace('<', '', $string);
+	$string = str_replace('-', '', $string);
+
+   return $string;
+   //return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+}
+
 ?>

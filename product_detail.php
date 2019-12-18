@@ -300,7 +300,11 @@
 	// --- Global Template Section	
 	//include_once("./include/global_value.php");
 	include_once("./include/beta/global_value.php");
+	if (!empty($memPackage) && !empty($pagpagetitle)) {
+		$metaTitle = $pagpagetitle;
+	}
 	
+	$tpl->assign("##metaTitle##", $metaTitle);
 	$tpl->parse ("##RIGHT_AREA##", "right_tpl");
 	$tpl->parse ("##LEFT_AREA##", "left_tpl");
 	$tpl->parse ("##TOP_AREA##", "top_tpl");

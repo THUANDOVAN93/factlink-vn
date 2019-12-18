@@ -217,7 +217,20 @@
 			$menumemcategory = explode(" ", $dbarrmemmenu1['mem_category']);
 			$menumemcate = $menumemcategory[0];
 			$memPackage = $dbarrmemmenu1['mem_package'];
+			$metaDescGlobal = $dbarrmemmenu1['mem_seocomdesc'];
+
+			if ($langcode == 'en') {
+				$metaTitle = $dbarrmemmenu1['mem_comname_en'] . ' | Fact-Link Vietnam';
+				$memBusinessDesc = $dbarrmemmenu1['mem_business_en'];
+			} elseif ($langcode == 'vn') {
+				$metaTitle = $dbarrmemmenu1['mem_comname_vn'] . ' | Fact-Link Vietnam';
+				$memBusinessDesc = $dbarrmemmenu1['mem_business_vn'];
+			} else {
+				$metaTitle = $dbarrmemmenu1['mem_comname_jp'] . ' | Fact-Link Vietnam';
+				$memBusinessDesc = $dbarrmemmenu1['mem_business_jp'];
+			}
 		}
+		$tpl->assign("##metaTitle##", $metaTitle);
 
 		$sqlmemmenu2 = "select * from flc_template_main where tpm_id = '$menumemtemplate';";
 		$resultmemmenu2 = mysql_query($sqlmemmenu2);
@@ -289,7 +302,30 @@
 	
 	$sqlmemmenu5 = "select * from flc_page where pag_id = '$pagid';"; 
 	$resultmemmenu5 = mysql_query($sqlmemmenu5);
-	while ($dbarrmemmenu5 = mysql_fetch_array($resultmemmenu5)) { $menupagupdate = $dbarrmemmenu5['pag_update']; }
+	while ($dbarrmemmenu5 = mysql_fetch_array($resultmemmenu5)) {
+		$menupagupdate = $dbarrmemmenu5['pag_update'];
+
+		if (!empty($memPackage)) {
+			$sqlSeoTag = "SELECT attribute_value FROM flc_pag_metadata WHERE pag_id = '$memid' AND attribute_code = 'all' AND attribute_name = 'seo' LIMIT 1;";
+			$resultSeoTag = mysql_query($sqlSeoTag);
+			while ($metaTag = mysql_fetch_assoc($resultSeoTag)) {
+				$metaDescArr = json_decode($metaTag['attribute_value'], true);
+			}
+			if ($langcode == 'en') {
+				$metaDesc = $metaDescArr['meta_desc']['en'];
+			} elseif ($langcode == 'vn') {
+				$metaDesc = $metaDescArr['meta_desc']['vn'];
+			} else {
+				$metaDesc = $metaDescArr['meta_desc']['jp'];
+			}
+			if (empty($metaDesc)) {
+				$metaDesc = $metaDescGlobal;
+			}
+		} else {
+			$metaDesc  = clean($memBusinessDesc);
+		}
+	}
+	$tpl->assign("##metaDesc##", $metaDesc);
 	
 	$menupagupdate = explode(" ",$menupagupdate);
 	$upd1 = explode("-",$menupagupdate[0]);
@@ -383,13 +419,6 @@
 				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
 				</a>
 				</td>
-				</tr>
-				<tr>
-				<td class=\"pd-5\">
-				<a href=\"/news_view.php?id=00000782\" target=\"_blank\">
-				<img class=\"img-reposive br-5\" src=\"/images/ads/longhau-free-right-banner.jpg\">
-				</a>
-				</td>
 				</tr>";
 		} elseif ($langcode == 'vn') {
 			$menulist = $menulist."<tr>
@@ -419,13 +448,6 @@
 				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-vn.png\">
 				</a>
 				</td>
-				</tr>
-				<tr>
-				<td class=\"pd-5\">
-				<a href=\"/news_view.php?id=00000782\" target=\"_blank\">
-				<img class=\"img-reposive br-5\" src=\"/images/ads/longhau-free-right-banner.jpg\">
-				</a>
-				</td>
 				</tr>";
 		} else {
 			$menulist = $menulist."<tr>
@@ -453,13 +475,6 @@
 			<td class=\"pd-5\">
 			<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
 			<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-jp.png\">
-			</a>
-			</td>
-			</tr>
-			<tr>
-			<td class=\"pd-5\">
-			<a href=\"/news_view.php?id=00000782\" target=\"_blank\">
-			<img class=\"img-reposive br-5\" src=\"/images/ads/longhau-free-right-banner.jpg\">
 			</a>
 			</td>
 			</tr>";

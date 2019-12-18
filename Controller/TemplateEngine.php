@@ -10,7 +10,9 @@ if ($_SESSION['vp'] != 'exe') {
 }
 
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__.'/../View/templates');
+//$twig = new \Twig\Environment($loader);
 $twig = new \Twig\Environment($loader);
+
 
 $template = $twig->load('index.html');
 

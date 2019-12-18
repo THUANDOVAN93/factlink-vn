@@ -317,7 +317,11 @@
 		$memsubdesc = "<p style=\"margin: 0;padding-left: 25px;line-height: 18px;\">".$memsubdesc."</p>";
 		$memcomname = "<span style=\"display: inline-block;width: 25px;\"></span>".$memcomname;
 	}
+	if (!empty($memPackage) && !empty($pagpagetitle)) {
+		$metaTitle = $pagpagetitle;
+	}
 	
+	$tpl->assign("##metaTitle##", $metaTitle);
 	$tpl->assign("##memid##", $memid);
 	$tpl->assign("##pagdetail##", $pagdetail);
 	$tpl->assign("##pagpagetitle##", $pagpagetitle);

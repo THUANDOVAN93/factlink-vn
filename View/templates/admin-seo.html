@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block header %}
+<section class="row my-4">
+  <div class="col text-center">
+    <h1 class="text-secondary">{{ title }}</h1>
+  </div>
+</section>
+{% endblock %}
+
+{% block maincontent %}
+<section class="row">
+  <div class="col">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col" colspan="3" class="text-center">COMPANY INFORMATION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Name</th>
+          <td>{{ companyName }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Nationality</th>
+          <td>{{ companyNational }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Package</th>
+          <td>{{ companyPackage }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address</th>
+          <td>{{ companyAddress }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Email</th>
+          <td>{{ companyEmail }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<form class="form-horizontal text-center" id="seo-form" method="post" action="{{ handler }}" role="form">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-highlight">
+      <thead>
+        <th>Name\Language</th>
+        <th>JAPAN</th>
+        <th>ENGLISH</th>
+        <th>VIETNAM</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span>Meta Description Tag</span>
+          </td>
+          <td>
+            <textarea style="height: 250px;" class="form-control" id="metaDescJp" name="metaDescJp" rows="3">{{ metaDescJp }}</textarea>
+          </td>
+          <td>
+            <textarea style="height: 250px;" class="form-control" id="metaDescEn" name="metaDescEn" rows="3">{{ metaDescEn }}</textarea>
+          </td>
+          <td>
+            <textarea style="height: 250px;" class="form-control" id="metaDescVn" name="metaDescVn" rows="3">{{ metaDescVn }}</textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <input type="hidden" name="id" value="{{ companyId }}">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

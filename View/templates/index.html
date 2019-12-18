@@ -14,6 +14,7 @@
     <a id="js-reqAjax" href="{{ buttonActionHandler }}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">{{ buttonActionContent }}</a>
     <p class="mt-5">Link to submit Google Seach Console : </p>
     <a href="{{ linkGoogleConsole }}">{{ linkGoogleConsole }}</a>
+    <p>RULE : HTTPS://www.(ANYTHING)</p>
   </div>
   <div class="col-8 text-center">
     <h5 class="mb-4 text-success">{{ result }}</h5>
@@ -21,8 +22,8 @@
       <thead>
         <tr class="table-active">
           <td>DATE CREATED</td>
-          <td>URL TOTAL</td>
           <td>FILE</td>
+          <td>URL TOTAL</td>
         </tr>
       </thead>
     </table>
@@ -46,7 +47,7 @@
         $("tr").last().after(contentAppend);
       },
       error :  function(request, status, error) {
-        console.log("ajax call went wrong:");
+        console.log(status);
       }
     });
   });

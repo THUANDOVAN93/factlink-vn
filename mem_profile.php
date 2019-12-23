@@ -589,7 +589,7 @@
 	
 	function call_ine($memineid, $langcode) {
 
-		if ($memineid != '1' && $memineid != '2' && $memineid != '') {
+		if ($memineid != '131' && $memineid != '1' && $memineid != '2' && $memineid != '') {
 
 			$sql6 = "select * from flc_ie where ine_id = '$memineid';";
 			$result6 = mysql_query($sql6);

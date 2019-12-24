@@ -339,11 +339,14 @@
 		$product_name = "Product Name";
 		$access_report = "Access Report";
 		$mapCode = "Map Code";
+		$tm_events = "Events";
+		$tt_oncoming_events = "Oncoming Events";
 		
 	} 
 	
 	else if ($_COOKIE['vlang'] == 'vn') { 
-		
+		$tm_events = "Events";
+		$tt_oncoming_events = "Oncoming Events";
 		$langpicjp = "lang_jp_01.png"; $langpicvn = "lang_vn_02.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_vn.png";
 		$texttitlebar = "FACT-LINK : : Cổng thông tin dành cho các doanh nghiệp Nhật Bản và Việt Nam";
@@ -684,7 +687,8 @@
 	}
 	
 	else { 
-		
+		$tm_events = "Events";
+		$tt_oncoming_events = "Oncoming Events";
 		$langpicjp = "lang_jp_02.png"; $langpicvn = "lang_vn_01.png"; $langpicen = "lang_en_01.png";
 		$headlogo = "header_07_jp.png";
 		$texttitlebar = "FACT-LINK : : ベトナムの日系製造業のためのポータルサイト";
@@ -1341,6 +1345,8 @@
 
 	$tpl->assign("##product_name##", $product_name);
 	$tpl->assign("##access_report##", $access_report);
+	$tpl->assign("##tm_events##", $tm_events);
+	$tpl->assign("##tt_oncoming_events##", $tt_oncoming_events);
 	
 	
 	
@@ -1369,5 +1375,30 @@
 	if ($countinbox != 0) { $inboxnew = "(".$countinbox.")"; } else { $inboxnew = ""; }
 	
 	$tpl->assign("##inboxnew##", $inboxnew);
+
+	//Count mail magazine
+	$sqljp = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp';"; 
+	$sqljp2 = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'jp' AND mem_oth_contactmail<>'' ;"; 
+
+	$queryjp=mysql_query($sqljp);
+
+	while ($result_jp = mysql_fetch_array($queryjp)) {
+
+		$summail_jp[]= (explode(",",$result_jp['mem_contactmail']));
+
+		if ($result_jp['mem_oth_contactmail']!='') {
+
+			$summail_oth_jp[]= $result_jp['mem_oth_contactmail'];
+		}
+	}
+
+	$sqlvn = "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national =  'vn' AND mem_contactmail<>'' ;";
+	$queryvn=mysql_query($sqlvn); 
+	$sqloth= "select * from flc_member where mem_status = '' and mem_mailop_mag = '1' AND mem_national <> 'jp' AND mem_national <>  'vn' AND mem_contactmail<>'' ;";
+
+	$queryoth=mysql_query( $sqloth); 
+	$tpl->assign("##summailjp##", count($summail_jp));
+	$tpl->assign("##summailvn##", mysql_num_rows($queryvn));
+	$tpl->assign("##summailoth##", mysql_num_rows($queryoth));
 	
 ?>

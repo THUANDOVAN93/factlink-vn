@@ -481,14 +481,22 @@ function ranDomStr($length){
 		$myMapArr = explode(",", $pagmemo);
 		$myMapX = $myMapArr[0];
 		$myMapY = $myMapArr[1];
-		$tpl->assign("##mapWidth##", "100%");
-		$tpl->assign("##mapHeight##", "500px");
+		$myMapWidth = $myMapArr[2];
+		$myMapHeight = $myMapArr[3];
+		if (empty($myMapWidth)) {
+			$myMapWidth = "300";
+		}
+		if (empty($myMapHeight)) {
+			$myMapHeight = "300";
+		}	
 	} else {
-		$tpl->assign("##mapWidth##", "0");
-		$tpl->assign("##mapHeight##", "0");
+		$myMapWidth = "0";
+		$myMapHeight = "0";
 	}
 	$tpl->assign("##myLat##", $myMapX);
 	$tpl->assign("##myLng##", $myMapY);
+	$tpl->assign("##mapWidth##", $myMapWidth."px");
+	$tpl->assign("##mapHeight##", $myMapHeight."px");
 	
 	$tpl->assign("##randomccmd5##", $randomccmd5);
 	//$tpl->assign("##rand##", include("pic_text.php"));

@@ -173,7 +173,15 @@
 		$searchKey = mysql_real_escape_string($_SESSION['vsearch_key']);
 		//$searchKey = str_replace('@', ' ', $searchKey);
 		$searchKey = preg_replace('~[\\\\/:*?@"<>()|]~', ' ', $searchKey);
-		$sqphixSql = "SELECT * FROM test1 WHERE MATCH('".$searchKey."*') limit 0,".$maxMatechesSphinx." option ranker=WORDCOUNT";
+		// if (isset($_GET['debug'])) {
+		// 	$searchKey = iconv(mb_detect_encoding($searchKey, mb_detect_order(), true), "UTF-8", $searchKey);
+		// 	// if (mb_detect_encoding($searchKey, 'UTF-8')) {
+		// 	// 	$test = iconv(mb_detect_encoding($searchKey, mb_detect_order(), true), "UTF-8", $searchKey);
+		// 	// 	var_dump($test);exit();
+		// 	// }
+		// }
+		//$sqphixSql = "SELECT * FROM test1 WHERE MATCH('".$searchKey."*') limit 0,".$maxMatechesSphinx." option ranker=WORDCOUNT";
+		$sqphixSql = "SELECT * FROM test1 WHERE MATCH('".$searchKey."*') limit 0,".$maxMatechesSphinx." option ranker=SPH04";
 		$resource = $connSphinx->query($sqphixSql);
 		if ($resource->num_rows !== 0) {
 			while ($row = $resource->fetch_assoc()) {
@@ -225,7 +233,7 @@
 			}
 			
 			//$sql1 = $sqlRoot." and mem_package != '' and mem_status != 'd' order by mem_sort asc limit $startbasic,$limitbasic;";
-			$sql1 = $sqlRoot." and mem_package != '' and mem_status != 'd' order by mem_sort asc limit $startbasic,$limitbasic;";
+			$sql1 = $sqlRoot." and mem_package != '' and mem_status != 'd' order by field(mem_id, $idList) limit $startbasic,$limitbasic;";
 			$result1 = mysql_query($sql1);
 			while ($dbarr1 = mysql_fetch_array($result1)) {
 				

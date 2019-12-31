@@ -488,15 +488,18 @@ function ranDomStr($length){
 		}
 		if (empty($myMapHeight)) {
 			$myMapHeight = "300";
-		}	
+		}
+		$mapLayout = "display: block; max-width:100%;";
 	} else {
 		$myMapWidth = "0";
 		$myMapHeight = "0";
+		$mapLayout = "";
 	}
 	$tpl->assign("##myLat##", $myMapX);
 	$tpl->assign("##myLng##", $myMapY);
 	$tpl->assign("##mapWidth##", $myMapWidth."px");
 	$tpl->assign("##mapHeight##", $myMapHeight."px");
+	$tpl->assign("##mapLayout##", $mapLayout);
 	
 	$tpl->assign("##randomccmd5##", $randomccmd5);
 	//$tpl->assign("##rand##", include("pic_text.php"));

@@ -10,13 +10,8 @@
         </script>
 <div class="panelcontent">
 <table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
+  <tr style="##mapLayout##">
     <td>##pagdetail##</td>
-  </tr>
-   <tr>
-    <td><img src="images/blank.png" width="760" height="9" /></td>
-  </tr>
-  <tr>
     <td><div id="map2" style="width: ##mapWidth##; height: ##mapHeight##;"></div></td>
   </tr>
   <tr>
@@ -43,11 +38,6 @@
           <td width="10">&nbsp;</td>
           <td width="530"><input name="t_company" type="text" class="box_normal" id="t_company" maxlength="85" /></td>
         </tr>
-        <!-- <tr>
-          <td><strong>##lb_department##</strong></td>
-          <td>&nbsp;</td>
-          <td><input name="t_department" type="text" class="box_normal" id="t_department" maxlength="85" /></td>
-        </tr> -->
         <tr>
           <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
         </tr>
@@ -110,14 +100,9 @@
   <tr>
     <td><strong>##lb_confirmcode## * </strong></td>
     <td>&nbsp;</td>
-    <td>  
-   
-
-	
+    <td>
       <input name="t_confirm" id="t_confirm" type="text" class="textbox_minq" maxlength="6" /><br />
-			<!--<img src="images/confirmcode/ccimage.php" style="margin:5px 0 0 0;" />-->
-
-        <!--<img src="pic_text.php?str=##ran_str##">--><img src="captcha/val_img.php" style="margin:5px 0 0 0;" />
+			<img src="captcha/val_img.php" style="margin:5px 0 0 0;" />
     
        </td>
   </tr>
@@ -158,6 +143,7 @@
   var map;
   var myLat = '##myLat##';
   var myLng = '##myLng##';
+  var googleMapLink = "http://www.google.com/maps/place/##myLat##,##myLng##";
   if (myLat !== '' && myLat !== '') {
     var myLat = Number('##myLat##');
     var myLng = Number('##myLng##');
@@ -165,7 +151,7 @@
 
     function initMap() {
 
-      map = new google.maps.Map(document.getElementById('map2'), {
+      var map = new google.maps.Map(document.getElementById('map2'), {
         center: myLatLng,
         zoom: 17
       });
@@ -176,6 +162,10 @@
         icon: {
         url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
         }
+      });
+
+      marker.addListener('click', function() {
+        window.open(googleMapLink, '_blank');
       });
     }
   }

@@ -83,7 +83,7 @@
 			echo "<pre>".print_r($imgpath,true)."</pre>";
 			exit('upload error');
 		}
-
+		correctImageOrientation($imgpath);
 
 		$imgdms = getimagesize($imgpath);
 		if ($t_imagewidth == '') {

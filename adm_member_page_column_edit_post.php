@@ -59,6 +59,7 @@
 		$newfile = $h_memid."-".$h_pagid."-".$h_conid."-C.jpg";
 		$imgpath = "home/".$memfolder."/".$newfile;
 		move_uploaded_file($_FILES['t_image']['tmp_name'], $imgpath);
+		correctImageOrientation($imgpath);
 		$old_umask = umask(0); chmod($imgpath, 0777); umask($old_umask);
 		$imgdms = getimagesize($imgpath); if ($t_imagewidth == '') { $t_imagewidth = $imgdms[0]; }
 		$sql4 = "update flc_content set con_image = 't', con_image_width = '$t_imagewidth', con_image_link = '$t_imagelink' where con_id = '$h_conid';";

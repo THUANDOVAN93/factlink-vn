@@ -16,10 +16,14 @@ $twig = new \Twig\Environment($loader);
 
 $template = $twig->load('index.html');
 
+$sitemapLogPath = "../cron/SitemapLog.txt";
+$lines = file($sitemapLogPath);
+
 echo $template->render([
 	'title' => 'FACT-LINK SEO MANAGEMENT',
 	'action' => 'ACTION',
 	'result' => 'RESULT',
+	'info' => $lines[0],
 	'buttonActionContent' => 'Create Sitemap',
 	'buttonActionHandler' => 'GenSitemapAction.php',
 	'linkGoogleConsole' => 'https://www.fact-link.com.vn/assets/sitemap.xml'

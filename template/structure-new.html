@@ -3,7 +3,6 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width">
 <meta name="keywords" content="##meta_keyword##" />
 <meta name="description" content="##meta_description##"  />
 <meta name="google-site-verification" content="la59twvP76ef_9Ax0RmaqGn3lOh2TrNPXJ5t_pmUMrw" />
@@ -60,7 +59,7 @@
 					##MENU_AREA##
 				</div>
 				
-				<div id="top-banner">
+				<div id="top-banner" style="width: 450px; height: 120px;">
 					##TOP_AREA##
 				</div>
 			
@@ -504,6 +503,25 @@
 			slidesToScroll: 1,
 			prevArrow: '<span class="arrow btn-pre"></span>',
 			nextArrow: '<span class="arrow btn-next"></span>'
+			});
+		});
+
+		var totalTopBanner = ##totaltopbanner##;
+		var positonImageStart = 0;
+		if (totalTopBanner <= 1) {
+			positonImageStart = 0;
+		} else {
+			positonImageStart = Math.floor(Math.random() * totalTopBanner + 1 ) - 1;
+		}
+
+		$(document).ready(function(){
+			
+			console.log(positonImageStart);
+			$('#top-banner').slick({
+				arrows: false,
+				autoplay: true,
+  				autoplaySpeed: 3000,
+  				initialSlide: positonImageStart
 			});
 		});
   </script>

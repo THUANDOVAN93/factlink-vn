@@ -17,7 +17,7 @@
 	$result0 = mysql_query($sql0);
 	while ($dbarr0 = mysql_fetch_array($result0)) { $bansort = $dbarr0['ban_sort'] + 1; } if ($bansort == '') { $bansort = 1; }
 
-	if ($bantype == 'spc') {
+	if ($bantype == 'spc' && $banpage != 'idx') {
 
 		$sql2 = "update flc_banner set ban_status = 'd' where ban_type = 'spc' and ban_page = '$banpage';";
 		$result2 = mysql_query($sql2);

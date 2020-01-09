@@ -33,7 +33,11 @@ $sqlGetProductPerCatPage = "SELECT CategoryID FROM flc_product_category WHERE Ac
 
 $sqlGetProducts = "SELECT ProductID FROM flc_products WHERE 1;";
 
-$sqlGetFolder = "SELECT mem_folder FROM flc_member WHERE mem_status != 'd';";
+$sqlGetFolder = "SELECT m.mem_folder 
+FROM flc_member m
+INNER JOIN flc_page p
+ON (p.mem_id = m.mem_id)
+WHERE m.mem_status != 'd' AND p.pag_type = 'prf';";
 
 $rsPageEn = mysql_query($sqlGetPageEn);
 $rsPageJp = mysql_query($sqlGetPageJp);
@@ -247,13 +251,23 @@ $ct = "</urlset>";
 
 fwrite($handle, $ct);
 fclose($handle);
+
+// Write Log
 $nowDateFull = date("d M Y H:i:s");
+
+$sitemapLogPath = "../cron/SitemapLog.txt";
+
+if (!$handleLog = fopen($sitemapLogPath, "w")) {
+	echo "Can not open file !";
+	exit;
+}
+fwrite($handleLog, $nowDateFull);
+
 $resArr = array(
 	"date" => $nowDateFull,
-	"total" => $count,
+	"total" => "$count",
 	"url" => $routeGetSitemap
 );
-
-$resJson = json_encode($resArr);
-echo $resJson;
+header('Content-type: application/json');
+echo json_encode($resArr);
 ?>

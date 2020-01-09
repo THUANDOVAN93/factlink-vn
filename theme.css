@@ -127,6 +127,7 @@ a:active {
 	position: absolute;
 	top: 2px;
 	right: 0;
+	overflow: hidden;
 }
 
 

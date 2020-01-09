@@ -56,11 +56,11 @@ $groups = new Assert\GroupSequence(['Default', 'custom']);
 $constraint = new Assert\Collection([
 	'companyName' => new Assert\Length([
 		'min' => 1,
-		'max' => 200,
+		'max' => 1000,
 	]),
 	'userName' => new Assert\Length([
 		'min' => 1,
-		'max' => 200,
+		'max' => 1000,
 	]),
 	'userPhone' => new Assert\Regex([
 		'pattern' => '/^(\(0\))?[0-9]+$/',
@@ -69,11 +69,11 @@ $constraint = new Assert\Collection([
 	'userMail' => new Assert\Email(),
 	'mailSubject' => new Assert\Length([
 		'min' => 1,
-		'max' => 300,
+		'max' => 1000,
 	]),
 	'mailContent' => new Assert\Length([
 		'min' => 1,
-		'max' => 500,
+		'max' => 5000,
 	]),
 ]);
 
@@ -126,7 +126,7 @@ $sqlAddInquiry = "insert into flc_mail (
 		'$nowdate',
 		'$nowtime',
 		'$warndate',
-		'$getip',
+		'$get_ip',
 		'i',
 		't',
 		'd',
@@ -135,7 +135,7 @@ $sqlAddInquiry = "insert into flc_mail (
 ;
 $resultAddInquiry = mysql_query($sqlAddInquiry)or die(mysql_error());
 
-$subject = "Contact Of Free Member";
+$subject = "Contact Of Member";
 $body = "
 <html>
 <body>
@@ -192,6 +192,60 @@ $body = "
 </body>
 </html>";
 
+$subjectConfirm = "［お問い合わせを受け付けました / We received your inquiry］ファクトリンクベトナム / Fact-Link.com.vn";
+$bodyConfirm = "
+<html>
+<body>
+<table width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#FFFFFF\">
+	<tr>
+		<td>
+		ファクトリンクベトナムにお問い合わせありがとうございます。<br>
+		送信内容は以下の通りです。担当者がご連絡をさせていただきます。<br>
+		こちらのメールは送信専用ですので返信をしないでください。<br><br>
+		Thank you for contacting to Fact-Link Vietnam. We receive
+		your inquiry. We will contact to you shortly.<br>
+		Please be noted that this email is only for sending, please do not reply to this email.<br>
+		<br>
+		------------------------------------------------------------
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>会社名 / Company name<br>".$dataForm['companyName']."</td>
+	</tr>
+	<tr>
+		<td>お名前 / Name<br>".$dataForm['userName']."</td>
+	</tr>
+	<tr>
+		<td>電話番号 / Phone<br>".$dataForm['userPhone']."</td>
+	</tr>
+	<tr>
+		<td>E-mail<br>".$dataForm['userMail']."</td>
+	</tr>
+	<tr>
+		<td>件名 / Subject<br>".$dataForm['mailSubject']."</td>
+	</tr>
+	<tr>
+		<td>お問い合わせ内容 / Inquiry<br>".$dataForm['mailContent']."</td>
+	</tr>
+	<tr>
+		<td>
+		<br>
+		------------------------------------------------------------
+		<br>
+		FACT-LINK MARKETPLACE CO.,LTD<br>
+		Address: 602/43 Dien Bien Phu, Ward 22, Binh Thanh District, Ho Chi Minh City (Google Map)<br>
+		Email : info@fact-link.com.vn<br>
+		Phone : (+84) 888 767 138
+		<br>
+		------------------------------------------------------------
+		<br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>";
+
 $mail = new PHPMailer();
 
 $mail->SMTPDebug = false;
@@ -208,12 +262,29 @@ $mail->SetFrom("noreply@fact-link.com.vn", "Fact-Link Vietnam");
 $mail->Subject = "$subject";
 $mail->MsgHTML($body);
 $mail->AddAddress("info@fact-link.com.vn", "Staff");
-//$mail->AddAddress("thuandovan93@gmail.com", "Staff");
 
 if (!$mail->Send()) {
 	header($urlRedirectFail);
 	exit();
 }
+
+$mail = new PHPMailer();
+
+$mail->SMTPDebug = false;
+$mail->CharSet		= 'utf-8';
+$mail->SMTPAuth		= true;
+$mail->SMTPSecure	= 'ssl';
+$mail->Host			= 'smtp.gmail.com';
+$mail->Port			= 465;
+$mail->Username		= 'factlinkportvn@gmail.com';
+$mail->Password		= '123456factlinkvn';
+
+$mail->IsSMTP();
+$mail->SetFrom("noreply@fact-link.com.vn", "Fact-Link Vietnam");
+$mail->Subject = "$subjectConfirm";
+$mail->MsgHTML($bodyConfirm);
+$mail->AddAddress($dataForm['userMail'], "Customer");
+$mail->Send();
 
 header($urlRedirectSuccess);
 exit();

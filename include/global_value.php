@@ -508,6 +508,22 @@
 		'/terms.php',
 		'/news_list.php',
 	];
+	// $newStructure = [
+	// 	'/fact-link/index.php',
+	// 	'/fact-link/intro.php',
+	// 	'/fact-link/manual.php',
+	// 	'/fact-link/contact.php',
+	// 	'/fact-link/news.php',
+	// 	'/fact-link/search_result.php',
+	// 	'/fact-link/search_category.php',
+	// 	'/fact-link/touroku.php',
+	// 	'/fact-link/news_view.php',
+	// 	'/fact-link/product_detail.php',
+	// 	'/fact-link/products_list.php',
+	// 	'/fact-link/contact_supplier.php',
+	// 	'/fact-link/terms.php',
+	// 	'/fact-link/news_list.php',
+	// ];
 	
 	
 	
@@ -1400,14 +1416,14 @@
 	
 	
 	
-	
 	// Banner - T *** Edit 3 lang - Dec 2013 ***
 	if ($pagecode == 'sch' && $searchtype == 'cate') { 
 		
 		//$searchcatid = $_SESSION['vsearch_cateid']; 
 		
-		$sqlbantop = "select * from flc_banner_cate where bac_type = 'spc' and cat_id = '$searchcatid' and bac_status != 'd';"; 
+		$sqlbantop = "select * from flc_banner_cate where bac_type = 'spc' and cat_id = '$searchcatid' and bac_status != 'd' ORDER BY RAND();";
 		$resultbantop = mysql_query($sqlbantop);
+		$totalTopBanner = mysql_num_rows($resultbantop);
 		while ($dbarrbantop = mysql_fetch_array($resultbantop)) {
 		
 			$bantopid = $dbarrbantop['bac_id'];
@@ -1434,13 +1450,32 @@
 			}
 					
 			$bantoppath = "images/banner/C".$bantopid.$bantoplang.".".$bantopfiletype;
-			
+
+			if ($bantopfiletype == 'swf') {
+				$bantopbanner = "<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\">
+							  <param name=\"movie\" value=\"".$bantoppath."\" />
+							  <param name=\"quality\" value=\"high\" />
+							  <embed src=\"".$bantoppath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\"></embed>
+							</object>";
+			} elseif ($bantopfiletype == 'mp4') {
+
+				$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><video width=\"".$bantopwidth."\" height=\"".$bantopheight."\" autoplay muted loop playsinline class=\"jsBannerTop\"><source src=\"".$bantoppath."\" type=\"video/mp4\"></video></a>";
+			} else { 
+				if ($bantoplink != '') {
+					$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\" border=\"0\"/></a>";
+				} else {
+					$bantopbanner = "<img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\" border=\"0\"/>";
+				}
+			}
+			$tpl->assign("##bantopbanner##", $bantopbanner);
+			$tpl->parse ("#####ROW#####", '.rows_topbanner');
 		}
 		
 	} else { 
 		
-		$sqlbantop = "select * from flc_banner where ban_type = 'spc' and ban_page = '$pagecode' and cat_id = '' and ban_status != 'd';"; 
+		$sqlbantop = "select * from flc_banner where ban_type = 'spc' and ban_page = '$pagecode' and cat_id = '' and ban_status != 'd' ORDER BY RAND();"; 
 		$resultbantop = mysql_query($sqlbantop);
+		$totalTopBanner = mysql_num_rows($resultbantop);
 		while ($dbarrbantop = mysql_fetch_array($resultbantop)) {
 		
 			$bantopid = $dbarrbantop['ban_id'];
@@ -1465,34 +1500,61 @@
 			}
 			
 			$bantoppath = "images/banner/".$bantopid.$bantoplang.".".$bantopfiletype;
-			
+
+			if ($bantopfiletype == 'swf') {
+				$bantopbanner = "<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\">
+							  <param name=\"movie\" value=\"".$bantoppath."\" />
+							  <param name=\"quality\" value=\"high\" />
+							  <embed src=\"".$bantoppath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\"></embed>
+							</object>";
+			} elseif ($bantopfiletype == 'mp4') {
+
+				$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><video width=\"".$bantopwidth."\" height=\"".$bantopheight."\" autoplay muted loop playsinline class=\"jsBannerTop\"><source src=\"".$bantoppath."\" type=\"video/mp4\"></video></a>";
+			} else { 
+				if ($bantoplink != '') {
+					$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\" border=\"0\"/></a>";
+				} else {
+					$bantopbanner = "<img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\" border=\"0\"/>";
+				}
+			}
+
+			$tpl->assign("##bantopbanner##", $bantopbanner);
+			$tpl->parse ("#####ROW#####", '.rows_topbanner');
 		}
 		
 	}
-	
-	if ($bantopfiletype == 'swf') {
-	$bantopbanner = "<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\">
-						  <param name=\"movie\" value=\"".$bantoppath."\" />
-						  <param name=\"quality\" value=\"high\" />
-						  <embed src=\"".$bantoppath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\"></embed>
-						</object>";
-	
-	} elseif ($bantopfiletype == 'mp4') {
+	// if ($totalTopBanner <= 1) {
+	// 	$positonImageStart = 0;
+	// } else {
+	// 	$positonImageStart = rand(1, $totalTopBanner)-1;
+	// }
+	// $tpl->assign("##positonImageStart##", $positonImageStart);
 
-		$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\">
-		<video width=\"".$bantopwidth."\" height=\"".$bantopheight."\" autoplay muted loop playsinline id=\"jsBannerTop\">
-		<source src=\"".$bantoppath."\" type=\"video/mp4\">
-		</video>
-		</a>
-		";
-	} else { 
-		
-		if ($bantoplink != '') { $bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" border=\"0\"/></a>"; }
-		else { $bantopbanner = "<img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" border=\"0\"/>"; }
-			
-	}
+	//var_dump($bantopbanner);exit();
 	
-	$tpl->assign("##bantopbanner##", $bantopbanner);
+	// if ($bantopfiletype == 'swf') {
+	// $bantopbanner = "<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\">
+	// 					  <param name=\"movie\" value=\"".$bantoppath."\" />
+	// 					  <param name=\"quality\" value=\"high\" />
+	// 					  <embed src=\"".$bantoppath."\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"".$bantopwidth."\" height=\"".$bantopheight."\"></embed>
+	// 					</object>";
+	
+	// } elseif ($bantopfiletype == 'mp4') {
+
+	// 	$bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\">
+	// 	<video width=\"".$bantopwidth."\" height=\"".$bantopheight."\" autoplay muted loop playsinline class=\"jsBannerTop\">
+	// 	<source src=\"".$bantoppath."\" type=\"video/mp4\">
+	// 	</video>
+	// 	</a>
+	// 	";
+	// } else { 
+		
+	// 	if ($bantoplink != '') { $bantopbanner = "<a href=\"".$bantoplink."\" target=\"_blank\"><img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" border=\"0\"/></a>"; }
+	// 	else { $bantopbanner = "<img src=\"".$bantoppath."\" width=\"".$bantopwidth."\" border=\"0\"/>"; }
+			
+	// }
+	
+	//$tpl->assign("##bantopbanner##", $bantopbanner);
 	
 	// Banner - R
 	$sqlbanright = "select * from flc_banner where ban_type = 'bsc' and ban_page = '$pagecode' and ban_side = 'r' and ban_status != 'd' order by ban_sort asc;";

@@ -6,29 +6,32 @@
 	include_once("./include/global_function.php");
 
 	/* Only accept submit data from following URI to prevent XSS attack */
-	$allow[] = 'https://www.fact-link.com.vn/touroku.php';
-	$allow[] = 'https://fact-link.com.vn/touroku.php';
+	// $allow[] = 'https://www.fact-link.com.vn/touroku.php';
+	// $allow[] = 'https://fact-link.com.vn/touroku.php';
 	
-	if(!in_array($_SERVER["HTTP_REFERER"],$allow)){
-		echo "<meta http-equiv = \"refresh\" content = \"0;URL = touroku_done.php?id=$memid&case=adress\">";
-		exit();
-	}
-	
-	// Escape special charactars
-	// $ip = $_SERVER['REMOTE_ADDR'];
-	// $captchaToken = $_POST['g-recaptcha-response'];
-
-	// $isValidCaptcha = validateReCaptcha($captchaSecretKey, $captchaToken, $ip);
-	// if ($isValidCaptcha == false) {
-	// 	echo "<meta http-equiv = \"refresh\" content = \"0;URL = touroku_done.php?id=$memid&case=bot\">";
+	// if(!in_array($_SERVER["HTTP_REFERER"],$allow)){
+	// 	echo "<meta http-equiv = \"refresh\" content = \"0;URL = touroku_done.php?id=$memid&case=adress\">";
 	// 	exit();
 	// }
+	
+	// Escape special charactars
+	$currentTime = new DateTime();
+	$startTimeCaptcha = new DateTime('18:00');
+	$endTimeCaptcha = (new DateTime('07:00'))->modify('+1 day');
+
+	if ($currentTime >= $startTimeCaptcha && $currentTime <= $endTimeCaptcha) {
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$captchaToken = $_POST['g-recaptcha-response'];
+		$isValidCaptcha = validateReCaptcha($captchaSecretKey, $captchaToken, $ip);
+		if ($isValidCaptcha == false) {
+			echo "<meta http-equiv = \"refresh\" content = \"0;URL = touroku_done.php?id=$memid&case=bot\">";
+			exit();
+		}
+	}
 
 	mysql_query("use $db_name;");
 	// Escape special charactars
 	$_POST = array_map('mysql_real_escape_string',$_POST);
-
-	
 
 	$t_emanresu = $_POST['t_emanresu'];
 	$t_emanhtap = $_POST['t_emanhtap'];

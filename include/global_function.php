@@ -434,7 +434,7 @@ function html($str) {
 		$str = str_replace ( "[font pink]", "<font color=\"#FF00FF\">", $str ) ; //pink
 		$str = str_replace ( "[font violet]", "<font color=\"#990099\">", $str ) ; //violet
 		$str = str_replace ( "[/font]", "</font>", $str ) ;
-		
+		$str = str_replace ( "\\r\\n", "<br>", $str ) ;
 
 		return $str;
 	}

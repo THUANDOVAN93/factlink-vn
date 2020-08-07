@@ -20,9 +20,20 @@
 
 	$memid = $_GET['id'];
 	$pagid = $_GET['page'];
-	$langcode = $_GET['lang'];
+	//$langcode = $_GET['lang'];
 	$catIdGet = $_GET['cat'];
 	
+	/* Set default language cookie */
+	if(empty($_COOKIE['vlang'])) {
+		$_COOKIE['vlang'] = 'en';
+	}
+	
+	/* Prevent unknown cookie language value */
+	if(!in_array($_COOKIE['vlang'],['en','jp','vn'])) {
+		$_COOKIE['vlang'] = 'en';
+	}
+	
+	$langcode =  $_COOKIE['vlang'];
 	// --- Global Template Section	
 	include_once("./include/global_memvalue.php");
 	
@@ -89,13 +100,13 @@
 			else { echo "<meta http-equiv = \"refresh\" content = \"0;URL = mem_error.php?id\">"; exit(); } 
 		}
 		
-		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') { $langen = "<a href=\"mem_products.php?id=".$memid."&page=".$pagid."&lang=en&start=0\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
+		if ($dbarr4['pag_show_en'] == 't' || $prfshowen == 't') { $langen = "<a href=\"set_language.php?lang=en\"><img src=\"images/tpl_".$memlangpicen."\" title=\"English\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
 		else { $langen = "<img src=\"images/tpl_en_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
 		
-		if ($dbarr4['pag_show_jp'] == 't' || $prfshowjp == 't') { $langjp = "<a href=\"mem_products.php?id=".$memid."&page=".$pagid."&lang=jp&start=0\"><img src=\"images/tpl_".$memlangpicjp."\" title=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
+		if ($dbarr4['pag_show_jp'] == 't' || $prfshowjp == 't') { $langjp = "<a href=\"set_language.php?lang=jp\"><img src=\"images/tpl_".$memlangpicjp."\" title=\"日本語\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
 		else { $langjp = "<img src=\"images/tpl_jp_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
 		
-		if ($dbarr4['pag_show_vn'] == 't' || $prfshowvn == 't') { $langvn = "<a href=\"mem_products.php?id=".$memid."&page=".$pagid."&lang=vn&start=0\"><img src=\"images/tpl_".$memlangpicvn."\" title=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
+		if ($dbarr4['pag_show_vn'] == 't' || $prfshowvn == 't') { $langvn = "<a href=\"set_language.php?lang=vn\"><img src=\"images/tpl_".$memlangpicvn."\" title=\"Việt Nam\" width=\"24\" height=\"24\" border=\"0\" /></a>"; }
 		else { $langvn = "<img src=\"images/tpl_vn_00.png\" width=\"24\" height=\"24\" border=\"0\" />"; }
 		
 		$pagpagetitleen = $dbarr4['pag_pagetitle_en'];

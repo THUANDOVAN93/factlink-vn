@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="flc_css.css" rel="stylesheet" type="text/css" />
+<link href="flc_css.css?v=2" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -32,7 +32,7 @@
           <tr>
             <td width="200"><div align="right"> <span class="red_b">*</span><strong> ##lb_comname##</strong></div></td>
             <td width="10">&nbsp;</td>
-            <td width="330"><input name="t_company" type="text" class="box_web" id="t_company" maxlength="85" /></td>
+            <td width="330"><input required name="t_company" type="text" class="box_web" id="t_company" maxlength="85" /></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/blank.png" width="540" height="10" /></td>
@@ -40,7 +40,7 @@
           <tr>
             <td><div align="right"><span class="red_b">*</span><strong> ##name_in_contactform##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_contact" type="text" class="box_web" id="t_contact" maxlength="85" /></td>
+            <td><input required name="t_contact" type="text" class="box_web" id="t_contact" maxlength="85" /></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/blank.png" width="540" height="10" /></td>
@@ -57,7 +57,7 @@
           <tr>
             <td><div align="right"><span class="red_b">*</span><strong> ##lb_comtel##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_tel" type="text" class="box_web" id="t_tel" maxlength="85" /></td>
+            <td><input name="t_tel" type="tel" class="box_web" id="t_tel" maxlength="85" required /></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/blank.png" width="540" height="10" /></td>
@@ -65,7 +65,7 @@
           <tr>
             <td><div align="right"><strong>##lb_commobile##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_mobile" type="text" class="box_web" id="t_mobile" maxlength="85" /></td>
+            <td><input name="t_mobile" type="tel" class="box_web" id="t_mobile" maxlength="85" /></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/blank.png" width="540" height="10" /></td>
@@ -81,7 +81,7 @@
           <tr>
             <td><div align="right"><span class="red_b">*</span><strong> ##lb_commail##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_mail" type="text" class="box_web" id="t_mail" maxlength="85" /></td>
+            <td><input required name="t_mail" type="text" class="box_web" id="t_mail" maxlength="85" /></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/line_frame_01.png" width="780" height="20" /></td>
@@ -89,7 +89,7 @@
           <tr>
             <td><div align="right"><span class="red_b">*</span><strong> ##lb_subject##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_subject" type="text" class="box_web" id="t_subject" maxlength="85" /></td>
+            <td><input required name="t_subject" type="text" class="box_web" id="t_subject" maxlength="85" /></td>
           </tr>
           <tr>
             <td colspan="3">&nbsp;</td>
@@ -97,7 +97,7 @@
           <tr>
             <td><div align="right"><span class="red_b">*</span><strong> ##inquiry_in_contactform##</strong></div></td>
             <td>&nbsp;</td>
-            <td><textarea name="t_detail" class="box_multi_web" id="t_detail"></textarea></td>
+            <td><textarea required name="t_detail" class="box_multi_web" id="t_detail"></textarea></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/line_frame_01.png" width="780" height="20" /></td>
@@ -105,7 +105,7 @@
           <tr>
             <td><div align="right"><span class="red_b">*</span><strong> ##lb_confirmcode##</strong></div></td>
             <td>&nbsp;</td>
-            <td><input name="t_confirm" type="text" class="box_web" id="t_confirm" maxlength="4" /></td>
+            <td><input required name="t_confirm" type="text" class="box_web" id="t_confirm" maxlength="4" /></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/blank.png" width="540" height="10" /></td>
@@ -126,7 +126,10 @@
             </div></td>
           </tr>
           <tr>
-            <td colspan="3"><input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"></td>
+            <td colspan="3">
+              <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+              <input name="flc-bot-prevent" type="text" id="flc-bot-prevent" />
+            </td>
           </tr>
         </table>
 		</form>		</td>

@@ -412,13 +412,6 @@
 				<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-en.png\">
 				</a>
 				</td>
-				</tr>
-				<tr>
-				<td class=\"pd-5\">
-				<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
-				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-en.png\">
-				</a>
-				</td>
 				</tr>";
 		} elseif ($langcode == 'vn') {
 			$menulist = $menulist."<tr>
@@ -441,13 +434,6 @@
 				<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-vn.png\">
 				</a>
 				</td>
-				</tr>
-				<tr>
-				<td class=\"pd-5\">
-				<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
-				<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-vn.png\">
-				</a>
-				</td>
 				</tr>";
 		} else {
 			$menulist = $menulist."<tr>
@@ -465,16 +451,9 @@
 			</td>
 			</tr>
 			<tr>
-				<td class=\"pd-5\">
-				<a href=\"https://fact-depot.com\" target=\"_blank\">
-				<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-jp.png\">
-				</a>
-				</td>
-				</tr>
-			<tr>
 			<td class=\"pd-5\">
-			<a href=\"/news_view.php?id=00000771\" target=\"_blank\">
-			<img class=\"img-reposive br-5\" src=\"/images/ads/subcontractor-right-banner-jp.png\">
+			<a href=\"https://fact-depot.com\" target=\"_blank\">
+			<img class=\"img-reposive br-5\" src=\"/images/ads/fd-right-banner-jp.png\">
 			</a>
 			</td>
 			</tr>";
@@ -544,7 +523,7 @@
 	} else {
 		$footerInfo = "<p>FACT-LINK MARKETPLACE CO.,LTD</br>Address: 602/43 Dien Bien Phu, Ward 22, Binh Thanh District, Ho Chi Minh City.</br>Tel: 0888 767 138 - Email: info@fact-link.com.vn</br>Tax code: 0313 560 828</br>Date: 03/12/2015 by Ho Chi Minh City Department of Planning and Investment</p>";
 	}
-	$footerInfo .= "<p><a rel=\"nofollow\" target=\"_blank\" href=\"http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=50823\"><img alt=\"\" title=\"\" src=\"/image/authent.png\" /></a></p>";
+	$footerInfo .= "<p><a target=\"_blank\" href=\"http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=50823\"><img alt=\"\" title=\"\" src=\"/image/authent.png\" /></a></p>";
 	$tpl->assign("##FOOTER_INFO##", $footerInfo);
 
 	if ($langcode == 'en') {

@@ -38,6 +38,11 @@
             <td width="330"><input name="t_emanresu" type="text" class="box_web" id="t_emanresu" maxlength="15" /></td>
           </tr>
           <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="color:red" id="error-name"></td>
+          </tr>
+          <tr>
             <td colspan="3"><img src="images/blank.png" width="795" height="5" /></td>
             </tr>
           <tr>
@@ -52,6 +57,11 @@
             <td><div align="right"><strong> * ##lb_pathname##</strong></div></td>
             <td>&nbsp;</td>
             <td><input name="t_emanhtap" type="text" class="box_web" id="t_emanhtap" maxlength="25" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="color:red" id="error-pathname"></td>
           </tr>
           <tr>
             <td colspan="3"><img src="images/blank.png" width="795" height="5" /></td>
@@ -200,7 +210,11 @@
               <option value="001">##prvname_1##</option>
             </select></td>
           </tr>
-          <tr hidden="hidden">
+          <tr>
+            <td colspan="3"><img src="images/line_frame_03.png" width="795" height="10" /></td>
+          </tr>
+          <tr>
+          <tr>
             <td><div align="right"><strong>* ##lb_country##</strong></div></td>
             <td>&nbsp;</td>
             <td><select name="t_yrtnuocmoc" class="box_list_web" id="t_yrtnuocmoc">
@@ -394,6 +408,61 @@
     // }
   });
 
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+    document.getElementById("t_emanresu").addEventListener("focusout", function() {
+
+      var xhttp = new XMLHttpRequest();
+      var elUsername = document.getElementById("t_emanresu");
+      var dataForm = "userName="+elUsername.value;
+      var elShowError = document.getElementById("error-name");
+
+      xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+          //var validateObject = JSON.parse(this.responseText);
+          console.log(this.responseText);
+
+          // if(validateObject.errorName.status == 1) {
+          //   elShowError.innerHTML = "Name is exit, please try other name!";
+          // } else {
+          //   elShowError.innerHTML = "";
+          // }
+        }
+      }
+      
+      xhttp.open("POST", "Helper/AjaxRegisterValidation.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(dataForm);
+    });
+
+    // document.getElementById("t_emanhtap").addEventListener("focusout", function() {
+
+    //   var xhttp = new XMLHttpRequest();
+    //   var elPathname = document.getElementById("t_emanhtap");
+    //   var dataForm = "pathName="+elPathname.value;
+    //   var elShowError = document.getElementById("error-pathname");
+
+    //   xhttp.onreadystatechange = function() {
+    //     if(this.readyState == 4 && this.status == 200) {
+    //       var validateObject = JSON.parse(this.responseText);
+
+    //       if(validateObject.errorName.status == 1) {
+    //         elShowError.innerHTML = "Path name exit, please try other name!";
+    //       } else {
+    //         elShowError.innerHTML = "";
+    //       }
+    //     }
+    //   }
+      
+    //   xhttp.open("POST", "Helper/AjaxRegisterValidation.php", true);
+    //   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //   xhttp.send(dataForm);
+    // });
+
+
+  });
 </script>
 </body>
 </html>

@@ -193,7 +193,7 @@ a:active {
 }
 .box_normal {
 	height: 18px;
-	width: 528px;
+	width: 524px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
 	color: #333;
@@ -263,8 +263,8 @@ a:active {
 	margin:0px;
 }
 .box_multi {
-	height: 150px;
-	width: 528px;
+	height: 50px;
+	width: 524px;
 	border: 1px solid #999999;
 	background-color:#FFFFFF;
 	color: #000000;
@@ -1359,3 +1359,5 @@ button:hover,
 .f-14 {
 	font-size: 14px;
 }
+
+form #flc-bot-prevent { display:none; }

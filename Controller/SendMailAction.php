@@ -1,6 +1,6 @@
 <?php
-error_reporting(-1);
-ini_set('display_errors', 'on');
+// error_reporting(-1);
+// ini_set('display_errors', 'on');
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../PHPMailer/class.smtp.php';
 require_once __DIR__.'/../PHPMailer/class.phpmailer.php';
@@ -26,6 +26,21 @@ $dataForm['langCode'] = $_POST['langCode'];
 $urlRedirectSuccess = "Location: ".$http."://".$host."/mem_inquiry_done.php?id=".$dataForm['memberId']."&page=".$dataForm['pageId']."&lang=".$dataForm['langCode']."&code=1";
 $urlRedirectFail = "Location: ".$http."://".$host."/mem_inquiry_done.php?id=".$dataForm['memberId']."&page=".$dataForm['pageId']."&lang=".$dataForm['langCode']."&code=2";
 
+if(!empty($_POST['flc-bot-prevent'])) {
+	header($urlRedirectFail);
+	exit();
+}
+
+//reCaptcha Validator
+$ip = $_SERVER['REMOTE_ADDR'];
+$captchaToken = $_POST['g-recaptcha-response'];
+$isValidCaptcha = validateReCaptcha($captchaSecretKey, $captchaToken, $ip);
+
+if ($isValidCaptcha == false) {
+	header($urlRedirectFail);
+	exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 	$dataForm['companyName'] = $_POST['companyName'];
 	$dataForm['userName'] = $_POST['userName'];
@@ -35,7 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 	$dataForm['mailSubject'] = $_POST['mailSubject'];
 	$dataForm['mailContent'] = $_POST['mailContent'];
 	$dataForm['memberName'] = $_POST['memberName'];
+	$dataForm['userConfirmCode'] = $_POST['t_confirm'];
+	$dataForm['constraintCode'] = $_POST['h_random'];
 } else {
+	header($urlRedirectFail);
+	exit();
+}
+
+if ($dataForm['userConfirmCode'] != $dataForm['constraintCode']) {
 	header($urlRedirectFail);
 	exit();
 }

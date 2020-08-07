@@ -39,6 +39,11 @@
 		$_COOKIE['vlang'] = 'en';
 	}
 
+	// Hook to check language changed
+	if (isset($_COOKIE['lang-origin'])) {
+		setcookie("lang-origin", $_COOKIE['vlang'], time()-60*60*24*7);
+	}
+
 	// if (isset($_GET['lang']) && !empty($_GET['lang'])) {
 	// 	$_COOKIE['vlang'] = $_GET['lang'];
 	// }
@@ -57,6 +62,7 @@
 	
 	/* Define fragments for template */
 	$tpl = new rFastTemplate("template");
+	//$tpl->no_strict();
 	$tpl->define(array(
 		"main_tpl"		=> $url1,
 		"detail_tpl"	=> $url2,
@@ -87,44 +93,66 @@
 	
 	// --- Feature Article
 	
-	$sql1 = "select * from flc_feature where fea_show = 't' order by fea_id desc;";
+	//$sql1 = "select * from flc_feature where fea_show = 't' order by rand() limit 2;";
+	//Rotate Featured  Article each refresh
+	$numberFeaArtShow = 2;
+	$sql1 = "select * from flc_feature where fea_show = 't' limit $numberFeaArtShow;";
 	$result1 = mysql_query($sql1);
-	while ($dbarr1 = mysql_fetch_array($result1)) {
-		
-		$feaid = $dbarr1['fea_id']; 
-		$featitleen = $dbarr1['fea_title_en']; 
-		$featitlevn = $dbarr1['fea_title_vn']; 
-		$featitlejp = $dbarr1['fea_title_jp']; 
-		$feadetailen = $dbarr1['fea_detail_en']; 
-		$feadetailvn = $dbarr1['fea_detail_vn']; 
-		$feadetailjp = $dbarr1['fea_detail_jp'];
-		$feaimage = $dbarr1['fea_image']; 
-		$feaimagewidth = $dbarr1['fea_image_width']; 
-		$feaimagelink = $dbarr1['fea_image_link'];
-		$feavideolink = $dbarr1['fea_video_link'];
-		$feamedia_option = $dbarr1['fea_media_option'];
 
-		$feadetailen1 = $dbarr1['fea_detail1_en']; 
-		$feadetailvn1 = $dbarr1['fea_detail1_vn']; 
-		$feadetailjp1 = $dbarr1['fea_detail1_jp'];
-		$feaimage1 = $dbarr1['fea_image1']; 
-		$feaimagewidth1 = $dbarr1['fea_image1_width']; 
-		$feaimagelink1 = $dbarr1['fea_image1_link'];
-		$feaimageside1 = $dbarr1['fea_image1_side'];
-		$feavideolink1 = $dbarr1['fea_video1_link'];
-		$feamedia_option1 = $dbarr1['fea_media1_option'];
+	if (isset($_SESSION['fea_article_index_start'])) {
+		// Next banner
+		$feaArticleIndexStart = (int)$_SESSION['fea_article_index_start'];
+		// Keep if change language
+		if (isset($_COOKIE['lang-changed'])) {
 
-		$feadetailen2 = $dbarr1['fea_detail2_en']; 
-		$feadetailvn2 = $dbarr1['fea_detail2_vn']; 
-		$feadetailjp2 = $dbarr1['fea_detail2_jp'];
-		$feaimage2 = $dbarr1['fea_image2']; 
-		$feaimagewidth2 = $dbarr1['fea_image2_width']; 
-		$feaimagelink2 = $dbarr1['fea_image2_link'];
-		$feaimageside2 = $dbarr1['fea_image2_side'];
-		$feavideolink2 = $dbarr1['fea_video2_link'];
-		$feamedia_option2 = $dbarr1['fea_media2_option'];
-		$fealink = $dbarr1['fea_link'];
+		}
+		if ($feaArticleIndexStart + 1 < $numberFeaArtShow) {
+			$_SESSION['fea_article_index_start'] = $feaArticleIndexStart + 1;
+		} else {
+			$_SESSION['fea_article_index_start'] = 0;
+		}
+	} else {
+		$feaArticleIndexStart = $_SESSION['fea_article_index_start'] = 0;
 	}
+	$tempFeaArticles = array();
+	while ($dbarr1 = mysql_fetch_array($result1)) {
+		$tempFeaArticles[] = $dbarr1;
+	}
+	//var_dump($_SERVER['HTTP_REFERER']);
+	unset($dbarr1);
+	$feaid = $tempFeaArticles[$feaArticleIndexStart]['fea_id']; 
+	$featitleen = $tempFeaArticles[$feaArticleIndexStart]['fea_title_en']; 
+	$featitlevn = $tempFeaArticles[$feaArticleIndexStart]['fea_title_vn']; 
+	$featitlejp = $tempFeaArticles[$feaArticleIndexStart]['fea_title_jp']; 
+	$feadetailen = $tempFeaArticles[$feaArticleIndexStart]['fea_detail_en']; 
+	$feadetailvn = $tempFeaArticles[$feaArticleIndexStart]['fea_detail_vn']; 
+	$feadetailjp = $tempFeaArticles[$feaArticleIndexStart]['fea_detail_jp'];
+	$feaimage = $tempFeaArticles[$feaArticleIndexStart]['fea_image']; 
+	$feaimagewidth = $tempFeaArticles[$feaArticleIndexStart]['fea_image_width']; 
+	$feaimagelink = $tempFeaArticles[$feaArticleIndexStart]['fea_image_link'];
+	$feavideolink = $tempFeaArticles[$feaArticleIndexStart]['fea_video_link'];
+	$feamedia_option = $tempFeaArticles[$feaArticleIndexStart]['fea_media_option'];
+
+	$feadetailen1 = $tempFeaArticles[$feaArticleIndexStart]['fea_detail1_en']; 
+	$feadetailvn1 = $tempFeaArticles[$feaArticleIndexStart]['fea_detail1_vn']; 
+	$feadetailjp1 = $tempFeaArticles[$feaArticleIndexStart]['fea_detail1_jp'];
+	$feaimage1 = $tempFeaArticles[$feaArticleIndexStart]['fea_image1']; 
+	$feaimagewidth1 = $tempFeaArticles[$feaArticleIndexStart]['fea_image1_width']; 
+	$feaimagelink1 = $tempFeaArticles[$feaArticleIndexStart]['fea_image1_link'];
+	$feaimageside1 = $tempFeaArticles[$feaArticleIndexStart]['fea_image1_side'];
+	$feavideolink1 = $tempFeaArticles[$feaArticleIndexStart]['fea_video1_link'];
+	$feamedia_option1 = $tempFeaArticles[$feaArticleIndexStart]['fea_media1_option'];
+
+	$feadetailen2 = $tempFeaArticles[$feaArticleIndexStart]['fea_detail2_en']; 
+	$feadetailvn2 = $tempFeaArticles[$feaArticleIndexStart]['fea_detail2_vn']; 
+	$feadetailjp2 = $tempFeaArticles[$feaArticleIndexStart]['fea_detail2_jp'];
+	$feaimage2 = $tempFeaArticles[$feaArticleIndexStart]['fea_image2']; 
+	$feaimagewidth2 = $tempFeaArticles[$feaArticleIndexStart]['fea_image2_width']; 
+	$feaimagelink2 = $tempFeaArticles[$feaArticleIndexStart]['fea_image2_link'];
+	$feaimageside2 = $tempFeaArticles[$feaArticleIndexStart]['fea_image2_side'];
+	$feavideolink2 = $tempFeaArticles[$feaArticleIndexStart]['fea_video2_link'];
+	$feamedia_option2 = $tempFeaArticles[$feaArticleIndexStart]['fea_media2_option'];
+	$fealink = $tempFeaArticles[$feaArticleIndexStart]['fea_link'];
 	
 	if ($_COOKIE['vlang'] == 'en') {
 

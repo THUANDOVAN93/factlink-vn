@@ -589,7 +589,7 @@
 	
 	function call_ine($memineid, $langcode) {
 
-		if ($memineid != '131' && $memineid != '1' && $memineid != '2' && $memineid != '') {
+		if ($memineid != '085' && $memineid != '131' && $memineid != '001' && $memineid != '002' && $memineid != '') {
 
 			$sql6 = "select * from flc_ie where ine_id = '$memineid';";
 			$result6 = mysql_query($sql6);
@@ -822,6 +822,13 @@
 	if (!empty($memPackage) && !empty($pagpagetitle)) {
 		$metaTitle = $pagpagetitle;
 	}
+
+	// Random security number
+	$random = random(0);
+	$confirmcode = $random[1].$random[2].$random[3].$random[4];
+	
+	$tpl->assign("##confirmcode##", $confirmcode);
+	$tpl->assign("##randomnum##", $random[0]);
 	
 	$tpl->assign("##metaTitle##", $metaTitle);
 	$tpl->assign("##memid##", $memid);
@@ -859,6 +866,7 @@
 	$tpl->assign("##langen##", $langen);
 	$tpl->assign("##langjp##", $langjp);
 	$tpl->assign("##langvn##", $langvn);
+	$tpl->assign("##captcha_site_key##", $captchaSiteKey);
 
 	$tpl->parse ("##MENU_AREA##", "menu_tpl");
 	$tpl->parse ("##DETAIL_AREA##", "detail_tpl");

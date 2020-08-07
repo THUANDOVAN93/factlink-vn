@@ -508,6 +508,7 @@
 		'/terms.php',
 		'/news_list.php',
 	];
+	
 	// $newStructure = [
 	// 	'/fact-link/index.php',
 	// 	'/fact-link/intro.php',
@@ -524,8 +525,7 @@
 	// 	'/fact-link/terms.php',
 	// 	'/fact-link/news_list.php',
 	// ];
-	
-	
+
 	
 	if(in_array($_SERVER['SCRIPT_NAME'],$newStructure)) {
 
@@ -1418,34 +1418,52 @@
 	
 	// Banner - T *** Edit 3 lang - Dec 2013 ***
 	if ($pagecode == 'sch' && $searchtype == 'cate') { 
-		
-		//$searchcatid = $_SESSION['vsearch_cateid']; 
-		
-		$sqlbantop = "select * from flc_banner_cate where bac_type = 'spc' and cat_id = '$searchcatid' and bac_status != 'd' ORDER BY RAND();";
+				
+		$sqlbantop = "select * from flc_banner_cate where bac_type = 'spc' and cat_id = '$searchcatid' and bac_status != 'd';";
 		$resultbantop = mysql_query($sqlbantop);
 		$totalTopBanner = mysql_num_rows($resultbantop);
-		while ($dbarrbantop = mysql_fetch_array($resultbantop)) {
-		
-			$bantopid = $dbarrbantop['bac_id'];
-			
+
+		$bannerItemArray = array();
+		while ($dbarrbantop = mysql_fetch_assoc($resultbantop)) {
+			$bannerItemArray[] = $dbarrbantop;
+		}
+
+		//Rotate banner each refresh
+		if (isset($_SESSION['banner_index_start'])) {
+			// Next banner
+			$bannerIndexStart = (int)$_SESSION['banner_index_start'];
+			if (($bannerIndexStart + 1) < $totalTopBanner) {
+				$_SESSION['banner_index_start'] = $bannerIndexStart + 1;
+			} else {
+				$_SESSION['banner_index_start'] = 0;
+			}
+		} else {
+			$bannerIndexStart = $_SESSION['banner_index_start'] = 0;
+		}
+		$moveBannerIndexFirst = $bannerItemArray[$bannerIndexStart];
+		unset($bannerItemArray[$bannerIndexStart]);
+		array_unshift($bannerItemArray, $moveBannerIndexFirst);
+
+		for ($i=0; $i < $totalTopBanner; $i++) { 
+			$bantopid = $bannerItemArray[$i]['bac_id'];			
 			
 			if ($_COOKIE['vlang'] == 'en') { 
-				$bantopfiletype = $dbarrbantop['bac_filetype_en'];
-				$bantopwidth = $dbarrbantop['bac_width_en'];
-				$bantopheight = $dbarrbantop['bac_height_en'];
-				$bantoplink = $dbarrbantop['bac_link_en']; 
+				$bantopfiletype = $bannerItemArray[$i]['bac_filetype_en'];
+				$bantopwidth = $bannerItemArray[$i]['bac_width_en'];
+				$bantopheight = $bannerItemArray[$i]['bac_height_en'];
+				$bantoplink = $bannerItemArray[$i]['bac_link_en']; 
 				$bantoplang = "_en";
 			} else if ($_COOKIE['vlang'] == 'vn') { 
-				$bantopfiletype = $dbarrbantop['bac_filetype_vn'];
-				$bantopwidth = $dbarrbantop['bac_width_vn'];
-				$bantopheight = $dbarrbantop['bac_height_vn'];
-				$bantoplink = $dbarrbantop['bac_link_vn']; 
+				$bantopfiletype = $bannerItemArray[$i]['bac_filetype_vn'];
+				$bantopwidth = $bannerItemArray[$i]['bac_width_vn'];
+				$bantopheight = $bannerItemArray[$i]['bac_height_vn'];
+				$bantoplink = $bannerItemArray[$i]['bac_link_vn']; 
 				$bantoplang = "_vn";
 			} else { 
-				$bantopfiletype = $dbarrbantop['bac_filetype_jp'];
-				$bantopwidth = $dbarrbantop['bac_width_jp'];
-				$bantopheight = $dbarrbantop['bac_height_jp'];
-				$bantoplink = $dbarrbantop['bac_link_jp']; 
+				$bantopfiletype = $bannerItemArray[$i]['bac_filetype_jp'];
+				$bantopwidth = $bannerItemArray[$i]['bac_width_jp'];
+				$bantopheight = $bannerItemArray[$i]['bac_height_jp'];
+				$bantoplink = $bannerItemArray[$i]['bac_link_jp']; 
 				$bantoplang = "_jp";
 			}
 					
@@ -1473,29 +1491,51 @@
 		
 	} else { 
 		
-		$sqlbantop = "select * from flc_banner where ban_type = 'spc' and ban_page = '$pagecode' and cat_id = '' and ban_status != 'd' ORDER BY RAND();"; 
+		$sqlbantop = "select * from flc_banner where ban_type = 'spc' and ban_page = '$pagecode' and cat_id = '' and ban_status != 'd';"; 
 		$resultbantop = mysql_query($sqlbantop);
 		$totalTopBanner = mysql_num_rows($resultbantop);
-		while ($dbarrbantop = mysql_fetch_array($resultbantop)) {
+
+		$bannerItemArray = array();
+		while ($dbarrbantop = mysql_fetch_assoc($resultbantop)) {
+			$bannerItemArray[] = $dbarrbantop;
+		}
+
+		//Rotate banner each refresh
+		if (isset($_SESSION['banner_index_start'])) {
+			// Next banner
+			$bannerIndexStart = (int)$_SESSION['banner_index_start'];
+			if (($bannerIndexStart + 1) < $totalTopBanner) {
+				$_SESSION['banner_index_start'] = $bannerIndexStart + 1;
+			} else {
+				$_SESSION['banner_index_start'] = 0;
+			}
+		} else {
+			$bannerIndexStart = $_SESSION['banner_index_start'] = 0;
+		}
+		$moveBannerIndexFirst = $bannerItemArray[$bannerIndexStart];
+		unset($bannerItemArray[$bannerIndexStart]);
+		array_unshift($bannerItemArray, $moveBannerIndexFirst);
+
+		for ($i=0; $i < $totalTopBanner; $i++) { 
 		
-			$bantopid = $dbarrbantop['ban_id'];
+			$bantopid = $bannerItemArray[$i]['ban_id'];
 			if ($_COOKIE['vlang'] == 'en') { 
-				$bantopfiletype = $dbarrbantop['ban_filetype_en'];
-				$bantopwidth = $dbarrbantop['ban_width_en'];
-				$bantopheight = $dbarrbantop['ban_height_en'];
-				$bantoplink = $dbarrbantop['ban_link_en']; 
+				$bantopfiletype = $bannerItemArray[$i]['ban_filetype_en'];
+				$bantopwidth = $bannerItemArray[$i]['ban_width_en'];
+				$bantopheight = $bannerItemArray[$i]['ban_height_en'];
+				$bantoplink = $bannerItemArray[$i]['ban_link_en']; 
 				$bantoplang = "_en";
 			} else if ($_COOKIE['vlang'] == 'vn') { 
-				$bantopfiletype = $dbarrbantop['ban_filetype_vn'];
-				$bantopwidth = $dbarrbantop['ban_width_vn'];
-				$bantopheight = $dbarrbantop['ban_height_vn'];
-				$bantoplink = $dbarrbantop['ban_link_vn']; 
+				$bantopfiletype = $bannerItemArray[$i]['ban_filetype_vn'];
+				$bantopwidth = $bannerItemArray[$i]['ban_width_vn'];
+				$bantopheight = $bannerItemArray[$i]['ban_height_vn'];
+				$bantoplink = $bannerItemArray[$i]['ban_link_vn']; 
 				$bantoplang = "_vn";
 			} else { 
-				$bantopfiletype = $dbarrbantop['ban_filetype_jp'];
-				$bantopwidth = $dbarrbantop['ban_width_jp'];
-				$bantopheight  = $dbarrbantop['ban_height_jp'];
-				$bantoplink = $dbarrbantop['ban_link_jp']; 
+				$bantopfiletype = $bannerItemArray[$i]['ban_filetype_jp'];
+				$bantopwidth = $bannerItemArray[$i]['ban_width_jp'];
+				$bantopheight  = $bannerItemArray[$i]['ban_height_jp'];
+				$bantoplink = $bannerItemArray[$i]['ban_link_jp']; 
 				$bantoplang = "_jp";
 			}
 			

@@ -8,7 +8,7 @@
 	
 	$feaid = $_GET['id'];
 		
-	$sql2 = "update flc_feature set fea_archive = '0', fea_show = 't' where fea_id = '$feaid';";
-	$result2 = mysql_query($sql2);
+	$sql2 = "update flc_feature set fea_archive = '1', fea_show = '' where fea_id = '$feaid';";
+	$result2 = mysql_query($sql2);	
 ?>
 <script language="JavaScript">history.back()</script>

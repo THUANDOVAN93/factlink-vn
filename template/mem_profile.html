@@ -24,6 +24,7 @@
     background: #CC0000;
     color: #fff;
   }
+  form #flc-bot-prevent { display:none; }
 </style>
 <div class="panelcontent">
 <div style="margin: 0px; padding: 0px; width: 760px; overflow: hidden;">
@@ -173,7 +174,7 @@
           }
         }
       </script>
-      <tr style="display: ##showForFree##">
+      <tr>
         <td valign="top"><font color="##pagprfcolor##"><strong>##pro_contact##</strong></font></td>
         <td valign="top">&nbsp;</td>
         <td valign="top" style="text-align: center;">
@@ -181,7 +182,7 @@
         </td>
       </tr>
 
-      <tr style="display: ##showForFree##">
+      <tr>
         <td colspan="3">
           <form id="js-expand-data" class="expand-data expand-enimation close"  action="/Controller/SendMailAction.php" method="post" enctype="multipart/form-data" name="mailMemberForm" target="_self" onsubmit="return confrm()">
             <table width="760" border="0" cellspacing="0" cellpadding="0">
@@ -244,12 +245,35 @@
               <tr>
                 <td colspan="3" class="red_b"><img src="images/line_h_02.png" width="760" height="10" /></td>
               </tr>
+
+              <tr>
+                <td><div align="left"><strong> ##lb_confirmcode##</strong><span class="red_b">*</span></div></td>
+                <td>&nbsp;</td>
+                <td><input name="t_confirm" type="text" class="box_web" id="t_confirm" maxlength="4" /></td>
+              </tr>
+              <tr>
+                <td colspan="3"><img src="images/blank.png" width="760" height="10" /></td>
+              </tr>
+              <tr>
+                <td><div align="right">##confirmcode##</div></td>
+                <td>&nbsp;</td>
+                <td class="red_n">##lb_confirmcode_text##</td>
+              </tr>
+              <tr>
+                <td colspan="3"><img src="images/line_frame_02.png" width="760" height="20" /></td>
+                </tr>
+              <tr>
+                <td colspan="3"><input name="h_random" type="hidden" id="h_random" value="##randomnum##" /></td>
+              </tr>
+
               <tr>
                 <td>
                   <input name="memberId" type="hidden" id="memberId" value="##memid##" />
                   <input name="pageId" type="hidden" id="pageId" value="##pagid##" />
                   <input name="langCode" type="hidden" id="langCode" value="##langcode##" />
                   <input name="memberName" type="hidden" id="memberName" value="##memcomname##" />
+                  <input name="flc-bot-prevent" type="text" id="flc-bot-prevent" />
+                  <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                 </td>
                 <td>&nbsp;</td>
                 <td><div align="right">
@@ -284,6 +308,15 @@
     });
   };
   
+</script>
+<script src="https://www.google.com/recaptcha/api.js?render=##captcha_site_key##"></script>
+<script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('##captcha_site_key##', {action: 'homepage'}).then(function(token) {
+        document.getElementById("g-recaptcha-response").value = token;
+        console.log(token);
+      });
+  });
 </script>
 
 <!-- End mem_profile temp -->

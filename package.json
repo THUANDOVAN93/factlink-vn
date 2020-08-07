@@ -1,0 +1,25 @@
+{
+  "name": "fact-link",
+  "version": "1.0.0",
+  "description": "Thuando Dev",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/THUANDOVAN93/factlink-vn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/THUANDOVAN93/factlink-vn/issues"
+  },
+  "homepage": "https://github.com/THUANDOVAN93/factlink-vn#readme"
+}

@@ -2,6 +2,7 @@
     "require": {
         "google/apiclient": "^2.0",
         "symfony/finder": "^3.4",
-        "symfony/validator": "^3.4"
+        "symfony/validator": "^3.4",
+        "twig/twig": "^1.0"
     }
 }

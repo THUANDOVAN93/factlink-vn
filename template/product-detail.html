@@ -113,5 +113,50 @@
 
 
   </div>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "##productname##",
+      "image": "##mainproductimage##",
+      "description": "##productname##",
+      "mpn": "##productsku##",
+      "brand": {
+        "@type": "Thing",
+        "name": "Fact-Link VietNam"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4"
+        },
+        "reviewBody":"Hàng đẹp. Sử dụng rất dễ",
+        "author": {
+            "@type": "Person",
+            "name": "Bao Ngoc"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.0",
+        "reviewCount": "3"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "VND",
+        "price": "00.00",
+        "priceValidUntil": "04/06/2020",
+        "itemCondition": "http://schema.org/UsedCondition",
+        "availability": "http://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "fact-link.com.vn"
+        },
+        "url":"https://www.fact-link.com.vn/product_detail.php?proid=##productid##"
+      },
+      "sku":"##productsku##"
+    }
+    </script>
 </body>
 </html>

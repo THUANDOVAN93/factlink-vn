@@ -70,5 +70,5 @@ if (!defined('ABSPATH'))
 define('WPINC', 'include');
 
 if (!defined('BASE_URL'))
-	define('BASE_URL', 'https://fact-link.com.vn');
+	define('BASE_URL', 'https://www.fact-link.com.vn');
 ?>

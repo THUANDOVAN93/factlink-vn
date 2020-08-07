@@ -319,7 +319,12 @@
 				if ($langset != '') {
 
 					$memcomname = "<a href=\"home/".$memfolder."\" target=\"_blank\">".$memcomname."</a>";
-				} 
+				}
+
+				$disableMemberCheck = false;
+				if ($pagshowjp != 't' &&  $pagshowvn != 't' && $pagshowvn != 't') {
+					$disableMemberCheck = true;
+				}
 				
 				if ($mempackage != '') {
 
@@ -410,8 +415,12 @@
 					</tr>
 					<tr><td valign=\"top\"><img src=\"images/blank.png\" width=\"560\" height=\"5\" /></td></tr>";
 				} elseif ($mempackage == '') {
-				
-					$resulttable = $resulttable."<tr>
+					if ($disableMemberCheck) {
+						$resulttable = $resulttable."<tr class='fl-d-none'>";	
+					} else {
+						$resulttable = $resulttable."<tr>";
+					}
+					$resulttable = $resulttable."
 					<td valign=\"top\"><table width=\"800\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
 					<tr>
 					".$elNationalHtml."

@@ -87,9 +87,9 @@
 	// Prepare Json data
 	$metaSeoArray = array(
 		'meta_title' => array(
-			'en' => $metaTitleEN, 
-			'jp' => $metaTitleJP,
-			'vn' => $metaTitleVN
+			'en' => $metaTitleEN." | Fact-Link Vietnam", 
+			'jp' => $metaTitleJP." | Fact-Link Vietnam",
+			'vn' => $metaTitleVN." | Fact-Link Vietnam"
 		),
 		'meta_desc' => array(
 			'en' => $metaDescEN, 

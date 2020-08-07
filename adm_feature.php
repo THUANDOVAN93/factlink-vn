@@ -2,7 +2,10 @@
 	ini_set("session.gc_maxlifetime", "18000");
 	session_start();
 	
-	if ($_SESSION['vp'] != 'exe') { echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_login.html\">"; exit(); }
+	if ($_SESSION['vp'] != 'exe') {
+		echo "<meta http-equiv = \"refresh\" content = \"0;URL = adm_login.html\">";
+		exit();
+	}
 	
 	include_once("./include/class.rFastTemplate.php");
 	include_once("./include/global_config.php");
@@ -57,7 +60,11 @@
 		}
 		
 		if ($feashow == 't') {
-			$feashow = "<img src=\"images/icon_enable_01.png\" alt=\"".$lb_alt_on."\" width=\"20\" height=\"20\" border=\"0\" />";
+			$feashow = "
+				<a href=\"adm_feature_set_disable.php?id=".$feaid."\">
+					<img src=\"images/icon_enable_01.png\" alt=\"".$lb_alt_on."\" width=\"20\" height=\"20\" border=\"0\" />
+				</a>
+			";
 		} else {
 			$feashow = "
 				<a href=\"adm_feature_set_enable.php?id=".$feaid."\">

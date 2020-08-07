@@ -11,14 +11,13 @@
 <title>##texttitlebar##</title>
 
 <link href="/flc_css.css?v=2" rel="stylesheet" type="text/css" />
-<link href="/theme.css?v=3" rel="stylesheet" type="text/css" />
+<link href="/theme.css?v=4" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="favicon.ico?v=1">
 
 <!-- Add the slick-theme.css if you want default styling -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
 </head>
 <body>
 	<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
@@ -494,7 +493,37 @@
 		})();
 	</script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script type="text/javascript">
+	<script>
+
+		$(document).ready(function(){
+			var elBannerTop =  $('.jsBannerTop');
+			var maxTimerSlider = 5000;
+			var totalVideoSilder = elBannerTop.length;
+
+			if (totalVideoSilder > 1) {
+				setTimeout(function() {
+					var timerSliderArr = []; 
+					elBannerTop.each(function() {
+						timerSliderArr.push($(this).get(0).duration);	
+					});
+					maxTimerSlider = Math.max.apply(null, timerSliderArr) * 1000;
+				}, 3000);
+			}
+
+			if (totalVideoSilder === 1) {
+				
+			  	setTimeout(function(){
+					maxTimerSlider = elBannerTop[0].duration * 1000;
+				}, 3000);
+			}
+			setTimeout(function(){
+				$('#top-banner').slick({
+					arrows: false,
+					autoplay: true,
+	  				autoplaySpeed: maxTimerSlider
+				});
+			}, maxTimerSlider);
+		});
 
 		$(document).ready(function(){
 			$('#js-wrap-products-list').slick({
@@ -505,45 +534,43 @@
 			nextArrow: '<span class="arrow btn-next"></span>'
 			});
 		});
+  	</script>
+  	<script>
+		// ===== Scroll to Top ==== 
+		$(window).scroll(function() {
+		    if ($(this).scrollTop() >= 50) {
 
-		var totalTopBanner = ##totaltopbanner##;
-		var positonImageStart = 0;
-		if (totalTopBanner <= 1) {
-			positonImageStart = 0;
-		} else {
-			positonImageStart = Math.floor(Math.random() * totalTopBanner + 1 ) - 1;
-		}
+		      $('#return-to-top').fadeIn(200);
+		    } else {
 
-		$(document).ready(function(){
-			
-			console.log(positonImageStart);
-			$('#top-banner').slick({
-				arrows: false,
-				autoplay: true,
-  				autoplaySpeed: 3000,
-  				initialSlide: positonImageStart
+		      $('#return-to-top').fadeOut(200);
+		    }
 			});
+
+			$('#return-to-top').click(function() {
+
+		    $('body,html').animate({
+		    	
+		      scrollTop : 0
+		    }, 500);
 		});
-  </script>
-  <script>
-	// ===== Scroll to Top ==== 
-	$(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) {
-
-      $('#return-to-top').fadeIn(200);
-    } else {
-
-      $('#return-to-top').fadeOut(200);
+  	</script>
+  	<script type="application/ld+json">
+  	{
+  		"@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Fact-Link",
+        "alternateName": "Fact-Link.vn",
+        "url": "https://www.fact-link.com.vn",
+        "accessMode": "textual",
+        "author": "Fact-Link VietNam",
+        "copyrightYear": 2015,
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.fact-link.com.vn/search_category.php?id={_search_term_number}",
+            "query-input": "required name=_search_term_number"
+        }
     }
-	});
-
-	$('#return-to-top').click(function() {
-
-    $('body,html').animate({
-    	
-      scrollTop : 0
-    }, 500);
-	});
-  </script>
+  	</script>
 </body>
 </html>

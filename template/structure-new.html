@@ -500,29 +500,50 @@
 			var maxTimerSlider = 5000;
 			var totalVideoSilder = elBannerTop.length;
 
+			// if (totalVideoSilder > 1) {
+			// 	setTimeout(function() {
+			// 		var timerSliderArr = []; 
+			// 		elBannerTop.each(function() {
+			// 			timerSliderArr.push($(this).get(0).duration);	
+			// 		});
+			// 		maxTimerSlider = Math.max.apply(null, timerSliderArr) * 1000;
+			// 	}, 3000);
+			// }
+
+			// if (totalVideoSilder === 1) {
+				
+			//   	setTimeout(function(){
+			// 		maxTimerSlider = elBannerTop[0].duration * 1000;
+			// 	}, 3000);
+			// }
+			// setTimeout(function(){
+			// 	$('#top-banner').slick({
+			// 		arrows: false,
+			// 		autoplay: true,
+	  // 				autoplaySpeed: maxTimerSlider
+			// 	});
+			// }, maxTimerSlider);
+
 			if (totalVideoSilder > 1) {
-				setTimeout(function() {
-					var timerSliderArr = []; 
-					elBannerTop.each(function() {
-						timerSliderArr.push($(this).get(0).duration);	
-					});
-					maxTimerSlider = Math.max.apply(null, timerSliderArr) * 1000;
-				}, 3000);
+				var timerSliderArr = [];
+				for (var i = 0; i < totalVideoSilder; i++) {
+					timerSliderArr.push(Math.ceil(elBannerTop[i].duration));
+				}
+				//maxTimerSlider = Math.max(timerSliderArr) * 1000;
+				//maxTimerSlider = Math.max(timerSliderArr) * 1000;
 			}
 
 			if (totalVideoSilder === 1) {
-				
-			  	setTimeout(function(){
-					maxTimerSlider = elBannerTop[0].duration * 1000;
-				}, 3000);
+			  	maxTimerSlider = Math.ceil(elBannerTop[0].duration) * 1000;
 			}
-			setTimeout(function(){
-				$('#top-banner').slick({
-					arrows: false,
-					autoplay: true,
-	  				autoplaySpeed: maxTimerSlider
-				});
-			}, maxTimerSlider);
+
+			console.log(timerSliderArr);
+
+			$('#top-banner').slick({
+				arrows: false,
+				autoplay: true,
+  				autoplaySpeed: maxTimerSlider
+			});
 		});
 
 		$(document).ready(function(){
